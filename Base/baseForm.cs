@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using System.Configuration;
-using DataSetLibrary;
+using DataLibraryDMD;
 using DataBindingLibrary;
 
 namespace prueba_txtBox
@@ -11,7 +11,7 @@ namespace prueba_txtBox
     {
         public DataSet ds;
         public bool esNuevo = false;
-        public BaseDataAccess dataAccess;
+        public MantenimentDades dataAccess;
         public string TableName;
         public string querySelect;
         public ComboBox comboBox;
@@ -27,7 +27,7 @@ namespace prueba_txtBox
             if (DesignMode) return;
 
             string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-            dataAccess = new BaseDataAccess(connectionString);
+            dataAccess = new MantenimentDades(connectionString);
 
             ds = dataAccess.PortarTaula(TableName);
 
@@ -47,6 +47,7 @@ namespace prueba_txtBox
 
         private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             string selectedCode = comboBox.SelectedValue.ToString();
 
             if (!string.IsNullOrEmpty(selectedCode))
@@ -95,7 +96,7 @@ namespace prueba_txtBox
                 esNuevo = false;
             }
 
-            dataAccess.Actualitzar(ds, querySelect, TableName);
+            dataAccess.Actualitzar(querySelect, ds, TableName);
             ds = dataAccess.PortarTaula(TableName);
             CargarDatos();
         }
@@ -117,6 +118,7 @@ namespace prueba_txtBox
 
         protected void UpdateTable()
         {
+
             dataGridView1.DataSource = ds.Tables[TableName];
             dataGridView1.Columns[0].Visible = false;
         }

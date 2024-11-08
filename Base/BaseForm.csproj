@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\App\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -87,13 +87,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\S2AM\ABP\DataBindingLibrary\DataBindingLibrary.csproj">
+    <ProjectReference Include="..\DataBindingLibrary\DataBindingLibrary.csproj">
       <Project>{153173b0-0949-492b-bb04-736efa2768f1}</Project>
       <Name>DataBindingLibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\S2AM\ABP\DataSetLibrary\DataSetLibrary.csproj">
-      <Project>{fa99a618-323f-4beb-b67b-29c10d9f52bf}</Project>
-      <Name>DataSetLibrary</Name>
+    <ProjectReference Include="..\Data\DataAcces.csproj">
+      <Project>{db77ddd9-3e44-4327-9d80-59afaf6f6b35}</Project>
+      <Name>DataAcces</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

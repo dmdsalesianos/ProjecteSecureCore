@@ -7,13 +7,14 @@ namespace DataLibraryDMD
 { 
     public class MantenimentDades
     {
-        protected string _connectionString = "Data Source=sqlserver.S2AM.sdslab.cat;Initial Catalog=SecureCoreG4;Persist Security Info=True;User ID=G4;Password=12345G4aA2425.";
+        protected string _connectionString;
 
         private SqlConnection connection;
         private DataSet ds;
 
-        public MantenimentDades()
+        public MantenimentDades(string connectionstring)
         {
+            _connectionString = connectionstring;
             connection = new SqlConnection(_connectionString);
         }
 
