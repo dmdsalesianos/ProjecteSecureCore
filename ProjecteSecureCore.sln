@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseForm", "Base\BaseForm.c
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBindingLibrary", "DataBindingLibrary\DataBindingLibrary.csproj", "{153173B0-0949-492B-BB04-736EFA2768F1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomControls", "CustomControls\CustomControls.csproj", "{6B666B1C-7BD0-4E76-AB39-95AD671EB46B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{153173B0-0949-492B-BB04-736EFA2768F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{153173B0-0949-492B-BB04-736EFA2768F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{153173B0-0949-492B-BB04-736EFA2768F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B666B1C-7BD0-4E76-AB39-95AD671EB46B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B666B1C-7BD0-4E76-AB39-95AD671EB46B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B666B1C-7BD0-4E76-AB39-95AD671EB46B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B666B1C-7BD0-4E76-AB39-95AD671EB46B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
