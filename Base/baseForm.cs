@@ -32,7 +32,6 @@ namespace prueba_txtBox
             ds = dataAccess.PortarTaula(TableName);
 
             comboBox.DataSource = ds.Tables[TableName];
-            comboBox.SelectedIndexChanged += comboBox_SelectedIndexChanged;
 
             CargarDatos();
 
@@ -45,28 +44,13 @@ namespace prueba_txtBox
             }
         }
 
-        private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            string selectedCode = comboBox.SelectedValue.ToString();
-
-            if (!string.IsNullOrEmpty(selectedCode))
-            {
-                querySelect = $"SELECT * FROM {TableName} WHERE {comboBox.ValueMember} = '{selectedCode}'";
-
-                ds = dataAccess.PortarTaula(TableName);
-                CargarDatos(); 
-            }
-        }
-
-
-
         protected void CargarDatos()
         {
-            DataBindingHelper.ClearDataBindings(this.Controls); 
-            UpdateTable(); 
+            DataBindingHelper.ClearDataBindings(this.Controls);
+            UpdateTable();
 
             BindTextBoxesToData();
+            BindComboBoxToData();
         }
 
         private void BindTextBoxesToData()
@@ -80,6 +64,19 @@ namespace prueba_txtBox
                 }
             }
         }
+
+        private void BindComboBoxToData()
+        {
+            if (comboBox.DisplayMember != null)
+            {
+                comboBox.DataBindings.Clear();
+
+                comboBox.DataBindings.Add("SelectedValue", ds.Tables[TableName], "idSpecie");
+            }
+        }
+
+
+
 
         protected void button1_Click(object sender, EventArgs e)
         {
@@ -96,7 +93,7 @@ namespace prueba_txtBox
                 esNuevo = false;
             }
 
-            dataAccess.Actualitzar(querySelect, ds, TableName);
+            dataAccess.Actualitzar(ds, querySelect, TableName);
             ds = dataAccess.PortarTaula(TableName);
             CargarDatos();
         }
@@ -131,4 +128,4 @@ namespace prueba_txtBox
             }
         }
     }
-}   
+}

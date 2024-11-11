@@ -29,36 +29,52 @@ namespace Species
         /// </summary>
         private void InitializeComponent()
         {
-            this.swTextox2 = new Species.SWTextox();
-            this.swTextox = new Species.SWTextox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.swTextBox2 = new Species.SWTextox();
+            this.swTextBox1 = new Species.SWTextox();
             this.SuspendLayout();
             // 
-            // swTextox2
+            // comboBox1
             // 
-            this.swTextox2.Location = new System.Drawing.Point(48, 152);
-            this.swTextox2.Name = "swTextox2";
-            this.swTextox2.nombreColumna = "descSpecie";
-            this.swTextox2.Size = new System.Drawing.Size(239, 26);
-            this.swTextox2.TabIndex = 6;
+            this.comboBox1.DisplayMember = "codeSpecie";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(22, 209);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 7;
+            this.comboBox1.ValueMember = "idSpecie";
             // 
-            // swTextox
+            // swTextBox2
             // 
-            this.swTextox.Location = new System.Drawing.Point(48, 82);
-            this.swTextox.Name = "swTextox";
-            this.swTextox.nombreColumna = "codeSpecie";
-            this.swTextox.Size = new System.Drawing.Size(239, 26);
-            this.swTextox.TabIndex = 5;
+            this.swTextBox2.Location = new System.Drawing.Point(43, 122);
+            this.swTextBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.swTextBox2.Name = "swTextBox2";
+            this.swTextBox2.nombreColumna = "descSpecie";
+            this.swTextBox2.Size = new System.Drawing.Size(213, 22);
+            this.swTextBox2.TabIndex = 6;
+            // 
+            // swTextBox1
+            // 
+            this.swTextBox1.Location = new System.Drawing.Point(43, 66);
+            this.swTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.swTextBox1.Name = "swTextBox1";
+            this.swTextBox1.nombreColumna = "codeSpecie";
+            this.swTextBox1.Size = new System.Drawing.Size(213, 22);
+            this.swTextBox1.TabIndex = 5;
             // 
             // frmSpecies
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(943, 567);
-            this.Controls.Add(this.swTextox2);
-            this.Controls.Add(this.swTextox);
+            this.ClientSize = new System.Drawing.Size(838, 454);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.swTextBox2);
+            this.Controls.Add(this.swTextBox1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmSpecies";
-            this.Controls.SetChildIndex(this.swTextox, 0);
-            this.Controls.SetChildIndex(this.swTextox2, 0);
+            this.Controls.SetChildIndex(this.swTextBox1, 0);
+            this.Controls.SetChildIndex(this.swTextBox2, 0);
+            this.Controls.SetChildIndex(this.comboBox1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -66,8 +82,9 @@ namespace Species
 
         #endregion
 
-        private SWTextox swTextox;
-        private SWTextox swTextox2;
+        private SWTextox swTextBox1;
+        private SWTextox swTextBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
