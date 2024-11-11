@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBindingLibrary", "DataB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomControls", "CustomControls\CustomControls.csproj", "{6B666B1C-7BD0-4E76-AB39-95AD671EB46B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Species", "Species\Species.csproj", "{DB6DCBD1-77DA-4A0D-AB1E-BA9E335BB939}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{6B666B1C-7BD0-4E76-AB39-95AD671EB46B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B666B1C-7BD0-4E76-AB39-95AD671EB46B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B666B1C-7BD0-4E76-AB39-95AD671EB46B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB6DCBD1-77DA-4A0D-AB1E-BA9E335BB939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB6DCBD1-77DA-4A0D-AB1E-BA9E335BB939}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB6DCBD1-77DA-4A0D-AB1E-BA9E335BB939}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB6DCBD1-77DA-4A0D-AB1E-BA9E335BB939}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
