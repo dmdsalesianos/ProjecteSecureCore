@@ -21,10 +21,8 @@ namespace Species
             swTextBox1.Tag = swTextBox1.nombreColumna;
             swTextBox2.Tag = swTextBox2.nombreColumna;
 
-            // Asigna el ComboBox en el formulario derivado al ComboBox en la clase base
-            comboBox = comboBox1;  // Asignamos comboBox1 de frmSpecies a la propiedad comboBox de baseForm
+            comboBox = comboBox1;  
         }
-
 
         protected override void BaseForm_Load(object sender, EventArgs e)
         {
