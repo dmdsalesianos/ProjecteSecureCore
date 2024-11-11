@@ -16,8 +16,8 @@ namespace Species
         public frmSpecies()
         {
             InitializeComponent();
-            TableName = "Species";
-            querySelect = "SELECT * FROM Species";
+            TableName = "Users";
+            querySelect = $"SELECT * FROM {TableName}";
             swTextBox1.Tag = swTextBox1.nombreColumna;
             swTextBox2.Tag = swTextBox2.nombreColumna;
 
