@@ -36,20 +36,20 @@ namespace Species
             // 
             // comboBox1
             // 
-            this.comboBox1.DisplayMember = "codeSpecie";
+            this.comboBox1.DisplayMember = "UserName";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(22, 209);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 7;
-            this.comboBox1.ValueMember = "idSpecie";
+            this.comboBox1.ValueMember = "idUser";
             // 
             // swTextBox2
             // 
             this.swTextBox2.Location = new System.Drawing.Point(43, 122);
             this.swTextBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.swTextBox2.Name = "swTextBox2";
-            this.swTextBox2.nombreColumna = "descSpecie";
+            this.swTextBox2.nombreColumna = "UserName";
             this.swTextBox2.Size = new System.Drawing.Size(213, 22);
             this.swTextBox2.TabIndex = 6;
             // 
@@ -58,7 +58,7 @@ namespace Species
             this.swTextBox1.Location = new System.Drawing.Point(43, 66);
             this.swTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.swTextBox1.Name = "swTextBox1";
-            this.swTextBox1.nombreColumna = "codeSpecie";
+            this.swTextBox1.nombreColumna = "codeUser";
             this.swTextBox1.Size = new System.Drawing.Size(213, 22);
             this.swTextBox1.TabIndex = 5;
             // 

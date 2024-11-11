@@ -23,7 +23,6 @@ namespace prueba_txtBox
 
         protected virtual void BaseForm_Load(object sender, EventArgs e)
         {
-
             if (DesignMode) return;
 
             string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
@@ -57,10 +56,15 @@ namespace prueba_txtBox
         {
             foreach (Control control in this.Controls)
             {
-                if (control is TextBox textBox && textBox.Tag != null)
+                if (control is TextBox textBox)
                 {
-                    textBox.DataBindings.Clear();
-                    textBox.DataBindings.Add("Text", ds.Tables[TableName], textBox.Tag.ToString());
+                    var nombreColumna = textBox.GetType().GetProperty("nombreColumna").GetValue(textBox, null) as string;
+
+                    if (!string.IsNullOrEmpty(nombreColumna))
+                    {
+                        textBox.DataBindings.Clear();
+                        textBox.DataBindings.Add("Text", ds.Tables[TableName], nombreColumna);
+                    }
                 }
             }
         }
@@ -74,9 +78,6 @@ namespace prueba_txtBox
                 comboBox.DataBindings.Add("SelectedValue", ds.Tables[TableName], "idSpecie");
             }
         }
-
-
-
 
         protected void button1_Click(object sender, EventArgs e)
         {
@@ -106,7 +107,12 @@ namespace prueba_txtBox
             {
                 if (control is TextBox textBox)
                 {
-                    newRow[textBox.Tag.ToString()] = textBox.Text;
+                    var nombreColumna = textBox.GetType().GetProperty("nombreColumna").GetValue(textBox, null) as string;
+
+                    if (!string.IsNullOrEmpty(nombreColumna))
+                    {
+                        newRow[nombreColumna] = textBox.Text;
+                    }
                 }
             }
 
@@ -115,7 +121,6 @@ namespace prueba_txtBox
 
         protected void UpdateTable()
         {
-
             dataGridView1.DataSource = ds.Tables[TableName];
             dataGridView1.Columns[0].Visible = false;
         }
