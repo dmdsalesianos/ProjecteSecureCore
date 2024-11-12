@@ -64,9 +64,18 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="SWCodi.resx">
+      <DependentUpon>SWCodi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SWLaunchForm.resx">
       <DependentUpon>SWLaunchForm.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data\DataAcces.csproj">
+      <Project>{db77ddd9-3e44-4327-9d80-59afaf6f6b35}</Project>
+      <Name>DataAcces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
