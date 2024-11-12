@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace DataLibraryDMD
+namespace DataAccess
 { 
     public class MantenimentDades
     {

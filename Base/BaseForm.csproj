@@ -91,9 +91,9 @@
       <Project>{153173b0-0949-492b-bb04-736efa2768f1}</Project>
       <Name>DataBindingLibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Data\DataAcces.csproj">
+    <ProjectReference Include="..\Data\DataAccess.csproj">
       <Project>{db77ddd9-3e44-4327-9d80-59afaf6f6b35}</Project>
-      <Name>DataAcces</Name>
+      <Name>DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

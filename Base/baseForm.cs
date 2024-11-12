@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using System.Configuration;
-using DataLibraryDMD;
+using DataAccess;
 using DataBindingLibrary;
 
 namespace prueba_txtBox
