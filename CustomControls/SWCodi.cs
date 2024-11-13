@@ -89,7 +89,7 @@ namespace Sprint53_G4
                 if(tipus != null)
                 {
                     Form frm = (Form)Activator.CreateInstance(tipus);
-                    frm.ShowDialog();
+                    frm.Show();//ShowDialog()
                 } else
                 {
                     MessageBox.Show("La clase especificada no se encontró.");
