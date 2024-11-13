@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DB6DCBD1-77DA-4A0D-AB1E-BA9E335BB939}</ProjectGuid>
+    <ProjectGuid>{62B17EBC-D53B-40EF-80BA-D7EE65EEB200}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Species</RootNamespace>
-    <AssemblyName>Species</AssemblyName>
+    <RootNamespace>GestioDeUsuaris</RootNamespace>
+    <AssemblyName>GestioDeUsuaris</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ControlsLibrary">
-      <HintPath>..\..\..\..\OneDrive\Documentos\CFGS\2 año\PRJ02\Sprint6_Custom Controls\App\ControlsLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmSpecies.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSpecies.Designer.cs">
-      <DependentUpon>frmSpecies.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmSpecies.resx">
-      <DependentUpon>frmSpecies.cs</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -83,17 +80,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Base\BaseForm.csproj">
-      <Project>{b033ceb6-8bdb-443f-9f37-6d6ebf422544}</Project>
-      <Name>BaseForm</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CustomControls\CustomControls.csproj">
       <Project>{6B666B1C-7BD0-4E76-AB39-95AD671EB46B}</Project>
       <Name>CustomControls</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Data\DataAcces.csproj">
-      <Project>{DB77DDD9-3E44-4327-9D80-59AFAF6F6B35}</Project>
-      <Name>DataAcces</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
