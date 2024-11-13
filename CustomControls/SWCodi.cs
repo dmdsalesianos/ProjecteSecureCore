@@ -16,7 +16,11 @@ namespace Sprint53_G4
 {
     public partial class SWCodi : UserControl
     {
-        public SWCodi() { InitializeComponent(); }
+        public SWCodi()
+        {
+            InitializeComponent();
+            codiTxt.Leave += Validacodi;
+        }
 
         private string nomTaula;
         private string nomCodi;
@@ -44,34 +48,36 @@ namespace Sprint53_G4
         public string NomCodi { get { return nomCodi; } set { nomCodi = value; } }
 
         public string NomTaula { get { return nomTaula; } set { nomTaula = value; } }
+
         private void Validacodi(object sender, EventArgs e)
         {
             string codi = codiTxt.Text;
-           
+
             //fer el appconfig i agafar la cadena amb el configuration manager
-            MantenimentDades manteniment = new MantenimentDades("configurationManager");
+            MantenimentDades manteniment = new MantenimentDades(
+                ConfigurationManager.ConnectionStrings["SecureCoreG4ConnectionString"].ConnectionString);
 
             string consulta = $"SELECT {NomId}, {NomDesc} FROM {NomTaula} WHERE {NomCodi} = '{codi}'";
 
             DataSet ds = manteniment.PortarPerConsulta(consulta);
 
-            if (ds.Tables[0].Rows.Count > 0)
+            if(ds.Tables[0].Rows.Count > 0)
             {
                 string id = ds.Tables[0].Rows[0][NomId].ToString();
                 string desc = ds.Tables[0].Rows[0][NomDesc].ToString();
 
                 descTxt.Text = desc;
                 TextBox controlExterno = this.Parent.Controls[ControlID] as TextBox;
-                if (controlExterno != null)
+                if(controlExterno != null)
                 {
                     controlExterno.Text = id;
                 }
-            }
-            else
+            } else
             {
                 descTxt.Text = "Unknown data";
             }
         }
+
         private void ObreCS()
         {
             string claseForm = ClaseCS + "." + FormCS;
@@ -92,6 +98,13 @@ namespace Sprint53_G4
             } catch(Exception ex)
             {
                 MessageBox.Show($"Error al abrir el formulario: {ex.Message}");
+            }
+        }
+        private void codiTxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F2)
+            {
+                ObreCS();
             }
         }
     }
