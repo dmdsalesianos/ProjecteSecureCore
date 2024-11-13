@@ -52,7 +52,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sprint53_G4.csproj">
+    <ProjectReference Include="..\CustomControls.csproj">
       <Project>{6B666B1C-7BD0-4E76-AB39-95AD671EB46B}</Project>
       <Name>Sprint53_G4</Name>
     </ProjectReference>
