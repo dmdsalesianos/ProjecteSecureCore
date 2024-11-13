@@ -29,8 +29,23 @@ namespace GestioDeUsuaris
         /// </summary>
         private void InitializeComponent()
         {
+            this.swCodi1 = new Sprint53_G4.SWCodi();
             this.swLaunchForm1 = new Sprint53_G4.SWLaunchForm();
             this.SuspendLayout();
+            // 
+            // swCodi1
+            // 
+            this.swCodi1.ClaseCS = "SpcaeShipCategories";
+            this.swCodi1.ControlID = "idSpaceShipCategory";
+            this.swCodi1.FormCS = "frmSpcaeShipCategories";
+            this.swCodi1.Location = new System.Drawing.Point(12, 119);
+            this.swCodi1.Name = "swCodi1";
+            this.swCodi1.NomCodi = "codeSpaceShipCategory";
+            this.swCodi1.NomDesc = "DescSpaceShipCategory";
+            this.swCodi1.NomId = "idSpaceShipCategory";
+            this.swCodi1.NomTaula = "SpaceShipCategories";
+            this.swCodi1.Size = new System.Drawing.Size(455, 51);
+            this.swCodi1.TabIndex = 1;
             // 
             // swLaunchForm1
             // 
@@ -38,7 +53,7 @@ namespace GestioDeUsuaris
             this.swLaunchForm1.Descripcion = "spcae Ship Categories";
             this.swLaunchForm1.Form = "frmSpaceShipCategories";
             this.swLaunchForm1.Image = global::GestioDeUsuaris.Properties.Resources.Screenshot_2024_10_03_175751;
-            this.swLaunchForm1.Location = new System.Drawing.Point(2, 3);
+            this.swLaunchForm1.Location = new System.Drawing.Point(298, 3);
             this.swLaunchForm1.Name = "swLaunchForm1";
             this.swLaunchForm1.Size = new System.Drawing.Size(1092, 558);
             this.swLaunchForm1.TabIndex = 0;
@@ -47,7 +62,8 @@ namespace GestioDeUsuaris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1106, 573);
+            this.ClientSize = new System.Drawing.Size(1481, 573);
+            this.Controls.Add(this.swCodi1);
             this.Controls.Add(this.swLaunchForm1);
             this.Name = "frmMain";
             this.Text = "frmMain";
@@ -58,6 +74,7 @@ namespace GestioDeUsuaris
         #endregion
 
         private Sprint53_G4.SWLaunchForm swLaunchForm1;
+        private Sprint53_G4.SWCodi swCodi1;
     }
 }
 
