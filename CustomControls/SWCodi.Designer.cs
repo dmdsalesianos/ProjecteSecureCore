@@ -39,6 +39,7 @@ namespace Sprint53_G4
             this.codiTxt.Name = "codiTxt";
             this.codiTxt.Size = new System.Drawing.Size(62, 22);
             this.codiTxt.TabIndex = 0;
+            this.codiTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.codiTxt_KeyDown);
             // 
             // descTxt
             // 
