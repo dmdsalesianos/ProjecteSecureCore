@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomControls", "CustomCon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Species", "Species\Species.csproj", "{DB6DCBD1-77DA-4A0D-AB1E-BA9E335BB939}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestioDeUsuaris", "GestioDeUsuaris\GestioDeUsuaris.csproj", "{62B17EBC-D53B-40EF-80BA-D7EE65EEB200}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{DB6DCBD1-77DA-4A0D-AB1E-BA9E335BB939}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB6DCBD1-77DA-4A0D-AB1E-BA9E335BB939}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB6DCBD1-77DA-4A0D-AB1E-BA9E335BB939}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62B17EBC-D53B-40EF-80BA-D7EE65EEB200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62B17EBC-D53B-40EF-80BA-D7EE65EEB200}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62B17EBC-D53B-40EF-80BA-D7EE65EEB200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62B17EBC-D53B-40EF-80BA-D7EE65EEB200}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

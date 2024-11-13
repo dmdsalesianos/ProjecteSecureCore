@@ -18,8 +18,6 @@ namespace Species
             InitializeComponent();
             TableName = "Users";
             querySelect = $"SELECT * FROM {TableName}";
-            swTextBox1.Tag = swTextBox1.nombreColumna;
-            swTextBox2.Tag = swTextBox2.nombreColumna;
 
             comboBox = comboBox1;  
         }

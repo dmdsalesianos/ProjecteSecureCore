@@ -30,8 +30,8 @@ namespace Species
         private void InitializeComponent()
         {
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.swTextBox2 = new Species.SWTextox();
-            this.swTextBox1 = new Species.SWTextox();
+            this.swTextbox1 = new Sprint53_G4.SWTextbox();
+            this.swTextbox2 = new Sprint53_G4.SWTextbox();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -44,47 +44,50 @@ namespace Species
             this.comboBox1.TabIndex = 7;
             this.comboBox1.ValueMember = "idUser";
             // 
-            // swTextBox2
+            // swTextbox1
             // 
-            this.swTextBox2.Location = new System.Drawing.Point(43, 122);
-            this.swTextBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.swTextBox2.Name = "swTextBox2";
-            this.swTextBox2.nombreColumna = "UserName";
-            this.swTextBox2.Size = new System.Drawing.Size(213, 22);
-            this.swTextBox2.TabIndex = 6;
+            this.swTextbox1.EsForanea = false;
+            this.swTextbox1.Location = new System.Drawing.Point(42, 29);
+            this.swTextbox1.Name = "swTextbox1";
+            this.swTextbox1.NomCampBBDD = "codeSpecie";
+            this.swTextbox1.PermetreBuit = false;
+            this.swTextbox1.Size = new System.Drawing.Size(250, 22);
+            this.swTextbox1.TabIndex = 8;
+            this.swTextbox1.TipusDada = Sprint53_G4.SWTextbox.Tipus_Dada.Text;
             // 
-            // swTextBox1
+            // swTextbox2
             // 
-            this.swTextBox1.Location = new System.Drawing.Point(43, 66);
-            this.swTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.swTextBox1.Name = "swTextBox1";
-            this.swTextBox1.nombreColumna = "codeUser";
-            this.swTextBox1.Size = new System.Drawing.Size(213, 22);
-            this.swTextBox1.TabIndex = 5;
+            this.swTextbox2.EsForanea = false;
+            this.swTextbox2.Location = new System.Drawing.Point(42, 78);
+            this.swTextbox2.Name = "swTextbox2";
+            this.swTextbox2.NomCampBBDD = "descSpecie";
+            this.swTextbox2.PermetreBuit = false;
+            this.swTextbox2.Size = new System.Drawing.Size(250, 22);
+            this.swTextbox2.TabIndex = 9;
+            this.swTextbox2.TipusDada = Sprint53_G4.SWTextbox.Tipus_Dada.Text;
             // 
             // frmSpecies
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 454);
+            this.Controls.Add(this.swTextbox2);
+            this.Controls.Add(this.swTextbox1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.swTextBox2);
-            this.Controls.Add(this.swTextBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmSpecies";
-            this.Controls.SetChildIndex(this.swTextBox1, 0);
-            this.Controls.SetChildIndex(this.swTextBox2, 0);
             this.Controls.SetChildIndex(this.comboBox1, 0);
+            this.Controls.SetChildIndex(this.swTextbox1, 0);
+            this.Controls.SetChildIndex(this.swTextbox2, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private SWTextox swTextBox1;
-        private SWTextox swTextBox2;
         private System.Windows.Forms.ComboBox comboBox1;
+        private Sprint53_G4.SWTextbox swTextbox1;
+        private Sprint53_G4.SWTextbox swTextbox2;
     }
 }
 

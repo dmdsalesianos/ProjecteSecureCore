@@ -58,12 +58,12 @@ namespace prueba_txtBox
             {
                 if (control is TextBox textBox)
                 {
-                    var nombreColumna = textBox.GetType().GetProperty("nombreColumna").GetValue(textBox, null) as string;
+                    var nomCampBBDD = textBox.GetType().GetProperty("nomCampBBDD").GetValue(textBox, null) as string;
 
-                    if (!string.IsNullOrEmpty(nombreColumna))
+                    if (!string.IsNullOrEmpty(nomCampBBDD))
                     {
                         textBox.DataBindings.Clear();
-                        textBox.DataBindings.Add("Text", ds.Tables[TableName], nombreColumna);
+                        textBox.DataBindings.Add("Text", ds.Tables[TableName], nomCampBBDD);
                     }
                 }
             }
@@ -75,7 +75,7 @@ namespace prueba_txtBox
             {
                 comboBox.DataBindings.Clear();
 
-                comboBox.DataBindings.Add("SelectedValue", ds.Tables[TableName], "idSpecie");
+                comboBox.DataBindings.Add("SelectedValue", ds.Tables[TableName], comboBox.ValueMember);
             }
         }
 
@@ -107,11 +107,11 @@ namespace prueba_txtBox
             {
                 if (control is TextBox textBox)
                 {
-                    var nombreColumna = textBox.GetType().GetProperty("nombreColumna").GetValue(textBox, null) as string;
+                    var nomCampBBDD = textBox.GetType().GetProperty("nomCampBBDD").GetValue(textBox, null) as string;
 
-                    if (!string.IsNullOrEmpty(nombreColumna))
+                    if (!string.IsNullOrEmpty(nomCampBBDD))
                     {
-                        newRow[nombreColumna] = textBox.Text;
+                        newRow[nomCampBBDD] = textBox.Text;
                     }
                 }
             }

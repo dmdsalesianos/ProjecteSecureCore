@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Species
+namespace GestioDeUsuaris
 {
-    public partial class SWTextox : TextBox
+    public partial class frmMain : Form
     {
-        public string nombreColumna { get; set; }
-        public SWTextox()
+        public frmMain()
         {
+            InitializeComponent();
         }
     }
 }
