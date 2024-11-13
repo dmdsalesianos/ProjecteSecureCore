@@ -100,6 +100,7 @@ namespace Sprint53_G4
                 MessageBox.Show($"Error al abrir el formulario: {ex.Message}");
             }
         }
+
         private void codiTxt_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F2)
