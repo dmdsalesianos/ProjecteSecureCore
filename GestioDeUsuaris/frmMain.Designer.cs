@@ -55,7 +55,7 @@ namespace GestioDeUsuaris
             this.swLaunchForm1.Image = global::GestioDeUsuaris.Properties.Resources.Screenshot_2024_10_03_175751;
             this.swLaunchForm1.Location = new System.Drawing.Point(298, 3);
             this.swLaunchForm1.Name = "swLaunchForm1";
-            this.swLaunchForm1.Size = new System.Drawing.Size(1092, 558);
+            this.swLaunchForm1.Size = new System.Drawing.Size(1171, 558);
             this.swLaunchForm1.TabIndex = 0;
             // 
             // frmMain
