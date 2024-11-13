@@ -2,95 +2,87 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Windows;
 
 namespace DataLibraryDMD
-{ 
+{
     public class MantenimentDades
     {
-        protected string _connectionString;
 
-        private SqlConnection connection;
-        private DataSet ds;
+        protected string connectionString;
 
-        public MantenimentDades(string connectionstring)
+        public MantenimentDades(string connString)
         {
-            _connectionString = connectionstring;
-            connection = new SqlConnection(_connectionString);
+            connectionString = connString;
         }
 
-        //public SqlConnection Connectar()
-        //{
-        //    connection.Open();
-        //}
-
-        public DataSet PortarTaula(string nomTaula)
+        public SqlConnection Connectar()
         {
-            ds = new DataSet();
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            return conn;
+        }
 
-            connection.Open();
-            SqlDataAdapter da = new SqlDataAdapter($"SELECT * FROM {nomTaula}", connection);
-            da.Fill(ds, nomTaula);
+        public string ObtenerConnectionString()
+        {
+            ConnectionStringSettings connectionStringSettings = ConfigurationManager.ConnectionStrings["Conexio"];
+            if (connectionStringSettings == null)
+            {
+                throw new InvalidOperationException("No se pudo encontrar la cadena de conexión 'Conexio'.");
+            }
 
-            connection.Close();
-            
+            return connectionStringSettings.ConnectionString;
+        }
+
+        public DataSet PortarTaula(string tableName)
+        {
+            SqlConnection conn = Connectar();
+            System.Data.DataSet ds = new System.Data.DataSet();
+            SqlDataAdapter da = new SqlDataAdapter($"SELECT * FROM {tableName}", conn);
+            da.Fill(ds, tableName);
+            conn.Close();
             return ds;
         }
 
         public DataSet PortarPerConsulta(string query)
         {
-            ds = new DataSet();
-
-            connection.Open();
-            SqlDataAdapter da = new SqlDataAdapter(query, connection);
+            SqlConnection conn = Connectar();
+            System.Data.DataSet ds = new System.Data.DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
             da.Fill(ds);
-
-            connection.Close();
-            
+            conn.Close();
             return ds;
         }
 
-        public DataSet PortarPerConsulta(string query, string nomDataTable)
+        public DataSet PortarPerConsulta(string query, string tableName)
         {
-
-            ds = new DataSet();
-
-            connection.Open();
-            SqlDataAdapter da = new SqlDataAdapter(query, connection);
-            da.Fill(ds, nomDataTable);
-
-            connection.Close();
-
+            SqlConnection conn = Connectar();
+            System.Data.DataSet ds = new System.Data.DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            da.Fill(ds, tableName);
+            conn.Close();
             return ds;
         }
 
-        public int Actualitzar(string querySelect, DataSet ds, string nomTaula)
+        public void Actualitzar(System.Data.DataSet ds, string query, string tableName)
         {
-
-            connection.Open();
-            SqlDataAdapter da = new SqlDataAdapter(querySelect, connection);
+            SqlConnection conn = Connectar();
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
             SqlCommandBuilder builder = new SqlCommandBuilder(da);
 
-            int result = da.Update(ds.Tables[nomTaula]);
-
-            connection.Close();
-
-            return result;
+            da.Update(ds, tableName);
+            conn.Close();
         }
 
-        public int Executa(string query)
+
+        public void Executa(string query)
         {
-            int rowsAffected;
-
-            connection.Open();
-            SqlCommand command = new SqlCommand(query, connection);
-            rowsAffected = command.ExecuteNonQuery();
-
-            connection.Close();
-            
-            return rowsAffected;
+            SqlConnection conn = Connectar();
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
 
-        
     }
 
 }

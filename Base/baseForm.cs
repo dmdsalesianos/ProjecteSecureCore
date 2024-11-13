@@ -23,7 +23,6 @@ namespace prueba_txtBox
 
         protected virtual void BaseForm_Load(object sender, EventArgs e)
         {
-
             if (DesignMode) return;
 
             string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
@@ -32,7 +31,6 @@ namespace prueba_txtBox
             ds = dataAccess.PortarTaula(TableName);
 
             comboBox.DataSource = ds.Tables[TableName];
-            comboBox.SelectedIndexChanged += comboBox_SelectedIndexChanged;
 
             CargarDatos();
 
@@ -45,39 +43,39 @@ namespace prueba_txtBox
             }
         }
 
-        private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            string selectedCode = comboBox.SelectedValue.ToString();
-
-            if (!string.IsNullOrEmpty(selectedCode))
-            {
-                querySelect = $"SELECT * FROM {TableName} WHERE {comboBox.ValueMember} = '{selectedCode}'";
-
-                ds = dataAccess.PortarTaula(TableName);
-                CargarDatos(); 
-            }
-        }
-
-
-
         protected void CargarDatos()
         {
-            DataBindingHelper.ClearDataBindings(this.Controls); 
-            UpdateTable(); 
+            DataBindingHelper.ClearDataBindings(this.Controls);
+            UpdateTable();
 
             BindTextBoxesToData();
+            BindComboBoxToData();
         }
 
         private void BindTextBoxesToData()
         {
             foreach (Control control in this.Controls)
             {
-                if (control is TextBox textBox && textBox.Tag != null)
+                if (control is TextBox textBox)
                 {
-                    textBox.DataBindings.Clear();
-                    textBox.DataBindings.Add("Text", ds.Tables[TableName], textBox.Tag.ToString());
+                    var nomCampBBDD = textBox.GetType().GetProperty("NomCampBBDD").GetValue(textBox, null) as string;
+
+                    if (!string.IsNullOrEmpty(nomCampBBDD))
+                    {
+                        textBox.DataBindings.Clear();
+                        textBox.DataBindings.Add("Text", ds.Tables[TableName], nomCampBBDD);
+                    }
                 }
+            }
+        }
+
+        private void BindComboBoxToData()
+        {
+            if (comboBox.DisplayMember != null)
+            {
+                comboBox.DataBindings.Clear();
+
+                comboBox.DataBindings.Add("SelectedValue", ds.Tables[TableName], comboBox.ValueMember);
             }
         }
 
@@ -96,7 +94,7 @@ namespace prueba_txtBox
                 esNuevo = false;
             }
 
-            dataAccess.Actualitzar(querySelect, ds, TableName);
+            dataAccess.Actualitzar(ds, querySelect, TableName);
             ds = dataAccess.PortarTaula(TableName);
             CargarDatos();
         }
@@ -109,7 +107,12 @@ namespace prueba_txtBox
             {
                 if (control is TextBox textBox)
                 {
-                    newRow[textBox.Tag.ToString()] = textBox.Text;
+                    var nomCampBBDD = textBox.GetType().GetProperty("NomCampBBDD").GetValue(textBox, null) as string;
+
+                    if (!string.IsNullOrEmpty(nomCampBBDD))
+                    {
+                        newRow[nomCampBBDD] = textBox.Text;
+                    }
                 }
             }
 
@@ -118,7 +121,6 @@ namespace prueba_txtBox
 
         protected void UpdateTable()
         {
-
             dataGridView1.DataSource = ds.Tables[TableName];
             dataGridView1.Columns[0].Visible = false;
         }
@@ -131,4 +133,4 @@ namespace prueba_txtBox
             }
         }
     }
-}   
+}
