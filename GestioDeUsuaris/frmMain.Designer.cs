@@ -29,20 +29,35 @@ namespace GestioDeUsuaris
         /// </summary>
         private void InitializeComponent()
         {
+            this.swLaunchForm1 = new Sprint53_G4.SWLaunchForm();
             this.SuspendLayout();
+            // 
+            // swLaunchForm1
+            // 
+            this.swLaunchForm1.Clase = "SpcaeShipCategories";
+            this.swLaunchForm1.Descripcion = "spcae Ship Categories";
+            this.swLaunchForm1.Form = "frmSpaceShipCategories";
+            this.swLaunchForm1.Image = global::GestioDeUsuaris.Properties.Resources.Screenshot_2024_10_03_175751;
+            this.swLaunchForm1.Location = new System.Drawing.Point(2, 3);
+            this.swLaunchForm1.Name = "swLaunchForm1";
+            this.swLaunchForm1.Size = new System.Drawing.Size(1092, 558);
+            this.swLaunchForm1.TabIndex = 0;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1106, 573);
+            this.Controls.Add(this.swLaunchForm1);
             this.Name = "frmMain";
-            this.Text = "Form1";
+            this.Text = "frmMain";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private Sprint53_G4.SWLaunchForm swLaunchForm1;
     }
 }
 

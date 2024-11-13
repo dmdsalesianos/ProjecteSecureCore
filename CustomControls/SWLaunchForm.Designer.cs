@@ -41,6 +41,7 @@ namespace Sprint53_G4
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(1359, 920);
             this.panel.TabIndex = 0;
+            this.panel.Click += new System.EventHandler(this.panel_Click_1);
             // 
             // pictureBox
             // 

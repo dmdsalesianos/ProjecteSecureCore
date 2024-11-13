@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DB6DCBD1-77DA-4A0D-AB1E-BA9E335BB939}</ProjectGuid>
+    <ProjectGuid>{7BF7B7D4-8D19-4C2F-88A3-5CD57AB9F7F9}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Species</RootNamespace>
-    <AssemblyName>Species</AssemblyName>
+    <RootNamespace>SpcaeShipCategories</RootNamespace>
+    <AssemblyName>SpcaeShipCategories</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -36,9 +36,6 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ControlsLibrary">
-      <HintPath>..\..\..\..\OneDrive\Documentos\CFGS\2 año\PRJ02\Sprint6_Custom Controls\App\ControlsLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -58,19 +55,10 @@
     <Compile Include="frmSpaceShipCategories.Designer.cs">
       <DependentUpon>frmSpaceShipCategories.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUserCategories.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmUserCategories.Designer.cs">
-      <DependentUpon>frmUserCategories.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmSpaceShipCategories.resx">
       <DependentUpon>frmSpaceShipCategories.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmUserCategories.resx">
-      <DependentUpon>frmUserCategories.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -102,14 +90,6 @@
     <ProjectReference Include="..\CustomControls\CustomControls.csproj">
       <Project>{6b666b1c-7bd0-4e76-ab39-95ad671eb46b}</Project>
       <Name>CustomControls</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Data\DataAcces.csproj">
-      <Project>{DB77DDD9-3E44-4327-9D80-59AFAF6F6B35}</Project>
-      <Name>DataAcces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GestioDeUsuaris\GestioDeUsuaris.csproj">
-      <Project>{62b17ebc-d53b-40ef-80ba-d7ee65eeb200}</Project>
-      <Name>GestioDeUsuaris</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
