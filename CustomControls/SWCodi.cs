@@ -53,9 +53,8 @@ namespace Sprint53_G4
         {
             string codi = codiTxt.Text;
 
-            //fer el appconfig i agafar la cadena amb el configuration manager
             MantenimentDades manteniment = new MantenimentDades(
-                ConfigurationManager.ConnectionStrings["SecureCoreG4ConnectionString"].ConnectionString);
+                ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
 
             string consulta = $"SELECT {NomId}, {NomDesc} FROM {NomTaula} WHERE {NomCodi} = '{codi}'";
 
