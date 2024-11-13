@@ -58,7 +58,7 @@ namespace prueba_txtBox
             {
                 if (control is TextBox textBox)
                 {
-                    var nomCampBBDD = textBox.GetType().GetProperty("nomCampBBDD").GetValue(textBox, null) as string;
+                    var nomCampBBDD = textBox.GetType().GetProperty("NomCampBBDD").GetValue(textBox, null) as string;
 
                     if (!string.IsNullOrEmpty(nomCampBBDD))
                     {
@@ -107,7 +107,7 @@ namespace prueba_txtBox
             {
                 if (control is TextBox textBox)
                 {
-                    var nomCampBBDD = textBox.GetType().GetProperty("nomCampBBDD").GetValue(textBox, null) as string;
+                    var nomCampBBDD = textBox.GetType().GetProperty("NomCampBBDD").GetValue(textBox, null) as string;
 
                     if (!string.IsNullOrEmpty(nomCampBBDD))
                     {

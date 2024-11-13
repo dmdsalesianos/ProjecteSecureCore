@@ -83,7 +83,9 @@ namespace Sprint53_G4 {
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
-        private void panel_Click(object sender, EventArgs e)
+
+
+        private void panel_Click_1(object sender, EventArgs e)
         {
             OpenForm();
         }

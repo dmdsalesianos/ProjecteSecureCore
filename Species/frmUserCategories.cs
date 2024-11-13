@@ -11,12 +11,12 @@ using prueba_txtBox;
 
 namespace Species
 {
-    public partial class frmSpecies : prueba_txtBox.baseForm
+    public partial class frmUserCategories : prueba_txtBox.baseForm
     {
-        public frmSpecies()
+        public frmUserCategories()
         {
             InitializeComponent();
-            TableName = "Users";
+            TableName = "UserCategories";
             querySelect = $"SELECT * FROM {TableName}";
 
             comboBox = comboBox1;  
