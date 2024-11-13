@@ -37,7 +37,7 @@ namespace GestioDeUsuaris
             // 
             this.swCodi1.ClaseCS = "SpcaeShipCategories";
             this.swCodi1.ControlID = "idSpaceShipCategory";
-            this.swCodi1.FormCS = "frmSpcaeShipCategories";
+            this.swCodi1.FormCS = "frmSpaceShipCategories";
             this.swCodi1.Location = new System.Drawing.Point(12, 119);
             this.swCodi1.Name = "swCodi1";
             this.swCodi1.NomCodi = "codeSpaceShipCategory";
