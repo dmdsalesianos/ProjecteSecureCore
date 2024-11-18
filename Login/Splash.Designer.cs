@@ -47,7 +47,7 @@ namespace Login
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.pictureBox2.Image = global::Sprout7_Joel_Molina.Properties.Resources.Logo_FFFFFF;
+            this.pictureBox2.Image = global::Login.Properties.Resources.Logo_FFFFFF;
             this.pictureBox2.Location = new System.Drawing.Point(306, 249);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(410, 343);
@@ -59,7 +59,7 @@ namespace Login
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.CornflowerBlue;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Sprout7_Joel_Molina.Properties.Resources.pngtree_gradient_abstract_hexagon_blue_business_border_hd_png_image_6561344;
+            this.pictureBox1.Image = global::Login.Properties.Resources.pngtree_gradient_abstract_hexagon_blue_business_border_hd_png_image_6561344;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1012, 811);

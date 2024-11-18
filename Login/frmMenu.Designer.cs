@@ -164,7 +164,7 @@ namespace Login
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Azure;
             this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox5.Image = global::Sprout7_Joel_Molina.Properties.Resources.Logo_2490F1;
+            this.pictureBox5.Image = global::Login.Properties.Resources.Logo_2490F1;
             this.pictureBox5.Location = new System.Drawing.Point(0, 0);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(798, 581);
@@ -175,7 +175,7 @@ namespace Login
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Image = global::Sprout7_Joel_Molina.Properties.Resources.icons8_mantenimiento_50;
+            this.pictureBox4.Image = global::Login.Properties.Resources.icons8_mantenimiento_50;
             this.pictureBox4.Location = new System.Drawing.Point(286, 163);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(51, 46);
@@ -186,7 +186,7 @@ namespace Login
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = global::Sprout7_Joel_Molina.Properties.Resources.icons8_trabajo_48;
+            this.pictureBox3.Image = global::Login.Properties.Resources.icons8_trabajo_48;
             this.pictureBox3.Location = new System.Drawing.Point(286, 28);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(51, 48);
@@ -196,7 +196,7 @@ namespace Login
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Sprout7_Joel_Molina.Properties.Resources.Name_FFFFFF;
+            this.pictureBox2.Image = global::Login.Properties.Resources.Name_FFFFFF;
             this.pictureBox2.Location = new System.Drawing.Point(91, 11);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(249, 40);
@@ -207,7 +207,7 @@ namespace Login
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Sprout7_Joel_Molina.Properties.Resources.Only_logo_FFFFFF;
+            this.pictureBox1.Image = global::Login.Properties.Resources.Only_logo_FFFFFF;
             this.pictureBox1.Location = new System.Drawing.Point(11, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(74, 53);
