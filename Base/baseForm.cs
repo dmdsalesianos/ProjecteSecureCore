@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Configuration;
 using DataAccess;
 using DataBindingLibrary;
+using System.Collections.Generic;
 
 namespace prueba_txtBox
 {
@@ -15,6 +16,7 @@ namespace prueba_txtBox
         public string TableName;
         public string querySelect;
         public ComboBox comboBox;
+        string connectionString;
 
         public baseForm()
         {
@@ -26,7 +28,7 @@ namespace prueba_txtBox
 
             if (DesignMode) return;
 
-            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             dataAccess = new MantenimentDades(connectionString);
 
             ds = dataAccess.PortarTaula(TableName);

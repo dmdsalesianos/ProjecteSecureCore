@@ -225,29 +225,30 @@ namespace DataAccess
         /// DataSet result = db.GeneraConsultaCerca("Clientes", criteris);
         /// </code>
         /// </example>
-        public DataSet GeneraConsultaCerca(string nomTaula, Dictionary<string, object> criteris)
+        public DataSet GeneraConsultaCerca(string nomTaula, Dictionary<string, string> criteris)
         {
             ds = new DataSet();
 
             try
             {
-                List<string> condicions = new List<string>();
-                SqlCommand command = new SqlCommand();
-                command.Connection = connection;
+                SqlCommand command = connection.CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = $"SELECT * FROM [{nomTaula}] WHERE 1=1 ";
 
                 foreach (var criteri in criteris)
                 {
-                    string paramName = $"@{criteri.Key}";
-                    condicions.Add($"{criteri.Key} = {paramName}");
-                    command.Parameters.AddWithValue(paramName, criteri.Value ?? DBNull.Value);
+                    command.CommandText += $"AND [{criteri.Key}] = @Valor";
+
+                    //command.Parameters.Add(new SqlParameter("@Camp", criteri.Key));
+                    command.Parameters.Add(new SqlParameter("@Valor", criteri.Value));
                 }
 
-                string query = $"SELECT * FROM {nomTaula} WHERE {string.Join(" AND ", condicions)}";
-                command.CommandText = query;
-
-                SqlDataAdapter da = new SqlDataAdapter(command);
                 connection.Open();
-                da.Fill(ds, nomTaula);
+
+                SqlDataAdapter dta = new SqlDataAdapter();
+                dta.SelectCommand = command;
+                dta.Fill(ds);
+                connection.Close();
             }
             catch (Exception ex)
             {
@@ -278,7 +279,7 @@ namespace DataAccess
         /// DataSet result = db.ExecutaStoredProcedure("ObtenerClientePorId", parametros);
         /// </code>
         /// </example>
-        public DataSet ExecutaStoredProcedure(string nomProc, Dictionary<string, object> parametres = null)
+        public DataSet ExecutaStoredProcedure(string nomProc, Dictionary<string, object> parametres)
         {
             ds = new DataSet();
 
@@ -378,7 +379,7 @@ namespace DataAccess
         /// db.CancelarTransaccio();
         /// </code>
         /// </example>
-        
+
         public void CancelarTransaccio()
         {
             try

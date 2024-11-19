@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "Data\DataAcce
 EndProject
 Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "SandCastleDoc", "SandCastleDoc\SandCastleDoc.shfbproj", "{10C9B00F-61E1-4F83-BB21-F7BD77A4C7C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pruebas", "Pruebas\Pruebas.csproj", "{5A455FE9-F82F-4FCB-BB84-80C500CCD9B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{10C9B00F-61E1-4F83-BB21-F7BD77A4C7C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10C9B00F-61E1-4F83-BB21-F7BD77A4C7C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10C9B00F-61E1-4F83-BB21-F7BD77A4C7C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A455FE9-F82F-4FCB-BB84-80C500CCD9B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A455FE9-F82F-4FCB-BB84-80C500CCD9B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A455FE9-F82F-4FCB-BB84-80C500CCD9B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A455FE9-F82F-4FCB-BB84-80C500CCD9B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
