@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GestioDeUsuaris;
 
 namespace Login
 {
@@ -40,6 +41,9 @@ namespace Login
 
         private void button_Man_User_Click(object sender, EventArgs e)
         {
+            frmMain Main = new frmMain();
+            CargarFormularioEnPanel(Main);
+
             //frm_Man_Usuari Manteniment_Usuari = new frm_Man_Usuari();
 
             //CargarFormularioEnPanel(Manteniment_Usuari);
