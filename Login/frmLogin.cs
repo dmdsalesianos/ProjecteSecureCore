@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
@@ -13,120 +15,95 @@ namespace Login
 {
     public partial class frmLogin : Form
     {
-        private const string InitialPassword = "12345aA"; // Paraula de pas inicial
-        private int userAccessLevel = 0; // Nivell d'accés de l'usuari
+        private string connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
 
         public frmLogin()
         {
             InitializeComponent();
-            textBox_password.UseSystemPasswordChar = true;
-            Vision_button.Text = "◠";
-
-            // Camps per al canvi de paraula de pas estan ocults al principi
-            //txtNewPassword.Visible = false;
-            //txtConfirmPassword.Visible = false;
-            //btnChangePassword.Visible = false;
-            //lblNewPassword.Visible = false;
-            //lblConfirmPassword.Visible = false;
         }
 
         private void Login_Click(object sender, EventArgs e)
         {
-            string usuario = textBox_user.Text.ToString();
-            string contras = textBox_password.Text.ToString();
+            string username = textBox_user.Text;
+            string password = textBox_password.Text;
 
-            if (usuario.Equals("Joel") && contras.Equals(InitialPassword))
+            
+            if (password == "12345aA")
             {
-                EnablePasswordChange();
-            }
-            else if (VerifyLogin(usuario, contras))
-            {
-                Error_label.Visible = false;
-                ShowWelcomeMessage();
-                frmLoading Loading = new frmLoading();
-                Loading.Show();
+                
+                frmChangePassword changePasswordForm = new frmChangePassword(username);
+                changePasswordForm.Show();
                 this.Hide();
             }
             else
             {
-                Error_label.Visible = true;
+                
+                if (VerifyUser(username, password))
+                {
+                    
+                    MessageBox.Show("Login exitoso. Bienvenido!");
+                    frmLoading frmLoading = new frmLoading();
+                    frmLoading.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos.");
+                }
             }
         }
 
-        private void EnablePasswordChange()
+        private bool VerifyUser(string username, string password)
         {
-            MessageBox.Show("És necessari canviar la paraula de pas inicial.");
-        //    txtNewPassword.Visible = true;
-        //    txtConfirmPassword.Visible = true;
-        //    btnChangePassword.Visible = true;
-        //    lblNewPassword.Visible = true;
-        //    lblConfirmPassword.Visible = true;
-        }
+            bool isValidUser = false;
 
-        private void btnChangePassword_Click(object sender, EventArgs e)
-        {
-            //string newPassword = txtNewPassword.Text;
-            //string confirmPassword = txtConfirmPassword.Text;
-
-            //if (newPassword == confirmPassword && IsValidPassword(newPassword))
-            //{
-            //    byte[] salt = GenerateSalt();
-            //    string hashedPassword = ComputeHash(newPassword, salt);
-
-            //    // Emmagatzema hashedPassword i salt a la base de dades
-
-            //    MessageBox.Show("Paraula de pas canviada amb èxit! Ara pots entrar amb la nova paraula de pas.");
-            //    HidePasswordChangeFields();
-
-            //    textBox_password.Clear();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Les paraules de pas no coincideixen o no són vàlides.");
-            //}
-        }
-
-        private bool VerifyLogin(string username, string password)
-        {
-            // Verificació simulada per al propòsit de l'exemple.
-            if (username == "Joel" && password != InitialPassword)
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                userAccessLevel = GetUserAccessLevel(username);
-                return true;
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT Password, Salt FROM Users WHERE UserName = @UserName";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@UserName", username);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                string storedPasswordHash = reader["Password"].ToString();
+                                string base64Salt = reader["Salt"].ToString();
+
+                               
+                                byte[] storedSalt = ConvertBase64ToBytes(base64Salt);
+                                if (storedSalt == null)
+                                {
+                                    MessageBox.Show("Error: el salt almacenado no es válido.");
+                                    return false;
+                                }
+
+                                
+                                string enteredPasswordHash = ComputeHash(password, storedSalt);
+
+                                
+                                if (storedPasswordHash == enteredPasswordHash)
+                                {
+                                    isValidUser = true;
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al verificar la contraseña: {ex.Message}");
+                }
             }
-            return false;
+
+            return isValidUser;
+
         }
 
-        private void ShowWelcomeMessage()
-        {
-            string welcomeMessage = $"Benvingut {textBox_user.Text}! Nivell d'accés: {userAccessLevel}." +
-                                    "\nSeràs redirigit a l'aplicació principal en 5 segons.";
-            MessageBox.Show(welcomeMessage);
-        }
-
-        private void HidePasswordChangeFields()
-        {
-            //txtNewPassword.Visible = false;
-            //txtConfirmPassword.Visible = false;
-            //btnChangePassword.Visible = false;
-            //lblNewPassword.Visible = false;
-            //lblConfirmPassword.Visible = false;
-        }
-
-        private bool IsValidPassword(string password)
-        {
-            return password.Length >= 6; // Aquí pots afegir més validacions si cal
-        }
-
-        private byte[] GenerateSalt()
-        {
-            using (var rng = new RNGCryptoServiceProvider())
-            {
-                byte[] salt = new byte[16];
-                rng.GetBytes(salt);
-                return salt;
-            }
-        }
 
         private string ComputeHash(string password, byte[] salt)
         {
@@ -141,24 +118,33 @@ namespace Login
                 return Convert.ToBase64String(hashBytes);
             }
         }
-
-        private int GetUserAccessLevel(string username)
+        private byte[] ConvertBase64ToBytes(string base64Salt)
         {
-            // Funció simulada per obtenir el nivell d'accés
-            return 1; // Assignar el nivell d'accés segons les dades
+            try
+            {
+                return Convert.FromBase64String(base64Salt);
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show($"Error al convertir el Salt desde Base64: {ex.Message}");
+                return null;
+            }
         }
+
+
 
         private void Visible_button(object sender, EventArgs e)
         {
+            
             if (textBox_password.UseSystemPasswordChar)
             {
                 textBox_password.UseSystemPasswordChar = false;
-                Vision_button.Text = "👁";
+                Vision_button.Text = "👁";  
             }
             else
             {
                 textBox_password.UseSystemPasswordChar = true;
-                Vision_button.Text = "◠";
+                Vision_button.Text = "◠";  
             }
         }
     }

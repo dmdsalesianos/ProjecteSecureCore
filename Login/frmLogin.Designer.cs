@@ -70,6 +70,7 @@ namespace Login
             this.textBox_password.Name = "textBox_password";
             this.textBox_password.Size = new System.Drawing.Size(302, 42);
             this.textBox_password.TabIndex = 3;
+            this.textBox_password.UseSystemPasswordChar = true;
             // 
             // button_login
             // 
@@ -160,7 +161,7 @@ namespace Login
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // Login_frm
+            // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -176,7 +177,7 @@ namespace Login
             this.Controls.Add(this.textBox_user);
             this.Controls.Add(this.Login);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "Login_frm";
+            this.Name = "frmLogin";
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
