@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GestioDeUsuaris;
 
 namespace Login
 {
@@ -33,16 +34,19 @@ namespace Login
 
         private void button_Man_species_Click(object sender, EventArgs e)
         {
-            frm_Man_species Manteniment_Species = new frm_Man_species();
+            //frm_Man_species Manteniment_Species = new frm_Man_species();
                         
-            CargarFormularioEnPanel(Manteniment_Species);
+            //CargarFormularioEnPanel(Manteniment_Species);
         }
 
         private void button_Man_User_Click(object sender, EventArgs e)
         {
-            frm_Man_Usuari Manteniment_Usuari = new frm_Man_Usuari();
+            frmMain Main = new frmMain();
+            CargarFormularioEnPanel(Main);
 
-            CargarFormularioEnPanel(Manteniment_Usuari);
+            //frm_Man_Usuari Manteniment_Usuari = new frm_Man_Usuari();
+
+            //CargarFormularioEnPanel(Manteniment_Usuari);
         }
 
         private void Enter_Mouse(object sender, EventArgs e)

@@ -54,7 +54,7 @@ namespace Login
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Sprout7_Joel_Molina.Properties.Resources.Only_logo_2490F1;
+            this.pictureBox1.Image = global::Login.Properties.Resources.Only_logo_2490F1;
             this.pictureBox1.Location = new System.Drawing.Point(301, 50);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(140, 187);
@@ -64,7 +64,7 @@ namespace Login
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Sprout7_Joel_Molina.Properties.Resources.Name_2490F1;
+            this.pictureBox2.Image = global::Login.Properties.Resources.Name_2490F1;
             this.pictureBox2.Location = new System.Drawing.Point(237, 243);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(276, 50);

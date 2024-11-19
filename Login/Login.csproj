@@ -141,5 +141,11 @@
   <ItemGroup>
     <None Include="Resources\Logo_2490F1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GestioDeUsuaris\GestioDeUsuaris.csproj">
+      <Project>{62b17ebc-d53b-40ef-80ba-d7ee65eeb200}</Project>
+      <Name>GestioDeUsuaris</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
