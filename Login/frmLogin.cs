@@ -16,7 +16,7 @@ namespace Login
     public partial class frmLogin : Form
     {
         private string connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
-
+        public int _idUserCategory { get; set; }
         public frmLogin()
         {
             InitializeComponent();
@@ -34,6 +34,8 @@ namespace Login
                 frmChangePassword changePasswordForm = new frmChangePassword(username);
                 changePasswordForm.Show();
                 this.Hide();
+
+                
             }
             else
             {
@@ -62,7 +64,7 @@ namespace Login
                 try
                 {
                     conn.Open();
-                    string query = "SELECT Password, Salt FROM Users WHERE UserName = @UserName";
+                    string query = "SELECT Password, Salt, idUserCategory FROM Users WHERE UserName = @UserName";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@UserName", username);
@@ -73,6 +75,7 @@ namespace Login
                             {
                                 string storedPasswordHash = reader["Password"].ToString();
                                 string base64Salt = reader["Salt"].ToString();
+                                _idUserCategory = (int)reader["idUserCategory"];
 
                                
                                 byte[] storedSalt = ConvertBase64ToBytes(base64Salt);

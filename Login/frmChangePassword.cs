@@ -45,8 +45,10 @@ namespace Login
                 
                 SetNewPassword(hashedPassword, newSalt);  
 
-                MessageBox.Show("Contraseña cambiada exitosamente.");
-                this.Close();  
+                this.Close();
+
+                frmLogin login = new frmLogin();
+                login.Show();
             }
             else
             {
