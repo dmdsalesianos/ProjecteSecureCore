@@ -142,6 +142,14 @@
     <None Include="Resources\Logo_2490F1.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CustomControls\CustomControls.csproj">
+      <Project>{6b666b1c-7bd0-4e76-ab39-95ad671eb46b}</Project>
+      <Name>CustomControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\DataAcces.csproj">
+      <Project>{db77ddd9-3e44-4327-9d80-59afaf6f6b35}</Project>
+      <Name>DataAcces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GestioDeUsuaris\GestioDeUsuaris.csproj">
       <Project>{62b17ebc-d53b-40ef-80ba-d7ee65eeb200}</Project>
       <Name>GestioDeUsuaris</Name>

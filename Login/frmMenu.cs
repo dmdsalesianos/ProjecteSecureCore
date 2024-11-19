@@ -15,7 +15,7 @@ namespace Login
     {
         private string nombreUsuario;
 
-        public frmMenu(/*String usuario*/)
+        public frmMenu(int usetrCategory)
         {
             InitializeComponent();
             //this.nombreUsuario = usuario;
@@ -39,15 +39,7 @@ namespace Login
             //CargarFormularioEnPanel(Manteniment_Species);
         }
 
-        private void button_Man_User_Click(object sender, EventArgs e)
-        {
-            frmMain Main = new frmMain();
-            CargarFormularioEnPanel(Main);
-
-            //frm_Man_Usuari Manteniment_Usuari = new frm_Man_Usuari();
-
-            //CargarFormularioEnPanel(Manteniment_Usuari);
-        }
+        
 
         private void Enter_Mouse(object sender, EventArgs e)
         {
@@ -63,22 +55,8 @@ namespace Login
                
         }
 
-        private void CargarFormularioEnPanel(Form formulario)
-        {
-            //Liampiar panel
-            if (PanelContenido.Controls.Count > 0)
-            {
-                PanelContenido.Controls.RemoveAt(0);
-            }
-                
+        
 
-            formulario.TopLevel = false; 
-            formulario.FormBorderStyle = FormBorderStyle.None; 
-            formulario.Dock = DockStyle.Fill; 
-                        
-            PanelContenido.Controls.Add(formulario);
-            PanelContenido.Tag = formulario;
-            formulario.Show();
-        }
+        
     }
 }
