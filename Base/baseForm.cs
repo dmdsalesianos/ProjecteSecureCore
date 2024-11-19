@@ -127,10 +127,18 @@ namespace prueba_txtBox
 
         protected void ValidarTextBox(object sender, EventArgs e)
         {
-            if (!esNuevo)
+            try
+            {
+                 if (!esNuevo)
             {
                 ((TextBox)sender).DataBindings[0].BindingManagerBase.EndCurrentEdit();
             }
+            }
+            catch (Exception)
+            {
+               throw;
+            }
+           
         }
     }
 }
