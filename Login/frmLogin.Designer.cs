@@ -155,7 +155,7 @@ namespace Login
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Login.Properties.Resources.Only_logo_2490F1;
-            this.pictureBox1.Location = new System.Drawing.Point(268, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(258, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(140, 187);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
