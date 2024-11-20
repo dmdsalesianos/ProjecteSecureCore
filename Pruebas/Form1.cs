@@ -53,5 +53,37 @@ namespace Pruebas
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Dictionary<string, string> criteris = new Dictionary<string, string>();
+            string proc = "ObtenerAlumnoPorNombre";
+            MantenimentDades manteniment = new MantenimentDades(connectionString);
+            DataSet ds = new DataSet();
+
+            criteris.Add("Nom", "Mandalorian");
+
+            ds = manteniment.ExecutaStoredProcedure(proc, criteris);
+
+            // Asegúrate de que el DataSet tiene datos
+            if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                string result = string.Empty;
+
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    string login = row["Login"].ToString(); // Asegúrate de que la columna "Login" existe
+                    string nom = row["Nom"].ToString();     // Asegúrate de que la columna "Nom" existe
+
+                    result += $"Login: {login}, Nom: {nom}\n";
+                }
+
+                // Mostrar en un MessageBox
+                MessageBox.Show(result, "Datos del DataSet", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No se encontraron datos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

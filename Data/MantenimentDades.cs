@@ -213,18 +213,45 @@ namespace DataAccess
         /// Genera una consulta de búsqueda con múltiples criterios y devuelve los resultados en un <see cref="DataSet"/>.
         /// </summary>
         /// <param name="nomTaula">Nombre de la tabla en la que buscar.</param>
-        /// <param name="criteris">Diccionario de criterios de búsqueda, donde la clave es el nombre de la columna y el valor es el valor a buscar.</param>
-        /// <returns>Un <see cref="DataSet"/> con los resultados de la búsqueda.</returns>
+        /// <param name="criteris">
+        /// Diccionario de criterios de búsqueda, donde la clave es el nombre de la columna y el valor es el valor a buscar.
+        /// </param>
+        /// <returns>Un <see cref="DataSet"/> con los resultados de la búsqueda. Si ocurre un error, devuelve <c>null</c>.</returns>
         /// <remarks>
-        /// Este método genera dinámicamente una consulta SQL para buscar registros en una tabla según múltiples criterios especificados.
-        /// Los criterios de búsqueda son proporcionados como un diccionario de claves y valores.
+        /// Este método genera dinámicamente una consulta SQL para buscar registros en una tabla específica según los criterios proporcionados.
+        /// Los nombres de las columnas y valores son incluidos en la consulta de manera segura para prevenir inyecciones SQL.
+        /// El nombre de la tabla es validado para garantizar que solo contenga caracteres alfanuméricos y guiones bajos.
         /// </remarks>
         /// <example>
+        /// Ejemplo: Generar una consulta de búsqueda con criterios específicos.
         /// <code>
-        /// var criteris = new Dictionary&lt;string, object&gt; { { "Edad", 30 }, { "Nombre", "Juan" } };
-        /// DataSet result = db.GeneraConsultaCerca("Clientes", criteris);
+        /// var criteris = new Dictionary&lt;string, string&gt;
+        /// {
+        ///     { "Login", "MAND" },
+        ///     { "Rol", "Admin" }
+        /// };
+        /// string nomTaula = "Usuarios";
+        /// MantenimentDades manteniment = new MantenimentDades(connectionString);
+        /// DataSet resultado = manteniment.GeneraConsultaCerca(nomTaula, criteris);
+        /// </code>
+        /// Esto generará una consulta SQL similar a:
+        /// <code>
+        /// SELECT * FROM [Usuarios] WHERE 1=1 AND [Login] = 'MAND' AND [Rol] = 'Admin'
+        /// </code>
+        /// Los valores de los parámetros serán configurados con seguridad para prevenir inyección SQL.
+        ///
+        /// Ejemplo: Generar una consulta de búsqueda sin criterios.
+        /// <code>
+        /// string nomTaula = "Usuarios";
+        /// MantenimentDades manteniment = new MantenimentDades(connectionString);
+        /// DataSet resultado = manteniment.GeneraConsultaCerca(nomTaula, null);
+        /// </code>
+        /// Esto generará una consulta SQL similar a:
+        /// <code>
+        /// SELECT * FROM [Usuarios] WHERE 1=1
         /// </code>
         /// </example>
+
         public DataSet GeneraConsultaCerca(string nomTaula, Dictionary<string, string> criteris)
         {
             ds = new DataSet();
@@ -264,47 +291,80 @@ namespace DataAccess
         }
 
         /// <summary>
-        /// Ejecuta un procedimiento almacenado con parámetros opcionales y devuelve los resultados en un <see cref="DataSet"/>.
+        /// Ejecuta un procedimiento almacenado en la base de datos con parámetros opcionales y devuelve los resultados en un <see cref="DataSet"/>.
         /// </summary>
-        /// <param name="nomProc">Nombre del procedimiento almacenado.</param>
-        /// <param name="parametres">Diccionario de parámetros, donde la clave es el nombre del parámetro y el valor es el valor del parámetro.</param>
-        /// <returns>Un <see cref="DataSet"/> con los resultados del procedimiento almacenado.</returns>
+        /// <param name="nomProc">Nombre del procedimiento almacenado a ejecutar.</param>
+        /// <param name="parametres">
+        /// Diccionario de parámetros donde la clave es el nombre del parámetro (incluyendo el prefijo `@`) 
+        /// y el valor es el valor que se pasará al procedimiento almacenado. Este parámetro puede ser <c>null</c> si el procedimiento no requiere parámetros.
+        /// </param>
+        /// <returns>
+        /// Un <see cref="DataSet"/> que contiene los resultados del procedimiento almacenado. 
+        /// Si ocurre un error durante la ejecución, se devuelve <c>null</c>.
+        /// </returns>
         /// <remarks>
-        /// Este método ejecuta un procedimiento almacenado en la base de datos, con la posibilidad de pasar parámetros opcionales.
-        /// Los parámetros se agregan al comando antes de ejecutar el procedimiento.
+        /// Este método permite ejecutar procedimientos almacenados en la base de datos, con soporte para parámetros opcionales.
+        /// Los parámetros deben pasarse como un diccionario con nombres y valores, donde los nombres coincidan 
+        /// exactamente con los esperados por el procedimiento almacenado, incluyendo el prefijo `@`. Si no se requieren parámetros,
+        /// se puede pasar <c>null</c> para la variable <paramref name="parametres"/>.
+        /// 
+        /// El procedimiento almacenado será ejecutado mediante el comando `EXEC` y, si se pasan parámetros, estos serán agregados a la consulta SQL 
+        /// como parámetros nombrados (por ejemplo, `@Login = 'MAND'`).
+        /// 
+        /// Asegúrese de que la conexión a la base de datos esté correctamente configurada antes de usar este método.
         /// </remarks>
         /// <example>
+        /// Ejemplo 1: Llamada a un procedimiento almacenado con un parámetro.
         /// <code>
-        /// var parametros = new Dictionary&lt;string, object&gt; { { "idCliente", 5 } };
-        /// DataSet result = db.ExecutaStoredProcedure("ObtenerClientePorId", parametros);
+        /// var parametres = new Dictionary&lt;string, string&gt; 
+        /// {
+        ///     { "@Login", "MAND" }
+        /// };
+        /// string nomProc = "BuscarUsuario";
+        /// DataSet resultado = manteniment.ExecutaStoredProcedure(nomProc, parametres);
+        /// </code>
+        /// Esto generará una consulta SQL similar a:
+        /// <code>
+        /// EXEC BuscarUsuario @Login = 'MAND'  
+        /// </code>
+        /// 
+        /// Ejemplo 2: Llamada a un procedimiento almacenado sin parámetros.
+        /// <code>
+        /// string nomProc = "ListarTodosLosClientes";
+        /// DataSet resultado = manteniment.ExecutaStoredProcedure(nomProc, null);
+        /// </code>
+        /// Esto generará una consulta SQL similar a:
+        /// <code>
+        /// EXEC ListarTodosLosClientes  
         /// </code>
         /// </example>
-        public DataSet ExecutaStoredProcedure(string nomProc, Dictionary<string, object> parametres)
+
+
+        public DataSet ExecutaStoredProcedure(string nomProc, Dictionary<string, string> parametres)
         {
-            ds = new DataSet();
+            DataSet ds = new DataSet();
 
             try
             {
-                SqlCommand command = new SqlCommand(nomProc, connection)
-                {
-                    CommandType = CommandType.StoredProcedure
-                };
+                SqlCommand command = connection.CreateCommand();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = nomProc;
 
                 if (parametres != null)
                 {
                     foreach (var parametre in parametres)
-                    {
-                        command.Parameters.AddWithValue($"@{parametre.Key}", parametre.Value ?? DBNull.Value);
+                    { 
+                        command.Parameters.Add(new SqlParameter(parametre.Key, parametre.Value));
                     }
                 }
 
-                SqlDataAdapter da = new SqlDataAdapter(command);
                 connection.Open();
-                da.Fill(ds);
+                SqlDataAdapter dta = new SqlDataAdapter(command);
+                dta.Fill(ds);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al ejecutar el procedimiento almacenado {nomProc}: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al ejecutar el procedimiento almacenado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ds = null;
             }
             finally
@@ -314,6 +374,8 @@ namespace DataAccess
 
             return ds;
         }
+
+
 
         /// <summary>
         /// Inicia una transacción en la conexión de la base de datos.
