@@ -23,7 +23,6 @@ namespace DataAccess
 
         private SqlConnection connection;
         private DataSet ds;
-        private SqlTransaction transaction;
 
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="MantenimentDades"/> con la cadena de conexión especificada.
@@ -124,57 +123,59 @@ namespace DataAccess
         }
 
         /// <summary>
-        /// Actualiza la base de datos utilizando un conjunto de datos y una consulta SELECT.
+        /// Actualiza los registros en la base de datos de acuerdo a los cambios realizados en el DataSet.
+        /// Este método utiliza una transacción para garantizar que todas las actualizaciones se realicen de manera atómica.
+        /// Si ocurre un error durante la actualización, la transacción se revierte para evitar cambios parciales en la base de datos.
         /// </summary>
-        /// <param name="querySelect">La consulta SELECT para seleccionar los datos a actualizar.</param>
-        /// <param name="ds">El <see cref="DataSet"/> que contiene los cambios a aplicar en la base de datos.</param>
-        /// <param name="nomTaula">El nombre de la tabla en el <see cref="DataSet"/>.</param>
-        /// <returns>
-        /// El número de filas afectadas por la actualización. Devuelve <c>-1</c> si ocurre un error.
-        /// </returns>
+        /// <param name="querySelect">La consulta SQL SELECT utilizada para recuperar los datos que se van a actualizar.</param>
+        /// <param name="ds">El DataSet que contiene los cambios que se desean aplicar a la base de datos.</param>
+        /// <param name="nomTaula">El nombre de la tabla en el DataSet que se va a actualizar.</param>
+        /// <returns>El número de filas afectadas por la operación de actualización. Si ocurre un error, devuelve -1.</returns>
         /// <remarks>
-        /// Este método realiza una actualización en la base de datos utilizando un <see cref="DataSet"/>
-        /// que contiene las modificaciones a aplicar en la tabla especificada.
+        /// Este método inicia una transacción, realiza la actualización de la tabla en el DataSet, 
+        /// y si todo es exitoso, confirma la transacción. Si ocurre un error, la transacción es revertida.
         /// </remarks>
         /// <example>
         /// Ejemplo de uso:
         /// <code>
-        /// DataSet ds = new DataSet();
-        /// ds.Tables["Clientes"].Rows[0]["Nombre"] = "Nuevo Nombre";
-        /// int result = db.Actualitzar("SELECT * FROM Clientes", ds, "Clientes");
+        /// int filasAfectadas = Actualitzar("SELECT * FROM MiTabla", miDataSet, "MiTabla");
+        /// if (filasAfectadas == -1)
+        /// {
+        ///     // Manejar el error
+        /// }
         /// </code>
         /// </example>
         public int Actualitzar(string querySelect, DataSet ds, string nomTaula)
-        {
-            int result = 0;
-            SqlTransaction transaction = null;
-
-            try
             {
-                connection.Open();
-                transaction = connection.BeginTransaction();
+                int result = 0;
+                SqlTransaction transaction = null;
 
-                SqlDataAdapter da = new SqlDataAdapter(querySelect, connection);
-                da.SelectCommand.Transaction = transaction;
+                try
+                {
+                    connection.Open();
+                    transaction = connection.BeginTransaction();
 
-                SqlCommandBuilder builder = new SqlCommandBuilder(da);
-                result = da.Update(ds.Tables[nomTaula]);
+                    SqlDataAdapter da = new SqlDataAdapter(querySelect, connection);
+                    da.SelectCommand.Transaction = transaction;
 
-                transaction.Commit();
+                    SqlCommandBuilder builder = new SqlCommandBuilder(da);
+                    result = da.Update(ds.Tables[nomTaula]);
+
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    MessageBox.Show($"Error al actualizar la tabla {nomTaula}: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    result = -1; // Si es error devuelve -1
+                }
+                finally
+                {
+                    connection.Close();
+                }
+
+                return result;
             }
-            catch (Exception ex)
-            {
-                transaction.Rollback();
-                MessageBox.Show($"Error al actualizar la tabla {nomTaula}: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                result = -1; // Si es error devuelve -1
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-            return result;
-        }
 
 
         /// <summary>
