@@ -6,7 +6,7 @@ using DataAccess;
 using DataBindingLibrary;
 using System.Collections.Generic;
 
-namespace prueba_txtBox
+namespace Base
 {
     public partial class baseForm : Form
     {
@@ -28,13 +28,13 @@ namespace prueba_txtBox
 
             if (DesignMode) return;
 
-            connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            connectionString = "Data Source=sqlserver.S2AM.sdslab.cat;Initial Catalog=SecureCoreG4;Persist Security Info=True;User ID=G4;Password=12345G4aA2425.";
             dataAccess = new MantenimentDades(connectionString);
 
             ds = dataAccess.PortarTaula(TableName);
 
-            comboBox.DataSource = ds.Tables[TableName];
-            comboBox.SelectedIndexChanged += comboBox_SelectedIndexChanged;
+            //comboBox.DataSource = ds.Tables[TableName];
+            //comboBox.SelectedIndexChanged += comboBox_SelectedIndexChanged;
 
             CargarDatos();
 

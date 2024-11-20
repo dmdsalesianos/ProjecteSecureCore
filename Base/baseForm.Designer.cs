@@ -1,5 +1,5 @@
 ﻿
-namespace prueba_txtBox
+namespace Base
 {
     partial class baseForm
     {

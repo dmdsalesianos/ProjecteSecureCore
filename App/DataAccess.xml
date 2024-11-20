@@ -207,48 +207,6 @@
             </code>
             </example>
         </member>
-        <member name="M:DataAccess.MantenimentDades.IniciarTransaccio">
-            <summary>
-            Inicia una transacción en la conexión de la base de datos.
-            </summary>
-            <remarks>
-            Este método abre una conexión a la base de datos y comienza una transacción, que puede ser confirmada o cancelada posteriormente.
-            </remarks>
-            <example>
-            Ejemplo de uso:
-            <code>
-            db.IniciarTransaccio();
-            </code>
-            </example>
-        </member>
-        <member name="M:DataAccess.MantenimentDades.ConfirmarTransaccio">
-            <summary>
-            Confirma la transacción en curso y cierra la conexión.
-            </summary>
-            <remarks>
-            Este método confirma todos los cambios realizados en la transacción y cierra la conexión a la base de datos.
-            </remarks>
-            <example>
-            Ejemplo de uso:
-            <code>
-            db.ConfirmarTransaccio();
-            </code>
-            </example>
-        </member>
-        <member name="M:DataAccess.MantenimentDades.CancelarTransaccio">
-            <summary>
-            Cancela la transacción en curso y cierra la conexión.
-            </summary>
-            <remarks>
-            Este método revierte todos los cambios realizados durante la transacción y cierra la conexión a la base de datos.
-            </remarks>
-            <example>
-            Ejemplo de uso:
-            <code>
-            db.CancelarTransaccio();
-            </code>
-            </example>
-        </member>
         <member name="T:DataAccess.SecureCoreG4DataSet">
              <summary>
             Represents a strongly typed in-memory cache of data.

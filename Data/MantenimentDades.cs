@@ -146,17 +146,25 @@ namespace DataAccess
         /// </example>
         public int Actualitzar(string querySelect, DataSet ds, string nomTaula)
         {
-            int result;
+            int result = 0;
+            SqlTransaction transaction = null;
 
             try
             {
                 connection.Open();
+                transaction = connection.BeginTransaction();
+
                 SqlDataAdapter da = new SqlDataAdapter(querySelect, connection);
+                da.SelectCommand.Transaction = transaction;
+
                 SqlCommandBuilder builder = new SqlCommandBuilder(da);
                 result = da.Update(ds.Tables[nomTaula]);
+
+                transaction.Commit();
             }
             catch (Exception ex)
             {
+                transaction.Rollback();
                 MessageBox.Show($"Error al actualizar la tabla {nomTaula}: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 result = -1; // Si es error devuelve -1
             }
@@ -167,6 +175,7 @@ namespace DataAccess
 
             return result;
         }
+
 
         /// <summary>
         /// Ejecuta una consulta SQL no selectiva (INSERT, UPDATE, DELETE).
@@ -374,88 +383,6 @@ namespace DataAccess
 
             return ds;
         }
-
-
-
-        /// <summary>
-        /// Inicia una transacción en la conexión de la base de datos.
-        /// </summary>
-        /// <remarks>
-        /// Este método abre una conexión a la base de datos y comienza una transacción, que puede ser confirmada o cancelada posteriormente.
-        /// </remarks>
-        /// <example>
-        /// Ejemplo de uso:
-        /// <code>
-        /// db.IniciarTransaccio();
-        /// </code>
-        /// </example>
-        public void IniciarTransaccio()
-        {
-            try
-            {
-                connection.Open();
-                transaction = connection.BeginTransaction();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al iniciar la transacción: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                transaction = null;
-            }
-        }
-
-        /// <summary>
-        /// Confirma la transacción en curso y cierra la conexión.
-        /// </summary>
-        /// <remarks>
-        /// Este método confirma todos los cambios realizados en la transacción y cierra la conexión a la base de datos.
-        /// </remarks>
-        /// <example>
-        /// Ejemplo de uso:
-        /// <code>
-        /// db.ConfirmarTransaccio();
-        /// </code>
-        /// </example>
-        public void ConfirmarTransaccio()
-        {
-            try
-            {
-                transaction?.Commit();
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al confirmar la transacción: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                connection.Close();
-            }
-        }
-
-        /// <summary>
-        /// Cancela la transacción en curso y cierra la conexión.
-        /// </summary>
-        /// <remarks>
-        /// Este método revierte todos los cambios realizados durante la transacción y cierra la conexión a la base de datos.
-        /// </remarks>
-        /// <example>
-        /// Ejemplo de uso:
-        /// <code>
-        /// db.CancelarTransaccio();
-        /// </code>
-        /// </example>
-
-        public void CancelarTransaccio()
-        {
-            try
-            {
-                transaction?.Rollback();
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al cancelar la transacción: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                connection.Close();
-            }
-        }
-
 
     }
 }

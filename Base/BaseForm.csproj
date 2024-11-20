@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B033CEB6-8BDB-443F-9F37-6D6EBF422544}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>prueba_txtBox</RootNamespace>
-    <AssemblyName>prueba_txtBox</AssemblyName>
+    <RootNamespace>Base</RootNamespace>
+    <AssemblyName>Base</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -72,6 +72,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
