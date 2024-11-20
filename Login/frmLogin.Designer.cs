@@ -71,6 +71,7 @@ namespace Login
             this.textBox_password.Size = new System.Drawing.Size(302, 42);
             this.textBox_password.TabIndex = 3;
             this.textBox_password.UseSystemPasswordChar = true;
+            this.textBox_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_password_KeyDown);
             // 
             // button_login
             // 
@@ -124,7 +125,7 @@ namespace Login
             // 
             // Vision_button
             // 
-            this.Vision_button.BackColor = System.Drawing.Color.Transparent;
+            this.Vision_button.BackColor = System.Drawing.Color.White;
             this.Vision_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Vision_button.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.Vision_button.FlatAppearance.BorderSize = 0;

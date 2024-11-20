@@ -22,6 +22,34 @@ namespace Login
             InitializeComponent();
         }
 
+        public static int CurrentUserCategoryId { get; set; }
+
+        private int GetUserCategoryId(string username)
+        {
+            int userCategoryId = 0;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = @"
+                    SELECT u.idUserCategory
+                    FROM Users u
+                    WHERE u.UserName = @username";
+
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@username", username);
+
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    userCategoryId = Convert.ToInt32(reader["idUserCategory"]);
+                }
+            }
+
+            return userCategoryId;
+        }
+
         private void Login_Click(object sender, EventArgs e)
         {
             string username = textBox_user.Text;
@@ -40,15 +68,16 @@ namespace Login
                 
                 if (VerifyUser(username, password))
                 {
-                    
-                    MessageBox.Show("Login exitoso. Bienvenido!");
+                    CurrentUserCategoryId = GetUserCategoryId(username);
+                    //MessageBox.Show("ID UserCategory Guardada: " + CurrentUserCategoryId.ToString(), "Verificación");
+
                     frmLoading frmLoading = new frmLoading();
                     frmLoading.Show();
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Usuario o contraseña incorrectos.");
+                    Error_label.Visible = true;
                 }
             }
         }
@@ -104,7 +133,6 @@ namespace Login
 
         }
 
-
         private string ComputeHash(string password, byte[] salt)
         {
             using (var sha256 = SHA256.Create())
@@ -130,9 +158,6 @@ namespace Login
                 return null;
             }
         }
-
-
-
         private void Visible_button(object sender, EventArgs e)
         {
             
@@ -145,6 +170,14 @@ namespace Login
             {
                 textBox_password.UseSystemPasswordChar = true;
                 Vision_button.Text = "◠";  
+            }
+        }
+
+        private void textBox_password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Login_Click(sender, e);
             }
         }
     }

@@ -46,11 +46,12 @@ namespace Login
                 SetNewPassword(hashedPassword, newSalt);  
 
                 MessageBox.Show("Contraseña cambiada exitosamente.");
-                this.Close();  
+                this.Close();
+                frmLogin frmLogin = new frmLogin();
+                frmLogin.Show();
             }
             else
             {
-                lblErrorMessage.Text = "Las contraseñas no coinciden o no son válidas.";
                 lblErrorMessage.Visible = true;
             }
         }
@@ -138,6 +139,13 @@ namespace Login
                 txtConfirmPassword.UseSystemPasswordChar = true;
                 btnShowConfirmPassword.Text = "◠";
             }
+        }
+
+        private void button_arrow_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.Show();
         }
     }
 }

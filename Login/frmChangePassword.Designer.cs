@@ -39,8 +39,8 @@ namespace Login
             this.btnSavePassword = new System.Windows.Forms.Button();
             this.lblErrorMessage = new System.Windows.Forms.Label();
             this.btnShowConfirmPassword = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button_arrow = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +48,7 @@ namespace Login
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Login.Properties.Resources.Name_2490F1;
-            this.pictureBox2.Location = new System.Drawing.Point(204, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(228, 197);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(276, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -61,7 +61,7 @@ namespace Login
             this.Login.BackColor = System.Drawing.Color.Transparent;
             this.Login.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Login.ForeColor = System.Drawing.Color.Black;
-            this.Login.Location = new System.Drawing.Point(255, 153);
+            this.Login.Location = new System.Drawing.Point(249, 264);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(235, 46);
             this.Login.TabIndex = 11;
@@ -70,7 +70,7 @@ namespace Login
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Login.Properties.Resources.Only_logo_2490F1;
-            this.pictureBox1.Location = new System.Drawing.Point(58, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(300, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(140, 187);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -79,7 +79,7 @@ namespace Login
             // 
             // btnShowNewPassword
             // 
-            this.btnShowNewPassword.BackColor = System.Drawing.Color.Transparent;
+            this.btnShowNewPassword.BackColor = System.Drawing.Color.White;
             this.btnShowNewPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnShowNewPassword.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnShowNewPassword.FlatAppearance.BorderSize = 0;
@@ -87,7 +87,8 @@ namespace Login
             this.btnShowNewPassword.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnShowNewPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowNewPassword.Location = new System.Drawing.Point(471, 362);
+            this.btnShowNewPassword.ForeColor = System.Drawing.Color.Black;
+            this.btnShowNewPassword.Location = new System.Drawing.Point(506, 362);
             this.btnShowNewPassword.Name = "btnShowNewPassword";
             this.btnShowNewPassword.Size = new System.Drawing.Size(31, 36);
             this.btnShowNewPassword.TabIndex = 17;
@@ -101,7 +102,7 @@ namespace Login
             this.lblConfirmPassword.AutoSize = true;
             this.lblConfirmPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblConfirmPassword.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.lblConfirmPassword.Location = new System.Drawing.Point(206, 413);
+            this.lblConfirmPassword.Location = new System.Drawing.Point(185, 413);
             this.lblConfirmPassword.Name = "lblConfirmPassword";
             this.lblConfirmPassword.Size = new System.Drawing.Size(103, 20);
             this.lblConfirmPassword.TabIndex = 16;
@@ -109,25 +110,25 @@ namespace Login
             // 
             // txtConfirmPassword
             // 
-            this.txtConfirmPassword.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(210, 436);
+            this.txtConfirmPassword.Font = new System.Drawing.Font("Arial", 16F);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(189, 436);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Size = new System.Drawing.Size(302, 42);
+            this.txtConfirmPassword.Size = new System.Drawing.Size(361, 44);
             this.txtConfirmPassword.TabIndex = 14;
             this.txtConfirmPassword.UseSystemPasswordChar = true;
             // 
             // txtNewPassword
             // 
-            this.txtNewPassword.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNewPassword.Location = new System.Drawing.Point(210, 356);
+            this.txtNewPassword.Font = new System.Drawing.Font("Arial", 16F);
+            this.txtNewPassword.Location = new System.Drawing.Point(189, 356);
             this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.Size = new System.Drawing.Size(302, 42);
+            this.txtNewPassword.Size = new System.Drawing.Size(361, 44);
             this.txtNewPassword.TabIndex = 13;
             this.txtNewPassword.UseSystemPasswordChar = true;
             // 
             // btnSavePassword
             // 
-            this.btnSavePassword.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnSavePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(153)))));
             this.btnSavePassword.FlatAppearance.BorderColor = System.Drawing.Color.Azure;
             this.btnSavePassword.FlatAppearance.MouseDownBackColor = System.Drawing.Color.CornflowerBlue;
             this.btnSavePassword.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
@@ -136,7 +137,7 @@ namespace Login
             this.btnSavePassword.ForeColor = System.Drawing.Color.AliceBlue;
             this.btnSavePassword.Location = new System.Drawing.Point(189, 539);
             this.btnSavePassword.Name = "btnSavePassword";
-            this.btnSavePassword.Size = new System.Drawing.Size(348, 61);
+            this.btnSavePassword.Size = new System.Drawing.Size(361, 61);
             this.btnSavePassword.TabIndex = 18;
             this.btnSavePassword.Text = "Guardar";
             this.btnSavePassword.UseVisualStyleBackColor = false;
@@ -146,16 +147,16 @@ namespace Login
             // 
             this.lblErrorMessage.AutoSize = true;
             this.lblErrorMessage.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorMessage.Location = new System.Drawing.Point(206, 481);
+            this.lblErrorMessage.Location = new System.Drawing.Point(185, 483);
             this.lblErrorMessage.Name = "lblErrorMessage";
-            this.lblErrorMessage.Size = new System.Drawing.Size(181, 20);
+            this.lblErrorMessage.Size = new System.Drawing.Size(243, 20);
             this.lblErrorMessage.TabIndex = 19;
-            this.lblErrorMessage.Text = "Wrong password or user";
+            this.lblErrorMessage.Text = "Wrong password or Confirm pass";
             this.lblErrorMessage.Visible = false;
             // 
             // btnShowConfirmPassword
             // 
-            this.btnShowConfirmPassword.BackColor = System.Drawing.Color.Transparent;
+            this.btnShowConfirmPassword.BackColor = System.Drawing.Color.White;
             this.btnShowConfirmPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnShowConfirmPassword.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnShowConfirmPassword.FlatAppearance.BorderSize = 0;
@@ -163,7 +164,7 @@ namespace Login
             this.btnShowConfirmPassword.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnShowConfirmPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowConfirmPassword.Location = new System.Drawing.Point(471, 442);
+            this.btnShowConfirmPassword.Location = new System.Drawing.Point(506, 442);
             this.btnShowConfirmPassword.Name = "btnShowConfirmPassword";
             this.btnShowConfirmPassword.Size = new System.Drawing.Size(31, 36);
             this.btnShowConfirmPassword.TabIndex = 20;
@@ -172,46 +173,44 @@ namespace Login
             this.btnShowConfirmPassword.UseVisualStyleBackColor = false;
             this.btnShowConfirmPassword.Click += new System.EventHandler(this.btnShowConfirmPassword_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(471, 362);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(31, 33);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "👁";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btnShowNewPassword_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label1.Location = new System.Drawing.Point(206, 333);
+            this.label1.Location = new System.Drawing.Point(185, 333);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 20);
             this.label1.TabIndex = 21;
             this.label1.Text = "New Pass";
             // 
+            // button_arrow
+            // 
+            this.button_arrow.BackColor = System.Drawing.Color.White;
+            this.button_arrow.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(153)))));
+            this.button_arrow.FlatAppearance.BorderSize = 4;
+            this.button_arrow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_arrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_arrow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(153)))));
+            this.button_arrow.Location = new System.Drawing.Point(41, 34);
+            this.button_arrow.Margin = new System.Windows.Forms.Padding(0);
+            this.button_arrow.Name = "button_arrow";
+            this.button_arrow.Size = new System.Drawing.Size(62, 72);
+            this.button_arrow.TabIndex = 22;
+            this.button_arrow.Text = "🡨";
+            this.button_arrow.UseVisualStyleBackColor = false;
+            this.button_arrow.Click += new System.EventHandler(this.button_arrow_Click);
+            // 
             // frmChangePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 670);
+            this.ClientSize = new System.Drawing.Size(761, 670);
+            this.Controls.Add(this.button_arrow);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnShowConfirmPassword);
             this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.btnSavePassword);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnShowNewPassword);
             this.Controls.Add(this.lblConfirmPassword);
             this.Controls.Add(this.txtConfirmPassword);
@@ -240,7 +239,7 @@ namespace Login
         private System.Windows.Forms.Button btnSavePassword;
         private System.Windows.Forms.Label lblErrorMessage;
         private System.Windows.Forms.Button btnShowConfirmPassword;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button_arrow;
     }
 }
