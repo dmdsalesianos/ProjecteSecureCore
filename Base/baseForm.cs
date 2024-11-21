@@ -94,7 +94,7 @@ namespace prueba_txtBox
                 esNuevo = false;
             }
 
-            dataAccess.Actualitzar(ds, querySelect, TableName);
+            dataAccess.Actualitzar(querySelect, ds, TableName);
             ds = dataAccess.PortarTaula(TableName);
             CargarDatos();
         }
