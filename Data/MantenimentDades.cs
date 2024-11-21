@@ -32,7 +32,7 @@ namespace DataAccess
         /// Este constructor crea una nueva instancia de la clase <see cref="MantenimentDades"/> y establece
         /// la conexión a la base de datos usando la cadena de conexión proporcionada.
         /// </remarks>
-        public MantenimentDades(string connectionString)
+        public MantenimentDades(string connectionString) 
         {
             _connectionString = connectionString; 
             connection = new SqlConnection(_connectionString);
