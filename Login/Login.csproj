@@ -155,7 +155,7 @@
       <Project>{6B666B1C-7BD0-4E76-AB39-95AD671EB46B}</Project>
       <Name>CustomControls</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Data\DataAcces.csproj">
+    <ProjectReference Include="..\Data\DataAccess.csproj">
       <Project>{db77ddd9-3e44-4327-9d80-59afaf6f6b35}</Project>
       <Name>DataAcces</Name>
     </ProjectReference>
