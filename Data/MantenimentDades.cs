@@ -34,7 +34,7 @@ namespace DataAccess
         /// </remarks>
         public MantenimentDades(string connectionString)
         {
-            _connectionString = connectionString;
+            _connectionString = connectionString; 
             connection = new SqlConnection(_connectionString);
         }
 
