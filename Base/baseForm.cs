@@ -2,10 +2,11 @@
 using System.Data;
 using System.Windows.Forms;
 using System.Configuration;
-using DataLibraryDMD;
+using DataAccess;
 using DataBindingLibrary;
+using System.Collections.Generic;
 
-namespace prueba_txtBox
+namespace Base
 {
     public partial class baseForm : Form
     {
@@ -15,6 +16,7 @@ namespace prueba_txtBox
         public string TableName;
         public string querySelect;
         public ComboBox comboBox;
+        string connectionString;
 
         public baseForm()
         {
@@ -23,14 +25,16 @@ namespace prueba_txtBox
 
         protected virtual void BaseForm_Load(object sender, EventArgs e)
         {
+
             if (DesignMode) return;
 
-            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            connectionString = "Data Source=sqlserver.S2AM.sdslab.cat;Initial Catalog=SecureCoreG4;Persist Security Info=True;User ID=G4;Password=12345G4aA2425.";
             dataAccess = new MantenimentDades(connectionString);
 
             ds = dataAccess.PortarTaula(TableName);
 
-            comboBox.DataSource = ds.Tables[TableName];
+            //comboBox.DataSource = ds.Tables[TableName];
+            //comboBox.SelectedIndexChanged += comboBox_SelectedIndexChanged;
 
             CargarDatos();
 
@@ -43,39 +47,39 @@ namespace prueba_txtBox
             }
         }
 
+        private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            string selectedCode = comboBox.SelectedValue.ToString();
+
+            if (!string.IsNullOrEmpty(selectedCode))
+            {
+                querySelect = $"SELECT * FROM {TableName} WHERE {comboBox.ValueMember} = '{selectedCode}'";
+
+                ds = dataAccess.PortarTaula(TableName);
+                CargarDatos(); 
+            }
+        }
+
+
+
         protected void CargarDatos()
         {
-            DataBindingHelper.ClearDataBindings(this.Controls);
-            UpdateTable();
+            DataBindingHelper.ClearDataBindings(this.Controls); 
+            UpdateTable(); 
 
             BindTextBoxesToData();
-            BindComboBoxToData();
         }
 
         private void BindTextBoxesToData()
         {
             foreach (Control control in this.Controls)
             {
-                if (control is TextBox textBox)
+                if (control is TextBox textBox && textBox.Tag != null)
                 {
-                    var nomCampBBDD = textBox.GetType().GetProperty("NomCampBBDD").GetValue(textBox, null) as string;
-
-                    if (!string.IsNullOrEmpty(nomCampBBDD))
-                    {
-                        textBox.DataBindings.Clear();
-                        textBox.DataBindings.Add("Text", ds.Tables[TableName], nomCampBBDD);
-                    }
+                    textBox.DataBindings.Clear();
+                    textBox.DataBindings.Add("Text", ds.Tables[TableName], textBox.Tag.ToString());
                 }
-            }
-        }
-
-        private void BindComboBoxToData()
-        {
-            if (comboBox.DisplayMember != null)
-            {
-                comboBox.DataBindings.Clear();
-
-                comboBox.DataBindings.Add("SelectedValue", ds.Tables[TableName], comboBox.ValueMember);
             }
         }
 
@@ -94,7 +98,7 @@ namespace prueba_txtBox
                 esNuevo = false;
             }
 
-            dataAccess.Actualitzar(ds, querySelect, TableName);
+            dataAccess.Actualitzar(querySelect, ds, TableName);
             ds = dataAccess.PortarTaula(TableName);
             CargarDatos();
         }
@@ -107,12 +111,7 @@ namespace prueba_txtBox
             {
                 if (control is TextBox textBox)
                 {
-                    var nomCampBBDD = textBox.GetType().GetProperty("NomCampBBDD").GetValue(textBox, null) as string;
-
-                    if (!string.IsNullOrEmpty(nomCampBBDD))
-                    {
-                        newRow[nomCampBBDD] = textBox.Text;
-                    }
+                    newRow[textBox.Tag.ToString()] = textBox.Text;
                 }
             }
 
@@ -121,24 +120,17 @@ namespace prueba_txtBox
 
         protected void UpdateTable()
         {
+
             dataGridView1.DataSource = ds.Tables[TableName];
             dataGridView1.Columns[0].Visible = false;
         }
 
         protected void ValidarTextBox(object sender, EventArgs e)
         {
-            try
-            {
-                 if (!esNuevo)
+            if (!esNuevo)
             {
                 ((TextBox)sender).DataBindings[0].BindingManagerBase.EndCurrentEdit();
             }
-            }
-            catch (Exception)
-            {
-               throw;
-            }
-           
         }
     }
-}
+}   
