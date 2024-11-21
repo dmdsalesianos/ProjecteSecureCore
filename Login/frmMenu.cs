@@ -12,14 +12,14 @@ namespace Login
 {
     public partial class frmMenu : Form
     {
-        private string nombreUsuario;
+        
 
         public frmMenu(/*String usuario*/)
         {
             InitializeComponent();
-            //this.nombreUsuario = usuario;
-            //textBox1.Text = nombreUsuario;
-
+            
+            
+            
         }
 
         private void button_logaout_Click(object sender, EventArgs e)
