@@ -43,9 +43,5 @@ namespace Sprint53_G4
                 form = value;
             }
         }
-        private void MenuBtn_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

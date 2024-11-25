@@ -27,5 +27,10 @@ namespace SpaceShipsTypes
             base.BaseForm_Load(sender, e);
             descCmb.DataSource = ds.Tables[TableName];
         }
+
+        private void frmSpaceShipsTypes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

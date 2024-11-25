@@ -37,16 +37,17 @@ namespace Sprint53_G4
             // 
             // MenuBtn
             // 
-            this.MenuBtn.Location = new System.Drawing.Point(-3, 3);
+            this.MenuBtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.MenuBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MenuBtn.Location = new System.Drawing.Point(-3, 0);
             this.MenuBtn.Name = "MenuBtn";
-            this.MenuBtn.Size = new System.Drawing.Size(260, 127);
+            this.MenuBtn.Size = new System.Drawing.Size(263, 127);
             this.MenuBtn.TabIndex = 0;
-            this.MenuBtn.UseVisualStyleBackColor = true;
-            this.MenuBtn.Click += new System.EventHandler(this.MenuBtn_Click);
+            this.MenuBtn.UseVisualStyleBackColor = false;
             // 
             // optionImg
             // 
-            this.optionImg.Location = new System.Drawing.Point(33, 38);
+            this.optionImg.Location = new System.Drawing.Point(32, 35);
             this.optionImg.Name = "optionImg";
             this.optionImg.Size = new System.Drawing.Size(54, 54);
             this.optionImg.TabIndex = 1;
@@ -55,9 +56,11 @@ namespace Sprint53_G4
             // optionLbl
             // 
             this.optionLbl.AutoSize = true;
-            this.optionLbl.Location = new System.Drawing.Point(136, 58);
+            this.optionLbl.BackColor = System.Drawing.Color.Transparent;
+            this.optionLbl.Font = new System.Drawing.Font("Corbel", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionLbl.Location = new System.Drawing.Point(116, 47);
             this.optionLbl.Name = "optionLbl";
-            this.optionLbl.Size = new System.Drawing.Size(61, 17);
+            this.optionLbl.Size = new System.Drawing.Size(94, 28);
             this.optionLbl.TabIndex = 2;
             this.optionLbl.Text = "OPTION";
             // 
