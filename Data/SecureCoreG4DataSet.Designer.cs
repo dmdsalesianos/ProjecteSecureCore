@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace DataLibraryDMD {
+namespace DataAcess {
     
     
     /// <summary>
@@ -681,7 +681,7 @@ namespace DataLibraryDMD {
         }
     }
 }
-namespace DataLibraryDMD.SecureCoreG4DataSetTableAdapters {
+namespace DataAcess.SecureCoreG4DataSetTableAdapters {
     
     
     /// <summary>
@@ -845,7 +845,7 @@ SELECT idSpecie, CodeSpecie, DescSpecie FROM Species WHERE (idSpecie = @idSpecie
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::DataLibraryDMD.Properties.Settings.Default.SecureCoreG4ConnectionString;
+            this._connection.ConnectionString = global::DataAcess.Properties.Settings.Default.SecureCoreG4ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

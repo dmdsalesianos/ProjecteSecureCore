@@ -59,6 +59,12 @@
     <Compile Include="frmLoading.Designer.cs">
       <DependentUpon>frmLoading.cs</DependentUpon>
     </Compile>
+    <Compile Include="Resources\RJButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Resources\RJTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Splash.cs">
       <SubType>Form</SubType>
     </Compile>

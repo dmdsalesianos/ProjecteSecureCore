@@ -76,5 +76,10 @@ namespace Login
             PanelContenido.Tag = formulario;
             formulario.Show();
         }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

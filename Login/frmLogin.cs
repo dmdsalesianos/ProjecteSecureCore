@@ -10,12 +10,14 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataAccess;
 
 namespace Login
 {
     public partial class frmLogin : Form
     {
-        private string connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+        private string connectionString;
+        MantenimentDades manteniment;
 
         public frmLogin()
         {
@@ -179,6 +181,12 @@ namespace Login
             {
                 Login_Click(sender, e);
             }
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            manteniment = new MantenimentDades(connectionString);
         }
     }
 }
