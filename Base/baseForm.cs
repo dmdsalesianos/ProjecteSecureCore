@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using System.Configuration;
-using DataLibraryDMD;
+using DataAccess;
 using DataBindingLibrary;
 
 namespace prueba_txtBox
@@ -13,6 +13,7 @@ namespace prueba_txtBox
         public bool esNuevo = false;
         public MantenimentDades dataAccess;
         public string TableName;
+        public string FKTableName;
         public string querySelect;
         public ComboBox comboBox;
 
@@ -25,23 +26,33 @@ namespace prueba_txtBox
         {
             if (DesignMode) return;
 
-            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
             dataAccess = new MantenimentDades(connectionString);
 
-            ds = dataAccess.PortarTaula(TableName);
+            ds = new DataSet();
 
-            comboBox.DataSource = ds.Tables[TableName];
+            DataSet tableDS = dataAccess.PortarTaula(TableName);
+            DataTable Table = tableDS.Tables[TableName].Copy(); 
+            Table.TableName = TableName; 
+            ds.Tables.Add(Table);
+
+            DataSet fkTableDS = dataAccess.PortarTaula(FKTableName);
+            DataTable FKTable = fkTableDS.Tables[FKTableName].Copy(); 
+            FKTable.TableName = FKTableName; 
+            ds.Tables.Add(FKTable);
+
+            ds.Relations.Add(
+                "Table_FKTable",
+                ds.Tables[FKTableName].Columns[comboBox.ValueMember],
+                ds.Tables[TableName].Columns[comboBox.ValueMember]
+            );
+
+            comboBox.SelectedValueChanged += comboBox_SelectedValueChanged;
 
             CargarDatos();
-
-            foreach (Control control in this.Controls)
-            {
-                if (control is TextBox textBox)
-                {
-                    textBox.Validated += ValidarTextBox;
-                }
-            }
         }
+
+
 
         protected void CargarDatos()
         {
@@ -51,6 +62,19 @@ namespace prueba_txtBox
             BindTextBoxesToData();
             BindComboBoxToData();
         }
+        private void comboBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (comboBox.SelectedValue != null)
+            {
+                string selectedValue = comboBox.SelectedValue.ToString();
+
+                DataView dv = new DataView(ds.Tables[TableName]);
+                dv.RowFilter = $"{comboBox.ValueMember} = {selectedValue}";
+
+                dataGridView1.DataSource = dv;
+            }
+        }
+
 
         private void BindTextBoxesToData()
         {
@@ -71,10 +95,13 @@ namespace prueba_txtBox
 
         private void BindComboBoxToData()
         {
-            if (comboBox.DisplayMember != null)
+            if (comboBox != null)
             {
-                comboBox.DataBindings.Clear();
+                comboBox.DataSource = ds.Tables[FKTableName];
+                comboBox.DisplayMember = comboBox.DisplayMember;
+                comboBox.ValueMember = comboBox.ValueMember;
 
+                comboBox.DataBindings.Clear();
                 comboBox.DataBindings.Add("SelectedValue", ds.Tables[TableName], comboBox.ValueMember);
             }
         }
@@ -127,10 +154,18 @@ namespace prueba_txtBox
 
         protected void ValidarTextBox(object sender, EventArgs e)
         {
-            if (!esNuevo)
+            try
+            {
+                 if (!esNuevo)
             {
                 ((TextBox)sender).DataBindings[0].BindingManagerBase.EndCurrentEdit();
             }
+            }
+            catch (Exception)
+            {
+               throw;
+            }
+           
         }
     }
 }

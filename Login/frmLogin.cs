@@ -1,30 +1,53 @@
 ﻿using System;
-using System.Data.SqlClient;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Login
 {
     public partial class frmLogin : Form
     {
-        private const string InitialPassword = "12345aA"; // Contraseña inicial
-        private int userAccessLevel = 0; // Nivel de acceso del usuario
-        private int userId = 0; // ID del usuario (para obtener su categoría)
-
+        private string connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+        public int _idUserCategory { get; set; }
         public frmLogin()
         {
             InitializeComponent();
-            textBox_password.UseSystemPasswordChar = true;
-            Vision_button.Text = "◠";
+        }
 
-            // Inicialmente ocultamos los campos de cambio de contraseña
-            txtNewPassword.Visible = false;
-            txtConfirmPassword.Visible = false;
-            btnChangePassword.Visible = false;
-            lblNewPassword.Visible = false;
-            lblConfirmPassword.Visible = false;
+        public static int CurrentUserCategoryId { get; set; }
+
+        private int GetUserCategoryId(string username)
+        {
+            int userCategoryId = 0;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = @"
+                    SELECT u.idUserCategory
+                    FROM Users u
+                    WHERE u.UserName = @username";
+
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@username", username);
+
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    userCategoryId = Convert.ToInt32(reader["idUserCategory"]);
+                }
+            }
+
+            return userCategoryId;
         }
 
         private void Login_Click(object sender, EventArgs e)
@@ -32,102 +55,85 @@ namespace Login
             string username = textBox_user.Text;
             string password = textBox_password.Text;
 
-            // Verificamos si el usuario existe y si la contraseña es correcta
-            if (VerifyLogin(username, password))
+            
+            if (password == "12345aA")
             {
-                // Si la contraseña no es la inicial, mostramos el mensaje de bienvenida
-                Error_label.Visible = false;
-                ShowWelcomeMessage();
-                frmLoading Loading = new frmLoading();
-                Loading.Show();
+                
+                frmChangePassword changePasswordForm = new frmChangePassword(username);
+                changePasswordForm.Show();
                 this.Hide();
 
+                
             }
             else
             {
-                if (password == InitialPassword)
+                
+                if (VerifyUser(username, password))
                 {
-                    // Si la contraseña es la inicial, mostramos los campos de cambio de contraseña
-                    EnablePasswordChange();
-                }
-                Error_label.Visible = true; // Mostramos el mensaje de error si el usuario no existe
-            }
-        }
+                    CurrentUserCategoryId = GetUserCategoryId(username);
+                    //MessageBox.Show("ID UserCategory Guardada: " + CurrentUserCategoryId.ToString(), "Verificación");
 
-        private void EnablePasswordChange()
-        {
-            // Mostramos los campos para cambiar la contraseña
-            MessageBox.Show("És necessari canviar la paraula de pas inicial.");
-            txtNewPassword.Visible = true;
-            txtConfirmPassword.Visible = true;
-            btnChangePassword.Visible = true;
-            lblNewPassword.Visible = true;
-            lblConfirmPassword.Visible = true;
-        }
-
-        private byte[] ConvertSaltToBytes(string saltString)
-        {
-            // Eliminar los guiones del string
-            saltString = saltString.Replace("-", "");
-
-            // Convertir el string hexadecimal a un arreglo de bytes
-            byte[] salt = new byte[saltString.Length / 2];
-
-            for (int i = 0; i < saltString.Length; i += 2)
-            {
-                salt[i / 2] = Convert.ToByte(saltString.Substring(i, 2), 16); // Convertir de hexadecimal a byte
-            }
-
-            return salt;
-        }
-
-        private bool VerifyLogin(string username, string password)
-        {
-            bool isValid = false;
-            string connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string query = "SELECT [idUser], [UserName], [Password], [Salt], [idUserCategory] FROM [Users] WHERE [Login] = @Login";
-
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Login", username);
-
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-
-                if (reader.HasRows)
-                {
-                    reader.Read();
-                    string storedPassword = reader["Password"].ToString();
-                    string storedSaltString = reader["Salt"].ToString(); 
-                    byte[] storedSalt = ConvertSaltToBytes(storedSaltString); 
-
-                    userId = (int)reader["idUser"];
-                    int userCategoryId = (int)reader["idUserCategory"];
-
-                    
-
-                    // Verificamos si la contraseña es correcta
-                    if (VerifyPassword(password, storedPassword, storedSalt))
-                    {
-                        userAccessLevel = GetUserAccessLevel(userCategoryId);
-                        isValid = true;
-                    }
+                    frmLoading frmLoading = new frmLoading();
+                    frmLoading.Show();
+                    this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Usuario no encontrado.");
+                    Error_label.Visible = true;
                 }
             }
-            return isValid;
         }
 
-
-        private bool VerifyPassword(string enteredPassword, string storedPassword, byte[] salt)
+        private bool VerifyUser(string username, string password)
         {
-            string hashedPassword = ComputeHash(enteredPassword, salt);
-            return storedPassword == hashedPassword;
+            bool isValidUser = false;
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT Password, Salt, idUserCategory FROM Users WHERE UserName = @UserName";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@UserName", username);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                string storedPasswordHash = reader["Password"].ToString();
+                                string base64Salt = reader["Salt"].ToString();
+                                _idUserCategory = (int)reader["idUserCategory"];
+
+                               
+                                byte[] storedSalt = ConvertBase64ToBytes(base64Salt);
+                                if (storedSalt == null)
+                                {
+                                    MessageBox.Show("Error: el salt almacenado no es válido.");
+                                    return false;
+                                }
+
+                                
+                                string enteredPasswordHash = ComputeHash(password, storedSalt);
+
+                                
+                                if (storedPasswordHash == enteredPasswordHash)
+                                {
+                                    isValidUser = true;
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al verificar la contraseña: {ex.Message}");
+                }
+            }
+
+            return isValidUser;
+
         }
 
         private string ComputeHash(string password, byte[] salt)
@@ -143,128 +149,38 @@ namespace Login
                 return Convert.ToBase64String(hashBytes);
             }
         }
-
-        private int GetUserAccessLevel(int userCategoryId)
+        private byte[] ConvertBase64ToBytes(string base64Salt)
         {
-            int accessLevel = 0;
-            string connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                string query = "SELECT [AccessLevel] FROM [UserCategories] WHERE [idUserCategory] = @userCategoryId";
-
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@userCategoryId", userCategoryId);
-
-                try
-                {
-                    connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    if (reader.HasRows)
-                    {
-                        reader.Read();
-                        accessLevel = (int)reader["AccessLevel"];
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al obtener el nivel de acceso: " + ex.Message);
-                }
+                return Convert.FromBase64String(base64Salt);
             }
-            return accessLevel;
-        }
-
-        private void ShowWelcomeMessage()
-        {
-            string welcomeMessage = $"Benvingut {textBox_user.Text}! Nivell d'accés: {userAccessLevel}." +
-                                    "\nSeràs redirigit a l'aplicació principal en 5 segons.";
-            MessageBox.Show(welcomeMessage);
-
-            // Aquí rediriges a la pantalla principal si la validación es correcta
-            frmLoading Loading = new frmLoading();
-            Loading.Show();
-            this.Hide();
-        }
-
-        private void btnChangePassword_Click(object sender, EventArgs e)
-        {
-            string newPassword = txtNewPassword.Text;
-            string confirmPassword = txtConfirmPassword.Text;
-
-            // Verificamos si las contraseñas coinciden
-            if (newPassword == confirmPassword && IsValidPassword(newPassword))
+            catch (FormatException ex)
             {
-                byte[] salt = GenerateSalt();
-                string hashedPassword = ComputeHash(newPassword, salt);
-
-                // Aquí deberías actualizar la base de datos con la nueva contraseña (hashedPassword) y el salt generado
-                string connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
-
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    string updateQuery = "UPDATE [Users] SET [Password] = @Password, [Salt] = @Salt WHERE [idUser] = @idUser";
-
-                    SqlCommand command = new SqlCommand(updateQuery, connection);
-                    command.Parameters.AddWithValue("@Password", hashedPassword);
-                    command.Parameters.AddWithValue("@Salt", BitConverter.ToString(salt).Replace("-", "")); // Convertir salt a string sin guiones
-                    command.Parameters.AddWithValue("@idUser", userId); // El id del usuario actual
-
-                    try
-                    {
-                        connection.Open();
-                        command.ExecuteNonQuery();
-                        HidePasswordChangeFields();
-                        textBox_password.Clear(); // Limpiar el campo de la contraseña
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Error al actualizar la contraseña: {ex.Message}");
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Las contraseñas no coinciden o no son válidas.");
+                MessageBox.Show($"Error al convertir el Salt desde Base64: {ex.Message}");
+                return null;
             }
         }
-
-
-        private void HidePasswordChangeFields()
-        {
-            txtNewPassword.Visible = false;
-            txtConfirmPassword.Visible = false;
-            btnChangePassword.Visible = false;
-            lblNewPassword.Visible = false;
-            lblConfirmPassword.Visible = false;
-        }
-
-        private bool IsValidPassword(string password)
-        {
-            return password.Length >= 6; // Aquí puedes agregar más validaciones si es necesario
-        }
-
         private void Visible_button(object sender, EventArgs e)
         {
+            
             if (textBox_password.UseSystemPasswordChar)
             {
                 textBox_password.UseSystemPasswordChar = false;
-                Vision_button.Text = "👁";
+                Vision_button.Text = "👁";  
             }
             else
             {
                 textBox_password.UseSystemPasswordChar = true;
-                Vision_button.Text = "◠";
+                Vision_button.Text = "◠";  
             }
         }
 
-        private byte[] GenerateSalt()
+        private void textBox_password_KeyDown(object sender, KeyEventArgs e)
         {
-            using (var rng = new RNGCryptoServiceProvider())
+            if (e.KeyCode == Keys.Enter)
             {
-                byte[] salt = new byte[16];
-                rng.GetBytes(salt);
-                return salt;
+                Login_Click(sender, e);
             }
         }
     }

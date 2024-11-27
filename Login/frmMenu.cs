@@ -7,20 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GestioDeUsuaris;
 
 namespace Login
 {
     public partial class frmMenu : Form
     {
-        private string nombreUsuario;
+        
 
-        public frmMenu(int usetrCategory)
+        public frmMenu(/*String usuario*/)
         {
             InitializeComponent();
-            //this.nombreUsuario = usuario;
-            //textBox1.Text = nombreUsuario;
-
+            
+            
+            
         }
 
         private void button_logaout_Click(object sender, EventArgs e)
@@ -39,7 +38,12 @@ namespace Login
             //CargarFormularioEnPanel(Manteniment_Species);
         }
 
-        
+        private void button_Man_User_Click(object sender, EventArgs e)
+        {
+            //frm_Man_Usuari Manteniment_Usuari = new frm_Man_Usuari();
+
+            //CargarFormularioEnPanel(Manteniment_Usuari);
+        }
 
         private void Enter_Mouse(object sender, EventArgs e)
         {
@@ -54,8 +58,6 @@ namespace Login
             boton.BackColor = Color.DodgerBlue;  
                
         }
-
-        
 
         
     }
