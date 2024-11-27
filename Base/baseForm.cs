@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Configuration;
 using DataAccess;
 using DataBindingLibrary;
+using DataLibraryDMD;
 
 namespace prueba_txtBox
 {
@@ -121,7 +122,7 @@ namespace prueba_txtBox
                 esNuevo = false;
             }
 
-            dataAccess.Actualitzar(querySelect, ds, TableName);
+            dataAccess.Actualitzar(ds, querySelect, TableName);
             ds = dataAccess.PortarTaula(TableName);
             CargarDatos();
         }
