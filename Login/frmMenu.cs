@@ -59,22 +59,6 @@ namespace Login
                
         }
 
-        private void CargarFormularioEnPanel(Form formulario)
-        {
-            //Liampiar panel
-            if (PanelContenido.Controls.Count > 0)
-            {
-                PanelContenido.Controls.RemoveAt(0);
-            }
-                
-
-            formulario.TopLevel = false; 
-            formulario.FormBorderStyle = FormBorderStyle.None; 
-            formulario.Dock = DockStyle.Fill; 
-                        
-            PanelContenido.Controls.Add(formulario);
-            PanelContenido.Tag = formulario;
-            formulario.Show();
-        }
+        
     }
 }
