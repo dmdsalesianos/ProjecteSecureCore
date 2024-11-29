@@ -167,7 +167,6 @@ namespace SpaceShipsTypes
             this.Controls.Add(this.codeTxt);
             this.Name = "frmSpaceShipsTypes";
             this.Text = "frmSpaceShipsTypes";
-            this.Load += new System.EventHandler(this.frmSpaceShipsTypes_Load);
             this.Controls.SetChildIndex(this.codeTxt, 0);
             this.Controls.SetChildIndex(this.descTxt, 0);
             this.Controls.SetChildIndex(this.descCmb, 0);

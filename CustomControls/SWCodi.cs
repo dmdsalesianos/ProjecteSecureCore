@@ -19,6 +19,7 @@ namespace Sprint53_G4
         public SWCodi()
         {
             InitializeComponent();
+
             codiTxt.Leave += Validacodi;
         }
 

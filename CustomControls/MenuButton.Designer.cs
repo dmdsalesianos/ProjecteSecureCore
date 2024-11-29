@@ -38,10 +38,9 @@ namespace Sprint53_G4
             // MenuBtn
             // 
             this.MenuBtn.BackColor = System.Drawing.Color.DodgerBlue;
-            this.MenuBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MenuBtn.Location = new System.Drawing.Point(-3, 0);
+            this.MenuBtn.Location = new System.Drawing.Point(0, 0);
             this.MenuBtn.Name = "MenuBtn";
-            this.MenuBtn.Size = new System.Drawing.Size(263, 127);
+            this.MenuBtn.Size = new System.Drawing.Size(260, 127);
             this.MenuBtn.TabIndex = 0;
             this.MenuBtn.UseVisualStyleBackColor = false;
             // 

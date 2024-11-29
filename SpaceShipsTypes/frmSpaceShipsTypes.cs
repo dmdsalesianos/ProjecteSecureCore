@@ -25,12 +25,8 @@ namespace SpaceShipsTypes
         protected override void BaseForm_Load(object sender, EventArgs e)
         {
             base.BaseForm_Load(sender, e);
-            descCmb.DataSource = ds.Tables[TableName];
-        }
-
-        private void frmSpaceShipsTypes_Load(object sender, EventArgs e)
-        {
-
+            comboBox.DataSource = ds.Tables[TableName];
+           
         }
     }
 }
