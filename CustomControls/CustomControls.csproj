@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>App\</OutputPath>
+    <OutputPath>..\App\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MenuButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuButton.Designer.cs">
+      <DependentUpon>MenuButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="RjButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -65,6 +72,23 @@
       <DependentUpon>SWTextbox.cs</DependentUpon>
     </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MenuButton.resx">
+      <DependentUpon>MenuButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWCodi.resx">
+      <DependentUpon>SWCodi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWLaunchForm.resx">
+      <DependentUpon>SWLaunchForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data\DataAcces.csproj">
+      <Project>{db77ddd9-3e44-4327-9d80-59afaf6f6b35}</Project>
+      <Name>DataAcces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

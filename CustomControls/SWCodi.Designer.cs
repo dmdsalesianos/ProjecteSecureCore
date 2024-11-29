@@ -29,10 +29,42 @@ namespace CustomControls
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.codiTxt = new System.Windows.Forms.TextBox();
+            this.descTxt = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // codiTxt
+            // 
+            this.codiTxt.Location = new System.Drawing.Point(24, 14);
+            this.codiTxt.Name = "codiTxt";
+            this.codiTxt.Size = new System.Drawing.Size(62, 22);
+            this.codiTxt.TabIndex = 0;
+            this.codiTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.codiTxt_KeyDown);
+            // 
+            // descTxt
+            // 
+            this.descTxt.Enabled = false;
+            this.descTxt.Location = new System.Drawing.Point(92, 14);
+            this.descTxt.Name = "descTxt";
+            this.descTxt.Size = new System.Drawing.Size(349, 22);
+            this.descTxt.TabIndex = 1;
+            // 
+            // SWCodi
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.descTxt);
+            this.Controls.Add(this.codiTxt);
+            this.Name = "SWCodi";
+            this.Size = new System.Drawing.Size(455, 51);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox codiTxt;
+        private System.Windows.Forms.TextBox descTxt;
     }
 }
