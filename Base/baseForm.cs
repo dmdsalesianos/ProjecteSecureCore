@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Configuration;
 using DataAccess;
 using DataBindingLibrary;
+using Sprint53_G4;
 
 namespace prueba_txtBox
 {
@@ -14,7 +15,8 @@ namespace prueba_txtBox
         public MantenimentDades dataAccess;
         public string TableName;
         public string querySelect;
-        public ComboBox comboBox;
+        private BindingSource bindingSource = new BindingSource();
+
 
         public baseForm()
         {
@@ -30,10 +32,6 @@ namespace prueba_txtBox
 
             ds = dataAccess.PortarTaula(TableName);
 
-            comboBox.DataSource = ds.Tables[TableName];
-
-            CargarDatos();
-
             foreach (Control control in this.Controls)
             {
                 if (control is TextBox textBox)
@@ -41,6 +39,8 @@ namespace prueba_txtBox
                     textBox.Validated += ValidarTextBox;
                 }
             }
+
+            CargarDatos();
         }
 
         protected void CargarDatos()
@@ -48,34 +48,67 @@ namespace prueba_txtBox
             DataBindingHelper.ClearDataBindings(this.Controls);
             UpdateTable();
 
-            BindTextBoxesToData();
-            BindComboBoxToData();
+            bindingSource.DataSource = ds.Tables[TableName];
+            dataGridView1.DataSource = bindingSource;
+            BindToData();
         }
 
-        private void BindTextBoxesToData()
+        private void comboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            foreach (Control control in this.Controls)
+            foreach (Control control in Controls)
             {
-                if (control is TextBox textBox)
+                if (control is ComboBox comboBox)
                 {
-                    var nomCampBBDD = textBox.GetType().GetProperty("NomCampBBDD").GetValue(textBox, null) as string;
-
-                    if (!string.IsNullOrEmpty(nomCampBBDD))
+                    if (comboBox.SelectedValue != null)
                     {
-                        textBox.DataBindings.Clear();
-                        textBox.DataBindings.Add("Text", ds.Tables[TableName], nomCampBBDD);
+                        string selectedValue = comboBox.SelectedValue.ToString();
+
+                        bindingSource.Filter = $"{comboBox.ValueMember} = {selectedValue}";
+
+                        if (dataGridView1.Rows.Count > 0)
+                        {
+                            dataGridView1.Rows[0].Selected = true;
+                        }
                     }
                 }
             }
         }
 
-        private void BindComboBoxToData()
+        private void BindToData()
         {
-            if (comboBox.DisplayMember != null)
+            foreach (Control control in Controls)
             {
-                comboBox.DataBindings.Clear();
+                if (control is TextBox)
+                {
+                    SWTextbox txtSW = (SWTextbox)control;
 
-                comboBox.DataBindings.Add("SelectedValue", ds.Tables[TableName], comboBox.ValueMember);
+                    var nomCampBBDD = txtSW.NomCampBBDD;
+
+                    if (!string.IsNullOrEmpty(nomCampBBDD))
+                    {
+                        txtSW.DataBindings.Clear();
+                        txtSW.DataBindings.Add("Text", bindingSource, nomCampBBDD);
+                    }
+                }
+            }
+
+            foreach (Control control in Controls)
+            {
+
+                if (control is ComboBox comboBox)
+                {
+
+                    //dsFK = dataAccess.PortarTaula(comboBox.Tag.ToString());
+                    comboBox.SelectedValueChanged += comboBox_SelectedValueChanged;
+
+
+                    if (comboBox != null)
+                    {
+                        comboBox.DataBindings.Clear();
+                        comboBox.DataBindings.Add("SelectedValue", ds.Tables[TableName], comboBox.ValueMember);
+
+                    }
+                }
             }
         }
 
@@ -105,13 +138,17 @@ namespace prueba_txtBox
 
             foreach (Control control in this.Controls)
             {
-                if (control is TextBox textBox)
+                if (control is TextBox)
                 {
-                    var nomCampBBDD = textBox.GetType().GetProperty("NomCampBBDD").GetValue(textBox, null) as string;
+                    SWTextbox txtSW = (SWTextbox)control;
+
+                    var nomCampBBDD = txtSW.NomCampBBDD;
+
+                    //var nomCampBBDD = textBox.GetType().GetProperty("NomCampBBDD").GetValue(textBox, null) as string;
 
                     if (!string.IsNullOrEmpty(nomCampBBDD))
                     {
-                        newRow[nomCampBBDD] = textBox.Text;
+                        newRow[nomCampBBDD] = txtSW.Text;
                     }
                 }
             }
@@ -129,16 +166,18 @@ namespace prueba_txtBox
         {
             try
             {
-                 if (!esNuevo)
-            {
-                ((TextBox)sender).DataBindings[0].BindingManagerBase.EndCurrentEdit();
-            }
+                if (!esNuevo)
+                {
+                    ((TextBox)sender).DataBindings[0].BindingManagerBase.EndCurrentEdit();
+                }
             }
             catch (Exception)
             {
-               throw;
+                throw;
             }
-           
+
         }
+
+
     }
 }
