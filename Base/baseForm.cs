@@ -60,7 +60,6 @@ namespace prueba_txtBox
             {
                 var comboBox = (ComboBox)sender;
 
-                // Check if there is at least one binding
                 if (comboBox.DataBindings.Count > 0 && !esNuevo)
                 {
                     comboBox.DataBindings[0].BindingManagerBase.EndCurrentEdit();
