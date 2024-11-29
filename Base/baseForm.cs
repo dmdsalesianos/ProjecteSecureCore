@@ -4,18 +4,21 @@ using System.Windows.Forms;
 using System.Configuration;
 using DataAccess;
 using DataBindingLibrary;
+using Sprint53_G4;
 
 namespace prueba_txtBox
 {
     public partial class baseForm : Form
     {
         public DataSet ds;
+        public DataSet dsFK;
         public bool esNuevo = false;
         public MantenimentDades dataAccess;
         public string TableName;
         public string FKTableName;
         public string querySelect;
-        public ComboBox comboBox;
+        private BindingSource bindingSource = new BindingSource();
+
 
         public baseForm()
         {
@@ -29,80 +32,87 @@ namespace prueba_txtBox
             string connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
             dataAccess = new MantenimentDades(connectionString);
 
-            ds = new DataSet();
+            ds = dataAccess.PortarTaula(TableName);
+            dsFK = dataAccess.PortarTaula(FKTableName);
+                        
 
-            DataSet tableDS = dataAccess.PortarTaula(TableName);
-            DataTable Table = tableDS.Tables[TableName].Copy(); 
-            Table.TableName = TableName; 
-            ds.Tables.Add(Table);
-
-            DataSet fkTableDS = dataAccess.PortarTaula(FKTableName);
-            DataTable FKTable = fkTableDS.Tables[FKTableName].Copy(); 
-            FKTable.TableName = FKTableName; 
-            ds.Tables.Add(FKTable);
-
-            ds.Relations.Add(
-                "Table_FKTable",
-                ds.Tables[FKTableName].Columns[comboBox.ValueMember],
-                ds.Tables[TableName].Columns[comboBox.ValueMember]
-            );
-
-            comboBox.SelectedValueChanged += comboBox_SelectedValueChanged;
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox textBox)
+                {
+                    textBox.Validated += ValidarTextBox;
+                }
+            }
 
             CargarDatos();
         }
-
-
 
         protected void CargarDatos()
         {
             DataBindingHelper.ClearDataBindings(this.Controls);
             UpdateTable();
 
-            BindTextBoxesToData();
-            BindComboBoxToData();
+            bindingSource.DataSource = ds.Tables[TableName];
+            dataGridView1.DataSource = bindingSource;
+            BindToData();         
         }
+
         private void comboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (comboBox.SelectedValue != null)
+            foreach (Control control in Controls)
             {
-                string selectedValue = comboBox.SelectedValue.ToString();
-
-                DataView dv = new DataView(ds.Tables[TableName]);
-                dv.RowFilter = $"{comboBox.ValueMember} = {selectedValue}";
-
-                dataGridView1.DataSource = dv;
-            }
-        }
-
-
-        private void BindTextBoxesToData()
-        {
-            foreach (Control control in this.Controls)
-            {
-                if (control is TextBox textBox)
+                if (control is ComboBox comboBox)
                 {
-                    var nomCampBBDD = textBox.GetType().GetProperty("NomCampBBDD").GetValue(textBox, null) as string;
-
-                    if (!string.IsNullOrEmpty(nomCampBBDD))
+                    if (comboBox.SelectedValue != null)
                     {
-                        textBox.DataBindings.Clear();
-                        textBox.DataBindings.Add("Text", ds.Tables[TableName], nomCampBBDD);
+                        string selectedValue = comboBox.SelectedValue.ToString();
+
+                        bindingSource.Filter = $"{comboBox.ValueMember} = {selectedValue}";
+
+                        if (dataGridView1.Rows.Count > 0)
+                        {
+                            dataGridView1.Rows[0].Selected = true;
+                        }
                     }
                 }
             }
+            
         }
 
-        private void BindComboBoxToData()
+        private void BindToData()
         {
-            if (comboBox != null)
+            foreach (Control control in Controls)
             {
-                comboBox.DataSource = ds.Tables[FKTableName];
-                comboBox.DisplayMember = comboBox.DisplayMember;
-                comboBox.ValueMember = comboBox.ValueMember;
+                if (control is TextBox)
+                {
+                    SWTextbox txtSW = (SWTextbox)control;
 
-                comboBox.DataBindings.Clear();
-                comboBox.DataBindings.Add("SelectedValue", ds.Tables[TableName], comboBox.ValueMember);
+                    var nomCampBBDD = txtSW.NomCampBBDD;
+
+                    if (!string.IsNullOrEmpty(nomCampBBDD))
+                    {
+                        txtSW.DataBindings.Clear();
+                        txtSW.DataBindings.Add("Text", bindingSource, nomCampBBDD);
+                    }
+                }
+            }
+
+            foreach (Control control in Controls)
+            {
+
+                if (control is ComboBox comboBox)
+                {
+                    comboBox.SelectedValueChanged += comboBox_SelectedValueChanged;
+
+                    if (comboBox != null)
+                    {
+                        comboBox.DataSource = dsFK.Tables[FKTableName];                        
+
+                        comboBox.DataBindings.Clear();
+                        comboBox.DataBindings.Add("SelectedValue", ds.Tables[TableName], comboBox.ValueMember);
+                        
+                    }
+                }
             }
         }
 
@@ -132,13 +142,17 @@ namespace prueba_txtBox
 
             foreach (Control control in this.Controls)
             {
-                if (control is TextBox textBox)
+                if (control is TextBox)
                 {
-                    var nomCampBBDD = textBox.GetType().GetProperty("NomCampBBDD").GetValue(textBox, null) as string;
+                    SWTextbox txtSW = (SWTextbox)control;
+
+                    var nomCampBBDD = txtSW.NomCampBBDD;
+
+                    //var nomCampBBDD = textBox.GetType().GetProperty("NomCampBBDD").GetValue(textBox, null) as string;
 
                     if (!string.IsNullOrEmpty(nomCampBBDD))
                     {
-                        newRow[nomCampBBDD] = textBox.Text;
+                        newRow[nomCampBBDD] = txtSW.Text;
                     }
                 }
             }
@@ -167,5 +181,7 @@ namespace prueba_txtBox
             }
            
         }
+
+       
     }
 }

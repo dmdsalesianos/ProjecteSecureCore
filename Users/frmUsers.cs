@@ -19,14 +19,18 @@ namespace Users
             TableName = "Users";
             FKTableName = "UserCategories";
             querySelect = $"SELECT * FROM {TableName}";
+            comboBox1.DisplayMember = "DescCategory";
+            comboBox1.ValueMember = "idUserCategory";
 
-            comboBox = comboBox1;
         }
 
         protected override void BaseForm_Load(object sender, EventArgs e)
         {
             base.BaseForm_Load(sender, e);
-            comboBox1.DataSource = ds.Tables[FKTableName];
+            
+            comboBox1.DataSource = dsFK.Tables[FKTableName];
+            
+
         }
     }
 }

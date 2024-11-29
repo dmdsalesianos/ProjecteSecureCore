@@ -58,13 +58,12 @@ namespace Users
             // 
             // comboBox1
             // 
-            this.comboBox1.DisplayMember = "DescCategory";
+            this.comboBox1.AllowDrop = true;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(23, 220);
+            this.comboBox1.Location = new System.Drawing.Point(12, 173);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(154, 24);
+            this.comboBox1.Size = new System.Drawing.Size(441, 24);
             this.comboBox1.TabIndex = 7;
-            this.comboBox1.ValueMember = "idUserCategory";
             // 
             // frmUser
             // 

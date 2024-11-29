@@ -88,6 +88,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CustomControls\CustomControls.csproj">
+      <Project>{6b666b1c-7bd0-4e76-ab39-95ad671eb46b}</Project>
+      <Name>CustomControls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataBindingLibrary\DataBindingLibrary.csproj">
       <Project>{153173b0-0949-492b-bb04-736efa2768f1}</Project>
       <Name>DataBindingLibrary</Name>

@@ -13,8 +13,6 @@ Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "SandCastleDoc", "SandCastle
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseForm", "Base\BaseForm.csproj", "{B033CEB6-8BDB-443F-9F37-6D6EBF422544}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestioDeUsuaris", "GestioDeUsuaris\GestioDeUsuaris.csproj", "{62B17EBC-D53B-40EF-80BA-D7EE65EEB200}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login", "Login\Login.csproj", "{DCDE2ADB-2ED6-4D2D-B7B7-83715431858D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpcaeShipCategories", "SpcaeShipCategories\SpcaeShipCategories.csproj", "{7BF7B7D4-8D19-4C2F-88A3-5CD57AB9F7F9}"
@@ -49,10 +47,6 @@ Global
 		{B033CEB6-8BDB-443F-9F37-6D6EBF422544}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B033CEB6-8BDB-443F-9F37-6D6EBF422544}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B033CEB6-8BDB-443F-9F37-6D6EBF422544}.Release|Any CPU.Build.0 = Release|Any CPU
-		{62B17EBC-D53B-40EF-80BA-D7EE65EEB200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{62B17EBC-D53B-40EF-80BA-D7EE65EEB200}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{62B17EBC-D53B-40EF-80BA-D7EE65EEB200}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{62B17EBC-D53B-40EF-80BA-D7EE65EEB200}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DCDE2ADB-2ED6-4D2D-B7B7-83715431858D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DCDE2ADB-2ED6-4D2D-B7B7-83715431858D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCDE2ADB-2ED6-4D2D-B7B7-83715431858D}.Release|Any CPU.ActiveCfg = Release|Any CPU
