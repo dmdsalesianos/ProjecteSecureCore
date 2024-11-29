@@ -12,7 +12,7 @@ using System.Configuration;
 using DataLibraryDMD;
 
 
-namespace Sprint53_G4
+namespace CustomControls
 {
     public partial class SWCodi : UserControl
     {

@@ -4,7 +4,8 @@ using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace Sprint53_G4 { 
+namespace CustomControls
+{ 
     public partial class SWLaunchForm : UserControl
     {
         public SWLaunchForm()

@@ -1,5 +1,5 @@
 ﻿
-namespace Sprint53_G4
+namespace CustomControls
 {
     partial class MenuButton
     {
