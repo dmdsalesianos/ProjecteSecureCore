@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CustomControls
+namespace Sprout7_Joel_Molina
 {
-    public partial class SWLaunchForm : UserControl
+    public partial class Form1 : Form
     {
-        public SWLaunchForm()
+        public Form1()
         {
             InitializeComponent();
         }

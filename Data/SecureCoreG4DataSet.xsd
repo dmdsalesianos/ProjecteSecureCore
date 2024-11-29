@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SecureCoreG4ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SecureCoreG4ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DataAccess.Properties.Settings.GlobalReference.Default.SecureCoreG4ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SecureCoreG4ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SecureCoreG4ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DataAcess.Properties.Settings.GlobalReference.Default.SecureCoreG4ConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SpeciesTableAdapter" GeneratorDataComponentClassName="SpeciesTableAdapter" Name="Species" UserDataComponentName="SpeciesTableAdapter">

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DataAcess.Properties {
+namespace Login.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

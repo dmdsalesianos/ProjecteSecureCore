@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Sprint53_G4
+namespace CustomControls
 {
     public partial class SWCodi : UserControl
     {
