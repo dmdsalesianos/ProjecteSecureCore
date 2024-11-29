@@ -15,7 +15,7 @@ namespace prueba_txtBox
         public MantenimentDades dataAccess;
         public string TableName;
         public string querySelect;
-        private BindingSource bindingSource = new BindingSource();
+        //private BindingSource bindingSource = new BindingSource();
 
 
         public baseForm()
@@ -48,30 +48,49 @@ namespace prueba_txtBox
             DataBindingHelper.ClearDataBindings(this.Controls);
             UpdateTable();
 
-            bindingSource.DataSource = ds.Tables[TableName];
-            dataGridView1.DataSource = bindingSource;
+          
+            dataGridView1.DataSource = ds.Tables[TableName];
             BindToData();
         }
 
         private void comboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            foreach (Control control in Controls)
+
+            try
             {
-                if (control is ComboBox comboBox)
+                var comboBox = (ComboBox)sender;
+
+                // Check if there is at least one binding
+                if (comboBox.DataBindings.Count > 0 && !esNuevo)
                 {
-                    if (comboBox.SelectedValue != null)
-                    {
-                        string selectedValue = comboBox.SelectedValue.ToString();
-
-                        bindingSource.Filter = $"{comboBox.ValueMember} = {selectedValue}";
-
-                        if (dataGridView1.Rows.Count > 0)
-                        {
-                            dataGridView1.Rows[0].Selected = true;
-                        }
-                    }
+                    comboBox.DataBindings[0].BindingManagerBase.EndCurrentEdit();
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+
+            //foreach (Control control in Controls)
+            //{
+            //    if (control is ComboBox comboBox)
+            //    {
+            //        if (comboBox.SelectedValue != null)
+            //        {
+
+            //ComboBox comboBox = (ComboBox)sender;
+
+            //            string selectedValue = comboBox.SelectedValue.ToString();
+
+            //            bindingSource.Filter = $"{comboBox.ValueMember} = {selectedValue}";
+
+            //            if (dataGridView1.Rows.Count > 0)
+            //            {
+            //                dataGridView1.Rows[0].Selected = true;
+            //            }
+            //        }
+            //    }
+            //}
         }
 
         private void BindToData()
@@ -87,7 +106,7 @@ namespace prueba_txtBox
                     if (!string.IsNullOrEmpty(nomCampBBDD))
                     {
                         txtSW.DataBindings.Clear();
-                        txtSW.DataBindings.Add("Text", bindingSource, nomCampBBDD);
+                        txtSW.DataBindings.Add("Text", ds.Tables[TableName], nomCampBBDD);
                     }
                 }
             }
@@ -98,7 +117,6 @@ namespace prueba_txtBox
                 if (control is ComboBox comboBox)
                 {
 
-                    //dsFK = dataAccess.PortarTaula(comboBox.Tag.ToString());
                     comboBox.SelectedValueChanged += comboBox_SelectedValueChanged;
 
 
