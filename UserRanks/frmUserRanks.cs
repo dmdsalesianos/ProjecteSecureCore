@@ -19,7 +19,7 @@ namespace UserRanks
             TableName = "UserRanks";
             querySelect = $"SELECT * FROM {TableName}";
 
-            
+            comboBox = rankCmb;
         }
 
         protected override void BaseForm_Load(object sender, EventArgs e)

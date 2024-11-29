@@ -103,7 +103,7 @@
       <Project>{6b666b1c-7bd0-4e76-ab39-95ad671eb46b}</Project>
       <Name>CustomControls</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Data\DataAcces.csproj">
+    <ProjectReference Include="..\Data\DataAccess.csproj">
       <Project>{DB77DDD9-3E44-4327-9D80-59AFAF6F6B35}</Project>
       <Name>DataAcces</Name>
     </ProjectReference>
