@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
-namespace Sprint53_G4
+namespace CustomControls
 {
     public partial class SWTextbox : TextBox
     {
