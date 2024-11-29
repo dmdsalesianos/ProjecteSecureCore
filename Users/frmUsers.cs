@@ -11,7 +11,7 @@ using Base;
 
 namespace Users
 {
-    public partial class frmUser : prueba_txtBox.baseForm
+    public partial class frmUser : baseForm
     {
         public DataSet dsFK;
 

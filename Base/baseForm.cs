@@ -6,7 +6,7 @@ using DataAccess;
 using DataBindingLibrary;
 using CustomControls;
 
-namespace prueba_txtBox
+namespace Base
 {
     public partial class baseForm : Form
     {
