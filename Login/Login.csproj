@@ -155,9 +155,9 @@
       <Project>{6b666b1c-7bd0-4e76-ab39-95ad671eb46b}</Project>
       <Name>CustomControls</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Data\DataAcces.csproj">
+    <ProjectReference Include="..\Data\DataAccess.csproj">
       <Project>{db77ddd9-3e44-4327-9d80-59afaf6f6b35}</Project>
-      <Name>DataAcces</Name>
+      <Name>DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
