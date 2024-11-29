@@ -19,7 +19,7 @@ namespace SpcaeShipCategories
             TableName = "SpaceShipCategories";
             querySelect = $"SELECT * FROM {TableName}";
 
-            comboBox = comboBox1;
+            
         }
 
         protected override void BaseForm_Load(object sender, EventArgs e)
