@@ -11,11 +11,9 @@ namespace prueba_txtBox
     public partial class baseForm : Form
     {
         public DataSet ds;
-        public DataSet dsFK;
         public bool esNuevo = false;
         public MantenimentDades dataAccess;
         public string TableName;
-        public string FKTableName;
         public string querySelect;
         private BindingSource bindingSource = new BindingSource();
 
@@ -33,8 +31,6 @@ namespace prueba_txtBox
             dataAccess = new MantenimentDades(connectionString);
 
             ds = dataAccess.PortarTaula(TableName);
-            dsFK = dataAccess.PortarTaula(FKTableName);
-                        
 
             foreach (Control control in this.Controls)
             {
@@ -54,7 +50,7 @@ namespace prueba_txtBox
 
             bindingSource.DataSource = ds.Tables[TableName];
             dataGridView1.DataSource = bindingSource;
-            BindToData();         
+            BindToData();
         }
 
         private void comboBox_SelectedValueChanged(object sender, EventArgs e)
@@ -76,7 +72,6 @@ namespace prueba_txtBox
                     }
                 }
             }
-            
         }
 
         private void BindToData()
@@ -102,15 +97,16 @@ namespace prueba_txtBox
 
                 if (control is ComboBox comboBox)
                 {
+
+                    //dsFK = dataAccess.PortarTaula(comboBox.Tag.ToString());
                     comboBox.SelectedValueChanged += comboBox_SelectedValueChanged;
+
 
                     if (comboBox != null)
                     {
-                        comboBox.DataSource = dsFK.Tables[FKTableName];                        
-
                         comboBox.DataBindings.Clear();
                         comboBox.DataBindings.Add("SelectedValue", ds.Tables[TableName], comboBox.ValueMember);
-                        
+
                     }
                 }
             }
@@ -170,18 +166,18 @@ namespace prueba_txtBox
         {
             try
             {
-                 if (!esNuevo)
-            {
-                ((TextBox)sender).DataBindings[0].BindingManagerBase.EndCurrentEdit();
-            }
+                if (!esNuevo)
+                {
+                    ((TextBox)sender).DataBindings[0].BindingManagerBase.EndCurrentEdit();
+                }
             }
             catch (Exception)
             {
-               throw;
+                throw;
             }
-           
+
         }
 
-       
+
     }
 }

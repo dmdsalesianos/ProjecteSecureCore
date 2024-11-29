@@ -32,6 +32,7 @@ namespace Users
             this.swTextbox1 = new Sprint53_G4.SWTextbox();
             this.swTextbox2 = new Sprint53_G4.SWTextbox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // swTextbox1
@@ -58,18 +59,27 @@ namespace Users
             // 
             // comboBox1
             // 
-            this.comboBox1.AllowDrop = true;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(12, 173);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(441, 24);
+            this.comboBox1.Size = new System.Drawing.Size(185, 24);
             this.comboBox1.TabIndex = 7;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(12, 223);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(185, 24);
+            this.comboBox2.TabIndex = 8;
             // 
             // frmUser
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1019, 541);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.swTextbox2);
             this.Controls.Add(this.swTextbox1);
@@ -78,6 +88,7 @@ namespace Users
             this.Controls.SetChildIndex(this.swTextbox1, 0);
             this.Controls.SetChildIndex(this.swTextbox2, 0);
             this.Controls.SetChildIndex(this.comboBox1, 0);
+            this.Controls.SetChildIndex(this.comboBox2, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -88,5 +99,6 @@ namespace Users
         private Sprint53_G4.SWTextbox swTextbox1;
         private Sprint53_G4.SWTextbox swTextbox2;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
