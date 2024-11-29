@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using prueba_txtBox;
+using Base;
 
 namespace Users
 {

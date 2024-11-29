@@ -29,8 +29,8 @@ namespace Users
         /// </summary>
         private void InitializeComponent()
         {
-            this.swTextbox1 = new Sprint53_G4.SWTextbox();
-            this.swTextbox2 = new Sprint53_G4.SWTextbox();
+            this.swTextbox1 = new CustomControls.SWTextbox();
+            this.swTextbox2 = new CustomControls.SWTextbox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
@@ -44,7 +44,7 @@ namespace Users
             this.swTextbox1.PermetreBuit = true;
             this.swTextbox1.Size = new System.Drawing.Size(280, 22);
             this.swTextbox1.TabIndex = 5;
-            this.swTextbox1.TipusDada = Sprint53_G4.SWTextbox.Tipus_Dada.Number;
+            this.swTextbox1.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
             // 
             // swTextbox2
             // 
@@ -55,7 +55,7 @@ namespace Users
             this.swTextbox2.PermetreBuit = true;
             this.swTextbox2.Size = new System.Drawing.Size(280, 22);
             this.swTextbox2.TabIndex = 6;
-            this.swTextbox2.TipusDada = Sprint53_G4.SWTextbox.Tipus_Dada.Number;
+            this.swTextbox2.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
             // 
             // comboBox1
             // 
@@ -96,8 +96,8 @@ namespace Users
 
         #endregion
 
-        private Sprint53_G4.SWTextbox swTextbox1;
-        private Sprint53_G4.SWTextbox swTextbox2;
+        private CustomControls.SWTextbox swTextbox1;
+        private CustomControls.SWTextbox swTextbox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
     }

@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using System.Configuration;
 using DataAccess;
 using DataBindingLibrary;
-using Sprint53_G4;
+using CustomControls;
 
 namespace prueba_txtBox
 {
