@@ -70,7 +70,7 @@ namespace prueba_txtBox
                 MessageBox.Show($"Error: {ex.Message}");
             }
 
-            //foreach (Control control in Controls)
+            //foreach (Control control in Controls )
             //{
             //    if (control is ComboBox comboBox)
             //    {
