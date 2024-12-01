@@ -29,8 +29,8 @@ namespace UserRanks
         /// </summary>
         private void InitializeComponent()
         {
-            this.codeRankTxt = new Sprint53_G4.SWTextbox();
-            this.descRankTxt = new Sprint53_G4.SWTextbox();
+            this.codeRankTxt = new CustomControls.SWTextbox();
+            this.descRankTxt = new CustomControls.SWTextbox();
             this.codeRankLbl = new System.Windows.Forms.Label();
             this.descRankLbl = new System.Windows.Forms.Label();
             this.rankCmb = new System.Windows.Forms.ComboBox();
@@ -45,7 +45,7 @@ namespace UserRanks
             this.codeRankTxt.PermetreBuit = true;
             this.codeRankTxt.Size = new System.Drawing.Size(199, 22);
             this.codeRankTxt.TabIndex = 5;
-            this.codeRankTxt.TipusDada = Sprint53_G4.SWTextbox.Tipus_Dada.Text;
+            this.codeRankTxt.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
             // 
             // descRankTxt
             // 
@@ -56,7 +56,7 @@ namespace UserRanks
             this.descRankTxt.PermetreBuit = true;
             this.descRankTxt.Size = new System.Drawing.Size(199, 22);
             this.descRankTxt.TabIndex = 6;
-            this.descRankTxt.TipusDada = Sprint53_G4.SWTextbox.Tipus_Dada.Text;
+            this.descRankTxt.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
             // 
             // codeRankLbl
             // 
@@ -110,8 +110,8 @@ namespace UserRanks
 
         #endregion
 
-        private Sprint53_G4.SWTextbox codeRankTxt;
-        private Sprint53_G4.SWTextbox descRankTxt;
+        private CustomControls.SWTextbox codeRankTxt;
+        private CustomControls.SWTextbox descRankTxt;
         private System.Windows.Forms.Label codeRankLbl;
         private System.Windows.Forms.Label descRankLbl;
         private System.Windows.Forms.ComboBox rankCmb;

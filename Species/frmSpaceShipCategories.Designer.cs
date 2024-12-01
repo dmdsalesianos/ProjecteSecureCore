@@ -29,8 +29,8 @@ namespace Species
         /// </summary>
         private void InitializeComponent()
         {
-            this.swTextbox1 = new Sprint53_G4.SWTextbox();
-            this.swTextbox2 = new Sprint53_G4.SWTextbox();
+            this.swTextbox1 = new CustomControls.SWTextbox();
+            this.swTextbox2 = new CustomControls.SWTextbox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -43,7 +43,7 @@ namespace Species
             this.swTextbox1.PermetreBuit = true;
             this.swTextbox1.Size = new System.Drawing.Size(267, 22);
             this.swTextbox1.TabIndex = 5;
-            this.swTextbox1.TipusDada = Sprint53_G4.SWTextbox.Tipus_Dada.Text;
+            this.swTextbox1.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
             // 
             // swTextbox2
             // 
@@ -54,7 +54,7 @@ namespace Species
             this.swTextbox2.PermetreBuit = true;
             this.swTextbox2.Size = new System.Drawing.Size(267, 22);
             this.swTextbox2.TabIndex = 6;
-            this.swTextbox2.TipusDada = Sprint53_G4.SWTextbox.Tipus_Dada.Text;
+            this.swTextbox2.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
             // 
             // comboBox1
             // 
@@ -86,8 +86,8 @@ namespace Species
 
         #endregion
 
-        private Sprint53_G4.SWTextbox swTextbox1;
-        private Sprint53_G4.SWTextbox swTextbox2;
+        private CustomControls.SWTextbox swTextbox1;
+        private CustomControls.SWTextbox swTextbox2;
         private System.Windows.Forms.ComboBox comboBox1;
     }
 }

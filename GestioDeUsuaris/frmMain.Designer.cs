@@ -29,8 +29,8 @@ namespace GestioDeUsuaris
         /// </summary>
         private void InitializeComponent()
         {
-            this.swCodi1 = new Sprint53_G4.SWCodi();
-            this.swLaunchForm1 = new Sprint53_G4.SWLaunchForm();
+            this.swCodi1 = new CustomControls.SWCodi();
+            this.swLaunchForm1 = new CustomControls.SWLaunchForm();
             this.SuspendLayout();
             // 
             // swCodi1
@@ -73,8 +73,8 @@ namespace GestioDeUsuaris
 
         #endregion
 
-        private Sprint53_G4.SWLaunchForm swLaunchForm1;
-        private Sprint53_G4.SWCodi swCodi1;
+        private CustomControls.SWLaunchForm swLaunchForm1;
+        private CustomControls.SWCodi swCodi1;
     }
 }
 
