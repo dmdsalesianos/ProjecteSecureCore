@@ -32,10 +32,10 @@ namespace SpaceShipsTypes
             this.descCmb = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.descTxt = new Sprint53_G4.SWTextbox();
-            this.codeTxt = new Sprint53_G4.SWTextbox();
-            this.swTextbox1 = new Sprint53_G4.SWTextbox();
-            this.swTextbox2 = new Sprint53_G4.SWTextbox();
+            this.descTxt = new CustomControls.SWTextbox();
+            this.codeTxt = new CustomControls.SWTextbox();
+            this.swTextbox1 = new CustomControls.SWTextbox();
+            this.swTextbox2 = new CustomControls.SWTextbox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -79,7 +79,7 @@ namespace SpaceShipsTypes
             this.descTxt.PermetreBuit = true;
             this.descTxt.Size = new System.Drawing.Size(168, 22);
             this.descTxt.TabIndex = 6;
-            this.descTxt.TipusDada = Sprint53_G4.SWTextbox.Tipus_Dada.Text;
+            this.descTxt.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
             // 
             // codeTxt
             // 
@@ -90,7 +90,7 @@ namespace SpaceShipsTypes
             this.codeTxt.PermetreBuit = true;
             this.codeTxt.Size = new System.Drawing.Size(170, 22);
             this.codeTxt.TabIndex = 5;
-            this.codeTxt.TipusDada = Sprint53_G4.SWTextbox.Tipus_Dada.Text;
+            this.codeTxt.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
             // 
             // swTextbox1
             // 
@@ -101,7 +101,7 @@ namespace SpaceShipsTypes
             this.swTextbox1.PermetreBuit = true;
             this.swTextbox1.Size = new System.Drawing.Size(170, 22);
             this.swTextbox1.TabIndex = 10;
-            this.swTextbox1.TipusDada = Sprint53_G4.SWTextbox.Tipus_Dada.Number;
+            this.swTextbox1.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
             // 
             // swTextbox2
             // 
@@ -112,7 +112,7 @@ namespace SpaceShipsTypes
             this.swTextbox2.PermetreBuit = true;
             this.swTextbox2.Size = new System.Drawing.Size(170, 22);
             this.swTextbox2.TabIndex = 11;
-            this.swTextbox2.TipusDada = Sprint53_G4.SWTextbox.Tipus_Dada.Number;
+            this.swTextbox2.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
             // 
             // label3
             // 
@@ -185,13 +185,13 @@ namespace SpaceShipsTypes
 
         #endregion
 
-        private Sprint53_G4.SWTextbox codeTxt;
-        private Sprint53_G4.SWTextbox descTxt;
+        private CustomControls.SWTextbox codeTxt;
+        private CustomControls.SWTextbox descTxt;
         private System.Windows.Forms.ComboBox descCmb;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private Sprint53_G4.SWTextbox swTextbox1;
-        private Sprint53_G4.SWTextbox swTextbox2;
+        private CustomControls.SWTextbox swTextbox1;
+        private CustomControls.SWTextbox swTextbox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox1;

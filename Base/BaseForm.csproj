@@ -36,9 +36,6 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ClassLibrary_Sprint1_correct">
-      <HintPath>..\..\..\Desktop\S2AM\ABP\ClassLibrary_Sprint1_correct\obj\Debug\ClassLibrary_Sprint1_correct.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -88,7 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomControls\CustomControls.csproj">
-      <Project>{6B666B1C-7BD0-4E76-AB39-95AD671EB46B}</Project>
+      <Project>{6b666b1c-7bd0-4e76-ab39-95ad671eb46b}</Project>
       <Name>CustomControls</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataBindingLibrary\DataBindingLibrary.csproj">
