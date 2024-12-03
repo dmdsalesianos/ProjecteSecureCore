@@ -33,7 +33,6 @@ namespace UserRanks
             this.descRankTxt = new CustomControls.SWTextbox();
             this.codeRankLbl = new System.Windows.Forms.Label();
             this.descRankLbl = new System.Windows.Forms.Label();
-            this.rankCmb = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // codeRankTxt
@@ -76,22 +75,11 @@ namespace UserRanks
             this.descRankLbl.TabIndex = 8;
             this.descRankLbl.Text = "DescRank";
             // 
-            // rankCmb
-            // 
-            this.rankCmb.DisplayMember = "DescRank";
-            this.rankCmb.FormattingEnabled = true;
-            this.rankCmb.Location = new System.Drawing.Point(498, 96);
-            this.rankCmb.Name = "rankCmb";
-            this.rankCmb.Size = new System.Drawing.Size(129, 24);
-            this.rankCmb.TabIndex = 9;
-            this.rankCmb.ValueMember = "idUserRank";
-            // 
             // frmUserRanks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(947, 530);
-            this.Controls.Add(this.rankCmb);
             this.Controls.Add(this.descRankLbl);
             this.Controls.Add(this.codeRankLbl);
             this.Controls.Add(this.descRankTxt);
@@ -102,7 +90,6 @@ namespace UserRanks
             this.Controls.SetChildIndex(this.descRankTxt, 0);
             this.Controls.SetChildIndex(this.codeRankLbl, 0);
             this.Controls.SetChildIndex(this.descRankLbl, 0);
-            this.Controls.SetChildIndex(this.rankCmb, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,6 +101,5 @@ namespace UserRanks
         private CustomControls.SWTextbox descRankTxt;
         private System.Windows.Forms.Label codeRankLbl;
         private System.Windows.Forms.Label descRankLbl;
-        private System.Windows.Forms.ComboBox rankCmb;
     }
 }

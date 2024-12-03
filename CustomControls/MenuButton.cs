@@ -7,15 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace CustomControls
 {
     public partial class MenuButton : UserControl
     {
-        public MenuButton()
-        {
-            InitializeComponent();
-        }
+        public MenuButton() { InitializeComponent(); }
         //EL BOTÓ ES UNA OPCIO DEL MENU, EXEMPLE MANTENIMENT USUARIS, FAREM CLICK, I EN LES PROPIETATS HAUREM 
         //DIT QUINA ES LA CLASE I EL FORMULARI QUE OBRA EL FORMULARI DE MANTENIMENT DE USUARIS, ALESHORES,
         //FAREM QUE AQUEST NOM I CLASE ES POSSI EN LES PROPIETATS CLASS Y FORM DEL LAUNCHFORM I DIREM
@@ -23,25 +21,45 @@ namespace CustomControls
         //I LLAVORS S'OBRIRA EL FORM QUE VOLIEM EN EL PANEL
         private string form;
         private string clase;
-        
+
 
         [Category("Custom Properties")]
-        public string Clase
-        {
-            get => clase;
-            set
-            {
-                clase = value;
-            }
-        }
+        public string Clase { get => clase; set { clase = value; } }
+
         [Category("Custom Properties")]
-        public string Form
+        public string Form { get => form; set { form = value; } }
+
+        [Category("Custom Properties")]
+        public Panel TargetPanel { get; set; }
+
+        private void OpenForm()
         {
-            get => form;
-            set
+            string claseForm = Clase + "." + Form;
+
+            try
             {
-                form = value;
+                Assembly ensamblat = Assembly.LoadFrom($"{Clase}.dll");
+                Type tipus = ensamblat.GetType(claseForm);
+
+                if(tipus != null)
+                {
+                    Form frm = (Form)Activator.CreateInstance(tipus);
+                    frm.TopLevel = false;
+                    frm.Dock = DockStyle.Fill;
+
+                    TargetPanel.Controls.Clear();
+                    TargetPanel.Controls.Add(frm);
+                    frm.Show();
+                } else
+                {
+                    MessageBox.Show("La clase especificada no se encontró.");
+                }
+            } catch(Exception ex)
+            {
+                MessageBox.Show($"Error al abrir el formulario: {ex.Message}");
             }
         }
+
+        private void MenuBtn_Click(object sender, EventArgs e) { OpenForm(); }
     }
 }
