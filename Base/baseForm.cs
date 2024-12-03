@@ -27,7 +27,7 @@ namespace Base
         {
             if (DesignMode) return;
 
-            string connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
+            string connectionString = "Data Source=sqlserver.S2AM.sdslab.cat;Initial Catalog=SecureCoreG4;Persist Security Info=True;User ID=G4;Password=12345G4aA2425.";
             dataAccess = new MantenimentDades(connectionString);
 
             ds = dataAccess.PortarTaula(TableName);
