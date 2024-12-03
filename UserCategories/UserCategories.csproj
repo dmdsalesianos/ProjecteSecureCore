@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B033CEB6-8BDB-443F-9F37-6D6EBF422544}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>Base</RootNamespace>
-    <AssemblyName>Base</AssemblyName>
+    <ProjectGuid>{287BF305-04C5-4686-ACB6-CAAA28C18F55}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UserCategories</RootNamespace>
+    <AssemblyName>UserCategories</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\App\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -32,12 +32,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,15 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="baseForm.cs">
+    <Compile Include="frmUserCategories.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="baseForm.Designer.cs">
-      <DependentUpon>baseForm.cs</DependentUpon>
+    <Compile Include="frmUserCategories.Designer.cs">
+      <DependentUpon>frmUserCategories.cs</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="baseForm.resx">
-      <DependentUpon>baseForm.cs</DependentUpon>
+    <EmbeddedResource Include="frmUserCategories.resx">
+      <DependentUpon>frmUserCategories.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -68,7 +65,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -84,13 +80,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Base\BaseForm.csproj">
+      <Project>{b033ceb6-8bdb-443f-9f37-6d6ebf422544}</Project>
+      <Name>BaseForm</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CustomControls\CustomControls.csproj">
       <Project>{6b666b1c-7bd0-4e76-ab39-95ad671eb46b}</Project>
       <Name>CustomControls</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataBindingLibrary\DataBindingLibrary.csproj">
-      <Project>{153173b0-0949-492b-bb04-736efa2768f1}</Project>
-      <Name>DataBindingLibrary</Name>
     </ProjectReference>
     <ProjectReference Include="..\Data\DataAccess.csproj">
       <Project>{db77ddd9-3e44-4327-9d80-59afaf6f6b35}</Project>
