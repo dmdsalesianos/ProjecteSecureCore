@@ -65,7 +65,7 @@
       <Name>BaseForm</Name>
     </ProjectReference>
     <ProjectReference Include="..\CustomControls\CustomControls.csproj">
-      <Project>{6B666B1C-7BD0-4E76-AB39-95AD671EB46B}</Project>
+      <Project>{6b666b1c-7bd0-4e76-ab39-95ad671eb46b}</Project>
       <Name>CustomControls</Name>
     </ProjectReference>
   </ItemGroup>
