@@ -15,8 +15,6 @@ namespace Base
         public MantenimentDades dataAccess;
         public string TableName;
         public string querySelect;
-        //private BindingSource bindingSource = new BindingSource();
-
 
         public baseForm()
         {
@@ -48,10 +46,56 @@ namespace Base
             DataBindingHelper.ClearDataBindings(this.Controls);
             UpdateTable();
 
-          
             dataGridView1.DataSource = ds.Tables[TableName];
             BindToData();
+
+            foreach (Control control in Controls)
+            {
+                if (control is ComboBox comboBox)
+                {
+                    if (dataGridView1.Columns.Contains(comboBox.ValueMember))
+                    {
+                        dataGridView1.Columns.Remove(comboBox.ValueMember);
+                    }
+
+                    if (!dataGridView1.Columns.Contains(comboBox.DisplayMember.ToString()))
+                    {
+                        dataGridView1.Columns.Add(comboBox.DisplayMember.ToString(), comboBox.DisplayMember);
+                    }
+
+                    string tableName = comboBox.Tag.ToString();
+                    string query = $"SELECT * FROM {tableName}"; 
+
+                    DataSet dsComboBox = dataAccess.PortarPerConsulta(query);
+
+                    if (dsComboBox != null && dsComboBox.Tables.Count > 0)
+                    {
+                        DataTable comboBoxDataSource = dsComboBox.Tables[0];
+
+                        foreach (DataGridViewRow row in dataGridView1.Rows)
+                        {
+                            if (row.DataBoundItem is DataRowView dataRowView)
+                            {
+                                object value = dataRowView[comboBox.ValueMember];
+
+                                var matchingRows = comboBoxDataSource.Select($"{comboBox.ValueMember} = '{value}'");
+
+                                if (matchingRows != null && matchingRows.Length > 0)
+                                {
+                                    row.Cells[comboBox.DisplayMember.ToString()].Value = matchingRows[0][comboBox.DisplayMember];
+                                }
+
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show($"No se pudieron cargar los datos para el ComboBox '{comboBox.Name}'.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
+
 
         private void comboBox_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -69,27 +113,6 @@ namespace Base
             {
                 MessageBox.Show($"Error: {ex.Message}");
             }
-
-            //foreach (Control control in Controls )
-            //{
-            //    if (control is ComboBox comboBox)
-            //    {
-            //        if (comboBox.SelectedValue != null)
-            //        {
-
-            //ComboBox comboBox = (ComboBox)sender;
-
-            //            string selectedValue = comboBox.SelectedValue.ToString();
-
-            //            bindingSource.Filter = $"{comboBox.ValueMember} = {selectedValue}";
-
-            //            if (dataGridView1.Rows.Count > 0)
-            //            {
-            //                dataGridView1.Rows[0].Selected = true;
-            //            }
-            //        }
-            //    }
-            //}
         }
 
         private void BindToData()
@@ -160,8 +183,6 @@ namespace Base
                     SWTextbox txtSW = (SWTextbox)control;
 
                     var nomCampBBDD = txtSW.NomCampBBDD;
-
-                    //var nomCampBBDD = textBox.GetType().GetProperty("NomCampBBDD").GetValue(textBox, null) as string;
 
                     if (!string.IsNullOrEmpty(nomCampBBDD))
                     {
