@@ -47,9 +47,6 @@ namespace Planets
             this.lblFiliation = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnImage = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -217,7 +214,7 @@ namespace Planets
             // 
             // btnImage
             // 
-            this.btnImage.Location = new System.Drawing.Point(256, 135);
+            this.btnImage.Location = new System.Drawing.Point(256, 154);
             this.btnImage.Name = "btnImage";
             this.btnImage.Size = new System.Drawing.Size(174, 34);
             this.btnImage.TabIndex = 22;
@@ -225,41 +222,11 @@ namespace Planets
             this.btnImage.UseVisualStyleBackColor = true;
             this.btnImage.Click += new System.EventHandler(this.btnImage_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 187);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 20);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Sector";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(252, 186);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 20);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "Natives";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(478, 187);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 20);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "Filiation";
-            // 
             // frmPlanets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 566);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnImage);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblFiliation);
@@ -298,9 +265,6 @@ namespace Planets
             this.Controls.SetChildIndex(this.lblFiliation, 0);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.btnImage, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.label3, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -327,9 +291,6 @@ namespace Planets
         private System.Windows.Forms.Label lblFiliation;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnImage;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
     }
 }
 
