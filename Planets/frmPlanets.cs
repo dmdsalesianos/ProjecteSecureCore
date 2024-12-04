@@ -57,6 +57,8 @@ namespace Planets
 
         private void btnImage_Click(object sender, EventArgs e)
         {
+            string nombreCarpeta = "imatges";
+
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.bmp";
@@ -66,16 +68,18 @@ namespace Planets
                 {
                     string sourceFilePath = openFileDialog.FileName;
 
-                    string projectDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                    string resourcesDirectory = Path.Combine(projectDirectory, "resources");
+                    string projectDirectory = Application.StartupPath; //Cojo el dierectorio del projecto C:/.../bin/Debug
+                    string carpetaDirectory = Path.Combine(projectDirectory, nombreCarpeta); //C://.../bin/Debug/imatges
 
-                    if (!Directory.Exists(resourcesDirectory))
+                    if (!Directory.Exists(carpetaDirectory))
                     {
-                        Directory.CreateDirectory(resourcesDirectory);
+                        Directory.CreateDirectory(carpetaDirectory);
                     }
 
-                    string fileName = Path.GetFileName(sourceFilePath);
-                    string destinationFilePath = Path.Combine(resourcesDirectory, fileName);
+                    string fileName = Path.GetFileName(sourceFilePath); //Nombre de la imagen
+                    string destinationFilePath = Path.Combine(carpetaDirectory, fileName); // C://.../bin/Debug/imatges/nombre_imagen
+
+                    string rutaBBD = Path.Combine(nombreCarpeta, fileName); // imagtes/nombre_imagen
 
                     try
                     {
@@ -84,12 +88,12 @@ namespace Planets
                         DataRow selectedRow = GetSelectedPlanetRow();
                         if (selectedRow != null)
                         {
-                            selectedRow["PlanetPicture"] = destinationFilePath;
+                            selectedRow["PlanetPicture"] = rutaBBD;
                         }
 
                         MostrarImagenSeleccionada();
 
-                        MessageBox.Show($"Imagen copiada exitosamente a: {destinationFilePath}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //MessageBox.Show($"Imagen copiada exitosamente a: {rutaBBD}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
                     {
@@ -109,7 +113,7 @@ namespace Planets
             DataRow selectedRow = GetSelectedPlanetRow();
             if (selectedRow != null)
             {
-                string imagePath = selectedRow["PlanetPicture"]?.ToString();
+                string imagePath = Path.Combine(Application.StartupPath, selectedRow["PlanetPicture"]?.ToString());
                 if (!string.IsNullOrEmpty(imagePath) && File.Exists(imagePath))
                 {
                     pictureBox1.Image = Image.FromFile(imagePath);
