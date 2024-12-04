@@ -47,6 +47,12 @@ namespace Planets
 
             dsFK = dataAccess.PortarTaula(cmbFiliations.Tag.ToString());
             cmbFiliations.DataSource = dsFK.Tables[cmbFiliations.Tag.ToString()];
+
+            // Suscribirse al evento de selección del DataGridView
+            dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
+
+            // Mostrar la imagen inicial del planeta seleccionado (si aplica)
+            MostrarImagenSeleccionada();
         }
 
         private void btnImage_Click(object sender, EventArgs e)
@@ -58,26 +64,31 @@ namespace Planets
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    // Ruta de la imagen seleccionada
                     string sourceFilePath = openFileDialog.FileName;
 
-                    // Ruta del directorio 'resources' en el proyecto
                     string projectDirectory = AppDomain.CurrentDomain.BaseDirectory;
                     string resourcesDirectory = Path.Combine(projectDirectory, "resources");
 
-                    // Crear la carpeta si no existe
                     if (!Directory.Exists(resourcesDirectory))
                     {
                         Directory.CreateDirectory(resourcesDirectory);
                     }
 
-                    // Copiar la imagen a la carpeta 'resources'
                     string fileName = Path.GetFileName(sourceFilePath);
                     string destinationFilePath = Path.Combine(resourcesDirectory, fileName);
 
                     try
                     {
                         File.Copy(sourceFilePath, destinationFilePath, overwrite: true);
+
+                        DataRow selectedRow = GetSelectedPlanetRow();
+                        if (selectedRow != null)
+                        {
+                            selectedRow["PlanetPicture"] = destinationFilePath;
+                        }
+
+                        MostrarImagenSeleccionada();
+
                         MessageBox.Show($"Imagen copiada exitosamente a: {destinationFilePath}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
@@ -86,6 +97,39 @@ namespace Planets
                     }
                 }
             }
+        }
+
+        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            MostrarImagenSeleccionada();
+        }
+
+        private void MostrarImagenSeleccionada()
+        {
+            DataRow selectedRow = GetSelectedPlanetRow();
+            if (selectedRow != null)
+            {
+                string imagePath = selectedRow["PlanetPicture"]?.ToString();
+                if (!string.IsNullOrEmpty(imagePath) && File.Exists(imagePath))
+                {
+                    pictureBox1.Image = Image.FromFile(imagePath);
+                }
+                else
+                {
+                    pictureBox1.Image = null; // Limpiar el PictureBox si no hay imagen válida
+                }
+            }
+        }
+
+        private DataRow GetSelectedPlanetRow()
+        {
+            if (dataGridView1.CurrentRow != null)
+            {
+                int selectedIndex = dataGridView1.CurrentRow.Index;
+                return ds.Tables[TableName].Rows[selectedIndex];
+            }
+
+            return null;
         }
     }
 }
