@@ -47,6 +47,7 @@ namespace CustomControls
             // 
             // optionImg
             // 
+            this.optionImg.BackColor = System.Drawing.Color.Transparent;
             this.optionImg.Location = new System.Drawing.Point(32, 35);
             this.optionImg.Name = "optionImg";
             this.optionImg.Size = new System.Drawing.Size(54, 54);
