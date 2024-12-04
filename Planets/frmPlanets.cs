@@ -22,15 +22,15 @@ namespace Planets
             TableName = "Planets";
             querySelect = $"SELECT * FROM {TableName}";
 
-            cmbSector.Tag = "Sectors";
+            cmbSector.Tag = "idSector";
             cmbSector.DisplayMember = "DescSector";
             cmbSector.ValueMember = "idSector";
 
-            cmbNatives.Tag = "Species";
+            cmbNatives.Tag = "idNatives"; 
             cmbNatives.DisplayMember = "DescSpecie";
-            cmbNatives.ValueMember = "idNatives";
+            cmbNatives.ValueMember = "idSpecie";
 
-            cmbFiliations.Tag = "Filiations";
+            cmbFiliations.Tag = "idFiliation";
             cmbFiliations.DisplayMember = "DescFiliations";
             cmbFiliations.ValueMember = "idFiliation";
         }
@@ -39,14 +39,25 @@ namespace Planets
         {
             base.BaseForm_Load(sender, e);
 
-            dsFK = dataAccess.PortarTaula(cmbSector.Tag.ToString());
-            cmbSector.DataSource = dsFK.Tables[cmbSector.Tag.ToString()];
+            dsFK = dataAccess.PortarTaula("Sectors");
+            cmbSector.DataSource = dsFK.Tables["Sectors"];
 
-            dsFK = dataAccess.PortarTaula(cmbNatives.Tag.ToString());
-            cmbNatives.DataSource = dsFK.Tables[cmbNatives.Tag.ToString()];
+            dsFK = dataAccess.PortarTaula("Species");
+            cmbNatives.DataSource = dsFK.Tables["Species"];
 
-            dsFK = dataAccess.PortarTaula(cmbFiliations.Tag.ToString());
-            cmbFiliations.DataSource = dsFK.Tables[cmbFiliations.Tag.ToString()];
+            dsFK = dataAccess.PortarTaula("Filiations");
+            cmbFiliations.DataSource = dsFK.Tables["Filiations"];
+
+            
+            //dsFK = dataAccess.PortarTaula(cmbSector.Tag.ToString());
+            //cmbSector.DataSource = dsFK.Tables[cmbSector.Tag.ToString()];
+
+            //dsFK = dataAccess.PortarTaula(cmbNatives.Tag.ToString());
+            //cmbNatives.DataSource = dsFK.Tables[cmbNatives.Tag.ToString()];
+
+            //dsFK = dataAccess.PortarTaula(cmbFiliations.Tag.ToString());
+            //cmbFiliations.DataSource = dsFK.Tables[cmbFiliations.Tag.ToString()];
+
 
             // Suscribirse al evento de selección del DataGridView
             dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;

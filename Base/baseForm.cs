@@ -122,12 +122,13 @@ namespace Base
                     if (comboBox != null)
                     {
                         comboBox.DataBindings.Clear();
-                        comboBox.DataBindings.Add("SelectedValue", ds.Tables[TableName], comboBox.ValueMember);
+                        comboBox.DataBindings.Add("SelectedValue", ds.Tables[TableName], comboBox.Tag.ToString()); ;
 
                     }
                 }
             }
         }
+
 
         protected void button1_Click(object sender, EventArgs e)
         {
