@@ -15,6 +15,7 @@ namespace Planets
     public partial class frmPlanets : baseForm
     {
         public DataSet dsFK;
+        string imagesDirectory = Path.Combine(Directory.GetParent(Application.StartupPath)?.Parent.Parent.FullName, "App");
 
         public frmPlanets()
         {
@@ -79,8 +80,9 @@ namespace Planets
                 {
                     string sourceFilePath = openFileDialog.FileName;
 
-                    string projectDirectory = Application.StartupPath; //Cojo el dierectorio del projecto C:/.../bin/Debug
-                    string carpetaDirectory = Path.Combine(projectDirectory, nombreCarpeta); //C://.../bin/Debug/imatges
+                    //string imagesDirectory = Path.Combine(Directory.GetParent(Application.StartupPath)?.Parent.Parent.FullName, "App");
+                    //Cojo el dierectorio del projecto C:/.../bin/Debug
+                    string carpetaDirectory = Path.Combine(imagesDirectory, nombreCarpeta); //C://.../bin/Debug/imatges
 
                     if (!Directory.Exists(carpetaDirectory))
                     {
@@ -124,7 +126,7 @@ namespace Planets
             DataRow selectedRow = GetSelectedPlanetRow();
             if (selectedRow != null)
             {
-                string imagePath = Path.Combine(Application.StartupPath, selectedRow["PlanetPicture"]?.ToString());
+                string imagePath = Path.Combine(imagesDirectory, selectedRow["PlanetPicture"]?.ToString());
                 if (!string.IsNullOrEmpty(imagePath) && File.Exists(imagePath))
                 {
                     pictureBox1.Image = Image.FromFile(imagePath);
