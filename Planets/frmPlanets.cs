@@ -80,8 +80,6 @@ namespace Planets
                 {
                     string sourceFilePath = openFileDialog.FileName;
 
-                    //string imagesDirectory = Path.Combine(Directory.GetParent(Application.StartupPath)?.Parent.Parent.FullName, "App");
-                    //Cojo el dierectorio del projecto C:/.../bin/Debug
                     string carpetaDirectory = Path.Combine(imagesDirectory, nombreCarpeta); //C://.../bin/Debug/imatges
 
                     if (!Directory.Exists(carpetaDirectory))
