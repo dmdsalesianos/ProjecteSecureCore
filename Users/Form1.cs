@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using System.IO;
 
 namespace Users
 {
@@ -38,7 +40,7 @@ namespace Users
 
         private void MostrarInforme(int idPersona)
         {
-            string rutaInforme = @"..\App";
+            string rutaInforme = Application.StartupPath;
             ReportDocument informe = new ReportDocument();
             informe.Load(rutaInforme);
 
