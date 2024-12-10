@@ -37,6 +37,7 @@ namespace Login
             this.label1 = new System.Windows.Forms.Label();
             this.PanelContenido = new System.Windows.Forms.Panel();
             this.swLaunchForm1 = new CustomControls.SWLaunchForm();
+            this.menuButton1 = new CustomControls.MenuButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -98,6 +99,7 @@ namespace Login
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel2.Controls.Add(this.menuButton1);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 59);
@@ -140,6 +142,16 @@ namespace Login
             this.swLaunchForm1.Size = new System.Drawing.Size(1785, 698);
             this.swLaunchForm1.TabIndex = 0;
             // 
+            // menuButton1
+            // 
+            this.menuButton1.Clase = null;
+            this.menuButton1.Form = null;
+            this.menuButton1.Location = new System.Drawing.Point(0, 7);
+            this.menuButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.menuButton1.Name = "menuButton1";
+            this.menuButton1.Size = new System.Drawing.Size(292, 159);
+            this.menuButton1.TabIndex = 5;
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -171,5 +183,6 @@ namespace Login
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel PanelContenido;
         private CustomControls.SWLaunchForm swLaunchForm1;
+        private CustomControls.MenuButton menuButton1;
     }
 }

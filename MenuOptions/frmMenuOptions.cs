@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,18 +13,16 @@ namespace MenuOptions
 {
     public partial class frmMenuOptions : prueba_txtBox.baseForm
     {
-
+        string imagesDirectory = Path.Combine(Directory.GetParent(Application.StartupPath)?.Parent.Parent.FullName, "App");
         public DataSet dsFK;
 
         public frmMenuOptions()
         {
             InitializeComponent();
-            TableName = "Menuoptions";
+            TableName = "MenuOptions";
             querySelect = $"SELECT * FROM {TableName}";
 
-            swTextbox_Rank.Tag = "Acceslevel";
-
-            swTextbox_Rank.Tag = "Rank";
+            
         }
 
         
@@ -32,102 +31,91 @@ namespace MenuOptions
         {
             base.BaseForm_Load(sender, e);
 
-            dsFK = dataAccess.PortarTaula(swTextbox_Rank.Tag.ToString());
+            
 
-            dsFK = dataAccess.PortarTaula(swTextbox_Rank.Tag.ToString());
+            dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
 
         }
 
-        //        using System;
-        //using System.Drawing;
-        //using System.Windows.Forms;
+        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            MostrarImagenSeleccionada();
+        }
 
-        //namespace MenuOptions
-        //    {
-        //        public partial class frmMenuOptions : prueba_txtBox.baseForm
-        //        {
-        //            public frmMenuOptions()
-        //            {
-        //                InitializeComponent();
-        //                TableName = "MenuOptions"; // Nombre de la tabla en la base de datos
-        //                querySelect = "SELECT * FROM MenuOptions"; // Consulta SELECT para inicializar
-        //            }
+        private void MostrarImagenSeleccionada()
+        {
+            DataRow selectedRow = GetSelectedPlanetRow();
+            if (selectedRow != null)
+            {
+                string imagePath = Path.Combine(imagesDirectory, selectedRow["Icono"]?.ToString());
+                if (!string.IsNullOrEmpty(imagePath) && File.Exists(imagePath))
+                {
+                    pictureBox_icono.Image = Image.FromFile(imagePath);
+                }
+                else
+                {
+                    pictureBox_icono.Image = null; // Limpiar el PictureBox si no hay imagen válida
+                }
+            }
+        }
 
-        //            protected override void BaseForm_Load(object sender, EventArgs e)
-        //            {
-        //                base.BaseForm_Load(sender, e); // Llama a la lógica de carga del formulario base
-        //                ConfigureCustomControls();
-        //            }
+        private DataRow GetSelectedPlanetRow()
+        {
+            if (dataGridView1.CurrentRow != null)
+            {
+                int selectedIndex = dataGridView1.CurrentRow.Index;
+                return ds.Tables[TableName].Rows[selectedIndex];
+            }
 
-        //            / <summary>
-        //            / Configura los controles personalizados específicos de este formulario.
-        //            / </summary>
-        //            private void ConfigureCustomControls()
-        //            {
-        //                Asignar los campos de la base de datos a los controles
-        //                txtName.NomCampBBDD = "Texto"; // Asignación al campo Texto
-        //                txtAccessLevel.NomCampBBDD = "AccessLevel"; // Asignación al campo AccessLevel
-        //                txtClasse.NomCampBBDD = "Clase"; // Asignación al campo Clase
-        //                txtForm.NomCampBBDD = "Form"; // Asignación al campo Form
-        //                txtTaula.NomCampBBDD = "Taula"; // Asignación al campo Taula
-        //                txtColor.NomCampBBDD = "Color"; // Asignación al campo Color
+            return null;
+        }
 
-        //                Asignar el PictureBox al campo Icono
-        //                picIcono.Tag = "Icono"; // Utiliza Tag para almacenar el nombre del campo asociado
-        //            }
+        private void rjButton_image_Click(object sender, EventArgs e)
+        {
+            string nombreCarpeta = "iconos";
 
-        //            / <summary>
-        //            / Guarda la imagen seleccionada y devuelve la ruta relativa para almacenarla en la base de datos.
-        //            / </summary>
-        //            private string SaveIcon()
-        //            {
-        //                if (picIcono.Image != null)
-        //                {
-        //                    string iconPath = Path.Combine(Application.StartupPath, "icons", $"{Guid.NewGuid()}.png");
-        //                    picIcono.Image.Save(iconPath, System.Drawing.Imaging.ImageFormat.Png);
-        //                    return iconPath;
-        //                }
-        //                return string.Empty;
-        //            }
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.bmp";
+                openFileDialog.Title = "Seleccionar una imagen";
 
-        //            / <summary>
-        //            / Sobrescribe la lógica para guardar los datos y actualiza el campo Icono con el PictureBox.
-        //            / </summary>
-        //            protected override void btnActualizar_Click(object sender, EventArgs e)
-        //            {
-        //                if (esNuevo)
-        //                {
-        //                    AddNewRow();
-        //                }
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string sourceFilePath = openFileDialog.FileName;
 
-        //                Sobreescribe el valor del campo Icono antes de guardar
-        //                if (picIcono.Tag != null)
-        //                {
-        //                    DataRow currentRow = ((DataRowView)bindingSource.Current).Row;
-        //                    currentRow["Icono"] = SaveIcon(); // Actualiza la ruta del ícono
-        //                }
+                    string carpetaDirectory = Path.Combine(imagesDirectory, nombreCarpeta); //C://.../bin/Debug/imatges
 
-        //                base.btnActualizar_Click(sender, e); // Llama al método del formulario base para guardar
-        //            }
+                    if (!Directory.Exists(carpetaDirectory))
+                    {
+                        Directory.CreateDirectory(carpetaDirectory);
+                    }
 
-        //            / <summary>
-        //            / Método para cargar una imagen en el PictureBox desde el sistema de archivos.
-        //            / </summary>
-        //            private void btnCargarIcono_Click(object sender, EventArgs e)
-        //            {
-        //                OpenFileDialog openFileDialog = new OpenFileDialog
-        //                {
-        //                    Filter = "Archivos de imagen (*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg"
-        //                };
+                    string fileName = Path.GetFileName(sourceFilePath); //Nombre de la imagen
+                    string destinationFilePath = Path.Combine(carpetaDirectory, fileName); // C://.../bin/Debug/imatges/nombre_imagen
 
-        //                if (openFileDialog.ShowDialog() == DialogResult.OK)
-        //                {
-        //                    picIcono.Image = Image.FromFile(openFileDialog.FileName);
-        //                }
-        //            }
-        //        }
+                    string rutaBBD = Path.Combine(nombreCarpeta, fileName); // imagtes/nombre_imagen
 
+                    try
+                    {
+                        File.Copy(sourceFilePath, destinationFilePath, overwrite: true);
 
+                        DataRow selectedRow = GetSelectedPlanetRow();
+                        if (selectedRow != null)
+                        {
+                            selectedRow["Icono"] = rutaBBD;
+                        }
+
+                        MostrarImagenSeleccionada();
+
+                        //MessageBox.Show($"Imagen copiada exitosamente a: {rutaBBD}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Ocurrió un error al copiar la imagen: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
     }
 
 }

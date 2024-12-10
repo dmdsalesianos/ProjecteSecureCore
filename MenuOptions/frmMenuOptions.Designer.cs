@@ -121,6 +121,7 @@ namespace MenuOptions
             this.rjButton_image.Text = "Cambiar Imagen";
             this.rjButton_image.TextColor = System.Drawing.Color.White;
             this.rjButton_image.UseVisualStyleBackColor = false;
+            this.rjButton_image.Click += new System.EventHandler(this.rjButton_image_Click);
             // 
             // label1
             // 

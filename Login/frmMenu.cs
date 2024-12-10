@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -31,50 +32,41 @@ namespace Login
             
         }
 
-        private void button_Man_species_Click(object sender, EventArgs e)
+        public int ObtenerAccessLevel(int idUsuario)
         {
-            //frm_Man_species Manteniment_Species = new frm_Man_species();
-                        
-            //CargarFormularioEnPanel(Manteniment_Species);
-        }
+            int accessLevel = 0;
 
-        private void button_Man_User_Click(object sender, EventArgs e)
-        {
-            //frm_Man_Usuari Manteniment_Usuari = new frm_Man_Usuari();
+            // Cadena de conexión a tu base de datos
+            string connectionString = "Data Source=TU_SERVIDOR;Initial Catalog=SecureCoreG4;Integrated Security=True;";
 
-            //CargarFormularioEnPanel(Manteniment_Usuari);
-        }
+            // Consulta SQL con JOIN
+            string query = @"SELECT R.AccessLevel
+                     FROM Usuarios U-
+                     INNER JOIN Rangos R ON U.IdRango = R.IdRango
+                     WHERE U.IdUsuario = @IdUsuario";
 
-        private void Enter_Mouse(object sender, EventArgs e)
-        {
-            Button boton = sender as Button;
-            boton.BackColor = Color.DeepSkyBlue;      
-                
-        }
-
-        private void Leave_Mouse(object sender, EventArgs e)
-        {
-            Button boton = sender as Button;
-            boton.BackColor = Color.DodgerBlue;  
-               
-        }
-
-        private void CargarFormularioEnPanel(Form formulario)
-        {
-            //Liampiar panel
-            if (PanelContenido.Controls.Count > 0)
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                PanelContenido.Controls.RemoveAt(0);
-            }
-                
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@IdUsuario", idUsuario);
 
-            formulario.TopLevel = false; 
-            formulario.FormBorderStyle = FormBorderStyle.None; 
-            formulario.Dock = DockStyle.Fill; 
-                        
-            PanelContenido.Controls.Add(formulario);
-            PanelContenido.Tag = formulario;
-            formulario.Show();
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        accessLevel = Convert.ToInt32(reader["AccessLevel"]);
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+            }
+
+            return accessLevel;
         }
 
     }
