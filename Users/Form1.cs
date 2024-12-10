@@ -38,7 +38,7 @@ namespace Users
 
         private void MostrarInforme(int idPersona)
         {
-            string rutaInforme = @"C:\proyecto_clase_git\ProjecteSecureCore\Users\TarjetaIdentificacion.rpt";
+            string rutaInforme = @"..\App";
             ReportDocument informe = new ReportDocument();
             informe.Load(rutaInforme);
 
