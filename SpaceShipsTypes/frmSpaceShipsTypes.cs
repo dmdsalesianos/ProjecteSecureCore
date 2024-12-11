@@ -28,7 +28,6 @@ namespace SpaceShipsTypes
             categoryCmb.Tag = "idSpaceShipCategory";
             categoryCmb.DisplayMember = "DescSpaceShipCategory";
             categoryCmb.ValueMember = "idSpaceShipCategory";
-
         }
 
         protected override void BaseForm_Load(object sender, EventArgs e)
