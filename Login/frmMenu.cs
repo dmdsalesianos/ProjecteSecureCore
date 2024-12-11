@@ -94,7 +94,7 @@ namespace Login
             //        // Lo añadimos al panel del formulario principal (en este caso 'targetPanel')
             //        PanelContenido.Controls.Add(btn);
             //    }
-            }
+            //}
         }
     }
 
