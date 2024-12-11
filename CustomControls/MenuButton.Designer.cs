@@ -40,6 +40,7 @@ namespace CustomControls
             this.MenuBtn.BackColor = System.Drawing.Color.DodgerBlue;
             this.MenuBtn.Location = new System.Drawing.Point(0, 0);
             this.MenuBtn.Name = "MenuBtn";
+            this.MenuBtn.Padding = new System.Windows.Forms.Padding(2);
             this.MenuBtn.Size = new System.Drawing.Size(260, 127);
             this.MenuBtn.TabIndex = 0;
             this.MenuBtn.UseVisualStyleBackColor = false;
@@ -51,6 +52,7 @@ namespace CustomControls
             this.optionImg.Location = new System.Drawing.Point(32, 35);
             this.optionImg.Name = "optionImg";
             this.optionImg.Size = new System.Drawing.Size(54, 54);
+            this.optionImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.optionImg.TabIndex = 1;
             this.optionImg.TabStop = false;
             // 

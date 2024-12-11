@@ -17,7 +17,6 @@ namespace CustomControls
 
         private string form;
         private string clase;
-        private string labelText;
 
 
         [Category("Custom Properties")]
