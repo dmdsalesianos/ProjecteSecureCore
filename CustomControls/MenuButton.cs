@@ -17,6 +17,7 @@ namespace CustomControls
 
         private string form;
         private string clase;
+        private string labelText;
 
 
         [Category("Custom Properties")]
@@ -27,6 +28,12 @@ namespace CustomControls
 
         [Category("Custom Properties")]
         public Panel TargetPanel { get; set; }
+
+        [Category("Custom Properties")]
+        public string LabelText { get => optionLbl.Text; set => optionLbl.Text = value; }
+
+        [Category("Custom Properties")]
+        public string RutaImagen { get => optionImg.ImageLocation; set => optionImg.ImageLocation = value; }
 
         private void OpenForm()
         {
