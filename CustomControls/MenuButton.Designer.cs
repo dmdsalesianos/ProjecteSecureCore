@@ -39,9 +39,9 @@ namespace CustomControls
             // 
             this.MenuBtn.BackColor = System.Drawing.Color.DodgerBlue;
             this.MenuBtn.Location = new System.Drawing.Point(0, 0);
-            this.MenuBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MenuBtn.Name = "MenuBtn";
-            this.MenuBtn.Size = new System.Drawing.Size(292, 159);
+            this.MenuBtn.Padding = new System.Windows.Forms.Padding(2);
+            this.MenuBtn.Size = new System.Drawing.Size(260, 127);
             this.MenuBtn.TabIndex = 0;
             this.MenuBtn.UseVisualStyleBackColor = false;
             this.MenuBtn.Click += new System.EventHandler(this.MenuBtn_Click);
@@ -49,10 +49,9 @@ namespace CustomControls
             // optionImg
             // 
             this.optionImg.BackColor = System.Drawing.Color.Transparent;
-            this.optionImg.Location = new System.Drawing.Point(36, 44);
-            this.optionImg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.optionImg.Location = new System.Drawing.Point(32, 35);
             this.optionImg.Name = "optionImg";
-            this.optionImg.Size = new System.Drawing.Size(61, 68);
+            this.optionImg.Size = new System.Drawing.Size(54, 54);
             this.optionImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.optionImg.TabIndex = 1;
             this.optionImg.TabStop = false;
@@ -62,22 +61,21 @@ namespace CustomControls
             this.optionLbl.AutoSize = true;
             this.optionLbl.BackColor = System.Drawing.Color.Transparent;
             this.optionLbl.Font = new System.Drawing.Font("Corbel", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.optionLbl.Location = new System.Drawing.Point(130, 59);
+            this.optionLbl.Location = new System.Drawing.Point(116, 47);
             this.optionLbl.Name = "optionLbl";
-            this.optionLbl.Size = new System.Drawing.Size(111, 33);
+            this.optionLbl.Size = new System.Drawing.Size(89, 27);
             this.optionLbl.TabIndex = 2;
             this.optionLbl.Text = "OPTION";
             // 
             // MenuButton
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.optionLbl);
             this.Controls.Add(this.optionImg);
             this.Controls.Add(this.MenuBtn);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MenuButton";
-            this.Size = new System.Drawing.Size(292, 159);
+            this.Size = new System.Drawing.Size(260, 127);
             ((System.ComponentModel.ISupportInitialize)(this.optionImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
