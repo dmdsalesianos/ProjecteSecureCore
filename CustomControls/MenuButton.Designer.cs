@@ -43,9 +43,11 @@ namespace CustomControls
             this.MenuBtn.Size = new System.Drawing.Size(260, 127);
             this.MenuBtn.TabIndex = 0;
             this.MenuBtn.UseVisualStyleBackColor = false;
+            this.MenuBtn.Click += new System.EventHandler(this.MenuBtn_Click);
             // 
             // optionImg
             // 
+            this.optionImg.BackColor = System.Drawing.Color.Transparent;
             this.optionImg.Location = new System.Drawing.Point(32, 35);
             this.optionImg.Name = "optionImg";
             this.optionImg.Size = new System.Drawing.Size(54, 54);
@@ -59,7 +61,7 @@ namespace CustomControls
             this.optionLbl.Font = new System.Drawing.Font("Corbel", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.optionLbl.Location = new System.Drawing.Point(116, 47);
             this.optionLbl.Name = "optionLbl";
-            this.optionLbl.Size = new System.Drawing.Size(94, 28);
+            this.optionLbl.Size = new System.Drawing.Size(89, 27);
             this.optionLbl.TabIndex = 2;
             this.optionLbl.Text = "OPTION";
             // 
