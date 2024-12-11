@@ -8,10 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Base;
 
 namespace MenuOptions
 {
-    public partial class frmMenuOptions : prueba_txtBox.baseForm
+    public partial class frmMenuOptions : baseForm
     {
         string imagesDirectory = Path.Combine(Directory.GetParent(Application.StartupPath)?.Parent.Parent.FullName, "App");
         public DataSet dsFK;
