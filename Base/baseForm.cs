@@ -29,19 +29,20 @@ namespace Base
             string connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
             dataAccess = new MantenimentDades(connectionString);
 
-                foreach (Control control in this.Controls)
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox textBox)
                 {
-                    if (control is TextBox textBox)
-                    {
-                        textBox.Validated += ValidarTextBox;
-                    }
-                    else if (control is ComboBox comboBox)
-                    {
-                        comboBox.Validated += ValidarCombobox;
-                    }
+                    textBox.Validated += ValidarTextBox;
                 }
+                else if (control is ComboBox comboBox)
+                {
+                    comboBox.Validated += ValidarCombobox;
+                }
+            }
 
             CargarDatos();
+            MakeBindings();
         }
 
         protected void ValidarTextBox(object sender, EventArgs e)
@@ -62,6 +63,11 @@ namespace Base
             dataGridView1.DataSource = table;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.DataSource = ds.Tables[TableName];
+        }
+
+        private void MakeBindings()
+        {
+            DataTable table = ds.Tables[TableName];
 
             //*****MAKE DATABINDINGS*****//
             foreach (Control control in this.Controls)
@@ -81,7 +87,7 @@ namespace Base
 
         //*****AÑADE UNA ROW VACIA*****//
         private void btnAgregar_Click(object sender, EventArgs e)
-        { 
+        {
             DataTable table = ds.Tables[TableName];
             DataRow newRow = table.NewRow();
 
@@ -113,6 +119,6 @@ namespace Base
             dataAccess.Actualitzar(querySelect, ds, TableName);
             CargarDatos();
         }
-         
+
     }
 }
