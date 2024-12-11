@@ -42,7 +42,7 @@ namespace Base
                 }
 
             CargarDatos();
-
+            MakeDataBindings();
         }
 
         protected void ValidarTextBox(object sender, EventArgs e)
@@ -55,7 +55,7 @@ namespace Base
             ((ComboBox)sender).DataBindings[0].BindingManagerBase.EndCurrentEdit();
         }
 
-        private void MakeDataBindigs()
+        private void MakeDataBindings()
         {
             DataTable table = ds.Tables[TableName];
 
