@@ -34,15 +34,12 @@ namespace Login
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button_logaout = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.PanelContenido = new System.Windows.Forms.Panel();
-            this.swLaunchForm1 = new CustomControls.SWLaunchForm();
             this.menuButton1 = new CustomControls.MenuButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            this.PanelContenido.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -100,53 +97,26 @@ namespace Login
             // 
             this.panel2.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel2.Controls.Add(this.menuButton1);
-            this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 59);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(340, 698);
             this.panel2.TabIndex = 1;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(-4, 184);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(359, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "___________________________________";
-            // 
             // PanelContenido
             // 
             this.PanelContenido.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.PanelContenido.Controls.Add(this.swLaunchForm1);
             this.PanelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelContenido.Location = new System.Drawing.Point(340, 59);
             this.PanelContenido.Name = "PanelContenido";
             this.PanelContenido.Size = new System.Drawing.Size(844, 698);
             this.PanelContenido.TabIndex = 2;
             // 
-            // swLaunchForm1
-            // 
-            this.swLaunchForm1.BackColor = System.Drawing.Color.Teal;
-            this.swLaunchForm1.Clase = null;
-            this.swLaunchForm1.Descripcion = null;
-            this.swLaunchForm1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.swLaunchForm1.Form = null;
-            this.swLaunchForm1.Image = null;
-            this.swLaunchForm1.Location = new System.Drawing.Point(-941, 0);
-            this.swLaunchForm1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.swLaunchForm1.Name = "swLaunchForm1";
-            this.swLaunchForm1.Size = new System.Drawing.Size(1785, 698);
-            this.swLaunchForm1.TabIndex = 0;
-            // 
             // menuButton1
             // 
             this.menuButton1.Clase = null;
             this.menuButton1.Form = null;
-            this.menuButton1.Location = new System.Drawing.Point(0, 7);
+            this.menuButton1.Location = new System.Drawing.Point(12, 7);
             this.menuButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.menuButton1.Name = "menuButton1";
             this.menuButton1.Size = new System.Drawing.Size(292, 159);
@@ -163,12 +133,11 @@ namespace Login
             this.Name = "frmMenu";
             this.Text = "Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmMenu_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.PanelContenido.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -180,9 +149,7 @@ namespace Login
         private System.Windows.Forms.Button button_logaout;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel PanelContenido;
-        private CustomControls.SWLaunchForm swLaunchForm1;
         private CustomControls.MenuButton menuButton1;
     }
 }

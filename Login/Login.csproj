@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{DCDE2ADB-2ED6-4D2D-B7B7-83715431858D}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>Login</RootNamespace>
     <AssemblyName>Login</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -162,6 +162,15 @@
       <Project>{db77ddd9-3e44-4327-9d80-59afaf6f6b35}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9496304.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Intento de fondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\94963041.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

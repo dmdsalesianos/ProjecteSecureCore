@@ -25,13 +25,9 @@ namespace MenuOptions
             
         }
 
-        
-
         protected override void BaseForm_Load(object sender, EventArgs e)
         {
             base.BaseForm_Load(sender, e);
-
-            
 
             dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
 
