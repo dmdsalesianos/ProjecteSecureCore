@@ -46,7 +46,7 @@ namespace Login
                 timer1.Stop(); 
                 this.Hide();
 
-                MessageBox.Show($"ID {userCategoryId}");
+                
                 frmMenu menu_frm = new frmMenu(userCategoryId);
                 menu_frm.Show();
 

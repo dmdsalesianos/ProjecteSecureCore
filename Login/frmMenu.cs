@@ -16,20 +16,20 @@ namespace Login
 {
     public partial class frmMenu : Form
     {
-        private int accesLevel;
-        private int currentUserCategoryId;
+        private int accesLevel = 100;
 
         public frmMenu(int currentUserCategoryId)
         {
             InitializeComponent();
             accesLevel = ObtenerAccessLevel(currentUserCategoryId);
-            MessageBox.Show($"Access Level: {accesLevel}");
+            //MessageBox.Show($"Access Level: {accesLevel}");
+
 
         }
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
-
+            ButonForms();
         }
 
         private void button_logaout_Click(object sender, EventArgs e)
@@ -63,38 +63,48 @@ namespace Login
 
         private void ButonForms()
         {
-            int Tables;
+            
             string query = $"select Texto, AccessLevel, Clase, Form, Icono, Color from MenuOptions where AccessLevel <= {accesLevel}";
 
             string connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
             MantenimentDades menuOptionsDataSet = new MantenimentDades(connectionString);
             DataSet ds = new DataSet();
 
+      
             ds = menuOptionsDataSet.PortarPerConsulta(query);
 
-            // Para cada fila en el DataSet de MenuOptions que obtenemos de la base de datos
-            //foreach (DataRow row in menuOptionsDataSet.Tables[0].Rows)
-            //{              
+            //Para cada fila en el DataSet de MenuOptions que obtenemos de la base de datos
+            DataTable menuOptionsTable = ds.Tables[0];
 
-            //    // Comprobar si el nivel de acceso del usuario es mayor o igual al nivel de acceso de la fila de MenuOptions
-            //    if (accesLevel >= Convert.ToInt32(row["AccessLevel"]))
-            //    {
-            //        // Creamos un nuevo botón de menú
-            //        MenuButton btn = new MenuButton();
+            
 
-            //        // Asignamos las propiedades del botón con los valores de la fila
-            //        btn.optionLabel.Text = row["OptionName"].ToString();  // Asignamos el nombre de la opción
-            //        btn.Level = Convert.ToInt32(row["AccessLevel"]);       // Asignamos el nivel de acceso
-            //        btn.Clase = row["Class"].ToString();                   // Asignamos la clase
-            //        btn.BackColor = Color.FromName(row["BackgroundColor"].ToString());  // Asignamos el color de fondo
 
-            //        // Agregamos el botón al panel especificado
-            //        btn.Dock = DockStyle.Left;
+            foreach (DataRow row in menuOptionsTable.Rows)
+            {
 
-            //        // Lo añadimos al panel del formulario principal (en este caso 'targetPanel')
-            //        PanelContenido.Controls.Add(btn);
-            //    }
-            //}
+                // Comprobar si el nivel de acceso del usuario es mayor o igual al nivel de acceso de la fila de MenuOptions
+                if (accesLevel >= Convert.ToInt32(row["AccessLevel"]))
+                {
+                    // Creamos un nuevo botón de menú
+                    MenuButton btn = new MenuButton();
+
+                    // Asignamos las propiedades del botón con los valores de la fila
+                    btn.LabelText = row["Texto"].ToString();  // Asignamos el nombre de la opción
+                    btn.Clase = row["Clase"].ToString();
+                    btn.Form = row["Form"].ToString(); // Asignamos la clase
+                    btn.RutaImagen = row["Icono"].ToString();
+                    btn.BackColor = Color.FromName(row["Color"].ToString());  // Asignamos el color de fondo
+
+                    // Agregamos el botón al panel especificado
+                    btn.Dock = DockStyle.Left;
+
+                    flowLayoutPanel.Dock = DockStyle.Left;  // O DockStyle.Fill si deseas que ocupe todo el espacio disponible
+                    flowLayoutPanel.FlowDirection = FlowDirection.TopDown;  // Esto hará que los botones se apilen verticalmente
+                    flowLayoutPanel.WrapContents = false;
+                    // Lo añadimos al panel del formulario principal (en este caso 'targetPanel')
+                    flowLayoutPanel.Controls.Add(btn);
+                }
+            }
         }
     }
 
