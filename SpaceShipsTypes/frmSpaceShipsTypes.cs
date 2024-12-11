@@ -21,26 +21,24 @@ namespace SpaceShipsTypes
             TableName = "SpaceShipTypes";
             querySelect = $"SELECT * FROM {TableName}";
 
-            filiationCmb.Tag = "Filiations";
+            filiationCmb.Tag = "idFiliation";
             filiationCmb.DisplayMember = "DescFiliations";
             filiationCmb.ValueMember = "idFiliation";
 
-            categoryCmb.Tag = "SpaceShipCategories";
+            categoryCmb.Tag = "idSpaceShipCategory";
             categoryCmb.DisplayMember = "DescSpaceShipCategory";
             categoryCmb.ValueMember = "idSpaceShipCategory";
-
         }
 
         protected override void BaseForm_Load(object sender, EventArgs e)
         {
             base.BaseForm_Load(sender, e);
 
-            dsFK = dataAccess.PortarTaula(categoryCmb.Tag.ToString());
+            dsFK = dataAccess.PortarTaula("SpaceShipCategories");
+            categoryCmb.DataSource = dsFK.Tables["SpaceShipCategories"];
 
-            categoryCmb.DataSource = dsFK.Tables[categoryCmb.Tag.ToString()];
-            dsFK = dataAccess.PortarTaula(filiationCmb.Tag.ToString());
-
-            filiationCmb.DataSource = dsFK.Tables[filiationCmb.Tag.ToString()];
+            dsFK = dataAccess.PortarTaula("Filiations");
+            filiationCmb.DataSource = dsFK.Tables["Filiations"];
 
 
 
