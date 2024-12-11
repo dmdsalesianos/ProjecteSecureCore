@@ -29,20 +29,20 @@ namespace Base
             string connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
             dataAccess = new MantenimentDades(connectionString);
 
-            foreach (Control control in this.Controls)
-            {
-                if (control is TextBox textBox)
+                foreach (Control control in this.Controls)
                 {
-                    textBox.Validated += ValidarTextBox;
+                    if (control is TextBox textBox)
+                    {
+                        textBox.Validated += ValidarTextBox;
+                    }
+                    else if (control is ComboBox comboBox)
+                    {
+                        comboBox.Validated += ValidarCombobox;
+                    }
                 }
-                else if (control is ComboBox comboBox)
-                {
-                    comboBox.Validated += ValidarCombobox;
-                }
-            }
 
             CargarDatos();
-            MakeBindings();
+
         }
 
         protected void ValidarTextBox(object sender, EventArgs e)
@@ -55,17 +55,7 @@ namespace Base
             ((ComboBox)sender).DataBindings[0].BindingManagerBase.EndCurrentEdit();
         }
 
-        protected void CargarDatos()
-        {
-            ds = dataAccess.PortarTaula(TableName);
-            DataTable table = ds.Tables[TableName];
-
-            dataGridView1.DataSource = table;
-            dataGridView1.Columns[0].Visible = false;
-            dataGridView1.DataSource = ds.Tables[TableName];
-        }
-
-        private void MakeBindings()
+        private void MakeDataBindigs()
         {
             DataTable table = ds.Tables[TableName];
 
@@ -85,9 +75,19 @@ namespace Base
             }
         }
 
+        private void CargarDatos()
+        {
+            ds = dataAccess.PortarTaula(TableName);
+            DataTable table = ds.Tables[TableName];
+
+            dataGridView1.DataSource = table;
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.DataSource = ds.Tables[TableName];
+        }
+
         //*****AÑADE UNA ROW VACIA*****//
         private void btnAgregar_Click(object sender, EventArgs e)
-        {
+        { 
             DataTable table = ds.Tables[TableName];
             DataRow newRow = table.NewRow();
 
@@ -119,6 +119,6 @@ namespace Base
             dataAccess.Actualitzar(querySelect, ds, TableName);
             CargarDatos();
         }
-
+         
     }
 }
