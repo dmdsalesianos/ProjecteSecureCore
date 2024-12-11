@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomControls;
+using System;
 using System.Data;
 using System.Windows.Forms;
 
@@ -10,10 +11,17 @@ namespace DataBindingLibrary
         {
             foreach (Control control in controls)
             {
-                if (control is TextBox textBox && table.Columns.Contains(control.Name))
+                if (control is SWTextbox textBox)
                 {
+                    SWTextbox SWControl = (SWTextbox)control;
+
                     textBox.DataBindings.Clear();
-                    textBox.DataBindings.Add("Text", table, control.Name);
+                    textBox.DataBindings.Add("Text", table, SWControl.NomCampBBDD.ToString()); ;
+                }
+                else if (control is ComboBox comboBox)
+                {
+                    comboBox.DataBindings.Clear();
+                    comboBox.DataBindings.Add("SelectedValue", table, control.Tag.ToString());
                 }
             }
         }

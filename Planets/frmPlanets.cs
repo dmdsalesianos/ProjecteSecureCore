@@ -48,23 +48,6 @@ namespace Planets
 
             dsFK = dataAccess.PortarTaula("Filiations");
             cmbFiliations.DataSource = dsFK.Tables["Filiations"];
-
-            
-            //dsFK = dataAccess.PortarTaula(cmbSector.Tag.ToString());
-            //cmbSector.DataSource = dsFK.Tables[cmbSector.Tag.ToString()];
-
-            //dsFK = dataAccess.PortarTaula(cmbNatives.Tag.ToString());
-            //cmbNatives.DataSource = dsFK.Tables[cmbNatives.Tag.ToString()];
-
-            //dsFK = dataAccess.PortarTaula(cmbFiliations.Tag.ToString());
-            //cmbFiliations.DataSource = dsFK.Tables[cmbFiliations.Tag.ToString()];
-
-
-            // Suscribirse al evento de selección del DataGridView
-            dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
-
-            // Mostrar la imagen inicial del planeta seleccionado (si aplica)
-            MostrarImagenSeleccionada();
         }
 
         private void btnImage_Click(object sender, EventArgs e)
@@ -80,7 +63,7 @@ namespace Planets
                 {
                     string sourceFilePath = openFileDialog.FileName;
 
-                    string carpetaDirectory = Path.Combine(imagesDirectory, nombreCarpeta); //C://.../bin/Debug/imatges
+                    string carpetaDirectory = Path.Combine(imagesDirectory, nombreCarpeta); //C://.../App
 
                     if (!Directory.Exists(carpetaDirectory))
                     {
@@ -88,23 +71,17 @@ namespace Planets
                     }
 
                     string fileName = Path.GetFileName(sourceFilePath); //Nombre de la imagen
-                    string destinationFilePath = Path.Combine(carpetaDirectory, fileName); // C://.../bin/Debug/imatges/nombre_imagen
-
-                    string rutaBBD = Path.Combine(nombreCarpeta, fileName); // imagtes/nombre_imagen
+                    string destinationFilePath = Path.Combine(carpetaDirectory, fileName); // C://.../App/imatges/nombre_imagen
 
                     try
                     {
                         File.Copy(sourceFilePath, destinationFilePath, overwrite: true);
+                        swtxtImagen.Text = fileName;
 
-                        DataRow selectedRow = GetSelectedPlanetRow();
-                        if (selectedRow != null)
-                        {
-                            selectedRow["PlanetPicture"] = rutaBBD;
-                        }
+                        //Hago focus sobre el swtxtImagen y luego lo pierdo para que se valide
+                        swtxtImagen.Focus();
+                        btnImage.Focus();
 
-                        MostrarImagenSeleccionada();
-
-                        //MessageBox.Show($"Imagen copiada exitosamente a: {rutaBBD}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
                     {
@@ -114,37 +91,22 @@ namespace Planets
             }
         }
 
-        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void swtxtImagen_TextChanged(object sender, EventArgs e)
         {
-            MostrarImagenSeleccionada();
-        }
+            string imagePath = Path.Combine(imagesDirectory, "imatges", swtxtImagen.Text);
 
-        private void MostrarImagenSeleccionada()
-        {
-            DataRow selectedRow = GetSelectedPlanetRow();
-            if (selectedRow != null)
+            if (File.Exists(imagePath))
             {
-                string imagePath = Path.Combine(imagesDirectory, selectedRow["PlanetPicture"]?.ToString());
-                if (!string.IsNullOrEmpty(imagePath) && File.Exists(imagePath))
-                {
-                    pictureBox1.Image = Image.FromFile(imagePath);
-                }
-                else
-                {
-                    pictureBox1.Image = null; // Limpiar el PictureBox si no hay imagen válida
-                }
+                pictureBox1.ImageLocation = imagePath;
+            }
+            else
+            {
+                pictureBox1.ImageLocation = null; // Borra la imagen si no se encuentra el archivo
             }
         }
-
-        private DataRow GetSelectedPlanetRow()
+        private void swTextbox3_TextChanged(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentRow != null)
-            {
-                int selectedIndex = dataGridView1.CurrentRow.Index;
-                return ds.Tables[TableName].Rows[selectedIndex];
-            }
 
-            return null;
         }
     }
 }

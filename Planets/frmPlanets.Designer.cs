@@ -29,16 +29,11 @@ namespace Planets
         /// </summary>
         private void InitializeComponent()
         {
-            this.swtxtCodePlanet = new CustomControls.SWTextbox();
             this.lblCodePlanet = new System.Windows.Forms.Label();
             this.lblDescPlanet = new System.Windows.Forms.Label();
-            this.swtxtDescPlanet = new CustomControls.SWTextbox();
             this.lblParsecs = new System.Windows.Forms.Label();
-            this.swtxtParsecs = new CustomControls.SWTextbox();
             this.lblLongitud = new System.Windows.Forms.Label();
-            this.swtxtLong = new CustomControls.SWTextbox();
             this.lblLatitud = new System.Windows.Forms.Label();
-            this.swtxtLat = new CustomControls.SWTextbox();
             this.cmbNatives = new System.Windows.Forms.ComboBox();
             this.cmbFiliations = new System.Windows.Forms.ComboBox();
             this.cmbSector = new System.Windows.Forms.ComboBox();
@@ -47,19 +42,20 @@ namespace Planets
             this.lblFiliation = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnImage = new System.Windows.Forms.Button();
+            this.lblIPPlanet = new System.Windows.Forms.Label();
+            this.lblPortPlanet = new System.Windows.Forms.Label();
+            this.lblPortPlanet1 = new System.Windows.Forms.Label();
+            this.swTextbox3 = new CustomControls.SWTextbox();
+            this.swTextbox2 = new CustomControls.SWTextbox();
+            this.swTextbox1 = new CustomControls.SWTextbox();
+            this.swtxtLat = new CustomControls.SWTextbox();
+            this.swtxtLong = new CustomControls.SWTextbox();
+            this.swtxtParsecs = new CustomControls.SWTextbox();
+            this.swtxtDescPlanet = new CustomControls.SWTextbox();
+            this.swtxtCodePlanet = new CustomControls.SWTextbox();
+            this.swtxtImagen = new CustomControls.SWTextbox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // swtxtCodePlanet
-            // 
-            this.swtxtCodePlanet.EsForanea = false;
-            this.swtxtCodePlanet.Location = new System.Drawing.Point(26, 36);
-            this.swtxtCodePlanet.Name = "swtxtCodePlanet";
-            this.swtxtCodePlanet.NomCampBBDD = "CodePlanet";
-            this.swtxtCodePlanet.PermetreBuit = true;
-            this.swtxtCodePlanet.Size = new System.Drawing.Size(174, 26);
-            this.swtxtCodePlanet.TabIndex = 5;
-            this.swtxtCodePlanet.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
             // 
             // lblCodePlanet
             // 
@@ -79,17 +75,6 @@ namespace Planets
             this.lblDescPlanet.TabIndex = 8;
             this.lblDescPlanet.Text = "Descripció planet";
             // 
-            // swtxtDescPlanet
-            // 
-            this.swtxtDescPlanet.EsForanea = false;
-            this.swtxtDescPlanet.Location = new System.Drawing.Point(26, 97);
-            this.swtxtDescPlanet.Name = "swtxtDescPlanet";
-            this.swtxtDescPlanet.NomCampBBDD = "DescPlanet";
-            this.swtxtDescPlanet.PermetreBuit = true;
-            this.swtxtDescPlanet.Size = new System.Drawing.Size(174, 26);
-            this.swtxtDescPlanet.TabIndex = 7;
-            this.swtxtDescPlanet.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
-            // 
             // lblParsecs
             // 
             this.lblParsecs.AutoSize = true;
@@ -98,17 +83,6 @@ namespace Planets
             this.lblParsecs.Size = new System.Drawing.Size(66, 20);
             this.lblParsecs.TabIndex = 10;
             this.lblParsecs.Text = "Parsecs";
-            // 
-            // swtxtParsecs
-            // 
-            this.swtxtParsecs.EsForanea = false;
-            this.swtxtParsecs.Location = new System.Drawing.Point(26, 158);
-            this.swtxtParsecs.Name = "swtxtParsecs";
-            this.swtxtParsecs.NomCampBBDD = "parsecs";
-            this.swtxtParsecs.PermetreBuit = true;
-            this.swtxtParsecs.Size = new System.Drawing.Size(174, 26);
-            this.swtxtParsecs.TabIndex = 9;
-            this.swtxtParsecs.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
             // 
             // lblLongitud
             // 
@@ -119,17 +93,6 @@ namespace Planets
             this.lblLongitud.TabIndex = 12;
             this.lblLongitud.Text = "Longitud";
             // 
-            // swtxtLong
-            // 
-            this.swtxtLong.EsForanea = false;
-            this.swtxtLong.Location = new System.Drawing.Point(256, 36);
-            this.swtxtLong.Name = "swtxtLong";
-            this.swtxtLong.NomCampBBDD = "long";
-            this.swtxtLong.PermetreBuit = true;
-            this.swtxtLong.Size = new System.Drawing.Size(174, 26);
-            this.swtxtLong.TabIndex = 11;
-            this.swtxtLong.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
-            // 
             // lblLatitud
             // 
             this.lblLatitud.AutoSize = true;
@@ -138,17 +101,6 @@ namespace Planets
             this.lblLatitud.Size = new System.Drawing.Size(58, 20);
             this.lblLatitud.TabIndex = 14;
             this.lblLatitud.Text = "Latitud";
-            // 
-            // swtxtLat
-            // 
-            this.swtxtLat.EsForanea = false;
-            this.swtxtLat.Location = new System.Drawing.Point(256, 97);
-            this.swtxtLat.Name = "swtxtLat";
-            this.swtxtLat.NomCampBBDD = "lat";
-            this.swtxtLat.PermetreBuit = true;
-            this.swtxtLat.Size = new System.Drawing.Size(174, 26);
-            this.swtxtLat.TabIndex = 13;
-            this.swtxtLat.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
             // 
             // cmbNatives
             // 
@@ -211,10 +163,11 @@ namespace Planets
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Tag = "PlanetPicture";
             // 
             // btnImage
             // 
-            this.btnImage.Location = new System.Drawing.Point(256, 154);
+            this.btnImage.Location = new System.Drawing.Point(482, 210);
             this.btnImage.Name = "btnImage";
             this.btnImage.Size = new System.Drawing.Size(174, 34);
             this.btnImage.TabIndex = 22;
@@ -222,11 +175,146 @@ namespace Planets
             this.btnImage.UseVisualStyleBackColor = true;
             this.btnImage.Click += new System.EventHandler(this.btnImage_Click);
             // 
+            // lblIPPlanet
+            // 
+            this.lblIPPlanet.AutoSize = true;
+            this.lblIPPlanet.Location = new System.Drawing.Point(252, 135);
+            this.lblIPPlanet.Name = "lblIPPlanet";
+            this.lblIPPlanet.Size = new System.Drawing.Size(69, 20);
+            this.lblIPPlanet.TabIndex = 25;
+            this.lblIPPlanet.Text = "IPPlanet";
+            // 
+            // lblPortPlanet
+            // 
+            this.lblPortPlanet.AutoSize = true;
+            this.lblPortPlanet.Location = new System.Drawing.Point(22, 195);
+            this.lblPortPlanet.Name = "lblPortPlanet";
+            this.lblPortPlanet.Size = new System.Drawing.Size(87, 20);
+            this.lblPortPlanet.TabIndex = 27;
+            this.lblPortPlanet.Text = "Port Planet";
+            // 
+            // lblPortPlanet1
+            // 
+            this.lblPortPlanet1.AutoSize = true;
+            this.lblPortPlanet1.Location = new System.Drawing.Point(252, 195);
+            this.lblPortPlanet1.Name = "lblPortPlanet1";
+            this.lblPortPlanet1.Size = new System.Drawing.Size(100, 20);
+            this.lblPortPlanet1.TabIndex = 29;
+            this.lblPortPlanet1.Text = "Port Planet 1";
+            // 
+            // swTextbox3
+            // 
+            this.swTextbox3.EsForanea = false;
+            this.swTextbox3.Location = new System.Drawing.Point(256, 218);
+            this.swTextbox3.Name = "swTextbox3";
+            this.swTextbox3.NomCampBBDD = "PortPlanet1";
+            this.swTextbox3.PermetreBuit = true;
+            this.swTextbox3.Size = new System.Drawing.Size(174, 26);
+            this.swTextbox3.TabIndex = 28;
+            this.swTextbox3.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
+            this.swTextbox3.TextChanged += new System.EventHandler(this.swTextbox3_TextChanged);
+            // 
+            // swTextbox2
+            // 
+            this.swTextbox2.EsForanea = false;
+            this.swTextbox2.Location = new System.Drawing.Point(26, 218);
+            this.swTextbox2.Name = "swTextbox2";
+            this.swTextbox2.NomCampBBDD = "PortPlanet";
+            this.swTextbox2.PermetreBuit = true;
+            this.swTextbox2.Size = new System.Drawing.Size(174, 26);
+            this.swTextbox2.TabIndex = 26;
+            this.swTextbox2.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
+            // 
+            // swTextbox1
+            // 
+            this.swTextbox1.EsForanea = false;
+            this.swTextbox1.Location = new System.Drawing.Point(256, 158);
+            this.swTextbox1.Name = "swTextbox1";
+            this.swTextbox1.NomCampBBDD = "IPPlanet";
+            this.swTextbox1.PermetreBuit = true;
+            this.swTextbox1.Size = new System.Drawing.Size(174, 26);
+            this.swTextbox1.TabIndex = 24;
+            this.swTextbox1.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
+            // 
+            // swtxtLat
+            // 
+            this.swtxtLat.EsForanea = false;
+            this.swtxtLat.Location = new System.Drawing.Point(256, 97);
+            this.swtxtLat.Name = "swtxtLat";
+            this.swtxtLat.NomCampBBDD = "lat";
+            this.swtxtLat.PermetreBuit = true;
+            this.swtxtLat.Size = new System.Drawing.Size(174, 26);
+            this.swtxtLat.TabIndex = 13;
+            this.swtxtLat.Tag = "";
+            this.swtxtLat.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
+            // 
+            // swtxtLong
+            // 
+            this.swtxtLong.EsForanea = false;
+            this.swtxtLong.Location = new System.Drawing.Point(256, 36);
+            this.swtxtLong.Name = "swtxtLong";
+            this.swtxtLong.NomCampBBDD = "long";
+            this.swtxtLong.PermetreBuit = true;
+            this.swtxtLong.Size = new System.Drawing.Size(174, 26);
+            this.swtxtLong.TabIndex = 11;
+            this.swtxtLong.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
+            // 
+            // swtxtParsecs
+            // 
+            this.swtxtParsecs.EsForanea = false;
+            this.swtxtParsecs.Location = new System.Drawing.Point(26, 158);
+            this.swtxtParsecs.Name = "swtxtParsecs";
+            this.swtxtParsecs.NomCampBBDD = "parsecs";
+            this.swtxtParsecs.PermetreBuit = true;
+            this.swtxtParsecs.Size = new System.Drawing.Size(174, 26);
+            this.swtxtParsecs.TabIndex = 9;
+            this.swtxtParsecs.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
+            // 
+            // swtxtDescPlanet
+            // 
+            this.swtxtDescPlanet.EsForanea = false;
+            this.swtxtDescPlanet.Location = new System.Drawing.Point(26, 97);
+            this.swtxtDescPlanet.Name = "swtxtDescPlanet";
+            this.swtxtDescPlanet.NomCampBBDD = "DescPlanet";
+            this.swtxtDescPlanet.PermetreBuit = true;
+            this.swtxtDescPlanet.Size = new System.Drawing.Size(174, 26);
+            this.swtxtDescPlanet.TabIndex = 7;
+            this.swtxtDescPlanet.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
+            // 
+            // swtxtCodePlanet
+            // 
+            this.swtxtCodePlanet.EsForanea = false;
+            this.swtxtCodePlanet.Location = new System.Drawing.Point(26, 36);
+            this.swtxtCodePlanet.Name = "swtxtCodePlanet";
+            this.swtxtCodePlanet.NomCampBBDD = "CodePlanet";
+            this.swtxtCodePlanet.PermetreBuit = true;
+            this.swtxtCodePlanet.Size = new System.Drawing.Size(174, 26);
+            this.swtxtCodePlanet.TabIndex = 5;
+            this.swtxtCodePlanet.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
+            // 
+            // swtxtImagen
+            // 
+            this.swtxtImagen.EsForanea = false;
+            this.swtxtImagen.Location = new System.Drawing.Point(71, 353);
+            this.swtxtImagen.Name = "swtxtImagen";
+            this.swtxtImagen.NomCampBBDD = "PlanetPicture";
+            this.swtxtImagen.PermetreBuit = true;
+            this.swtxtImagen.Size = new System.Drawing.Size(108, 26);
+            this.swtxtImagen.TabIndex = 23;
+            this.swtxtImagen.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
+            this.swtxtImagen.TextChanged += new System.EventHandler(this.swtxtImagen_TextChanged);
+            // 
             // frmPlanets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 566);
+            this.Controls.Add(this.lblPortPlanet1);
+            this.Controls.Add(this.swTextbox3);
+            this.Controls.Add(this.lblPortPlanet);
+            this.Controls.Add(this.swTextbox2);
+            this.Controls.Add(this.lblIPPlanet);
+            this.Controls.Add(this.swTextbox1);
             this.Controls.Add(this.btnImage);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblFiliation);
@@ -245,8 +333,10 @@ namespace Planets
             this.Controls.Add(this.swtxtDescPlanet);
             this.Controls.Add(this.lblCodePlanet);
             this.Controls.Add(this.swtxtCodePlanet);
+            this.Controls.Add(this.swtxtImagen);
             this.Name = "frmPlanets";
             this.Load += new System.EventHandler(this.frmPlanets_Load);
+            this.Controls.SetChildIndex(this.swtxtImagen, 0);
             this.Controls.SetChildIndex(this.swtxtCodePlanet, 0);
             this.Controls.SetChildIndex(this.lblCodePlanet, 0);
             this.Controls.SetChildIndex(this.swtxtDescPlanet, 0);
@@ -265,6 +355,12 @@ namespace Planets
             this.Controls.SetChildIndex(this.lblFiliation, 0);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.btnImage, 0);
+            this.Controls.SetChildIndex(this.swTextbox1, 0);
+            this.Controls.SetChildIndex(this.lblIPPlanet, 0);
+            this.Controls.SetChildIndex(this.swTextbox2, 0);
+            this.Controls.SetChildIndex(this.lblPortPlanet, 0);
+            this.Controls.SetChildIndex(this.swTextbox3, 0);
+            this.Controls.SetChildIndex(this.lblPortPlanet1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -291,6 +387,13 @@ namespace Planets
         private System.Windows.Forms.Label lblFiliation;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnImage;
+        private CustomControls.SWTextbox swtxtImagen;
+        private CustomControls.SWTextbox swTextbox1;
+        private System.Windows.Forms.Label lblIPPlanet;
+        private System.Windows.Forms.Label lblPortPlanet;
+        private CustomControls.SWTextbox swTextbox2;
+        private System.Windows.Forms.Label lblPortPlanet1;
+        private CustomControls.SWTextbox swTextbox3;
     }
 }
 
