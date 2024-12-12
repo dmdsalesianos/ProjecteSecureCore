@@ -82,7 +82,8 @@ namespace Users
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1146, 676);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(902, 565);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.swTextbox2);

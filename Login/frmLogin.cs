@@ -190,7 +190,7 @@ namespace Login
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
             manteniment = new MantenimentDades(connectionString);
         }
     }

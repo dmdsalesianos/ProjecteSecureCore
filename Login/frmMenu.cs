@@ -50,7 +50,7 @@ namespace Login
                            "INNER JOIN Users us ON cat.idUserCategory = us.idUserCategory " +
                            $"WHERE cat.idUserCategory = {currentUserCategoryId}";
 
-            string connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
             MantenimentDades mantenimentDades = new MantenimentDades(connectionString);
             DataSet ds = new DataSet();
 
@@ -66,7 +66,7 @@ namespace Login
             
             string query = $"select Texto, AccessLevel, Clase, Form, Icono, Color from MenuOptions where AccessLevel <= {accesLevel}";
 
-            string connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
             MantenimentDades menuOptionsDataSet = new MantenimentDades(connectionString);
             DataSet ds = new DataSet();
 
@@ -89,6 +89,7 @@ namespace Login
                     MenuButton btn = new MenuButton();
 
                     // Asignamos las propiedades del botón con los valores de la fila
+                    btn.TargetPanel = PanelContenido;
                     btn.LabelText = row["Texto"].ToString();  // Asignamos el nombre de la opción
                     btn.Clase = row["Clase"].ToString();
                     btn.Form = row["Form"].ToString(); // Asignamos la clase

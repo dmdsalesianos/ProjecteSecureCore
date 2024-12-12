@@ -41,18 +41,27 @@ namespace CustomControls
             try
             {
                 Assembly ensamblat = Assembly.LoadFrom($"{Clase}.dll");
+                Object dllBD;
+                
                 Type tipus = ensamblat.GetType(claseForm);
+
+                dllBD = Activator.CreateInstance(tipus);
 
                 if(tipus != null)
                 {
+
                     Form frm = (Form)Activator.CreateInstance(tipus);
+
                     frm.TopLevel = false;
+                    frm.FormBorderStyle = FormBorderStyle.None;
                     frm.Dock = DockStyle.Fill;
 
                     TargetPanel.Controls.Clear();
                     TargetPanel.Controls.Add(frm);
+
                     frm.Show();
-                } else
+                } 
+                else
                 {
                     MessageBox.Show("La clase especificada no se encontró.");
                 }

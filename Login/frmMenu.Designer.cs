@@ -38,7 +38,6 @@ namespace Login
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.PanelContenido.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -95,20 +94,19 @@ namespace Login
             // PanelContenido
             // 
             this.PanelContenido.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.PanelContenido.Controls.Add(this.flowLayoutPanel);
             this.PanelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelContenido.Location = new System.Drawing.Point(0, 59);
+            this.PanelContenido.Location = new System.Drawing.Point(418, 59);
             this.PanelContenido.Name = "PanelContenido";
-            this.PanelContenido.Size = new System.Drawing.Size(1184, 698);
+            this.PanelContenido.Size = new System.Drawing.Size(766, 698);
             this.PanelContenido.TabIndex = 2;
             // 
             // flowLayoutPanel
             // 
             this.flowLayoutPanel.BackColor = System.Drawing.Color.SeaGreen;
             this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel.Location = new System.Drawing.Point(0, 59);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(357, 698);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(418, 698);
             this.flowLayoutPanel.TabIndex = 0;
             // 
             // frmMenu
@@ -117,6 +115,7 @@ namespace Login
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 757);
             this.Controls.Add(this.PanelContenido);
+            this.Controls.Add(this.flowLayoutPanel);
             this.Controls.Add(this.panel1);
             this.Name = "frmMenu";
             this.Text = "Menu";
@@ -125,7 +124,6 @@ namespace Login
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.PanelContenido.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
