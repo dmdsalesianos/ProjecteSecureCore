@@ -102,7 +102,7 @@ namespace Login
             // 
             // flowLayoutPanel
             // 
-            this.flowLayoutPanel.BackColor = System.Drawing.Color.SeaGreen;
+            this.flowLayoutPanel.BackColor = System.Drawing.SystemColors.HotTrack;
             this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel.Location = new System.Drawing.Point(0, 59);
             this.flowLayoutPanel.Name = "flowLayoutPanel";

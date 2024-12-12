@@ -197,6 +197,8 @@ namespace MenuOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(937, 576);
             this.Controls.Add(this.swTextbox_Color);
             this.Controls.Add(this.swTextbox_Form);
@@ -212,6 +214,7 @@ namespace MenuOptions
             this.Controls.Add(this.label_acceslevel);
             this.Controls.Add(this.pictureBox_icono);
             this.Name = "frmMenuOptions";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "¡¡";
             this.Controls.SetChildIndex(this.pictureBox_icono, 0);
             this.Controls.SetChildIndex(this.label_acceslevel, 0);

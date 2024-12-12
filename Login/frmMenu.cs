@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataAccess;
 using CustomControls;
+using System.Drawing;
 
 namespace Login
 {
@@ -94,19 +95,49 @@ namespace Login
                     btn.Clase = row["Clase"].ToString();
                     btn.Form = row["Form"].ToString(); // Asignamos la clase
                     btn.RutaImagen = row["Icono"].ToString();
-                    btn.BackColor = Color.FromName(row["Color"].ToString());  // Asignamos el color de fondo
+                    // Obtén el valor del color desde la fila
+                    string colorValue = row["Color"].ToString();
 
-                    // Agregamos el botón al panel especificado
-                    btn.Dock = DockStyle.Left;
+                    // Verifica si es un nombre de color
+                    if (Color.FromName(colorValue).IsKnownColor)
+                    {
+                        // Es un nombre de color conocido
+                        btn.BackColor = Color.FromName(colorValue);
+                        btn.ColorOri = Color.FromName(colorValue);
+                    }
+                    else
+                    {
+                        // Intenta procesarlo como RGB separado por punto y coma
+                        try
+                        {
+                            // Divide el valor en componentes R, G, B
+                            string[] rgb = colorValue.Split(';');
+                            int r = int.Parse(rgb[0].Trim());
+                            int g = int.Parse(rgb[1].Trim());
+                            int b = int.Parse(rgb[2].Trim());
+
+                            // Asigna el color RGB
+                            btn.BackColor = Color.FromArgb(r, g, b);
+                            btn.ColorOri = Color.FromArgb(r, g, b);
+                        }
+                        catch
+                        {
+                            // En caso de error, asignar un color predeterminado
+                            btn.BackColor = Color.BlueViolet;
+                            btn.ColorOri = Color.BlueViolet;
+                            
+                        }
+                    } // Asignamos el color de fondoç
+                 
 
                     flowLayoutPanel.Dock = DockStyle.Left;  // O DockStyle.Fill si deseas que ocupe todo el espacio disponible
                     flowLayoutPanel.FlowDirection = FlowDirection.TopDown;  // Esto hará que los botones se apilen verticalmente
                     flowLayoutPanel.WrapContents = false;
+                    flowLayoutPanel.Width = btn.Width;
                     // Lo añadimos al panel del formulario principal (en este caso 'targetPanel')
                     flowLayoutPanel.Controls.Add(btn);
                 }
             }
         }
     }
-
 }
