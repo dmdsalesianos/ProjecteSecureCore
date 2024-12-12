@@ -34,6 +34,9 @@ namespace CustomControls
         [Category("Custom Properties")]
         public string RutaImagen { get => optionImg.ImageLocation; set => optionImg.ImageLocation = value; }
 
+        [Category("Custom Properties")]
+        public Color BtnBg { get => MenuBtn.BackColor; set => MenuBtn.BackColor = value; }
+
         private void OpenForm()
         {
             string claseForm = Clase + "." + Form;
