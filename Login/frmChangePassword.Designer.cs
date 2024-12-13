@@ -180,7 +180,7 @@ namespace Login
             this.button_arrow.ForeColor = System.Drawing.Color.White;
             this.button_arrow.Location = new System.Drawing.Point(12, 12);
             this.button_arrow.Name = "button_arrow";
-            this.button_arrow.Size = new System.Drawing.Size(52, 51);
+            this.button_arrow.Size = new System.Drawing.Size(63, 57);
             this.button_arrow.TabIndex = 23;
             this.button_arrow.Text = "🡨";
             this.button_arrow.TextColor = System.Drawing.Color.White;
