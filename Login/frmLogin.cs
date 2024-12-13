@@ -23,6 +23,7 @@ namespace Login
         public frmLogin()
         {
             InitializeComponent();
+            DoubleBuffered = true;
         }
         public int CurrentUserCategoryId { get; set; }
 

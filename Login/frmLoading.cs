@@ -13,7 +13,7 @@ namespace Login
     public partial class frmLoading : Form
     {
 
-        private int tiempoTotal = 5000; 
+        private int tiempoTotal = 1000; 
         private int intervalo = 100; 
         private int incremento;
         private int userCategoryId;

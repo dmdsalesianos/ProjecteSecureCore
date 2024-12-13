@@ -13,15 +13,12 @@ namespace CustomControls
 {
     public partial class MenuButton : UserControl
     {
-        public MenuButton()
-        {
-            InitializeComponent();
-            
-        }
+        public MenuButton() { InitializeComponent(); }
 
         private string form;
         private string clase;
-
+        private static MenuButton selectedButton;
+        private bool isSelected = false;
 
         [Category("Custom Properties")]
         public string Clase { get => clase; set { clase = value; } }
@@ -39,6 +36,7 @@ namespace CustomControls
         public string RutaImagen { get => optionImg.ImageLocation; set => optionImg.ImageLocation = value; }
 
         public Color ColorOri { get; set; }
+
         private void OpenForm()
         {
             string claseForm = Clase + "." + Form;
@@ -52,9 +50,8 @@ namespace CustomControls
 
                 dllBD = Activator.CreateInstance(tipus);
 
-                if (tipus != null)
+                if(tipus != null)
                 {
-
                     Form frm = (Form)Activator.CreateInstance(tipus);
 
                     frm.TopLevel = false;
@@ -65,13 +62,11 @@ namespace CustomControls
                     TargetPanel.Controls.Add(frm);
 
                     frm.Show();
-                }
-                else
+                } else
                 {
                     MessageBox.Show("La clase especificada no se encontró.");
                 }
-            }
-            catch (Exception ex)
+            } catch(Exception ex)
             {
                 MessageBox.Show($"Error al abrir el formulario: {ex.Message}");
             }
@@ -80,16 +75,31 @@ namespace CustomControls
         private void MenuButton_Click(object sender, EventArgs e)
         {
             OpenForm();
+            if(selectedButton != null && selectedButton != this)
+            {
+                selectedButton.BackColor = selectedButton.ColorOri;
+                selectedButton.BorderStyle = BorderStyle.None;
+                selectedButton.isSelected = false;
+            }
+            isSelected = true;
+            BorderStyle = BorderStyle.Fixed3D;
+            selectedButton = this;
         }
 
         private void MenuButton_MouseEnter(object sender, EventArgs e)
         {
-            BackColor = Color.Pink;
+            if(isSelected == false)
+            {
+                BackColor = Color.Pink;
+            }
         }
 
         private void MenuButton_MouseLeave(object sender, EventArgs e)
         {
-            BackColor = ColorOri;
+            if(isSelected == false)
+            {
+                BackColor = ColorOri;
+            }
         }
     }
 }
