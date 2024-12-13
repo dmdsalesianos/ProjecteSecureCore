@@ -193,5 +193,10 @@ namespace Login
             connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
             manteniment = new MantenimentDades(connectionString);
         }
+
+        private void Button_Close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

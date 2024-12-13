@@ -31,12 +31,15 @@ namespace Login
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button_logaout = new System.Windows.Forms.Button();
+            this.button_Close = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button_logaout = new System.Windows.Forms.Button();
             this.PanelContenido = new System.Windows.Forms.Panel();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -44,14 +47,63 @@ namespace Login
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.button_logaout);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1184, 59);
             this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel2.Controls.Add(this.button_logaout);
+            this.panel2.Controls.Add(this.button_Close);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(908, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(276, 59);
+            this.panel2.TabIndex = 3;
+            // 
+            // button_logaout
+            // 
+            this.button_logaout.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.button_logaout.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button_logaout.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.button_logaout.FlatAppearance.BorderSize = 0;
+            this.button_logaout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
+            this.button_logaout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.button_logaout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_logaout.Font = new System.Drawing.Font("Arial Nova", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_logaout.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button_logaout.Location = new System.Drawing.Point(0, 0);
+            this.button_logaout.Name = "button_logaout";
+            this.button_logaout.Size = new System.Drawing.Size(146, 59);
+            this.button_logaout.TabIndex = 0;
+            this.button_logaout.Text = "LogOut";
+            this.button_logaout.UseVisualStyleBackColor = false;
+            this.button_logaout.Click += new System.EventHandler(this.button_logaout_Click);
+            // 
+            // button_Close
+            // 
+            this.button_Close.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.button_Close.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button_Close.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.button_Close.FlatAppearance.BorderSize = 0;
+            this.button_Close.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
+            this.button_Close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.button_Close.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_Close.Font = new System.Drawing.Font("Arial Nova", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Close.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button_Close.Location = new System.Drawing.Point(152, 0);
+            this.button_Close.Name = "button_Close";
+            this.button_Close.Size = new System.Drawing.Size(124, 59);
+            this.button_Close.TabIndex = 1;
+            this.button_Close.Text = "Close";
+            this.button_Close.UseVisualStyleBackColor = false;
+            this.button_Close.Click += new System.EventHandler(this.button_Close_Click);
             // 
             // pictureBox2
             // 
@@ -73,24 +125,6 @@ namespace Login
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // button_logaout
-            // 
-            this.button_logaout.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button_logaout.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button_logaout.FlatAppearance.BorderSize = 0;
-            this.button_logaout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
-            this.button_logaout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.button_logaout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_logaout.Font = new System.Drawing.Font("Arial Nova", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_logaout.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button_logaout.Location = new System.Drawing.Point(1042, 0);
-            this.button_logaout.Name = "button_logaout";
-            this.button_logaout.Size = new System.Drawing.Size(142, 59);
-            this.button_logaout.TabIndex = 0;
-            this.button_logaout.Text = "Log out";
-            this.button_logaout.UseVisualStyleBackColor = false;
-            this.button_logaout.Click += new System.EventHandler(this.button_logaout_Click);
             // 
             // PanelContenido
             // 
@@ -126,6 +160,7 @@ namespace Login
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -140,5 +175,7 @@ namespace Login
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel PanelContenido;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button_Close;
     }
 }

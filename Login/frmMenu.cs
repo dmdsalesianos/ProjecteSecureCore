@@ -140,5 +140,10 @@ namespace Login
                 }
             }
         }
+
+        private void button_Close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
