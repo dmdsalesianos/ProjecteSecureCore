@@ -17,7 +17,7 @@ namespace Login
     public partial class frmChangePassword : Form
     {
         private string username;
-        private string connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+        private string connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
 
 
         public frmChangePassword(string username)

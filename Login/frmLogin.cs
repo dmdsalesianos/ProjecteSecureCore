@@ -24,8 +24,7 @@ namespace Login
         {
             InitializeComponent();
         }
-
-        public static int CurrentUserCategoryId { get; set; }
+        public int CurrentUserCategoryId { get; set; }
 
         private int GetUserCategoryId(string username)
         {
@@ -51,42 +50,47 @@ namespace Login
             }
 
             return userCategoryId;
+
+
         }
 
         private void Login_Click(object sender, EventArgs e)
         {
-            string username = textBox_user.Text;
-            string password = textBox_password.Text;
+            {
+                string username = textBox_user.Text;
+                string password = textBox_password.Text;
 
-            
-            if (password == "12345aA")
-            {
-                
-                frmChangePassword changePasswordForm = new frmChangePassword(username);
-                changePasswordForm.Show();
-                this.Hide();
-            }
-            else
-            {
-                
-                if (VerifyUser(username, password))
+
+                if (password == "12345aA")
                 {
-                    CurrentUserCategoryId = GetUserCategoryId(username);
-                    //MessageBox.Show("ID UserCategory Guardada: " + CurrentUserCategoryId.ToString(), "Verificación");
 
-                    frmLoading frmLoading = new frmLoading();
-                    frmLoading.Show();
-                    this.Close();
+                    frmChangePassword changePasswordForm = new frmChangePassword(username);
+                    changePasswordForm.Show();
+                    this.Hide();
                 }
                 else
                 {
-                    Error_label.Visible = true;
+
+                    if (VerifyUser(username, password))
+                    {
+                        CurrentUserCategoryId = GetUserCategoryId(username);
+                        //MessageBox.Show("ID UserCategory Guardada: " + CurrentUserCategoryId.ToString(), "Verificación");
+
+                        frmLoading frmLoading = new frmLoading(CurrentUserCategoryId);
+                        frmLoading.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        Error_label.Visible = true;
+                    }
                 }
             }
         }
 
         private bool VerifyUser(string username, string password)
         {
+
             bool isValidUser = false;
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -186,7 +190,7 @@ namespace Login
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
             manteniment = new MantenimentDades(connectionString);
         }
     }

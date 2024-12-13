@@ -169,8 +169,10 @@ namespace Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(670, 650);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(241)))), ((int)(((byte)(254)))));
+            this.BackgroundImage = global::Login.Properties.Resources._9496304;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(657, 682);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Error_label);
@@ -181,6 +183,7 @@ namespace Login
             this.Controls.Add(this.textBox_user);
             this.Controls.Add(this.Login);
             this.Controls.Add(this.pictureBox1);
+            this.DoubleBuffered = true;
             this.Name = "frmLogin";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.frmLogin_Load);

@@ -36,11 +36,11 @@ namespace Login
             this.lblConfirmPassword = new System.Windows.Forms.Label();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.txtNewPassword = new System.Windows.Forms.TextBox();
-            this.btnSavePassword = new System.Windows.Forms.Button();
             this.lblErrorMessage = new System.Windows.Forms.Label();
             this.btnShowConfirmPassword = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button_arrow = new System.Windows.Forms.Button();
+            this.button_arrow = new CustomControls.RJButton();
+            this.btnSavePassword = new CustomControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -126,23 +126,6 @@ namespace Login
             this.txtNewPassword.TabIndex = 13;
             this.txtNewPassword.UseSystemPasswordChar = true;
             // 
-            // btnSavePassword
-            // 
-            this.btnSavePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(153)))));
-            this.btnSavePassword.FlatAppearance.BorderColor = System.Drawing.Color.Azure;
-            this.btnSavePassword.FlatAppearance.MouseDownBackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnSavePassword.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnSavePassword.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSavePassword.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSavePassword.ForeColor = System.Drawing.Color.AliceBlue;
-            this.btnSavePassword.Location = new System.Drawing.Point(189, 539);
-            this.btnSavePassword.Name = "btnSavePassword";
-            this.btnSavePassword.Size = new System.Drawing.Size(361, 61);
-            this.btnSavePassword.TabIndex = 18;
-            this.btnSavePassword.Text = "Guardar";
-            this.btnSavePassword.UseVisualStyleBackColor = false;
-            this.btnSavePassword.Click += new System.EventHandler(this.btnSavePassword_Click);
-            // 
             // lblErrorMessage
             // 
             this.lblErrorMessage.AutoSize = true;
@@ -186,31 +169,57 @@ namespace Login
             // 
             // button_arrow
             // 
-            this.button_arrow.BackColor = System.Drawing.Color.White;
-            this.button_arrow.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(153)))));
-            this.button_arrow.FlatAppearance.BorderSize = 4;
-            this.button_arrow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_arrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_arrow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(153)))));
-            this.button_arrow.Location = new System.Drawing.Point(41, 34);
-            this.button_arrow.Margin = new System.Windows.Forms.Padding(0);
+            this.button_arrow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(198)))), ((int)(((byte)(250)))));
+            this.button_arrow.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(198)))), ((int)(((byte)(250)))));
+            this.button_arrow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(153)))));
+            this.button_arrow.BorderRadius = 25;
+            this.button_arrow.BorderSize = 5;
+            this.button_arrow.FlatAppearance.BorderSize = 0;
+            this.button_arrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_arrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.button_arrow.ForeColor = System.Drawing.Color.White;
+            this.button_arrow.Location = new System.Drawing.Point(12, 12);
             this.button_arrow.Name = "button_arrow";
-            this.button_arrow.Size = new System.Drawing.Size(62, 72);
-            this.button_arrow.TabIndex = 22;
+            this.button_arrow.Size = new System.Drawing.Size(63, 57);
+            this.button_arrow.TabIndex = 23;
             this.button_arrow.Text = "🡨";
+            this.button_arrow.TextColor = System.Drawing.Color.White;
             this.button_arrow.UseVisualStyleBackColor = false;
             this.button_arrow.Click += new System.EventHandler(this.button_arrow_Click);
+            // 
+            // btnSavePassword
+            // 
+            this.btnSavePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(241)))));
+            this.btnSavePassword.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(241)))));
+            this.btnSavePassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(106)))), ((int)(((byte)(197)))));
+            this.btnSavePassword.BorderRadius = 20;
+            this.btnSavePassword.BorderSize = 5;
+            this.btnSavePassword.FlatAppearance.BorderSize = 0;
+            this.btnSavePassword.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSavePassword.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSavePassword.ForeColor = System.Drawing.Color.White;
+            this.btnSavePassword.Location = new System.Drawing.Point(189, 537);
+            this.btnSavePassword.Name = "btnSavePassword";
+            this.btnSavePassword.Size = new System.Drawing.Size(361, 60);
+            this.btnSavePassword.TabIndex = 24;
+            this.btnSavePassword.Text = "SAVE";
+            this.btnSavePassword.TextColor = System.Drawing.Color.White;
+            this.btnSavePassword.UseVisualStyleBackColor = false;
+            this.btnSavePassword.Click += new System.EventHandler(this.btnSavePassword_Click);
             // 
             // frmChangePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(241)))), ((int)(((byte)(254)))));
+            this.BackgroundImage = global::Login.Properties.Resources._94963041;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(761, 670);
+            this.Controls.Add(this.btnSavePassword);
             this.Controls.Add(this.button_arrow);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnShowConfirmPassword);
             this.Controls.Add(this.lblErrorMessage);
-            this.Controls.Add(this.btnSavePassword);
             this.Controls.Add(this.btnShowNewPassword);
             this.Controls.Add(this.lblConfirmPassword);
             this.Controls.Add(this.txtConfirmPassword);
@@ -218,6 +227,7 @@ namespace Login
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Login);
             this.Controls.Add(this.pictureBox1);
+            this.DoubleBuffered = true;
             this.Name = "frmChangePassword";
             this.Text = "frmChangePassword";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -236,10 +246,10 @@ namespace Login
         private System.Windows.Forms.Label lblConfirmPassword;
         private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.TextBox txtNewPassword;
-        private System.Windows.Forms.Button btnSavePassword;
         private System.Windows.Forms.Label lblErrorMessage;
         private System.Windows.Forms.Button btnShowConfirmPassword;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button_arrow;
+        private CustomControls.RJButton button_arrow;
+        private CustomControls.RJButton btnSavePassword;
     }
 }

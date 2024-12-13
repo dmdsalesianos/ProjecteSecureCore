@@ -16,10 +16,14 @@ namespace Login
         private int tiempoTotal = 5000; 
         private int intervalo = 100; 
         private int incremento;
+        private int userCategoryId;
 
-        public frmLoading()
+        public frmLoading(int currentUserCategoryId)
         {
             InitializeComponent();
+
+            this.userCategoryId = currentUserCategoryId;
+
             timer1.Interval = 100; 
             timer1.Start();
 
@@ -40,9 +44,10 @@ namespace Login
             if (progressBar1.Value >= progressBar1.Maximum)
             {
                 timer1.Stop(); 
-                this.Hide(); 
+                this.Hide();
 
-                frmMenu menu_frm = new frmMenu();
+                
+                frmMenu menu_frm = new frmMenu(userCategoryId);
                 menu_frm.Show();
 
                 
