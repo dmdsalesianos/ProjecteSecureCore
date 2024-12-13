@@ -22,6 +22,7 @@ namespace Login
         public frmMenu(int currentUserCategoryId)
         {
             InitializeComponent();
+            DoubleBuffered = true;
             accesLevel = ObtenerAccessLevel(currentUserCategoryId);
             //MessageBox.Show($"Access Level: {accesLevel}");
 

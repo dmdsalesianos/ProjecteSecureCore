@@ -29,6 +29,7 @@ namespace Login
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -93,7 +94,7 @@ namespace Login
             // 
             // PanelContenido
             // 
-            this.PanelContenido.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.PanelContenido.BackColor = System.Drawing.Color.Gray;
             this.PanelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelContenido.Location = new System.Drawing.Point(418, 59);
             this.PanelContenido.Name = "PanelContenido";
@@ -102,7 +103,8 @@ namespace Login
             // 
             // flowLayoutPanel
             // 
-            this.flowLayoutPanel.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.flowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel.BackgroundImage = global::Login.Properties.Resources._9496304;
             this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel.Location = new System.Drawing.Point(0, 59);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
@@ -113,10 +115,12 @@ namespace Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Login.Properties.Resources._9496304;
             this.ClientSize = new System.Drawing.Size(1184, 757);
             this.Controls.Add(this.PanelContenido);
             this.Controls.Add(this.flowLayoutPanel);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMenu";
             this.Text = "Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

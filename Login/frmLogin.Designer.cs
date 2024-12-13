@@ -158,7 +158,7 @@ namespace Login
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(164, 530);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(302, 60);
+            this.btnLogin.Size = new System.Drawing.Size(302, 57);
             this.btnLogin.TabIndex = 10;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.TextColor = System.Drawing.Color.White;
