@@ -48,16 +48,18 @@ namespace Login
             this.panel1.Controls.Add(this.button_logaout);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1184, 59);
+            this.panel1.Size = new System.Drawing.Size(1052, 47);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Login.Properties.Resources.Name_FFFFFF;
-            this.pictureBox2.Location = new System.Drawing.Point(91, 11);
+            this.pictureBox2.Location = new System.Drawing.Point(81, 9);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(249, 40);
+            this.pictureBox2.Size = new System.Drawing.Size(221, 32);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -66,9 +68,10 @@ namespace Login
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Login.Properties.Resources.Only_logo_FFFFFF;
-            this.pictureBox1.Location = new System.Drawing.Point(11, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(10, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(74, 53);
+            this.pictureBox1.Size = new System.Drawing.Size(66, 42);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -81,11 +84,12 @@ namespace Login
             this.button_logaout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
             this.button_logaout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
             this.button_logaout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_logaout.Font = new System.Drawing.Font("Arial Nova", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_logaout.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_logaout.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button_logaout.Location = new System.Drawing.Point(1042, 0);
+            this.button_logaout.Location = new System.Drawing.Point(926, 0);
+            this.button_logaout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_logaout.Name = "button_logaout";
-            this.button_logaout.Size = new System.Drawing.Size(142, 59);
+            this.button_logaout.Size = new System.Drawing.Size(126, 47);
             this.button_logaout.TabIndex = 0;
             this.button_logaout.Text = "Log out";
             this.button_logaout.UseVisualStyleBackColor = false;
@@ -95,28 +99,32 @@ namespace Login
             // 
             this.PanelContenido.BackColor = System.Drawing.Color.PaleTurquoise;
             this.PanelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelContenido.Location = new System.Drawing.Point(418, 59);
+            this.PanelContenido.Location = new System.Drawing.Point(372, 47);
+            this.PanelContenido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelContenido.Name = "PanelContenido";
-            this.PanelContenido.Size = new System.Drawing.Size(766, 698);
+            this.PanelContenido.Size = new System.Drawing.Size(680, 559);
             this.PanelContenido.TabIndex = 2;
             // 
             // flowLayoutPanel
             // 
+            this.flowLayoutPanel.AutoScroll = true;
             this.flowLayoutPanel.BackColor = System.Drawing.SystemColors.HotTrack;
             this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel.Location = new System.Drawing.Point(0, 59);
+            this.flowLayoutPanel.Location = new System.Drawing.Point(0, 47);
+            this.flowLayoutPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(418, 698);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(372, 559);
             this.flowLayoutPanel.TabIndex = 0;
             // 
             // frmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 757);
+            this.ClientSize = new System.Drawing.Size(1052, 606);
             this.Controls.Add(this.PanelContenido);
             this.Controls.Add(this.flowLayoutPanel);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmMenu";
             this.Text = "Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

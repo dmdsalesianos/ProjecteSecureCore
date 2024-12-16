@@ -62,6 +62,12 @@
     <Compile Include="frmLoading.Designer.cs">
       <DependentUpon>frmLoading.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmOpcionesAmpliado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOpcionesAmpliado.Designer.cs">
+      <DependentUpon>frmOpcionesAmpliado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Splash.cs">
       <SubType>Form</SubType>
     </Compile>

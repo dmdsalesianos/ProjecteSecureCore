@@ -77,9 +77,6 @@ namespace Login
             //Para cada fila en el DataSet de MenuOptions que obtenemos de la base de datos
             DataTable menuOptionsTable = ds.Tables[0];
 
-            
-
-
             foreach (DataRow row in menuOptionsTable.Rows)
             {
 
@@ -127,13 +124,13 @@ namespace Login
                             btn.ColorOri = Color.BlueViolet;
                             
                         }
-                    } // Asignamos el color de fondoç
+                    } // Asignamos el color de fondo
                  
 
                     flowLayoutPanel.Dock = DockStyle.Left;  // O DockStyle.Fill si deseas que ocupe todo el espacio disponible
                     flowLayoutPanel.FlowDirection = FlowDirection.TopDown;  // Esto hará que los botones se apilen verticalmente
                     flowLayoutPanel.WrapContents = false;
-                    flowLayoutPanel.Width = btn.Width;
+                    flowLayoutPanel.Width = btn.Width + 15;
                     // Lo añadimos al panel del formulario principal (en este caso 'targetPanel')
                     flowLayoutPanel.Controls.Add(btn);
                 }
