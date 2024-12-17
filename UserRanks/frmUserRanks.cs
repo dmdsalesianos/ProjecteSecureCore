@@ -25,7 +25,6 @@ namespace UserRanks
         protected override void BaseForm_Load(object sender, EventArgs e)
         {
             base.BaseForm_Load(sender, e);
-            rankCmb.DataSource = ds.Tables[TableName];
         }
     }
 }

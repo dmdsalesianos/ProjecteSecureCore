@@ -11,22 +11,37 @@ using Base;
 
 namespace SpaceShipsTypes
 {
-    public partial class frmSpaceShipsTypes : baseForm
+    public partial class frmSpaceShipsTypes : Base.baseForm
     {
+        private DataSet dsFK;
+
         public frmSpaceShipsTypes()
         {
             InitializeComponent();
             TableName = "SpaceShipTypes";
             querySelect = $"SELECT * FROM {TableName}";
 
-            //comboBox = descCmb;
+            filiationCmb.Tag = "idFiliation";
+            filiationCmb.DisplayMember = "DescFiliations";
+            filiationCmb.ValueMember = "idFiliation";
+
+            categoryCmb.Tag = "idSpaceShipCategory";
+            categoryCmb.DisplayMember = "DescSpaceShipCategory";
+            categoryCmb.ValueMember = "idSpaceShipCategory";
         }
 
         protected override void BaseForm_Load(object sender, EventArgs e)
         {
             base.BaseForm_Load(sender, e);
-            //comboBox.DataSource = ds.Tables[TableName];
-           
+
+            dsFK = dataAccess.PortarTaula("SpaceShipCategories");
+            categoryCmb.DataSource = dsFK.Tables["SpaceShipCategories"];
+
+            dsFK = dataAccess.PortarTaula("Filiations");
+            filiationCmb.DataSource = dsFK.Tables["Filiations"];
+
+
+
         }
     }
 }
