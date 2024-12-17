@@ -15,7 +15,7 @@ namespace Base
         public MantenimentDades dataAccess;
         public string TableName;
         public string querySelect;
-
+        protected DataGridView dataGrid;
         public baseForm()
         {
             InitializeComponent();
@@ -48,7 +48,7 @@ namespace Base
 
             dataGridView1.DataSource = ds.Tables[TableName];
             BindToData();
-
+            
             foreach (Control control in Controls)
             {
                 if (control is ComboBox comboBox)
@@ -58,13 +58,16 @@ namespace Base
                         dataGridView1.Columns.Remove(comboBox.ValueMember);
                     }
 
-                    if (!dataGridView1.Columns.Contains(comboBox.DisplayMember.ToString()))
+                    if (dataGridView1.Columns.Contains(comboBox.DisplayMember.ToString()))
                     {
-                        dataGridView1.Columns.Add(comboBox.DisplayMember.ToString(), comboBox.DisplayMember);
+                        dataGridView1.Columns.Remove(comboBox.DisplayMember.ToString());
+
                     }
 
+                    dataGridView1.Columns.Add(comboBox.DisplayMember.ToString(), comboBox.DisplayMember);
+
                     string tableName = comboBox.Tag.ToString();
-                    string query = $"SELECT * FROM {tableName}"; 
+                    string query = $"SELECT * FROM {tableName}";
 
                     DataSet dsComboBox = dataAccess.PortarPerConsulta(query);
 
@@ -88,12 +91,10 @@ namespace Base
                             }
                         }
                     }
-                    else
-                    {
-                        MessageBox.Show($"No se pudieron cargar los datos para el ComboBox '{comboBox.Name}'.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+
                 }
             }
+            dataGrid = dataGridView1;
         }
 
 

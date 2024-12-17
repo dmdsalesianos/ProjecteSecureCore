@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Base;
+using CrystalDecisions.CrystalReports.Engine;
+
 
 namespace Users
 {
     public partial class frmUser : baseForm
     {
         public DataSet dsFK;
+        protected int idUserDG;
 
         public frmUser()
         {
@@ -43,6 +46,21 @@ namespace Users
             comboBox1.DataSource = dsFK.Tables[comboBox1.Tag.ToString()];
             
             
+
+        }
+
+        private void btnMostrar_Click(object sender, EventArgs e)
+        {
+            if (dataGrid.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGrid.SelectedRows[0];
+
+                idUserDG = Convert.ToInt32(selectedRow.Cells[0].Value);
+
+            }
+            Form1 frmCrystal = new Form1(idUserDG);
+            frmCrystal.Show();
+
 
         }
     }
