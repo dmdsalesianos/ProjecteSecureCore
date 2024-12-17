@@ -29,60 +29,61 @@ namespace CustomControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.MenuBtn = new System.Windows.Forms.Button();
             this.optionImg = new System.Windows.Forms.PictureBox();
             this.optionLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.optionImg)).BeginInit();
             this.SuspendLayout();
             // 
-            // MenuBtn
-            // 
-            this.MenuBtn.BackColor = System.Drawing.Color.DodgerBlue;
-            this.MenuBtn.Location = new System.Drawing.Point(0, 0);
-            this.MenuBtn.Name = "MenuBtn";
-            this.MenuBtn.Size = new System.Drawing.Size(260, 127);
-            this.MenuBtn.TabIndex = 0;
-            this.MenuBtn.UseVisualStyleBackColor = false;
-            this.MenuBtn.Click += new System.EventHandler(this.MenuBtn_Click);
-            // 
             // optionImg
             // 
             this.optionImg.BackColor = System.Drawing.Color.Transparent;
-            this.optionImg.Location = new System.Drawing.Point(32, 35);
+            this.optionImg.Location = new System.Drawing.Point(20, 35);
             this.optionImg.Name = "optionImg";
-            this.optionImg.Size = new System.Drawing.Size(54, 54);
+            this.optionImg.Size = new System.Drawing.Size(67, 62);
+            this.optionImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.optionImg.TabIndex = 1;
             this.optionImg.TabStop = false;
+            this.optionImg.Click += new System.EventHandler(this.MenuButton_Click);
+            this.optionImg.MouseEnter += new System.EventHandler(this.MenuButton_MouseEnter);
+            this.optionImg.MouseLeave += new System.EventHandler(this.MenuButton_MouseLeave);
             // 
             // optionLbl
             // 
-            this.optionLbl.AutoSize = true;
             this.optionLbl.BackColor = System.Drawing.Color.Transparent;
             this.optionLbl.Font = new System.Drawing.Font("Corbel", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.optionLbl.Location = new System.Drawing.Point(116, 47);
+            this.optionLbl.Location = new System.Drawing.Point(92, 35);
+            this.optionLbl.MinimumSize = new System.Drawing.Size(178, 2);
             this.optionLbl.Name = "optionLbl";
-            this.optionLbl.Size = new System.Drawing.Size(89, 27);
+            this.optionLbl.Size = new System.Drawing.Size(178, 62);
             this.optionLbl.TabIndex = 2;
             this.optionLbl.Text = "OPTION";
+            this.optionLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.optionLbl.Click += new System.EventHandler(this.MenuButton_Click);
+            this.optionLbl.MouseEnter += new System.EventHandler(this.MenuButton_MouseEnter);
+            this.optionLbl.MouseLeave += new System.EventHandler(this.MenuButton_MouseLeave);
             // 
             // MenuButton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DodgerBlue;
             this.Controls.Add(this.optionLbl);
             this.Controls.Add(this.optionImg);
-            this.Controls.Add(this.MenuBtn);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Margin = new System.Windows.Forms.Padding(0);
+            this.MinimumSize = new System.Drawing.Size(213, 127);
             this.Name = "MenuButton";
-            this.Size = new System.Drawing.Size(260, 127);
+            this.Size = new System.Drawing.Size(300, 127);
+            this.Click += new System.EventHandler(this.MenuButton_Click);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuButton_Paint);
+            this.MouseEnter += new System.EventHandler(this.MenuButton_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.MenuButton_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.optionImg)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button MenuBtn;
         private System.Windows.Forms.PictureBox optionImg;
         private System.Windows.Forms.Label optionLbl;
     }
