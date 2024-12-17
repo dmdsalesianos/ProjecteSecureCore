@@ -81,7 +81,6 @@ namespace Base
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "baseForm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.BaseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

@@ -48,7 +48,7 @@ namespace MenuOptions
             // 
             // pictureBox_icono
             // 
-            this.pictureBox_icono.Location = new System.Drawing.Point(40, 70);
+            this.pictureBox_icono.Location = new System.Drawing.Point(46, 70);
             this.pictureBox_icono.Name = "pictureBox_icono";
             this.pictureBox_icono.Size = new System.Drawing.Size(132, 121);
             this.pictureBox_icono.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -197,7 +197,7 @@ namespace MenuOptions
             // swtxtImagen
             // 
             this.swtxtImagen.EsForanea = false;
-            this.swtxtImagen.Location = new System.Drawing.Point(55, 102);
+            this.swtxtImagen.Location = new System.Drawing.Point(60, 302);
             this.swtxtImagen.Name = "swtxtImagen";
             this.swtxtImagen.NomCampBBDD = "Icono";
             this.swtxtImagen.PermetreBuit = true;
