@@ -124,12 +124,12 @@ namespace Login
                             btn.ColorOri = Color.BlueViolet;
                             
                         }
-                    } // Asignamos el color de fondo
-                 
+                    } // Asignamos el color de fondo       
 
                     flowLayoutPanel.Dock = DockStyle.Left;  // O DockStyle.Fill si deseas que ocupe todo el espacio disponible
                     flowLayoutPanel.FlowDirection = FlowDirection.TopDown;  // Esto hará que los botones se apilen verticalmente
                     flowLayoutPanel.WrapContents = false;
+                    flowLayoutPanel.AutoScroll = true;
                     flowLayoutPanel.Width = btn.Width + 15;
                     // Lo añadimos al panel del formulario principal (en este caso 'targetPanel')
                     flowLayoutPanel.Controls.Add(btn);
