@@ -17,49 +17,7 @@ namespace MenuOptions
             InitializeComponent();
             TableName = "MenuOptions";
             querySelect = $"SELECT * FROM {TableName}";
-
             
-        }
-
-        protected override void BaseForm_Load(object sender, EventArgs e)
-        {
-            base.BaseForm_Load(sender, e);
-
-            dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
-
-        }
-
-        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
-        {
-            MostrarImagenSeleccionada();
-        }
-
-        private void MostrarImagenSeleccionada()
-        {
-            DataRow selectedRow = GetSelectedPlanetRow();
-            if (selectedRow != null)
-            {
-                string imagePath = Path.Combine(imagesDirectory, selectedRow["Icono"]?.ToString());
-                if (!string.IsNullOrEmpty(imagePath) && File.Exists(imagePath))
-                {
-                    pictureBox_icono.Image = Image.FromFile(imagePath);
-                }
-                else
-                {
-                    pictureBox_icono.Image = null; // Limpiar el PictureBox si no hay imagen válida
-                }
-            }
-        }
-
-        private DataRow GetSelectedPlanetRow()
-        {
-            if (dataGridView1.CurrentRow != null)
-            {
-                int selectedIndex = dataGridView1.CurrentRow.Index;
-                return ds.Tables[TableName].Rows[selectedIndex];
-            }
-
-            return null;
         }
 
         private void rjButton_image_Click(object sender, EventArgs e)
