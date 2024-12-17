@@ -214,8 +214,10 @@ namespace MenuOptions
             this.Controls.Add(this.label_acceslevel);
             this.Controls.Add(this.pictureBox_icono);
             this.Name = "frmMenuOptions";
+            this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "¡¡";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Controls.SetChildIndex(this.pictureBox_icono, 0);
             this.Controls.SetChildIndex(this.label_acceslevel, 0);
             this.Controls.SetChildIndex(this.label_clase, 0);

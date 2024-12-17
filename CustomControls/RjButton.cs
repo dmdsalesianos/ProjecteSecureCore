@@ -48,7 +48,7 @@ namespace CustomControls
             {
                 backgroundColor = value;
                 this.BackColor = value; // Sincroniza con BackColor del botón
-                this.Invalidate();     // Redibuja el botón
+                this.Invalidate(); // Redibuja el botón
             }
         }
 
@@ -72,6 +72,7 @@ namespace CustomControls
             this.BackColor = Color.MediumSlateBlue;
             this.ForeColor = Color.White;
             this.Resize += Button_Resize;
+            
         }
 
         private GraphicsPath GetFigurePath(Rectangle rect, int radius)

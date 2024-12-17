@@ -61,6 +61,12 @@
     <Compile Include="RjButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RJProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SWCodi.cs">
       <SubType>UserControl</SubType>
     </Compile>
