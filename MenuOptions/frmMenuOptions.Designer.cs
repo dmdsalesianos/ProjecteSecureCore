@@ -232,6 +232,7 @@ namespace MenuOptions
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "¡¡";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmMenuOptions_Load);
             this.Controls.SetChildIndex(this.swtxtImagen, 0);
             this.Controls.SetChildIndex(this.pictureBox_icono, 0);
             this.Controls.SetChildIndex(this.label_acceslevel, 0);

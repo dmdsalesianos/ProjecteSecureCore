@@ -294,7 +294,7 @@ namespace Planets
             // swtxtImagen
             // 
             this.swtxtImagen.EsForanea = false;
-            this.swtxtImagen.Location = new System.Drawing.Point(71, 353);
+            this.swtxtImagen.Location = new System.Drawing.Point(56, 417);
             this.swtxtImagen.Name = "swtxtImagen";
             this.swtxtImagen.NomCampBBDD = "PlanetPicture";
             this.swtxtImagen.PermetreBuit = true;

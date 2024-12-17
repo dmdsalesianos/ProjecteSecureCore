@@ -15,7 +15,7 @@ namespace Planets
     public partial class frmPlanets : baseForm
     {
         public DataSet dsFK;
-        string imagesDirectory = Path.Combine(Directory.GetParent(Application.StartupPath)?.Parent.Parent.FullName, "App");
+        string imagesDirectory = Application.StartupPath;
 
         public frmPlanets()
         {
