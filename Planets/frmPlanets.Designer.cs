@@ -45,9 +45,9 @@ namespace Planets
             this.lblIPPlanet = new System.Windows.Forms.Label();
             this.lblPortPlanet = new System.Windows.Forms.Label();
             this.lblPortPlanet1 = new System.Windows.Forms.Label();
-            this.swTextbox3 = new CustomControls.SWTextbox();
-            this.swTextbox2 = new CustomControls.SWTextbox();
-            this.swTextbox1 = new CustomControls.SWTextbox();
+            this.swtxtPortPlanet = new CustomControls.SWTextbox();
+            this.swtxtbox = new CustomControls.SWTextbox();
+            this.swtxtIPPlanet = new CustomControls.SWTextbox();
             this.swtxtLat = new CustomControls.SWTextbox();
             this.swtxtLong = new CustomControls.SWTextbox();
             this.swtxtParsecs = new CustomControls.SWTextbox();
@@ -157,7 +157,7 @@ namespace Planets
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(26, 261);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 425);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(184, 150);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -202,39 +202,38 @@ namespace Planets
             this.lblPortPlanet1.TabIndex = 29;
             this.lblPortPlanet1.Text = "Port Planet 1";
             // 
-            // swTextbox3
+            // swtxtPortPlanet
             // 
-            this.swTextbox3.EsForanea = false;
-            this.swTextbox3.Location = new System.Drawing.Point(256, 218);
-            this.swTextbox3.Name = "swTextbox3";
-            this.swTextbox3.NomCampBBDD = "PortPlanet1";
-            this.swTextbox3.PermetreBuit = true;
-            this.swTextbox3.Size = new System.Drawing.Size(174, 26);
-            this.swTextbox3.TabIndex = 28;
-            this.swTextbox3.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
-            this.swTextbox3.TextChanged += new System.EventHandler(this.swTextbox3_TextChanged);
+            this.swtxtPortPlanet.EsForanea = false;
+            this.swtxtPortPlanet.Location = new System.Drawing.Point(256, 218);
+            this.swtxtPortPlanet.Name = "swtxtPortPlanet";
+            this.swtxtPortPlanet.NomCampBBDD = "PortPlanet1";
+            this.swtxtPortPlanet.PermetreBuit = true;
+            this.swtxtPortPlanet.Size = new System.Drawing.Size(174, 26);
+            this.swtxtPortPlanet.TabIndex = 28;
+            this.swtxtPortPlanet.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
             // 
-            // swTextbox2
+            // swtxtbox
             // 
-            this.swTextbox2.EsForanea = false;
-            this.swTextbox2.Location = new System.Drawing.Point(26, 218);
-            this.swTextbox2.Name = "swTextbox2";
-            this.swTextbox2.NomCampBBDD = "PortPlanet";
-            this.swTextbox2.PermetreBuit = true;
-            this.swTextbox2.Size = new System.Drawing.Size(174, 26);
-            this.swTextbox2.TabIndex = 26;
-            this.swTextbox2.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
+            this.swtxtbox.EsForanea = false;
+            this.swtxtbox.Location = new System.Drawing.Point(26, 218);
+            this.swtxtbox.Name = "swtxtbox";
+            this.swtxtbox.NomCampBBDD = "PortPlanet";
+            this.swtxtbox.PermetreBuit = true;
+            this.swtxtbox.Size = new System.Drawing.Size(174, 26);
+            this.swtxtbox.TabIndex = 26;
+            this.swtxtbox.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
             // 
-            // swTextbox1
+            // swtxtIPPlanet
             // 
-            this.swTextbox1.EsForanea = false;
-            this.swTextbox1.Location = new System.Drawing.Point(256, 158);
-            this.swTextbox1.Name = "swTextbox1";
-            this.swTextbox1.NomCampBBDD = "IPPlanet";
-            this.swTextbox1.PermetreBuit = true;
-            this.swTextbox1.Size = new System.Drawing.Size(174, 26);
-            this.swTextbox1.TabIndex = 24;
-            this.swTextbox1.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
+            this.swtxtIPPlanet.EsForanea = false;
+            this.swtxtIPPlanet.Location = new System.Drawing.Point(256, 158);
+            this.swtxtIPPlanet.Name = "swtxtIPPlanet";
+            this.swtxtIPPlanet.NomCampBBDD = "IPPlanet";
+            this.swtxtIPPlanet.PermetreBuit = true;
+            this.swtxtIPPlanet.Size = new System.Drawing.Size(174, 26);
+            this.swtxtIPPlanet.TabIndex = 24;
+            this.swtxtIPPlanet.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
             // 
             // swtxtLat
             // 
@@ -310,11 +309,11 @@ namespace Planets
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 566);
             this.Controls.Add(this.lblPortPlanet1);
-            this.Controls.Add(this.swTextbox3);
+            this.Controls.Add(this.swtxtPortPlanet);
             this.Controls.Add(this.lblPortPlanet);
-            this.Controls.Add(this.swTextbox2);
+            this.Controls.Add(this.swtxtbox);
             this.Controls.Add(this.lblIPPlanet);
-            this.Controls.Add(this.swTextbox1);
+            this.Controls.Add(this.swtxtIPPlanet);
             this.Controls.Add(this.btnImage);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblFiliation);
@@ -355,11 +354,11 @@ namespace Planets
             this.Controls.SetChildIndex(this.lblFiliation, 0);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.btnImage, 0);
-            this.Controls.SetChildIndex(this.swTextbox1, 0);
+            this.Controls.SetChildIndex(this.swtxtIPPlanet, 0);
             this.Controls.SetChildIndex(this.lblIPPlanet, 0);
-            this.Controls.SetChildIndex(this.swTextbox2, 0);
+            this.Controls.SetChildIndex(this.swtxtbox, 0);
             this.Controls.SetChildIndex(this.lblPortPlanet, 0);
-            this.Controls.SetChildIndex(this.swTextbox3, 0);
+            this.Controls.SetChildIndex(this.swtxtPortPlanet, 0);
             this.Controls.SetChildIndex(this.lblPortPlanet1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -388,12 +387,12 @@ namespace Planets
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnImage;
         private CustomControls.SWTextbox swtxtImagen;
-        private CustomControls.SWTextbox swTextbox1;
+        private CustomControls.SWTextbox swtxtIPPlanet;
         private System.Windows.Forms.Label lblIPPlanet;
         private System.Windows.Forms.Label lblPortPlanet;
-        private CustomControls.SWTextbox swTextbox2;
+        private CustomControls.SWTextbox swtxtbox;
         private System.Windows.Forms.Label lblPortPlanet1;
-        private CustomControls.SWTextbox swTextbox3;
+        private CustomControls.SWTextbox swtxtPortPlanet;
     }
 }
 

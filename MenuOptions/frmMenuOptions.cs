@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Base;
 
@@ -80,7 +75,7 @@ namespace MenuOptions
                 {
                     string sourceFilePath = openFileDialog.FileName;
 
-                    string carpetaDirectory = Path.Combine(imagesDirectory, nombreCarpeta); //C://.../bin/Debug/imatges
+                    string carpetaDirectory = Path.Combine(imagesDirectory, nombreCarpeta); //C://.../App
 
                     if (!Directory.Exists(carpetaDirectory))
                     {
@@ -88,29 +83,37 @@ namespace MenuOptions
                     }
 
                     string fileName = Path.GetFileName(sourceFilePath); //Nombre de la imagen
-                    string destinationFilePath = Path.Combine(carpetaDirectory, fileName); // C://.../bin/Debug/imatges/nombre_imagen
-
-                    string rutaBBD = Path.Combine(nombreCarpeta, fileName); // imagtes/nombre_imagen
+                    string destinationFilePath = Path.Combine(carpetaDirectory, fileName); // C://.../App/imatges/nombre_imagen
 
                     try
                     {
                         File.Copy(sourceFilePath, destinationFilePath, overwrite: true);
+                        swtxtImagen.Text = fileName;
 
-                        DataRow selectedRow = GetSelectedPlanetRow();
-                        if (selectedRow != null)
-                        {
-                            selectedRow["Icono"] = rutaBBD;
-                        }
+                        //Hago focus sobre el swtxtImagen y luego lo pierdo para que se valide
+                        swtxtImagen.Focus();
+                        rjButton_image.Focus();
 
-                        MostrarImagenSeleccionada();
-
-                        //MessageBox.Show($"Imagen copiada exitosamente a: {rutaBBD}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show($"Ocurrió un error al copiar la imagen: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+            }
+        }
+
+        private void swtxtImagen_TextChanged(object sender, EventArgs e)
+        {
+            string imagePath = Path.Combine(imagesDirectory, "iconos", swtxtImagen.Text);
+
+            if (File.Exists(imagePath))
+            {
+                pictureBox_icono.ImageLocation = imagePath;
+            }
+            else
+            {
+                pictureBox_icono.ImageLocation = null; // Borra la imagen si no se encuentra el archivo
             }
         }
     }

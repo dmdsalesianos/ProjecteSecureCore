@@ -104,9 +104,5 @@ namespace Planets
                 pictureBox1.ImageLocation = null; // Borra la imagen si no se encuentra el archivo
             }
         }
-        private void swTextbox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

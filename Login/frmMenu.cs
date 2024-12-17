@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataAccess;
 using CustomControls;
-using System.Drawing;
 
 namespace Login
 {

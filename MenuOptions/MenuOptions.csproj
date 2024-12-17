@@ -54,7 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmMenuOptions.cs" />
+    <Compile Include="frmMenuOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMenuOptions.Designer.cs">
       <DependentUpon>frmMenuOptions.cs</DependentUpon>
     </Compile>
