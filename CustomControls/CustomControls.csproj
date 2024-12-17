@@ -96,6 +96,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="RJProgressBar.resx">
+      <DependentUpon>RJProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SWCodi.resx">
       <DependentUpon>SWCodi.cs</DependentUpon>
     </EmbeddedResource>

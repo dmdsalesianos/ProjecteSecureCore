@@ -12,13 +12,14 @@ using System.Windows.Forms;
 namespace Login
 {
     public partial class frmLoading : Form
-    {       
-        private int tiempoTotal = 5000;
-        private int intervalo = 100;   
+    {
+        //ANTES HABIAN 5000 ms
+        private int tiempoTotal = 1000;
+        private int intervalo = 100;
         private int incremento;
         private int userCategoryId;
 
-        private int dotCount = 0; 
+        private int dotCount = 0;
 
         public frmLoading(int currentUserCategoryId)
         {
@@ -31,13 +32,13 @@ namespace Login
 
             // Configuración del RJProgressBar
             incremento = rjProgressBar.Maximum / (tiempoTotal / intervalo);
-            rjProgressBar.Value = 0; 
+            rjProgressBar.Value = 0;
             rjProgressBar.ChannelColor = ColorTranslator.FromHtml("#232F5F");   // Color del canal de fondo
             rjProgressBar.SliderColor = ColorTranslator.FromHtml("#2490F1");   // Color del progreso
             rjProgressBar.ForeBackColor = Color.Transparent;              // Fondo del texto transparente
             rjProgressBar.ShowValue = TextPosition.None;                  // No mostrar porcentaje
 
-            
+
             lblLoadingMessage.ForeColor = ColorTranslator.FromHtml("#2490F1");
             lblLoadingMessage.BackColor = Color.Transparent;                  // Transparencia en el texto
         }
@@ -46,11 +47,11 @@ namespace Login
         {
             rjProgressBar.Value += incremento;
 
-            dotCount = (dotCount + 1) % 4; 
-            lblLoadingMessage.Text = "Cooking" + new string('.', dotCount); 
+            dotCount = (dotCount + 1) % 4;
+            lblLoadingMessage.Text = "Cooking" + new string('.', dotCount);
 
-            
-            if (rjProgressBar.Value >= rjProgressBar.Maximum)
+
+            if(rjProgressBar.Value >= rjProgressBar.Maximum)
             {
                 timer1.Stop();
                 this.Hide();
