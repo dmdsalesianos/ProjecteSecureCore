@@ -39,9 +39,9 @@ namespace Login
             this.lblErrorMessage = new System.Windows.Forms.Label();
             this.btnShowConfirmPassword = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button_arrow = new CustomControls.RJButton();
-            this.btnSavePassword = new CustomControls.RJButton();
             this.Button_Close = new CustomControls.RJButton();
+            this.btnSavePassword = new CustomControls.RJButton();
+            this.button_arrow = new CustomControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -171,25 +171,25 @@ namespace Login
             this.label1.TabIndex = 21;
             this.label1.Text = "New Pass";
             // 
-            // button_arrow
+            // Button_Close
             // 
-            this.button_arrow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(198)))), ((int)(((byte)(250)))));
-            this.button_arrow.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(198)))), ((int)(((byte)(250)))));
-            this.button_arrow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(153)))));
-            this.button_arrow.BorderRadius = 20;
-            this.button_arrow.BorderSize = 5;
-            this.button_arrow.FlatAppearance.BorderSize = 0;
-            this.button_arrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_arrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.button_arrow.ForeColor = System.Drawing.Color.White;
-            this.button_arrow.Location = new System.Drawing.Point(12, 12);
-            this.button_arrow.Name = "button_arrow";
-            this.button_arrow.Size = new System.Drawing.Size(57, 55);
-            this.button_arrow.TabIndex = 23;
-            this.button_arrow.Text = "🡨";
-            this.button_arrow.TextColor = System.Drawing.Color.White;
-            this.button_arrow.UseVisualStyleBackColor = false;
-            this.button_arrow.Click += new System.EventHandler(this.button_arrow_Click);
+            this.Button_Close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.Button_Close.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.Button_Close.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Button_Close.BorderRadius = 10;
+            this.Button_Close.BorderSize = 5;
+            this.Button_Close.FlatAppearance.BorderSize = 0;
+            this.Button_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_Close.ForeColor = System.Drawing.Color.White;
+            this.Button_Close.Location = new System.Drawing.Point(716, 12);
+            this.Button_Close.Name = "Button_Close";
+            this.Button_Close.Size = new System.Drawing.Size(33, 36);
+            this.Button_Close.TabIndex = 25;
+            this.Button_Close.Text = "❌";
+            this.Button_Close.TextColor = System.Drawing.Color.White;
+            this.Button_Close.UseVisualStyleBackColor = false;
+            this.Button_Close.Click += new System.EventHandler(this.Button_Close_Click);
             // 
             // btnSavePassword
             // 
@@ -211,25 +211,25 @@ namespace Login
             this.btnSavePassword.UseVisualStyleBackColor = false;
             this.btnSavePassword.Click += new System.EventHandler(this.btnSavePassword_Click);
             // 
-            // Button_Close
+            // button_arrow
             // 
-            this.Button_Close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.Button_Close.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.Button_Close.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Button_Close.BorderRadius = 10;
-            this.Button_Close.BorderSize = 5;
-            this.Button_Close.FlatAppearance.BorderSize = 0;
-            this.Button_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_Close.ForeColor = System.Drawing.Color.White;
-            this.Button_Close.Location = new System.Drawing.Point(711, 12);
-            this.Button_Close.Name = "Button_Close";
-            this.Button_Close.Size = new System.Drawing.Size(38, 36);
-            this.Button_Close.TabIndex = 25;
-            this.Button_Close.Text = "❌";
-            this.Button_Close.TextColor = System.Drawing.Color.White;
-            this.Button_Close.UseVisualStyleBackColor = false;
-            this.Button_Close.Click += new System.EventHandler(this.Button_Close_Click);
+            this.button_arrow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(198)))), ((int)(((byte)(250)))));
+            this.button_arrow.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(198)))), ((int)(((byte)(250)))));
+            this.button_arrow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(153)))));
+            this.button_arrow.BorderRadius = 20;
+            this.button_arrow.BorderSize = 5;
+            this.button_arrow.FlatAppearance.BorderSize = 0;
+            this.button_arrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_arrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.button_arrow.ForeColor = System.Drawing.Color.White;
+            this.button_arrow.Location = new System.Drawing.Point(12, 12);
+            this.button_arrow.Name = "button_arrow";
+            this.button_arrow.Size = new System.Drawing.Size(57, 55);
+            this.button_arrow.TabIndex = 23;
+            this.button_arrow.Text = "🡨";
+            this.button_arrow.TextColor = System.Drawing.Color.White;
+            this.button_arrow.UseVisualStyleBackColor = false;
+            this.button_arrow.Click += new System.EventHandler(this.button_arrow_Click);
             // 
             // frmChangePassword
             // 
@@ -254,6 +254,7 @@ namespace Login
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.Name = "frmChangePassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmChangePassword";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

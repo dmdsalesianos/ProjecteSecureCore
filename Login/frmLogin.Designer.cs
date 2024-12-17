@@ -207,6 +207,7 @@ namespace Login
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

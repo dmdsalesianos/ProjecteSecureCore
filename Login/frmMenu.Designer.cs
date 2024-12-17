@@ -53,7 +53,7 @@ namespace Login
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1184, 59);
+            this.panel1.Size = new System.Drawing.Size(1108, 59);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -62,7 +62,7 @@ namespace Login
             this.panel2.Controls.Add(this.button_logaout);
             this.panel2.Controls.Add(this.button_Close);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(908, 0);
+            this.panel2.Location = new System.Drawing.Point(832, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(276, 59);
             this.panel2.TabIndex = 3;
@@ -128,21 +128,24 @@ namespace Login
             // 
             // PanelContenido
             // 
-            this.PanelContenido.BackColor = System.Drawing.Color.Gray;
+            this.PanelContenido.BackColor = System.Drawing.Color.MidnightBlue;
+            this.PanelContenido.BackgroundImage = global::Login.Properties.Resources.Only_logo_2490F1;
+            this.PanelContenido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.PanelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelContenido.Location = new System.Drawing.Point(418, 59);
             this.PanelContenido.Name = "PanelContenido";
-            this.PanelContenido.Size = new System.Drawing.Size(766, 698);
+            this.PanelContenido.Size = new System.Drawing.Size(690, 749);
             this.PanelContenido.TabIndex = 2;
             // 
             // flowLayoutPanel
             // 
+            this.flowLayoutPanel.AutoScroll = true;
             this.flowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel.BackgroundImage = global::Login.Properties.Resources._9496304;
             this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel.Location = new System.Drawing.Point(0, 59);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(418, 698);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(418, 749);
             this.flowLayoutPanel.TabIndex = 0;
             // 
             // frmMenu
@@ -150,7 +153,7 @@ namespace Login
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Login.Properties.Resources._9496304;
-            this.ClientSize = new System.Drawing.Size(1184, 757);
+            this.ClientSize = new System.Drawing.Size(1108, 808);
             this.Controls.Add(this.PanelContenido);
             this.Controls.Add(this.flowLayoutPanel);
             this.Controls.Add(this.panel1);
