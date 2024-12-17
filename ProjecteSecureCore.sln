@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserRanks", "UserRanks\User
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserCategories", "UserCategories\UserCategories.csproj", "{287BF305-04C5-4686-ACB6-CAAA28C18F55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planets", "Planets\Planets.csproj", "{72BC0850-475D-415E-A634-5F72775252D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{287BF305-04C5-4686-ACB6-CAAA28C18F55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{287BF305-04C5-4686-ACB6-CAAA28C18F55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{287BF305-04C5-4686-ACB6-CAAA28C18F55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72BC0850-475D-415E-A634-5F72775252D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72BC0850-475D-415E-A634-5F72775252D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72BC0850-475D-415E-A634-5F72775252D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72BC0850-475D-415E-A634-5F72775252D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
