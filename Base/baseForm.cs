@@ -3,10 +3,11 @@ using System.Data;
 using System.Windows.Forms;
 using System.Configuration;
 using DataAccess;
-using DataBindingLibrary;
-using DataLibraryDMD;
+using CustomControls;
+using System.IO;
+using System.Drawing;
 
-namespace prueba_txtBox
+namespace Base
 {
     public partial class baseForm : Form
     {
@@ -14,9 +15,7 @@ namespace prueba_txtBox
         public bool esNuevo = false;
         public MantenimentDades dataAccess;
         public string TableName;
-        public string FKTableName;
         public string querySelect;
-        public ComboBox comboBox;
 
         public baseForm()
         {
@@ -30,143 +29,97 @@ namespace prueba_txtBox
             string connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
             dataAccess = new MantenimentDades(connectionString);
 
-            ds = new DataSet();
-
-            DataSet tableDS = dataAccess.PortarTaula(TableName);
-            DataTable Table = tableDS.Tables[TableName].Copy(); 
-            Table.TableName = TableName; 
-            ds.Tables.Add(Table);
-
-            DataSet fkTableDS = dataAccess.PortarTaula(FKTableName);
-            DataTable FKTable = fkTableDS.Tables[FKTableName].Copy(); 
-            FKTable.TableName = FKTableName; 
-            ds.Tables.Add(FKTable);
-
-            ds.Relations.Add(
-                "Table_FKTable",
-                ds.Tables[FKTableName].Columns[comboBox.ValueMember],
-                ds.Tables[TableName].Columns[comboBox.ValueMember]
-            );
-
-            comboBox.SelectedValueChanged += comboBox_SelectedValueChanged;
-
-            CargarDatos();
-        }
-
-
-
-        protected void CargarDatos()
-        {
-            DataBindingHelper.ClearDataBindings(this.Controls);
-            UpdateTable();
-
-            BindTextBoxesToData();
-            BindComboBoxToData();
-        }
-        private void comboBox_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (comboBox.SelectedValue != null)
-            {
-                string selectedValue = comboBox.SelectedValue.ToString();
-
-                DataView dv = new DataView(ds.Tables[TableName]);
-                dv.RowFilter = $"{comboBox.ValueMember} = {selectedValue}";
-
-                dataGridView1.DataSource = dv;
-            }
-        }
-
-
-        private void BindTextBoxesToData()
-        {
-            foreach (Control control in this.Controls)
-            {
-                if (control is TextBox textBox)
+                foreach (Control control in this.Controls)
                 {
-                    var nomCampBBDD = textBox.GetType().GetProperty("NomCampBBDD").GetValue(textBox, null) as string;
-
-                    if (!string.IsNullOrEmpty(nomCampBBDD))
+                    if (control is TextBox textBox)
                     {
-                        textBox.DataBindings.Clear();
-                        textBox.DataBindings.Add("Text", ds.Tables[TableName], nomCampBBDD);
+                        textBox.Validated += ValidarTextBox;
+                    }
+                    else if (control is ComboBox comboBox)
+                    {
+                        comboBox.Validated += ValidarCombobox;
                     }
                 }
-            }
-        }
 
-        private void BindComboBoxToData()
-        {
-            if (comboBox != null)
-            {
-                comboBox.DataSource = ds.Tables[FKTableName];
-                comboBox.DisplayMember = comboBox.DisplayMember;
-                comboBox.ValueMember = comboBox.ValueMember;
-
-                comboBox.DataBindings.Clear();
-                comboBox.DataBindings.Add("SelectedValue", ds.Tables[TableName], comboBox.ValueMember);
-            }
-        }
-
-        protected void button1_Click(object sender, EventArgs e)
-        {
-            esNuevo = true;
-            DataBindingHelper.ClearDataBindings(this.Controls);
-        }
-
-        protected void btnActualizar_Click(object sender, EventArgs e)
-        {
-            if (esNuevo)
-            {
-                AddNewRow();
-                DataBindingHelper.BindControlsToData(this.Controls, ds.Tables[TableName]);
-                esNuevo = false;
-            }
-
-            dataAccess.Actualitzar(ds, querySelect, TableName);
-            ds = dataAccess.PortarTaula(TableName);
             CargarDatos();
-        }
-
-        protected void AddNewRow()
-        {
-            DataRow newRow = ds.Tables[TableName].NewRow();
-
-            foreach (Control control in this.Controls)
-            {
-                if (control is TextBox textBox)
-                {
-                    var nomCampBBDD = textBox.GetType().GetProperty("NomCampBBDD").GetValue(textBox, null) as string;
-
-                    if (!string.IsNullOrEmpty(nomCampBBDD))
-                    {
-                        newRow[nomCampBBDD] = textBox.Text;
-                    }
-                }
-            }
-
-            ds.Tables[TableName].Rows.Add(newRow);
-        }
-
-        protected void UpdateTable()
-        {
-            dataGridView1.DataSource = ds.Tables[TableName];
-            dataGridView1.Columns[0].Visible = false;
+            MakeDataBindigs();
         }
 
         protected void ValidarTextBox(object sender, EventArgs e)
         {
-            try
-            {
-                 if (!esNuevo)
-            {
-                ((TextBox)sender).DataBindings[0].BindingManagerBase.EndCurrentEdit();
-            }
-            }
-            catch (Exception)
-            {
-               throw;
-            }
-           
+            ((TextBox)sender).DataBindings[0].BindingManagerBase.EndCurrentEdit();
         }
+
+        protected void ValidarCombobox(object sender, EventArgs e)
+        {
+            ((ComboBox)sender).DataBindings[0].BindingManagerBase.EndCurrentEdit();
+        }
+
+        private void MakeDataBindigs()
+        {
+            DataTable table = ds.Tables[TableName];
+
+            //*****MAKE DATABINDINGS*****//
+            foreach (Control control in this.Controls)
+            {
+                if (control is SWTextbox textBox)
+                {
+                    textBox.DataBindings.Clear();
+                    textBox.DataBindings.Add("Text", table, textBox.NomCampBBDD);
+                }
+                else if (control is ComboBox comboBox)
+                {
+                    comboBox.DataBindings.Clear();
+                    comboBox.DataBindings.Add("SelectedValue", table, comboBox.Tag.ToString());
+                }
+            }
+        }
+
+        private void CargarDatos()
+        {
+            ds = dataAccess.PortarTaula(TableName);
+            DataTable table = ds.Tables[TableName];
+
+            dataGridView1.DataSource = table;
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.DataSource = ds.Tables[TableName];
+        }
+
+        //*****AÑADE UNA ROW VACIA*****//
+        private void btnAgregar_Click(object sender, EventArgs e)
+        { 
+            DataTable table = ds.Tables[TableName];
+            DataRow newRow = table.NewRow();
+
+            ds.Tables[TableName].Rows.Add(newRow);
+            dataGridView1.DataSource = table;
+            int rowIndex = dataGridView1.Rows.Count - 1;
+
+            // Buscar la primera columna visible
+            int firstVisibleColumnIndex = -1;
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                if (column.Visible)
+                {
+                    firstVisibleColumnIndex = column.Index;
+                    break;
+                }
+            }
+
+            // Seleccionar la celda en la última fila y primera columna visible
+            if (firstVisibleColumnIndex != -1)
+            {
+                dataGridView1.CurrentCell = dataGridView1.Rows[rowIndex].Cells[firstVisibleColumnIndex];
+                dataGridView1.Rows[rowIndex].Selected = true;
+            }
+        }
+
+        protected void btnActualizar_Click(object sender, EventArgs e)
+        {
+            dataAccess.Actualitzar(querySelect, ds, TableName);
+            CargarDatos();
+            MakeDataBindigs();
+        }
+
     }
 }

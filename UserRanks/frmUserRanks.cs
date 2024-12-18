@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using prueba_txtBox;
+using Base;
 
 namespace UserRanks
 {
@@ -19,13 +19,12 @@ namespace UserRanks
             TableName = "UserRanks";
             querySelect = $"SELECT * FROM {TableName}";
 
-            comboBox = rankCmb;
+            //comboBox = rankCmb;
         }
 
         protected override void BaseForm_Load(object sender, EventArgs e)
         {
             base.BaseForm_Load(sender, e);
-            rankCmb.DataSource = ds.Tables[TableName];
         }
     }
 }

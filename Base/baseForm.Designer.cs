@@ -1,5 +1,5 @@
 ﻿
-namespace prueba_txtBox
+namespace Base
 {
     partial class baseForm
     {
@@ -44,7 +44,7 @@ namespace prueba_txtBox
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.button1_Click);
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnActualizar
             // 
@@ -81,7 +81,6 @@ namespace prueba_txtBox
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "baseForm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.BaseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -91,7 +90,7 @@ namespace prueba_txtBox
 
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        protected System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

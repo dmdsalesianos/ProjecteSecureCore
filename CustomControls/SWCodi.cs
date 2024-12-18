@@ -12,13 +12,14 @@ using System.Configuration;
 using DataAccess;
 
 
-namespace Sprint53_G4
+namespace CustomControls
 {
     public partial class SWCodi : UserControl
     {
         public SWCodi()
         {
             InitializeComponent();
+
             codiTxt.Leave += Validacodi;
         }
 

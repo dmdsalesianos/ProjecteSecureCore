@@ -17,7 +17,7 @@ namespace Login
     public partial class frmChangePassword : Form
     {
         private string username;
-        private string connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+        private string connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
 
 
         public frmChangePassword(string username)
@@ -58,6 +58,14 @@ namespace Login
 
         private bool IsValidPassword(string password)
         {
+            if (password.Length >= 6)
+            {
+                lblErrorMessage.Text = "Wrong password or Confirm pass";
+            }
+            else
+            {
+                lblErrorMessage.Text = "Se necessita mas de 6 caracteres";
+            }
             return password.Length >= 6;
         }
 
@@ -146,6 +154,19 @@ namespace Login
             this.Close();
             frmLogin frmLogin = new frmLogin();
             frmLogin.Show();
+        }
+
+        private void txtConfirmPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSavePassword_Click(sender, e);
+            }
+        }
+
+        private void Button_Close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

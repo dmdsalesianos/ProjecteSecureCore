@@ -30,9 +30,9 @@ namespace Species
         private void InitializeComponent()
         {
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.swTextbox1 = new Sprint53_G4.SWTextbox();
-            this.swTextbox2 = new Sprint53_G4.SWTextbox();
-            this.swTextbox3 = new Sprint53_G4.SWTextbox();
+            this.swTextbox1 = new CustomControls.SWTextbox();
+            this.swTextbox2 = new CustomControls.SWTextbox();
+            this.swTextbox3 = new CustomControls.SWTextbox();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -54,7 +54,7 @@ namespace Species
             this.swTextbox1.PermetreBuit = false;
             this.swTextbox1.Size = new System.Drawing.Size(250, 22);
             this.swTextbox1.TabIndex = 8;
-            this.swTextbox1.TipusDada = Sprint53_G4.SWTextbox.Tipus_Dada.Text;
+            this.swTextbox1.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
             // 
             // swTextbox2
             // 
@@ -65,7 +65,7 @@ namespace Species
             this.swTextbox2.PermetreBuit = false;
             this.swTextbox2.Size = new System.Drawing.Size(250, 22);
             this.swTextbox2.TabIndex = 9;
-            this.swTextbox2.TipusDada = Sprint53_G4.SWTextbox.Tipus_Dada.Text;
+            this.swTextbox2.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
             // 
             // swTextbox3
             // 
@@ -76,7 +76,7 @@ namespace Species
             this.swTextbox3.PermetreBuit = false;
             this.swTextbox3.Size = new System.Drawing.Size(250, 22);
             this.swTextbox3.TabIndex = 10;
-            this.swTextbox3.TipusDada = Sprint53_G4.SWTextbox.Tipus_Dada.Text;
+            this.swTextbox3.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
             // 
             // frmUserCategories
             // 
@@ -100,9 +100,9 @@ namespace Species
 
         #endregion
         private System.Windows.Forms.ComboBox comboBox1;
-        private Sprint53_G4.SWTextbox swTextbox1;
-        private Sprint53_G4.SWTextbox swTextbox2;
-        private Sprint53_G4.SWTextbox swTextbox3;
+        private CustomControls.SWTextbox swTextbox1;
+        private CustomControls.SWTextbox swTextbox2;
+        private CustomControls.SWTextbox swTextbox3;
     }
 }
 

@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{56584742-DF32-43D6-BFBE-1740D0C17D9F}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SpaceShipsTypes</RootNamespace>
     <AssemblyName>SpaceShipsTypes</AssemblyName>
@@ -60,22 +60,26 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Base\BaseForm.csproj">
-      <Project>{b033ceb6-8bdb-443f-9f37-6d6ebf422544}</Project>
-      <Name>BaseForm</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CustomControls\CustomControls.csproj">
-      <Project>{6B666B1C-7BD0-4E76-AB39-95AD671EB46B}</Project>
-      <Name>CustomControls</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="frmSpaceShipsTypes.resx">
       <DependentUpon>frmSpaceShipsTypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Base\BaseForm.csproj">
+      <Project>{b033ceb6-8bdb-443f-9f37-6d6ebf422544}</Project>
+      <Name>BaseForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CustomControls\CustomControls.csproj">
+      <Project>{6b666b1c-7bd0-4e76-ab39-95ad671eb46b}</Project>
+      <Name>CustomControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\DataAccess.csproj">
+      <Project>{db77ddd9-3e44-4327-9d80-59afaf6f6b35}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -30,7 +30,8 @@ namespace Users
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.UserIdentificationCardReport1 = new Users.UserIdentificationCardReport();
+            this.TarjetaIdentificacion2 = new Users.TarjetaIdentificacion();
+            this.TarjetaIdentificacion1 = new Users.TarjetaIdentificacion();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -38,21 +39,25 @@ namespace Users
             this.crystalReportViewer1.ActiveViewIndex = 0;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.DisplayStatusBar = false;
+            this.crystalReportViewer1.DisplayToolbar = false;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.UserIdentificationCardReport1;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.crystalReportViewer1.ReportSource = this.TarjetaIdentificacion2;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(847, 493);
             this.crystalReportViewer1.TabIndex = 0;
+            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(847, 493);
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
@@ -60,7 +65,7 @@ namespace Users
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private UserIdentificationCardReport UserIdentificationCardReport1;
+        private TarjetaIdentificacion TarjetaIdentificacion2;
+        private TarjetaIdentificacion TarjetaIdentificacion1;
     }
 }
-

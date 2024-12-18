@@ -10,19 +10,22 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataAccess;
+using CustomControls;
 
 namespace Login
 {
     public partial class frmLogin : Form
     {
-        private string connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
-        public int _idUserCategory { get; set; }
+        private string connectionString;
+        MantenimentDades manteniment;
+
         public frmLogin()
         {
             InitializeComponent();
+            DoubleBuffered = true;
         }
-
-        public static int CurrentUserCategoryId { get; set; }
+        public int CurrentUserCategoryId { get; set; }
 
         private int GetUserCategoryId(string username)
         {
@@ -48,44 +51,47 @@ namespace Login
             }
 
             return userCategoryId;
+
+
         }
 
         private void Login_Click(object sender, EventArgs e)
         {
-            string username = textBox_user.Text;
-            string password = textBox_password.Text;
-
-            
-            if (password == "12345aA")
             {
-                
-                frmChangePassword changePasswordForm = new frmChangePassword(username);
-                changePasswordForm.Show();
-                this.Hide();
+                string username = textBox_user.Text;
+                string password = textBox_password.Text;
 
-                
-            }
-            else
-            {
-                
-                if (VerifyUser(username, password))
+
+                if (password == "12345aA")
                 {
-                    CurrentUserCategoryId = GetUserCategoryId(username);
-                    //MessageBox.Show("ID UserCategory Guardada: " + CurrentUserCategoryId.ToString(), "Verificación");
 
-                    frmLoading frmLoading = new frmLoading();
-                    frmLoading.Show();
-                    this.Close();
+                    frmChangePassword changePasswordForm = new frmChangePassword(username);
+                    changePasswordForm.Show();
+                    this.Hide();
                 }
                 else
                 {
-                    Error_label.Visible = true;
+
+                    if (VerifyUser(username, password))
+                    {
+                        CurrentUserCategoryId = GetUserCategoryId(username);
+                        //MessageBox.Show("ID UserCategory Guardada: " + CurrentUserCategoryId.ToString(), "Verificación");
+
+                        frmLoading frmLoading = new frmLoading(CurrentUserCategoryId);
+                        frmLoading.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        Error_label.Visible = true;
+                    }
                 }
             }
         }
 
         private bool VerifyUser(string username, string password)
         {
+
             bool isValidUser = false;
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -93,7 +99,7 @@ namespace Login
                 try
                 {
                     conn.Open();
-                    string query = "SELECT Password, Salt, idUserCategory FROM Users WHERE UserName = @UserName";
+                    string query = "SELECT Password, Salt FROM Users WHERE UserName = @UserName";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@UserName", username);
@@ -104,7 +110,6 @@ namespace Login
                             {
                                 string storedPasswordHash = reader["Password"].ToString();
                                 string base64Salt = reader["Salt"].ToString();
-                                _idUserCategory = (int)reader["idUserCategory"];
 
                                
                                 byte[] storedSalt = ConvertBase64ToBytes(base64Salt);
@@ -182,6 +187,17 @@ namespace Login
             {
                 Login_Click(sender, e);
             }
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
+            manteniment = new MantenimentDades(connectionString);
+        }
+
+        private void Button_Close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

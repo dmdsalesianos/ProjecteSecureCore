@@ -32,15 +32,16 @@ namespace Login
             this.Login = new System.Windows.Forms.Label();
             this.textBox_user = new System.Windows.Forms.TextBox();
             this.textBox_password = new System.Windows.Forms.TextBox();
-            this.button_login = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Error_label = new System.Windows.Forms.Label();
             this.Vision_button = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.btnLogin = new CustomControls.RJButton();
+            this.Button_Close = new CustomControls.RJButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // Login
@@ -72,23 +73,6 @@ namespace Login
             this.textBox_password.TabIndex = 3;
             this.textBox_password.UseSystemPasswordChar = true;
             this.textBox_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_password_KeyDown);
-            // 
-            // button_login
-            // 
-            this.button_login.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button_login.FlatAppearance.BorderColor = System.Drawing.Color.Azure;
-            this.button_login.FlatAppearance.MouseDownBackColor = System.Drawing.Color.CornflowerBlue;
-            this.button_login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.button_login.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_login.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_login.ForeColor = System.Drawing.Color.AliceBlue;
-            this.button_login.Location = new System.Drawing.Point(141, 536);
-            this.button_login.Name = "button_login";
-            this.button_login.Size = new System.Drawing.Size(348, 61);
-            this.button_login.TabIndex = 4;
-            this.button_login.Text = "Log in";
-            this.button_login.UseVisualStyleBackColor = false;
-            this.button_login.Click += new System.EventHandler(this.Login_Click);
             // 
             // label1
             // 
@@ -142,6 +126,56 @@ namespace Login
             this.Vision_button.UseVisualStyleBackColor = false;
             this.Vision_button.Click += new System.EventHandler(this.Visible_button);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Login.Properties.Resources.Only_logo_2490F1;
+            this.pictureBox1.Location = new System.Drawing.Point(258, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(140, 187);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(241)))));
+            this.btnLogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(241)))));
+            this.btnLogin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(106)))), ((int)(((byte)(197)))));
+            this.btnLogin.BorderRadius = 20;
+            this.btnLogin.BorderSize = 5;
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(164, 530);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(302, 57);
+            this.btnLogin.TabIndex = 10;
+            this.btnLogin.Text = "LOGIN";
+            this.btnLogin.TextColor = System.Drawing.Color.White;
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.Login_Click);
+            // 
+            // Button_Close
+            // 
+            this.Button_Close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.Button_Close.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.Button_Close.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Button_Close.BorderRadius = 10;
+            this.Button_Close.BorderSize = 5;
+            this.Button_Close.FlatAppearance.BorderSize = 0;
+            this.Button_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_Close.ForeColor = System.Drawing.Color.White;
+            this.Button_Close.Location = new System.Drawing.Point(607, 12);
+            this.Button_Close.Name = "Button_Close";
+            this.Button_Close.Size = new System.Drawing.Size(38, 36);
+            this.Button_Close.TabIndex = 26;
+            this.Button_Close.Text = "❌";
+            this.Button_Close.TextColor = System.Drawing.Color.White;
+            this.Button_Close.UseVisualStyleBackColor = false;
+            this.Button_Close.Click += new System.EventHandler(this.Button_Close_Click);
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Login.Properties.Resources.Name_2490F1;
@@ -152,36 +186,32 @@ namespace Login
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Login.Properties.Resources.Only_logo_2490F1;
-            this.pictureBox1.Location = new System.Drawing.Point(268, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(140, 187);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(670, 650);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(241)))), ((int)(((byte)(254)))));
+            this.BackgroundImage = global::Login.Properties.Resources._9496304;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(657, 682);
+            this.Controls.Add(this.Button_Close);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Error_label);
             this.Controls.Add(this.Vision_button);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button_login);
             this.Controls.Add(this.textBox_password);
             this.Controls.Add(this.textBox_user);
             this.Controls.Add(this.Login);
             this.Controls.Add(this.pictureBox1);
+            this.DoubleBuffered = true;
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,11 +223,12 @@ namespace Login
         private System.Windows.Forms.Label Login;
         private System.Windows.Forms.TextBox textBox_user;
         private System.Windows.Forms.TextBox textBox_password;
-        private System.Windows.Forms.Button button_login;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Vision_button;
         private System.Windows.Forms.Label Error_label;
+        private CustomControls.RJButton btnLogin;
+        private CustomControls.RJButton Button_Close;
         private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
