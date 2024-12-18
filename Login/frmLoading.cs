@@ -12,13 +12,14 @@ using System.Windows.Forms;
 namespace Login
 {
     public partial class frmLoading : Form
-    {       
-        private int tiempoTotal = 5000;
-        private int intervalo = 100;   
+    {
+        //ANTES HABIAN 5000 ms
+        private int tiempoTotal = 1000;
+        private int intervalo = 100;
         private int incremento;
         private int userCategoryId;
 
-        private int dotCount = 0; 
+        private int dotCount = 0;
 
         public frmLoading(int currentUserCategoryId)
         {
@@ -50,7 +51,8 @@ namespace Login
             lblLoadingMessage.Text = "Cooking" + new string('.', dotCount);
 
 
-            if (rjProgressBar.Value >= rjProgressBar.Maximum)
+            if(rjProgressBar.Value >= rjProgressBar.Maximum)
+
             {
                 timer1.Stop();
                 this.Hide();
