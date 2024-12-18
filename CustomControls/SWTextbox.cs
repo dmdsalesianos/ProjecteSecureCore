@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.ComponentModel;
+using System.Drawing;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace CustomControls
 {
@@ -19,8 +15,14 @@ namespace CustomControls
         private bool esForanea;
         private string nomCampBBDD;
 
-        public SWTextbox() { colorOriginal = this.BackColor; }
+        // Constructor
+        public SWTextbox()
+        {
+            InitializeComponent();
+            colorOriginal = this.BackColor;
+        }
 
+        // Enumeració Tipus de Dada
         public enum Tipus_Dada
         {
             Number,
@@ -28,6 +30,7 @@ namespace CustomControls
             Code
         }
 
+        // Propietats Personalitzades
         [Category("Custom Properties")]
         [Description("Especifica el tipus de dada que accepta el control.")]
         public Tipus_Dada TipusDada { get => tipusDada; set => tipusDada = value; }
@@ -44,26 +47,27 @@ namespace CustomControls
         [Description("Especifica el nom del camp de la BBDD associat.")]
         public string NomCampBBDD { get => nomCampBBDD; set => nomCampBBDD = value; }
 
+        // Canvi de color en el focus
         private void SWTextbox_GotFocus(object sender, EventArgs e) { this.BackColor = Color.LightYellow; }
 
         private void SWTextbox_LostFocus(object sender, EventArgs e) { this.BackColor = colorOriginal; }
 
+        // Validació del contingut
         private void SWTextbox_Validating(object sender, CancelEventArgs e)
         {
             if(!permetreBuit && string.IsNullOrEmpty(this.Text))
             {
                 this.BackColor = Color.LightCoral;
-                e.Cancel = true;
             } else if(!ValidateInput(this.Text))
             {
                 this.BackColor = Color.LightCoral;
-                e.Cancel = true;
             } else
             {
                 this.BackColor = colorOriginal;
             }
         }
 
+        // Funció per validar amb Regex segons el tipus de dada
         private bool ValidateInput(string text)
         {
             if(string.IsNullOrEmpty(text))
@@ -72,24 +76,28 @@ namespace CustomControls
             switch(tipusDada)
             {
                 case Tipus_Dada.Number:
-                    return Regex.IsMatch(text, @"^\d+$");
+                    return Regex.IsMatch(text, @"^\d+$");  // Només números
                 case Tipus_Dada.Text:
-                    return Regex.IsMatch(text, @"^[a-zA-Z]+$");
+                    return text.All(c => Char.IsLetter(c) || c == ' ');  // Només text
                 case Tipus_Dada.Code:
-                    return Regex.IsMatch(text, @"^[AEIOU][A-Z]{3}\d{2}[13579]$");
+                    return Regex.IsMatch(text, @"^[AEIOU][A-Z]{3}\d{2}[13579]$");  // Codi tipus AAAB1234
                 default:
                     return true;
             }
         }
 
+        // Esdeveniment per controlar el canvi de contingut
         private void SWTextbox_TextChanged(object sender, EventArgs e)
         {
             if(esForanea && !string.IsNullOrEmpty(nomCampBBDD))
             {
                 // Logica per gestionar el canvi en el control SWCodi associat, si cal
+                // Aquesta lògica hauria de modificar la selecció del control SWCodi associat.
+                // Aquí podries cridar un mètode per actualitzar la selecció del SWCodi.
             }
         }
 
+        // Inicialitzar components
         private void InitializeComponent()
         {
             this.SuspendLayout();
