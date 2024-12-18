@@ -79,16 +79,16 @@ namespace Login
             // 
             this.rjProgressBar.BackColor = System.Drawing.Color.Transparent;
             this.rjProgressBar.ChannelColor = System.Drawing.Color.LightSteelBlue;
-            this.rjProgressBar.ChannelHeight = 6;
+            this.rjProgressBar.ChannelHeight = 25;
             this.rjProgressBar.ForeBackColor = System.Drawing.Color.Transparent;
             this.rjProgressBar.ForeColor = System.Drawing.Color.White;
-            this.rjProgressBar.Location = new System.Drawing.Point(243, 324);
+            this.rjProgressBar.Location = new System.Drawing.Point(241, 346);
             this.rjProgressBar.Name = "rjProgressBar";
             this.rjProgressBar.ShowMaximun = false;
             this.rjProgressBar.ShowValue = CustomControls.TextPosition.Right;
             this.rjProgressBar.Size = new System.Drawing.Size(552, 21);
             this.rjProgressBar.SliderColor = System.Drawing.Color.RoyalBlue;
-            this.rjProgressBar.SliderHeight = 6;
+            this.rjProgressBar.SliderHeight = 25;
             this.rjProgressBar.SymbolAfter = "";
             this.rjProgressBar.SymbolBefore = "";
             this.rjProgressBar.TabIndex = 13;
