@@ -59,7 +59,6 @@ namespace Base
         {
             DataTable table = ds.Tables[TableName];
 
-            //*****MAKE DATABINDINGS*****//
             foreach (Control control in this.Controls)
             {
                 if (control is SWTextbox textBox)
