@@ -47,7 +47,7 @@ namespace Login
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Login.Properties.Resources.Only_logo_2490F1;
-            this.pictureBox1.Location = new System.Drawing.Point(461, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(468, 40);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(140, 187);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -57,7 +57,7 @@ namespace Login
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Login.Properties.Resources.Name_2490F1;
-            this.pictureBox2.Location = new System.Drawing.Point(387, 205);
+            this.pictureBox2.Location = new System.Drawing.Point(394, 233);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(276, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -69,7 +69,7 @@ namespace Login
             this.lblLoadingMessage.AutoSize = true;
             this.lblLoadingMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoadingMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(241)))));
-            this.lblLoadingMessage.Location = new System.Drawing.Point(418, 275);
+            this.lblLoadingMessage.Location = new System.Drawing.Point(425, 303);
             this.lblLoadingMessage.Name = "lblLoadingMessage";
             this.lblLoadingMessage.Size = new System.Drawing.Size(222, 46);
             this.lblLoadingMessage.TabIndex = 12;
@@ -82,7 +82,7 @@ namespace Login
             this.rjProgressBar.ChannelHeight = 25;
             this.rjProgressBar.ForeBackColor = System.Drawing.Color.Transparent;
             this.rjProgressBar.ForeColor = System.Drawing.Color.White;
-            this.rjProgressBar.Location = new System.Drawing.Point(241, 346);
+            this.rjProgressBar.Location = new System.Drawing.Point(242, 374);
             this.rjProgressBar.Name = "rjProgressBar";
             this.rjProgressBar.ShowMaximun = false;
             this.rjProgressBar.ShowValue = CustomControls.TextPosition.Right;
