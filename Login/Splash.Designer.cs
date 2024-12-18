@@ -41,11 +41,11 @@ namespace Login
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Login.Properties.Resources.Logo_2490F1;
-            this.pictureBox1.Location = new System.Drawing.Point(315, 86);
+            this.pictureBox1.Image = global::Login.Properties.Resources.Only_logo_FFFFFF;
+            this.pictureBox1.Location = new System.Drawing.Point(216, 185);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(483, 365);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Size = new System.Drawing.Size(259, 254);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -53,10 +53,10 @@ namespace Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.AliceBlue;
-            this.BackgroundImage = global::Login.Properties.Resources._94963041;
+            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.BackgroundImage = global::Login.Properties.Resources.pngtree_gradient_abstract_hexagon_blue_business_border_hd_png_image_6561344;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1148, 733);
+            this.ClientSize = new System.Drawing.Size(684, 733);
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

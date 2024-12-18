@@ -126,16 +126,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CustomControls\CustomControls.csproj">
-      <Project>{6b666b1c-7bd0-4e76-ab39-95ad671eb46b}</Project>
-      <Name>CustomControls</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Data\DataAccess.csproj">
-      <Project>{db77ddd9-3e44-4327-9d80-59afaf6f6b35}</Project>
-      <Name>DataAccess</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\14777.png" />
   </ItemGroup>
   <ItemGroup>
@@ -179,6 +169,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pngtree-gradient-abstract-hexagon-blue-business-border-hd-png-image_6561344.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CustomControls\CustomControls.csproj">
+      <Project>{6b666b1c-7bd0-4e76-ab39-95ad671eb46b}</Project>
+      <Name>CustomControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\DataAccess.csproj">
+      <Project>{db77ddd9-3e44-4327-9d80-59afaf6f6b35}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
