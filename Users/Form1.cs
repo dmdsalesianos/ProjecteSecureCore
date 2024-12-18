@@ -42,7 +42,7 @@ namespace Users
         {
             string rutaInforme = Application.StartupPath;
             ReportDocument informe = new ReportDocument();
-            informe.Load(rutaInforme);
+            informe.Load(@"C:\proyecto_clase_git\ProjecteSecureCore\Users\TarjetaIdentificacion.rpt");
 
             // Configura el parámetro
             ParameterFieldDefinitions parametros = informe.DataDefinition.ParameterFields;

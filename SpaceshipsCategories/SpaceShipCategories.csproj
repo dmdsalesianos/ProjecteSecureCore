@@ -50,9 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmSpaceshipsCategories.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmSpaceshipsCategories.cs" />
     <Compile Include="frmSpaceshipsCategories.Designer.cs">
       <DependentUpon>frmSpaceshipsCategories.cs</DependentUpon>
     </Compile>

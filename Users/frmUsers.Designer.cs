@@ -97,6 +97,7 @@ namespace Users
             this.Controls.Add(this.swTextbox1);
             this.Name = "frmUser";
             this.Text = "frmUsers";
+            this.Load += new System.EventHandler(this.BaseForm_Load);
             this.Controls.SetChildIndex(this.swTextbox1, 0);
             this.Controls.SetChildIndex(this.swTextbox2, 0);
             this.Controls.SetChildIndex(this.comboBox1, 0);

@@ -24,12 +24,12 @@ namespace Users
             TableName = "Users";
             querySelect = $"SELECT * FROM {TableName}";
 
-            comboBox1.Tag = "UserCategories";
+            comboBox1.Tag = "idUserCategory";
             comboBox1.DisplayMember = "DescCategory";
             comboBox1.ValueMember = "idUserCategory";
             
-            comboBox2.Tag = "UserRanks";
-            comboBox2.DisplayMember = "DescRank";
+            comboBox2.Tag = "idUserRank";
+            comboBox2.DisplayMember = "DescRank";   
             comboBox2.ValueMember = "idUserRank";
 
         }
@@ -38,22 +38,18 @@ namespace Users
         {
             base.BaseForm_Load(sender, e);
 
-            dsFK = dataAccess.PortarTaula(comboBox2.Tag.ToString());
-
-            comboBox2.DataSource = dsFK.Tables[comboBox2.Tag.ToString()];
-            dsFK = dataAccess.PortarTaula(comboBox1.Tag.ToString());
-
-            comboBox1.DataSource = dsFK.Tables[comboBox1.Tag.ToString()];
+            dsFK = dataAccess.PortarTaula("UserCategories");
+            comboBox1.DataSource = dsFK.Tables["UserCategories"];
             
-            
-
+            dsFK = dataAccess.PortarTaula("UserRanks");
+            comboBox2.DataSource = dsFK.Tables["UserRanks"];
         }
 
         private void btnMostrar_Click(object sender, EventArgs e)
         {
-            if (dataGrid.SelectedRows.Count > 0)
+            if (dataGridView1.SelectedRows.Count > 0)
             {
-                DataGridViewRow selectedRow = dataGrid.SelectedRows[0];
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
 
                 idUserDG = Convert.ToInt32(selectedRow.Cells[0].Value);
 
