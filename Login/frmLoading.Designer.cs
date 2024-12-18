@@ -82,7 +82,7 @@ namespace Login
             this.rjProgressBar.ChannelHeight = 6;
             this.rjProgressBar.ForeBackColor = System.Drawing.Color.Transparent;
             this.rjProgressBar.ForeColor = System.Drawing.Color.White;
-            this.rjProgressBar.Location = new System.Drawing.Point(241, 338);
+            this.rjProgressBar.Location = new System.Drawing.Point(243, 324);
             this.rjProgressBar.Name = "rjProgressBar";
             this.rjProgressBar.ShowMaximun = false;
             this.rjProgressBar.ShowValue = CustomControls.TextPosition.Right;
