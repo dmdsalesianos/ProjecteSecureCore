@@ -185,5 +185,12 @@ namespace CustomControls
                 graph.DrawString(text, this.Font, brushText, rectText);
             }
         }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            this.ResumeLayout(false);
+
+        }
     }
 }
