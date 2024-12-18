@@ -27,7 +27,8 @@ namespace CustomControls
         {
             Number,
             Text,
-            Code
+            Code,
+            All
         }
 
         // Propietats Personalitzades
@@ -81,6 +82,8 @@ namespace CustomControls
                     return text.All(c => Char.IsLetter(c) || c == ' ');  // Només text
                 case Tipus_Dada.Code:
                     return Regex.IsMatch(text, @"^[AEIOU][A-Z]{3}\d{2}[13579]$");  // Codi tipus AAAB1234
+                case Tipus_Dada.All:
+                    return true;  // Codi tipus AAAB1234
                 default:
                     return true;
             }
@@ -100,12 +103,10 @@ namespace CustomControls
         // Inicialitzar components
         private void InitializeComponent()
         {
-            this.SuspendLayout();
             this.GotFocus += SWTextbox_GotFocus;
             this.LostFocus += SWTextbox_LostFocus;
             this.Validating += SWTextbox_Validating;
             this.TextChanged += SWTextbox_TextChanged;
-            this.ResumeLayout(false);
         }
     }
 }
