@@ -6,6 +6,7 @@ using DataAccess;
 using CustomControls;
 using System.IO;
 using System.Drawing;
+using CustomControls.RJControls;
 
 namespace Base
 {
@@ -39,6 +40,11 @@ namespace Base
                     {
                         comboBox.Validated += ValidarCombobox;
                     }
+                    else if (control is RJTextBox RJtextBox)
+                    {
+                        RJtextBox.textBox1.Validated += ValidarTextBox;
+
+                    }
                 }
 
             CargarDatos();
@@ -71,6 +77,11 @@ namespace Base
                 {
                     comboBox.DataBindings.Clear();
                     comboBox.DataBindings.Add("SelectedValue", table, comboBox.Tag.ToString());
+                }
+                else if (control is RJTextBox RJtextBox)
+                {
+                    RJtextBox.textBox1.DataBindings.Clear();
+                    RJtextBox.textBox1.DataBindings.Add("Text", table, RJtextBox.NomCampBBDD);
                 }
             }
         }

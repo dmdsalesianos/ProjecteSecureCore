@@ -54,6 +54,7 @@ namespace Planets
             this.swtxtDescPlanet = new CustomControls.SWTextbox();
             this.swtxtCodePlanet = new CustomControls.SWTextbox();
             this.swtxtImagen = new CustomControls.SWTextbox();
+            this.rjTextBox1 = new CustomControls.RJControls.RJTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -303,11 +304,38 @@ namespace Planets
             this.swtxtImagen.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
             this.swtxtImagen.TextChanged += new System.EventHandler(this.swtxtImagen_TextChanged);
             // 
+            // rjTextBox1
+            // 
+            this.rjTextBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.rjTextBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.rjTextBox1.BorderRadius = 0;
+            this.rjTextBox1.BorderSize = 2;
+            this.rjTextBox1.EsForanea = false;
+            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.rjTextBox1.Location = new System.Drawing.Point(701, 210);
+            this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.rjTextBox1.Multiline = false;
+            this.rjTextBox1.Name = "rjTextBox1";
+            this.rjTextBox1.NomCampBBDD = "CodePlanet";
+            this.rjTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.rjTextBox1.PasswordChar = false;
+            this.rjTextBox1.PermetreBuit = true;
+            this.rjTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rjTextBox1.PlaceholderText = "";
+            this.rjTextBox1.Size = new System.Drawing.Size(250, 39);
+            this.rjTextBox1.TabIndex = 30;
+            this.rjTextBox1.Texts = "";
+            this.rjTextBox1.TipusDada = CustomControls.RJControls.RJTextBox.Tipus_Dada.Text;
+            this.rjTextBox1.UnderlinedStyle = false;
+            // 
             // frmPlanets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(908, 566);
+            this.ClientSize = new System.Drawing.Size(974, 566);
+            this.Controls.Add(this.rjTextBox1);
             this.Controls.Add(this.lblPortPlanet1);
             this.Controls.Add(this.swtxtPortPlanet);
             this.Controls.Add(this.lblPortPlanet);
@@ -360,6 +388,7 @@ namespace Planets
             this.Controls.SetChildIndex(this.lblPortPlanet, 0);
             this.Controls.SetChildIndex(this.swtxtPortPlanet, 0);
             this.Controls.SetChildIndex(this.lblPortPlanet1, 0);
+            this.Controls.SetChildIndex(this.rjTextBox1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -393,6 +422,7 @@ namespace Planets
         private CustomControls.SWTextbox swtxtbox;
         private System.Windows.Forms.Label lblPortPlanet1;
         private CustomControls.SWTextbox swtxtPortPlanet;
+        private CustomControls.RJControls.RJTextBox rjTextBox1;
     }
 }
 

@@ -42,82 +42,86 @@ namespace SpaceShipsTypes
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(299, 30);
+            this.label1.Location = new System.Drawing.Point(336, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 17);
+            this.label1.Size = new System.Drawing.Size(47, 20);
             this.label1.TabIndex = 8;
             this.label1.Text = "Code";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(300, 72);
+            this.label2.Location = new System.Drawing.Point(338, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 17);
+            this.label2.Size = new System.Drawing.Size(46, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "Desc";
             // 
             // descTxt
             // 
             this.descTxt.EsForanea = false;
-            this.descTxt.Location = new System.Drawing.Point(357, 69);
+            this.descTxt.Location = new System.Drawing.Point(402, 86);
+            this.descTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.descTxt.Name = "descTxt";
             this.descTxt.NomCampBBDD = "DescSpaceShipType";
             this.descTxt.PermetreBuit = true;
-            this.descTxt.Size = new System.Drawing.Size(168, 22);
+            this.descTxt.Size = new System.Drawing.Size(188, 26);
             this.descTxt.TabIndex = 6;
             this.descTxt.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
             // 
             // codeTxt
             // 
             this.codeTxt.EsForanea = false;
-            this.codeTxt.Location = new System.Drawing.Point(355, 27);
+            this.codeTxt.Location = new System.Drawing.Point(399, 34);
+            this.codeTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.codeTxt.Name = "codeTxt";
             this.codeTxt.NomCampBBDD = "CodeSpaceShipType";
             this.codeTxt.PermetreBuit = true;
-            this.codeTxt.Size = new System.Drawing.Size(170, 22);
+            this.codeTxt.Size = new System.Drawing.Size(191, 26);
             this.codeTxt.TabIndex = 5;
             this.codeTxt.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(284, 114);
+            this.label3.Location = new System.Drawing.Point(320, 142);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 17);
+            this.label3.Size = new System.Drawing.Size(63, 20);
             this.label3.TabIndex = 12;
             this.label3.Text = "Filiation";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(199, 152);
+            this.label4.Location = new System.Drawing.Point(224, 190);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(141, 17);
+            this.label4.Size = new System.Drawing.Size(159, 20);
             this.label4.TabIndex = 13;
             this.label4.Text = "Space Ship Category";
             // 
             // filiationCmb
             // 
             this.filiationCmb.FormattingEnabled = true;
-            this.filiationCmb.Location = new System.Drawing.Point(355, 111);
+            this.filiationCmb.Location = new System.Drawing.Point(399, 139);
+            this.filiationCmb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.filiationCmb.Name = "filiationCmb";
-            this.filiationCmb.Size = new System.Drawing.Size(121, 24);
+            this.filiationCmb.Size = new System.Drawing.Size(136, 28);
             this.filiationCmb.TabIndex = 14;
             // 
             // categoryCmb
             // 
             this.categoryCmb.FormattingEnabled = true;
-            this.categoryCmb.Location = new System.Drawing.Point(355, 152);
+            this.categoryCmb.Location = new System.Drawing.Point(399, 190);
+            this.categoryCmb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.categoryCmb.Name = "categoryCmb";
-            this.categoryCmb.Size = new System.Drawing.Size(121, 24);
+            this.categoryCmb.Size = new System.Drawing.Size(136, 28);
             this.categoryCmb.TabIndex = 15;
             // 
             // frmSpaceShipsTypes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(968, 506);
+            this.ClientSize = new System.Drawing.Size(1089, 632);
             this.Controls.Add(this.categoryCmb);
             this.Controls.Add(this.filiationCmb);
             this.Controls.Add(this.label4);
@@ -126,8 +130,10 @@ namespace SpaceShipsTypes
             this.Controls.Add(this.label1);
             this.Controls.Add(this.descTxt);
             this.Controls.Add(this.codeTxt);
+            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "frmSpaceShipsTypes";
             this.Text = "frmSpaceShipsTypes";
+            this.Load += new System.EventHandler(this.BaseForm_Load);
             this.Controls.SetChildIndex(this.codeTxt, 0);
             this.Controls.SetChildIndex(this.descTxt, 0);
             this.Controls.SetChildIndex(this.label1, 0);

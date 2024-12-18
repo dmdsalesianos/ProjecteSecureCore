@@ -61,6 +61,38 @@
     <Compile Include="RjButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RJControls\MenuColorTable.cs" />
+    <Compile Include="RJControls\MenuRenderer.cs" />
+    <Compile Include="RJControls\RJButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJControls\RJCircularPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJControls\RJComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RJControls\RJDatePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJControls\RJDropdownMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJControls\RJProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJControls\RJRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJControls\RJTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RJControls\RJTextBox.Designer.cs">
+      <DependentUpon>RJTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RJControls\RJToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RJProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -96,6 +128,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="RJControls\RJTextBox.resx">
+      <DependentUpon>RJTextBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RJProgressBar.resx">
       <DependentUpon>RJProgressBar.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +146,12 @@
       <Project>{db77ddd9-3e44-4327-9d80-59afaf6f6b35}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendarDark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendarWhite.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
