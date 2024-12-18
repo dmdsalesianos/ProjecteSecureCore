@@ -15,7 +15,8 @@ namespace Planets
     public partial class frmPlanets : baseForm
     {
         public DataSet dsFK;
-        string imagesDirectory = Application.StartupPath;
+        string nombreCarpeta;
+        string imagesDirectory;
 
         public frmPlanets()
         {
@@ -34,6 +35,9 @@ namespace Planets
             cmbFiliations.Tag = "idFiliation";
             cmbFiliations.DisplayMember = "DescFiliations";
             cmbFiliations.ValueMember = "idFiliation";
+
+            nombreCarpeta = "planetas";
+            imagesDirectory = Path.Combine(Application.StartupPath, "imatges");
         }
 
         private void frmPlanets_Load(object sender, EventArgs e)
@@ -52,8 +56,6 @@ namespace Planets
 
         private void btnImage_Click(object sender, EventArgs e)
         {
-            string nombreCarpeta = "imatges";
-
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.bmp";
@@ -93,7 +95,7 @@ namespace Planets
 
         private void swtxtImagen_TextChanged(object sender, EventArgs e)
         {
-            string imagePath = Path.Combine(imagesDirectory, "imatges", swtxtImagen.Text);
+            string imagePath = Path.Combine(imagesDirectory, nombreCarpeta, swtxtImagen.Text);
 
             if (File.Exists(imagePath))
             {

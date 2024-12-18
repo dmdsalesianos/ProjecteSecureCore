@@ -10,7 +10,8 @@ namespace MenuOptions
     public partial class frmMenuOptions : baseForm
     {
         //string imagesDirectory = Path.Combine(Directory.GetParent(Application.StartupPath)?.Parent.Parent.FullName, "App");
-        string imagesDirectory = Application.StartupPath;
+        string imagesDirectory;
+        string nombreCarpeta;
 
         public DataSet dsFK;
 
@@ -19,7 +20,10 @@ namespace MenuOptions
             InitializeComponent();
             TableName = "MenuOptions";
             querySelect = $"SELECT * FROM {TableName}";
-            
+
+            nombreCarpeta = "iconos";
+            imagesDirectory = Path.Combine(Application.StartupPath, "imatges");
+
         }
         private void frmMenuOptions_Load(object sender, EventArgs e)
         {
@@ -29,8 +33,6 @@ namespace MenuOptions
 
         private void rjButton_image_Click(object sender, EventArgs e)
         {
-            string nombreCarpeta = "iconos";
-
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.bmp";
@@ -70,7 +72,7 @@ namespace MenuOptions
 
         private void swtxtImagen_TextChanged(object sender, EventArgs e)
         {
-            string imagePath = Path.Combine(imagesDirectory, "iconos", swtxtImagen.Text);
+            string imagePath = Path.Combine(imagesDirectory, nombreCarpeta, swtxtImagen.Text);
 
             if (File.Exists(imagePath))
             {

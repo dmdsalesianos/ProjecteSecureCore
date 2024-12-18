@@ -12,6 +12,7 @@ namespace CustomControls
         public MenuButton()
         {
             InitializeComponent();
+            optionLbl.ForeColor = Color.White;
         }
 
         private string form;
@@ -116,7 +117,7 @@ namespace CustomControls
         {
             if(!isSelected)
             {
-                BackColor = Color.Pink;
+                BackColor = Color.FromArgb(34, 68, 153);  // Amarillo (Rojo: 255, Verde: 255, Azul: 0)
             }
         }
 

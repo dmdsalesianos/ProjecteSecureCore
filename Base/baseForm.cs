@@ -118,7 +118,8 @@ namespace Base
         {
             dataAccess.Actualitzar(querySelect, ds, TableName);
             CargarDatos();
+            MakeDataBindigs();
         }
-         
+
     }
 }

@@ -107,14 +107,18 @@ namespace CustomControls
 
         protected override void OnPaintBackground(PaintEventArgs pevent)
         {
-            // Dibujar el fondo del contenedor (para respetar la imagen de fondo del formulario)
-            if (this.Parent != null)    
+            if (this.Parent != null && this.Parent.BackgroundImage != null)
             {
                 Graphics g = pevent.Graphics;
                 Rectangle rect = new Rectangle(this.Location, this.Size);
                 g.DrawImage(this.Parent.BackgroundImage, rect, rect, GraphicsUnit.Pixel);
             }
+            else
+            {
+                base.OnPaintBackground(pevent); // Dibuja el fondo predeterminado si no hay imagen
+            }
         }
+
 
         protected override void OnPaint(PaintEventArgs e)
         {

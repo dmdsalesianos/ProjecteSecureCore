@@ -11,12 +11,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataAccess;
 using CustomControls;
+using System.IO;
 
 namespace Login
 {
     public partial class frmMenu : Form
     {
         private int accesLevel = 100;
+        string imagesDirectory = Path.Combine(Application.StartupPath, "imatges", "iconos");
 
         public frmMenu(int currentUserCategoryId)
         {
@@ -94,7 +96,8 @@ namespace Login
                     btn.LabelText = row["Texto"].ToString();  // Asignamos el nombre de la opción
                     btn.Clase = row["Clase"].ToString();
                     btn.Form = row["Form"].ToString(); // Asignamos la clase
-                    btn.RutaImagen = row["Icono"].ToString();
+                    btn.RutaImagen = Path.Combine(imagesDirectory, row["Icono"].ToString());
+                    btn.BottomBorderColor = Color.White;
                     // Obtén el valor del color desde la fila
                     string colorValue = row["Color"].ToString();
 
@@ -123,9 +126,9 @@ namespace Login
                         catch
                         {
                             // En caso de error, asignar un color predeterminado
-                            btn.BackColor = Color.BlueViolet;
-                            btn.ColorOri = Color.BlueViolet;
-                            
+                            btn.BackColor = Color.FromArgb(36, 144, 241);
+                            btn.ColorOri = Color.FromArgb(36, 144, 241);
+
                         }
                     } // Asignamos el color de fondoç
                  

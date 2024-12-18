@@ -197,7 +197,7 @@ namespace MenuOptions
             // swtxtImagen
             // 
             this.swtxtImagen.EsForanea = false;
-            this.swtxtImagen.Location = new System.Drawing.Point(60, 302);
+            this.swtxtImagen.Location = new System.Drawing.Point(63, 114);
             this.swtxtImagen.Name = "swtxtImagen";
             this.swtxtImagen.NomCampBBDD = "Icono";
             this.swtxtImagen.PermetreBuit = true;

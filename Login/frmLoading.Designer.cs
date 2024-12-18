@@ -67,34 +67,31 @@ namespace Login
             // lblLoadingMessage
             // 
             this.lblLoadingMessage.AutoSize = true;
-            this.lblLoadingMessage.Font = new System.Drawing.Font("Arial Nova", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoadingMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoadingMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(241)))));
-            this.lblLoadingMessage.Location = new System.Drawing.Point(422, 289);
+            this.lblLoadingMessage.Location = new System.Drawing.Point(418, 275);
             this.lblLoadingMessage.Name = "lblLoadingMessage";
-            this.lblLoadingMessage.Size = new System.Drawing.Size(218, 48);
+            this.lblLoadingMessage.Size = new System.Drawing.Size(222, 46);
             this.lblLoadingMessage.TabIndex = 12;
             this.lblLoadingMessage.Text = "Coocking...";
             // 
             // rjProgressBar
             // 
-            this.rjProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rjProgressBar.BackColor = System.Drawing.Color.White;
-            this.rjProgressBar.ChannelColor = System.Drawing.Color.DodgerBlue;
-            this.rjProgressBar.ChannelHeight = 20;
-            this.rjProgressBar.ForeBackColor = System.Drawing.Color.RoyalBlue;
+            this.rjProgressBar.BackColor = System.Drawing.Color.Transparent;
+            this.rjProgressBar.ChannelColor = System.Drawing.Color.LightSteelBlue;
+            this.rjProgressBar.ChannelHeight = 6;
+            this.rjProgressBar.ForeBackColor = System.Drawing.Color.Transparent;
             this.rjProgressBar.ForeColor = System.Drawing.Color.White;
-            this.rjProgressBar.Location = new System.Drawing.Point(187, 355);
+            this.rjProgressBar.Location = new System.Drawing.Point(241, 338);
             this.rjProgressBar.Name = "rjProgressBar";
             this.rjProgressBar.ShowMaximun = false;
             this.rjProgressBar.ShowValue = CustomControls.TextPosition.Right;
-            this.rjProgressBar.Size = new System.Drawing.Size(652, 21);
+            this.rjProgressBar.Size = new System.Drawing.Size(552, 21);
             this.rjProgressBar.SliderColor = System.Drawing.Color.RoyalBlue;
-            this.rjProgressBar.SliderHeight = 20;
+            this.rjProgressBar.SliderHeight = 6;
             this.rjProgressBar.SymbolAfter = "";
             this.rjProgressBar.SymbolBefore = "";
-            this.rjProgressBar.TabIndex = 11;
+            this.rjProgressBar.TabIndex = 13;
             // 
             // frmLoading
             // 
@@ -104,8 +101,8 @@ namespace Login
             this.BackgroundImage = global::Login.Properties.Resources._9496304;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1031, 545);
-            this.Controls.Add(this.lblLoadingMessage);
             this.Controls.Add(this.rjProgressBar);
+            this.Controls.Add(this.lblLoadingMessage);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Cursor = System.Windows.Forms.Cursors.AppStarting;
@@ -127,7 +124,7 @@ namespace Login
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private CustomControls.RJProgressBar rjProgressBar;
         private System.Windows.Forms.Label lblLoadingMessage;
+        private CustomControls.RJProgressBar rjProgressBar;
     }
 }

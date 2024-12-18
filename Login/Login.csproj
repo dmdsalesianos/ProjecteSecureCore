@@ -68,6 +68,11 @@
     <Compile Include="frmOpcionesAmpliado.Designer.cs">
       <DependentUpon>frmOpcionesAmpliado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Splash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,13 +108,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,48 +126,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\14777.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Only_logo_2490F1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Name_2490F1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Captura.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Only_logo_FFFFFF.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Name_FFFFFF.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-trabajo-48.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-mantenimiento-50.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pngtree-gradient-abstract-hexagon-blue-business-border-hd-png-image_6561344.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Logo_FFFFFF.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Logo_2490F1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\9496304.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Intento de fondo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\94963041.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\CustomControls\CustomControls.csproj">
       <Project>{6b666b1c-7bd0-4e76-ab39-95ad671eb46b}</Project>
       <Name>CustomControls</Name>
@@ -177,6 +134,51 @@
       <Project>{db77ddd9-3e44-4327-9d80-59afaf6f6b35}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\14777.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9496304.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\94963041.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-mantenimiento-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-trabajo-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Intento de fondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_2490F1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_2490F11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_FFFFFF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Name_2490F1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Name_FFFFFF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Only_logo_2490F1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Only_logo_FFFFFF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-gradient-abstract-hexagon-blue-business-border-hd-png-image_6561344.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
