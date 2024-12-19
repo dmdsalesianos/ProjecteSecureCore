@@ -81,23 +81,5 @@ namespace CustomControls
                     return true;
             }
         }
-
-        private void SWTextbox_TextChanged(object sender, EventArgs e)
-        {
-            if(esForanea && !string.IsNullOrEmpty(nomCampBBDD))
-            {
-                // Logica per gestionar el canvi en el control SWCodi associat, si cal
-            }
-        }
-
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            this.GotFocus += SWTextbox_GotFocus;
-            this.LostFocus += SWTextbox_LostFocus;
-            this.Validating += SWTextbox_Validating;
-            this.TextChanged += SWTextbox_TextChanged;
-            this.ResumeLayout(false);
-        }
     }
 }

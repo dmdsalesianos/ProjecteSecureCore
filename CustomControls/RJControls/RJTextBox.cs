@@ -30,7 +30,7 @@ namespace CustomControls.RJControls
         private bool isPasswordChar = false;
 
         //*******SWTXT**********//
-        private Color colorOriginal;
+        private Color colorOriginal = Color.White;
         private Tipus_Dada tipusDada;
         private bool permetreBuit = true;
         private bool esForanea;
