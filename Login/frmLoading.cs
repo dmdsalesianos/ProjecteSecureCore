@@ -18,14 +18,16 @@ namespace Login
         private int intervalo = 100;
         private int incremento;
         private int userCategoryId;
+        public string NameUserLoa { get; private set; }
 
         private int dotCount = 0;
 
-        public frmLoading(int currentUserCategoryId)
+        public frmLoading(int currentUserCategoryId, string NameUser)
         {
             InitializeComponent();
 
             this.userCategoryId = currentUserCategoryId;
+            NameUserLoa = NameUser;
 
             timer1.Interval = intervalo;
             timer1.Start();
@@ -43,6 +45,8 @@ namespace Login
             lblLoadingMessage.BackColor = Color.Transparent;                  // Transparencia en el texto
         }
 
+        
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             rjProgressBar.Value += incremento;
@@ -57,7 +61,7 @@ namespace Login
                 timer1.Stop();
                 this.Hide();
 
-                frmMenu menu_frm = new frmMenu(userCategoryId);
+                frmMenu menu_frm = new frmMenu(userCategoryId, NameUserLoa);
                 menu_frm.Show();
             }
         }

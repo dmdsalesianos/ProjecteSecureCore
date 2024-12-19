@@ -26,6 +26,7 @@ namespace Login
             DoubleBuffered = true;
         }
         public int CurrentUserCategoryId { get; set; }
+        
 
         private int GetUserCategoryId(string username)
         {
@@ -33,12 +34,13 @@ namespace Login
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = @"
+                string queryRank = @"
                     SELECT u.idUserCategory
                     FROM Users u
                     WHERE u.UserName = @username";
 
-                SqlCommand command = new SqlCommand(query, connection);
+
+                SqlCommand command = new SqlCommand(queryRank, connection);
                 command.Parameters.AddWithValue("@username", username);
 
                 connection.Open();
@@ -77,7 +79,7 @@ namespace Login
                         CurrentUserCategoryId = GetUserCategoryId(username);
                         //MessageBox.Show("ID UserCategory Guardada: " + CurrentUserCategoryId.ToString(), "Verificación");
 
-                        frmLoading frmLoading = new frmLoading(CurrentUserCategoryId);
+                        frmLoading frmLoading = new frmLoading(CurrentUserCategoryId, username.ToUpperInvariant());
                         frmLoading.Show();
                         this.Close();
                     }

@@ -16,7 +16,7 @@ namespace Login
         public Splash()
         {
             InitializeComponent();
-            timer1.Interval = 2000; 
+            timer1.Interval = 3100; 
             timer1.Start();
         }
 
