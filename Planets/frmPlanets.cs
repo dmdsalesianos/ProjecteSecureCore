@@ -15,8 +15,8 @@ namespace Planets
     public partial class frmPlanets : baseForm
     {
         public DataSet dsFK;
-        string nombreCarpeta;
-        string imagesDirectory;
+        string nombreCarpeta = "planetas";
+        string imagesDirectory = Path.Combine(Application.StartupPath, "imatges");
 
         public frmPlanets()
         {
@@ -35,9 +35,6 @@ namespace Planets
             cmbFiliations.Tag = "idFiliation";
             cmbFiliations.DisplayMember = "DescFiliations";
             cmbFiliations.ValueMember = "idFiliation";
-
-            nombreCarpeta = "planetas";
-            imagesDirectory = Path.Combine(Application.StartupPath, "imatges");
         }
 
         private void frmPlanets_Load(object sender, EventArgs e)
