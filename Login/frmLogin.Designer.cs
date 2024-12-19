@@ -37,9 +37,9 @@ namespace Login
             this.Error_label = new System.Windows.Forms.Label();
             this.Vision_button = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnLogin = new CustomControls.RJButton();
-            this.Button_Close = new CustomControls.RJButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.Button_Close = new CustomControls.RJButton();
+            this.btnLogin = new CustomControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -136,6 +136,36 @@ namespace Login
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Login.Properties.Resources.Name_2490F1;
+            this.pictureBox2.Location = new System.Drawing.Point(190, 205);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(276, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
+            // Button_Close
+            // 
+            this.Button_Close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.Button_Close.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.Button_Close.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Button_Close.BorderRadius = 10;
+            this.Button_Close.BorderSize = 5;
+            this.Button_Close.FlatAppearance.BorderSize = 0;
+            this.Button_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_Close.ForeColor = System.Drawing.Color.White;
+            this.Button_Close.Location = new System.Drawing.Point(584, -9);
+            this.Button_Close.Name = "Button_Close";
+            this.Button_Close.Size = new System.Drawing.Size(76, 66);
+            this.Button_Close.TabIndex = 26;
+            this.Button_Close.Text = "❌";
+            this.Button_Close.TextColor = System.Drawing.Color.White;
+            this.Button_Close.UseVisualStyleBackColor = false;
+            this.Button_Close.Click += new System.EventHandler(this.Button_Close_Click);
+            // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(241)))));
@@ -155,36 +185,6 @@ namespace Login
             this.btnLogin.TextColor = System.Drawing.Color.White;
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.Login_Click);
-            // 
-            // Button_Close
-            // 
-            this.Button_Close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.Button_Close.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.Button_Close.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Button_Close.BorderRadius = 10;
-            this.Button_Close.BorderSize = 5;
-            this.Button_Close.FlatAppearance.BorderSize = 0;
-            this.Button_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_Close.ForeColor = System.Drawing.Color.White;
-            this.Button_Close.Location = new System.Drawing.Point(607, 12);
-            this.Button_Close.Name = "Button_Close";
-            this.Button_Close.Size = new System.Drawing.Size(38, 36);
-            this.Button_Close.TabIndex = 26;
-            this.Button_Close.Text = "❌";
-            this.Button_Close.TextColor = System.Drawing.Color.White;
-            this.Button_Close.UseVisualStyleBackColor = false;
-            this.Button_Close.Click += new System.EventHandler(this.Button_Close_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Login.Properties.Resources.Name_2490F1;
-            this.pictureBox2.Location = new System.Drawing.Point(190, 205);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(276, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
             // 
             // frmLogin
             // 

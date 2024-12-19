@@ -32,7 +32,7 @@ namespace Login
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.usuariLbl = new System.Windows.Forms.Label();
+            this.label_name = new System.Windows.Forms.Label();
             this.button_logaout = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PanelContenido = new System.Windows.Forms.Panel();
@@ -46,14 +46,13 @@ namespace Login
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.usuariLbl);
+            this.panel1.Controls.Add(this.label_name);
             this.panel1.Controls.Add(this.button_logaout);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(985, 56);
+            this.panel1.Size = new System.Drawing.Size(1108, 70);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -62,24 +61,22 @@ namespace Login
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox1.Image = global::Login.Properties.Resources.Only_logo_FFFFFF;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(68, 56);
+            this.pictureBox1.Size = new System.Drawing.Size(77, 70);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // usuariLbl
+            // label_name
             // 
-            this.usuariLbl.AutoSize = true;
-            this.usuariLbl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usuariLbl.ForeColor = System.Drawing.Color.White;
-            this.usuariLbl.Location = new System.Drawing.Point(750, 12);
-            this.usuariLbl.Margin = new System.Windows.Forms.Padding(0);
-            this.usuariLbl.Name = "usuariLbl";
-            this.usuariLbl.Size = new System.Drawing.Size(102, 32);
-            this.usuariLbl.TabIndex = 3;
-            this.usuariLbl.Text = "Usuari";
+            this.label_name.AutoSize = true;
+            this.label_name.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_name.ForeColor = System.Drawing.Color.White;
+            this.label_name.Location = new System.Drawing.Point(793, 10);
+            this.label_name.Name = "label_name";
+            this.label_name.Size = new System.Drawing.Size(112, 37);
+            this.label_name.TabIndex = 3;
+            this.label_name.Text = "label1";
             // 
             // button_logaout
             // 
@@ -92,10 +89,9 @@ namespace Login
             this.button_logaout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_logaout.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_logaout.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button_logaout.Location = new System.Drawing.Point(855, 0);
-            this.button_logaout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_logaout.Location = new System.Drawing.Point(962, 0);
             this.button_logaout.Name = "button_logaout";
-            this.button_logaout.Size = new System.Drawing.Size(130, 56);
+            this.button_logaout.Size = new System.Drawing.Size(146, 70);
             this.button_logaout.TabIndex = 0;
             this.button_logaout.Text = "LogOut";
             this.button_logaout.UseVisualStyleBackColor = false;
@@ -104,10 +100,9 @@ namespace Login
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Login.Properties.Resources.Name_FFFFFF;
-            this.pictureBox2.Location = new System.Drawing.Point(81, 12);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(91, 15);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(179, 30);
+            this.pictureBox2.Size = new System.Drawing.Size(201, 38);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -117,10 +112,9 @@ namespace Login
             this.PanelContenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(198)))), ((int)(((byte)(250)))));
             this.PanelContenido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.PanelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelContenido.Location = new System.Drawing.Point(372, 56);
-            this.PanelContenido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PanelContenido.Location = new System.Drawing.Point(418, 70);
             this.PanelContenido.Name = "PanelContenido";
-            this.PanelContenido.Size = new System.Drawing.Size(613, 590);
+            this.PanelContenido.Size = new System.Drawing.Size(690, 738);
             this.PanelContenido.TabIndex = 2;
             // 
             // flowLayoutPanel
@@ -128,22 +122,20 @@ namespace Login
             this.flowLayoutPanel.AutoScroll = true;
             this.flowLayoutPanel.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel.Location = new System.Drawing.Point(0, 56);
-            this.flowLayoutPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel.Location = new System.Drawing.Point(0, 70);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(372, 590);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(418, 738);
             this.flowLayoutPanel.TabIndex = 0;
             // 
             // frmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(985, 646);
+            this.ClientSize = new System.Drawing.Size(1108, 808);
             this.Controls.Add(this.PanelContenido);
             this.Controls.Add(this.flowLayoutPanel);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmMenu";
             this.Text = "Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -163,7 +155,7 @@ namespace Login
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel PanelContenido;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
-        private System.Windows.Forms.Label usuariLbl;
+        private System.Windows.Forms.Label label_name;
         private System.Windows.Forms.Button button_logaout;
     }
 }

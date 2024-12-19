@@ -17,14 +17,16 @@ namespace Login
 {
     public partial class frmMenu : Form
     {
-        private int accesLevel = 100;
+        private int accesLevel;
         string imagesDirectory = Path.Combine(Application.StartupPath, "imatges", "iconos");
+        string UserNameM;
 
-        public frmMenu(int currentUserCategoryId)
+        public frmMenu(int currentUserCategoryId, string UserName)
         {
             InitializeComponent();
             DoubleBuffered = true;
             accesLevel = ObtenerAccessLevel(currentUserCategoryId);
+            UserNameM = UserName;
             //MessageBox.Show($"Access Level: {accesLevel}");
 
 
@@ -33,6 +35,7 @@ namespace Login
         private void frmMenu_Load(object sender, EventArgs e)
         {
             ButonForms();
+            label_name.Text = UserNameM;
         }
 
         private void button_logaout_Click(object sender, EventArgs e)
