@@ -1,0 +1,44 @@
+﻿<Page x:Class="Splash_WPF.SpashScreen2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Splash_WPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SpashScreen2">
+
+    <!-- Fondo gris -->
+    <Grid Background="LightGray">
+        <!-- Olas en la parte superior -->
+        <Canvas Name="TopWaveCanvas" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="113" Margin="0,-63,0,0">
+            <Rectangle Name="TopWaveRectangle" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="LightBlue" Offset="0" />
+                        <GradientStop Color="DarkBlue" Offset="1" />
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Canvas>
+
+        <!-- Olas en la parte inferior -->
+        <Canvas Name="BottomWaveCanvas" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="50">
+            <Rectangle Name="BottomWaveRectangle" HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="LightBlue" Offset="0" />
+                        <GradientStop Color="DarkBlue" Offset="1" />
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Canvas>
+
+        <!-- Logo centrado con animación de zoom -->
+        <Image Name="LogoImage" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="200" Height="200" Source="images/logo.png" Margin="300,0,300,125">
+            <Image.RenderTransform>
+                <ScaleTransform x:Name="LogoZoomTransform" ScaleX="0" ScaleY="0" CenterX="0.5" CenterY="0.5"/>
+            </Image.RenderTransform>
+        </Image>
+    </Grid>
+</Page>
