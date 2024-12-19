@@ -1,7 +1,7 @@
 ﻿
-namespace SpaceshipsCategories
+namespace SpaceShipCategories
 {
-    partial class frmSpaceshipsCategories
+    partial class frmSpaceShipCategories
     {
         /// <summary>
         /// Required designer variable.
