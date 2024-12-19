@@ -14,15 +14,14 @@ namespace CustomControls
         private bool permetreBuit = true;
         private bool esForanea;
         private string nomCampBBDD;
+        private bool esValid = true;
 
-        // Constructor
         public SWTextbox()
         {
             InitializeComponent();
             colorOriginal = this.BackColor;
         }
 
-        // Enumeració Tipus de Dada
         public enum Tipus_Dada
         {
             Number,
@@ -31,7 +30,6 @@ namespace CustomControls
             All
         }
 
-        // Propietats Personalitzades
         [Category("Custom Properties")]
         [Description("Especifica el tipus de dada que accepta el control.")]
         public Tipus_Dada TipusDada { get => tipusDada; set => tipusDada = value; }
@@ -48,27 +46,23 @@ namespace CustomControls
         [Description("Especifica el nom del camp de la BBDD associat.")]
         public string NomCampBBDD { get => nomCampBBDD; set => nomCampBBDD = value; }
 
-        // Canvi de color en el focus
-        private void SWTextbox_GotFocus(object sender, EventArgs e) { this.BackColor = Color.LightYellow; }
-
-        private void SWTextbox_LostFocus(object sender, EventArgs e) { this.BackColor = colorOriginal; }
-
-        // Validació del contingut
-        private void SWTextbox_Validating(object sender, CancelEventArgs e)
+        private void SWTextbox_GotFocus(object sender, EventArgs e)
         {
-            if(!permetreBuit && string.IsNullOrEmpty(this.Text))
+            if(esValid)
             {
-                this.BackColor = Color.LightCoral;
-            } else if(!ValidateInput(this.Text))
-            {
-                this.BackColor = Color.LightCoral;
-            } else
+                this.BackColor = Color.LightYellow;
+            }
+        }
+
+        private void SWTextbox_LostFocus(object sender, EventArgs e)
+        {
+            if(esValid)
             {
                 this.BackColor = colorOriginal;
             }
         }
 
-        // Funció per validar amb Regex segons el tipus de dada
+
         private bool ValidateInput(string text)
         {
             if(string.IsNullOrEmpty(text))
@@ -77,35 +71,39 @@ namespace CustomControls
             switch(tipusDada)
             {
                 case Tipus_Dada.Number:
-                    return Regex.IsMatch(text, @"^\d+$");  // Només números
+                    return Regex.IsMatch(text, @"^\d+$"); // Només números
                 case Tipus_Dada.Text:
-                    return text.All(c => Char.IsLetter(c) || c == ' ');  // Només text
+                    return text.All(c => Char.IsLetter(c) || c == ' '); // Només text
                 case Tipus_Dada.Code:
-                    return Regex.IsMatch(text, @"^[AEIOU][A-Z]{3}\d{2}[13579]$");  // Codi tipus AAAB1234
+                    return Regex.IsMatch(text, @"^[AEIOU][A-Z]{3}\d{2}[13579]$"); // Codi tipus AAAB1234
                 case Tipus_Dada.All:
-                    return true;  // Codi tipus AAAB1234
+                    return true; // Permet tot
                 default:
                     return true;
             }
         }
 
-        // Esdeveniment per controlar el canvi de contingut
-        private void SWTextbox_TextChanged(object sender, EventArgs e)
+        private void SWTextbox_TextChanged(object sender, EventArgs e) { ActualizarColorValidación(); }
+
+        private void ActualizarColorValidación()
         {
-            if(esForanea && !string.IsNullOrEmpty(nomCampBBDD))
+            esValid = ValidateInput(this.Text);
+
+            if(esValid)
             {
-                // Logica per gestionar el canvi en el control SWCodi associat, si cal
-                // Aquesta lògica hauria de modificar la selecció del control SWCodi associat.
-                // Aquí podries cridar un mètode per actualitzar la selecció del SWCodi.
+                // Si el dato es válido y el control tiene el foco, se pone amarillo
+                this.BackColor = this.Focused ? Color.LightYellow : colorOriginal;
+            } else
+            {
+                // Si el dato es inválido, se pone LightCoral
+                this.BackColor = Color.LightCoral;
             }
         }
 
-        // Inicialitzar components
         private void InitializeComponent()
         {
             this.GotFocus += SWTextbox_GotFocus;
             this.LostFocus += SWTextbox_LostFocus;
-            this.Validating += SWTextbox_Validating;
             this.TextChanged += SWTextbox_TextChanged;
         }
     }
