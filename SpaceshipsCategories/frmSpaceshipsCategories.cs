@@ -19,5 +19,10 @@ namespace SpaceshipsCategories
             TableName = "SpaceShipCategories";
             querySelect = $"SELECT * FROM {TableName}";
         }
+
+        private void frmSpaceshipsCategories_Load(object sender, EventArgs e)
+        {
+            base.BaseForm_Load(sender, e);
+        }
     }
 }

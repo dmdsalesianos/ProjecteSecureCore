@@ -85,6 +85,7 @@ namespace SpaceshipsCategories
             this.Controls.Add(this.txtBoxDescSpaceShipCategory);
             this.Controls.Add(this.txtBoxCodeSpaceShipCategory);
             this.Name = "frmSpaceshipsCategories";
+            this.Load += new System.EventHandler(this.frmSpaceshipsCategories_Load);
             this.Controls.SetChildIndex(this.txtBoxCodeSpaceShipCategory, 0);
             this.Controls.SetChildIndex(this.txtBoxDescSpaceShipCategory, 0);
             this.Controls.SetChildIndex(this.lblCodeSpaceShipCategory, 0);
