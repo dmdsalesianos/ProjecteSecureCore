@@ -38,7 +38,6 @@ namespace Login
             this.Vision_button = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.Button_Close = new CustomControls.RJButton();
             this.btnLogin = new CustomControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -146,26 +145,6 @@ namespace Login
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             // 
-            // Button_Close
-            // 
-            this.Button_Close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.Button_Close.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.Button_Close.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Button_Close.BorderRadius = 10;
-            this.Button_Close.BorderSize = 5;
-            this.Button_Close.FlatAppearance.BorderSize = 0;
-            this.Button_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_Close.ForeColor = System.Drawing.Color.White;
-            this.Button_Close.Location = new System.Drawing.Point(584, -9);
-            this.Button_Close.Name = "Button_Close";
-            this.Button_Close.Size = new System.Drawing.Size(76, 66);
-            this.Button_Close.TabIndex = 26;
-            this.Button_Close.Text = "❌";
-            this.Button_Close.TextColor = System.Drawing.Color.White;
-            this.Button_Close.UseVisualStyleBackColor = false;
-            this.Button_Close.Click += new System.EventHandler(this.Button_Close_Click);
-            // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(241)))));
@@ -194,7 +173,6 @@ namespace Login
             this.BackgroundImage = global::Login.Properties.Resources._9496304;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(657, 682);
-            this.Controls.Add(this.Button_Close);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Error_label);
@@ -228,7 +206,6 @@ namespace Login
         private System.Windows.Forms.Button Vision_button;
         private System.Windows.Forms.Label Error_label;
         private CustomControls.RJButton btnLogin;
-        private CustomControls.RJButton Button_Close;
         private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
