@@ -66,7 +66,7 @@ namespace CustomControls
         private void OpenForm()
         {
             string claseForm = $"{Clase}.{Form}";
-
+            
             try
             {
                 Assembly ensamblat = Assembly.LoadFrom($"{Clase}.dll");

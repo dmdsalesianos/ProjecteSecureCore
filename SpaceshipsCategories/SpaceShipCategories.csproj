@@ -7,8 +7,8 @@
     <ProjectGuid>{16536944-D558-4E17-BAA8-D010795AD3D0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SpaceshipsCategories</RootNamespace>
-    <AssemblyName>SpaceshipsCategories</AssemblyName>
+    <RootNamespace>SpaceShipCategories</RootNamespace>
+    <AssemblyName>SpaceShipCategories</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -50,11 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmSpaceshipsCategories.cs">
+    <Compile Include="frmSpaceShipCategories.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSpaceshipsCategories.Designer.cs">
-      <DependentUpon>frmSpaceshipsCategories.cs</DependentUpon>
+    <Compile Include="frmSpaceShipCategories.Designer.cs">
+      <DependentUpon>frmSpaceShipCategories.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,8 +70,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmSpaceshipsCategories.resx">
-      <DependentUpon>frmSpaceshipsCategories.cs</DependentUpon>
+    <EmbeddedResource Include="frmSpaceShipCategories.resx">
+      <DependentUpon>frmSpaceShipCategories.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

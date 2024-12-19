@@ -11,11 +11,11 @@ using Base;
 
 namespace UserCategories
 {
-    public partial class frmUserCategroies : baseForm
+    public partial class frmUserCategories : baseForm
     {
         public DataSet dsFK;
 
-        public frmUserCategroies()
+        public frmUserCategories()
         {
             InitializeComponent();
             TableName = "UserCategories";

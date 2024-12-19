@@ -1,7 +1,7 @@
 ﻿
 namespace UserCategories
 {
-    partial class frmUserCategroies
+    partial class frmUserCategories
     {
         /// <summary>
         /// Required designer variable.
@@ -55,7 +55,7 @@ namespace UserCategories
             this.swTextbox2.TabIndex = 6;
             this.swTextbox2.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
             // 
-            // frmUserCategroies
+            // frmUserCategories
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -63,7 +63,7 @@ namespace UserCategories
             this.ClientSize = new System.Drawing.Size(1019, 541);
             this.Controls.Add(this.swTextbox2);
             this.Controls.Add(this.swTextbox1);
-            this.Name = "frmUserCategroies";
+            this.Name = "frmUserCategories";
             this.Text = "frmUsers";
             this.Controls.SetChildIndex(this.swTextbox1, 0);
             this.Controls.SetChildIndex(this.swTextbox2, 0);

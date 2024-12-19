@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Base;
 
-namespace SpaceshipsCategories
+namespace SpaceShipCategories
 {
-    public partial class frmSpaceshipsCategories : baseForm
+    public partial class frmSpaceShipCategories : baseForm
     {
-        public frmSpaceshipsCategories()
+        public frmSpaceShipCategories()
         {
             InitializeComponent();
             TableName = "SpaceShipCategories";

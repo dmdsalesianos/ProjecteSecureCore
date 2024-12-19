@@ -16,7 +16,7 @@ namespace UserCategories
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmUserCategroies());
+            Application.Run(new frmUserCategories());
         }
     }
 }
