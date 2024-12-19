@@ -74,7 +74,8 @@ namespace Login
             this.usuariLbl.AutoSize = true;
             this.usuariLbl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usuariLbl.ForeColor = System.Drawing.Color.White;
-            this.usuariLbl.Location = new System.Drawing.Point(705, 8);
+            this.usuariLbl.Location = new System.Drawing.Point(750, 12);
+            this.usuariLbl.Margin = new System.Windows.Forms.Padding(0);
             this.usuariLbl.Name = "usuariLbl";
             this.usuariLbl.Size = new System.Drawing.Size(102, 32);
             this.usuariLbl.TabIndex = 3;
