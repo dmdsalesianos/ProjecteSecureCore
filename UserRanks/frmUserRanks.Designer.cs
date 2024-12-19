@@ -86,6 +86,7 @@ namespace UserRanks
             this.Controls.Add(this.codeRankTxt);
             this.Name = "frmUserRanks";
             this.Text = "frmUserRanks";
+            this.Load += new System.EventHandler(this.BaseForm_Load);
             this.Controls.SetChildIndex(this.codeRankTxt, 0);
             this.Controls.SetChildIndex(this.descRankTxt, 0);
             this.Controls.SetChildIndex(this.codeRankLbl, 0);
