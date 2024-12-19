@@ -25,7 +25,7 @@ namespace Login
         {
             InitializeComponent();
 
-            this.userCategoryId = currentUserCategoryId;
+            
 
             timer1.Interval = intervalo;
             timer1.Start();

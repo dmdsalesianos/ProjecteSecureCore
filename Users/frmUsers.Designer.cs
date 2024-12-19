@@ -32,8 +32,15 @@ namespace Users
             this.swTextbox1 = new CustomControls.SWTextbox();
             this.swTextbox2 = new CustomControls.SWTextbox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.btnMostrar = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.swtxtPhoto = new CustomControls.SWTextbox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSelectImage = new System.Windows.Forms.Button();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // swTextbox1
@@ -61,10 +68,20 @@ namespace Users
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 173);
+            this.comboBox1.Location = new System.Drawing.Point(11, 267);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(185, 24);
             this.comboBox1.TabIndex = 7;
+            // 
+            // btnMostrar
+            // 
+            this.btnMostrar.Location = new System.Drawing.Point(43, 314);
+            this.btnMostrar.Name = "btnMostrar";
+            this.btnMostrar.Size = new System.Drawing.Size(75, 23);
+            this.btnMostrar.TabIndex = 9;
+            this.btnMostrar.Text = "button1";
+            this.btnMostrar.UseVisualStyleBackColor = true;
+            this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
             // comboBox2
             // 
@@ -74,22 +91,70 @@ namespace Users
             this.comboBox2.Size = new System.Drawing.Size(185, 24);
             this.comboBox2.TabIndex = 8;
             // 
-            // btnMostrar
+            // panel1
             // 
-            this.btnMostrar.Location = new System.Drawing.Point(58, 301);
-            this.btnMostrar.Name = "btnMostrar";
-            this.btnMostrar.Size = new System.Drawing.Size(75, 23);
-            this.btnMostrar.TabIndex = 9;
-            this.btnMostrar.Text = "button1";
-            this.btnMostrar.UseVisualStyleBackColor = true;
-            this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
+            this.panel1.Controls.Add(this.crystalReportViewer1);
+            this.panel1.Location = new System.Drawing.Point(812, 40);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(746, 491);
+            this.panel1.TabIndex = 10;
+            // 
+            // swtxtPhoto
+            // 
+            this.swtxtPhoto.EsForanea = false;
+            this.swtxtPhoto.Location = new System.Drawing.Point(43, 428);
+            this.swtxtPhoto.Name = "swtxtPhoto";
+            this.swtxtPhoto.NomCampBBDD = "Photo";
+            this.swtxtPhoto.PermetreBuit = true;
+            this.swtxtPhoto.Size = new System.Drawing.Size(100, 22);
+            this.swtxtPhoto.TabIndex = 11;
+            this.swtxtPhoto.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
+            this.swtxtPhoto.TextChanged += new System.EventHandler(this.swtxtPhoto_TextChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(21, 376);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(142, 112);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnSelectImage
+            // 
+            this.btnSelectImage.Location = new System.Drawing.Point(27, 494);
+            this.btnSelectImage.Name = "btnSelectImage";
+            this.btnSelectImage.Size = new System.Drawing.Size(116, 23);
+            this.btnSelectImage.TabIndex = 13;
+            this.btnSelectImage.Text = "Select Image";
+            this.btnSelectImage.UseVisualStyleBackColor = true;
+            this.btnSelectImage.Click += new System.EventHandler(this.btnSelectImage_Click);
+            // 
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.DisplayStatusBar = false;
+            this.crystalReportViewer1.DisplayToolbar = false;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(746, 491);
+            this.crystalReportViewer1.TabIndex = 0;
+            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // frmUser
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 472);
+            this.ClientSize = new System.Drawing.Size(1570, 739);
+            this.Controls.Add(this.btnSelectImage);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.swtxtPhoto);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
@@ -103,6 +168,12 @@ namespace Users
             this.Controls.SetChildIndex(this.comboBox1, 0);
             this.Controls.SetChildIndex(this.comboBox2, 0);
             this.Controls.SetChildIndex(this.btnMostrar, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.swtxtPhoto, 0);
+            this.Controls.SetChildIndex(this.pictureBox1, 0);
+            this.Controls.SetChildIndex(this.btnSelectImage, 0);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,7 +184,12 @@ namespace Users
         private CustomControls.SWTextbox swTextbox1;
         private CustomControls.SWTextbox swTextbox2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button btnMostrar;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Panel panel1;
+        private CustomControls.SWTextbox swtxtPhoto;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnSelectImage;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
     }
 }

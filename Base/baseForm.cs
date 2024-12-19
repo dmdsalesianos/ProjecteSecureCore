@@ -29,17 +29,17 @@ namespace Base
             string connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
             dataAccess = new MantenimentDades(connectionString);
 
-                foreach (Control control in this.Controls)
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox textBox)
                 {
-                    if (control is TextBox textBox)
-                    {
-                        textBox.Validated += ValidarTextBox;
-                    }
-                    else if (control is ComboBox comboBox)
-                    {
-                        comboBox.Validated += ValidarCombobox;
-                    }
+                    textBox.Validated += ValidarTextBox;
                 }
+                else if (control is ComboBox comboBox)
+                {
+                    comboBox.Validated += ValidarCombobox;
+                }
+            }
 
             CargarDatos();
             MakeDataBindigs();
@@ -69,10 +69,51 @@ namespace Base
                 }
                 else if (control is ComboBox comboBox)
                 {
+                    if (dataGridView1.Columns.Contains(comboBox.ValueMember))
+                    {
+                        dataGridView1.Columns.Remove(comboBox.ValueMember);
+                    }
+
+                    if (!dataGridView1.Columns.Contains(comboBox.DisplayMember.ToString()))
+                    {
+                        dataGridView1.Columns.Add(comboBox.DisplayMember.ToString(), comboBox.DisplayMember);
+                    }
+
+                    string tableName = comboBox.Tag.ToString();
+                    string query = $"SELECT * FROM {tableName}";
+
+                    DataSet dsComboBox = dataAccess.PortarPerConsulta(query);
+
+                    if (dsComboBox != null && dsComboBox.Tables.Count > 0)
+                    {
+                        DataTable comboBoxDataSource = dsComboBox.Tables[0];
+
+                        foreach (DataGridViewRow row in dataGridView1.Rows)
+                        {
+                            if (row.DataBoundItem is DataRowView dataRowView)
+                            {
+                                object value = dataRowView[comboBox.ValueMember];
+
+                                var matchingRows = comboBoxDataSource.Select($"{comboBox.ValueMember} = '{value}'");
+
+                                if (matchingRows != null && matchingRows.Length > 0)
+                                {
+                                    row.Cells[comboBox.DisplayMember.ToString()].Value = matchingRows[0][comboBox.DisplayMember];
+                                }
+
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show($"No se pudieron cargar los datos para el ComboBox '{comboBox.Name}'.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                     comboBox.DataBindings.Clear();
-                    comboBox.DataBindings.Add("SelectedValue", table, comboBox.Tag.ToString());
+                    comboBox.DataBindings.Add("SelectedValue", table, comboBox.ValueMember.ToString());
                 }
             }
+
+
         }
 
         private void CargarDatos()
@@ -87,7 +128,7 @@ namespace Base
 
         //*****AÑADE UNA ROW VACIA*****//
         private void btnAgregar_Click(object sender, EventArgs e)
-        { 
+        {
             DataTable table = ds.Tables[TableName];
             DataRow newRow = table.NewRow();
 
