@@ -98,11 +98,24 @@ namespace Base
 
                                 if (matchingRows != null && matchingRows.Length > 0)
                                 {
-                                    row.Cells[comboBox.DisplayMember.ToString()].Value = matchingRows[0][comboBox.DisplayMember];
-                                }
+                                    string columnName = $"{comboBox.DisplayMember}_";
 
+                                    // Eliminar columnas que coincidan con comboBox.DisplayMember
+                                    if (dataGridView1.Columns.Contains(comboBox.DisplayMember))
+                                    {
+                                        dataGridView1.Columns.Remove(comboBox.DisplayMember);
+                                    }
+
+                                    if (!dataGridView1.Columns.Contains(columnName))
+                                    {
+                                        dataGridView1.Columns.Add(columnName, columnName);
+                                    }
+
+                                    row.Cells[columnName].Value = matchingRows[0][comboBox.DisplayMember];
+                                }
                             }
                         }
+
                     }
                     else
                     {
@@ -112,8 +125,6 @@ namespace Base
                     comboBox.DataBindings.Add("SelectedValue", table, comboBox.ValueMember.ToString());
                 }
             }
-
-
         }
 
         private void CargarDatos()
@@ -123,7 +134,7 @@ namespace Base
 
             dataGridView1.DataSource = table;
             dataGridView1.Columns[0].Visible = false;
-            dataGridView1.DataSource = ds.Tables[TableName];
+
         }
 
         //*****AÑADE UNA ROW VACIA*****//

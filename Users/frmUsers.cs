@@ -94,44 +94,6 @@ namespace Users
             }
         }
 
-        private void btnSelectImage_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.bmp";
-                openFileDialog.Title = "Seleccionar una imagen";
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    string sourceFilePath = openFileDialog.FileName;
-
-                    string carpetaDirectory = Path.Combine(imagesDirectory, nombreCarpeta); //C://.../App
-
-                    if (!Directory.Exists(carpetaDirectory))
-                    {
-                        Directory.CreateDirectory(carpetaDirectory);
-                    }
-
-                    string fileName = Path.GetFileName(sourceFilePath); //Nombre de la imagen
-                    string destinationFilePath = Path.Combine(carpetaDirectory, fileName); // C://.../App/imatges/nombre_imagen
-
-                    try
-                    {
-                        File.Copy(sourceFilePath, destinationFilePath, overwrite: true);
-                        swtxtPhoto.Text = fileName;
-
-                        //Hago focus sobre el swtxtImagen y luego lo pierdo para que se valide
-                        swtxtPhoto.Focus();
-                        btnSelectImage.Focus();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Ocurrió un error al copiar la imagen: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-        }
         private void MostrarInforme(int idPersona)
         {
             try
