@@ -38,8 +38,10 @@ namespace Users
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.swtxtPhoto = new CustomControls.SWTextbox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoading = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoading)).BeginInit();
             this.SuspendLayout();
             // 
             // swTextbox1
@@ -74,11 +76,11 @@ namespace Users
             // 
             // btnMostrar
             // 
-            this.btnMostrar.Location = new System.Drawing.Point(43, 314);
+            this.btnMostrar.Location = new System.Drawing.Point(23, 308);
             this.btnMostrar.Name = "btnMostrar";
-            this.btnMostrar.Size = new System.Drawing.Size(75, 23);
+            this.btnMostrar.Size = new System.Drawing.Size(120, 23);
             this.btnMostrar.TabIndex = 9;
-            this.btnMostrar.Text = "button1";
+            this.btnMostrar.Text = "Mostrar Informe";
             this.btnMostrar.UseVisualStyleBackColor = true;
             this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
@@ -92,10 +94,11 @@ namespace Users
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pictureBoxLoading);
             this.panel1.Controls.Add(this.crystalReportViewer1);
             this.panel1.Location = new System.Drawing.Point(812, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(746, 491);
+            this.panel1.Size = new System.Drawing.Size(805, 491);
             this.panel1.TabIndex = 10;
             // 
             // crystalReportViewer1
@@ -108,7 +111,7 @@ namespace Users
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(746, 491);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(805, 491);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -134,6 +137,16 @@ namespace Users
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBoxLoading
+            // 
+            this.pictureBoxLoading.Image = global::Users.Properties.Resources.cargando;
+            this.pictureBoxLoading.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxLoading.Name = "pictureBoxLoading";
+            this.pictureBoxLoading.Size = new System.Drawing.Size(799, 485);
+            this.pictureBoxLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLoading.TabIndex = 13;
+            this.pictureBoxLoading.TabStop = false;
+            // 
             // frmUser
             // 
             this.AllowDrop = true;
@@ -150,6 +163,7 @@ namespace Users
             this.Controls.Add(this.swTextbox1);
             this.Name = "frmUser";
             this.Text = "frmUsers";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.BaseForm_Load);
             this.Controls.SetChildIndex(this.swTextbox1, 0);
             this.Controls.SetChildIndex(this.swTextbox2, 0);
@@ -161,6 +175,7 @@ namespace Users
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoading)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,5 +192,6 @@ namespace Users
         private CustomControls.SWTextbox swtxtPhoto;
         private System.Windows.Forms.PictureBox pictureBox1;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private System.Windows.Forms.PictureBox pictureBoxLoading;
     }
 }
