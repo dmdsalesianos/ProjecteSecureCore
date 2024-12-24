@@ -35,13 +35,13 @@ namespace Users
             this.btnMostrar = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBoxLoading = new System.Windows.Forms.PictureBox();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.swtxtPhoto = new CustomControls.SWTextbox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLoading = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoading)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // swTextbox1
@@ -101,6 +101,16 @@ namespace Users
             this.panel1.Size = new System.Drawing.Size(805, 491);
             this.panel1.TabIndex = 10;
             // 
+            // pictureBoxLoading
+            // 
+            this.pictureBoxLoading.Image = global::Users.Properties.Resources.cargando;
+            this.pictureBoxLoading.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxLoading.Name = "pictureBoxLoading";
+            this.pictureBoxLoading.Size = new System.Drawing.Size(799, 485);
+            this.pictureBoxLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLoading.TabIndex = 13;
+            this.pictureBoxLoading.TabStop = false;
+            // 
             // crystalReportViewer1
             // 
             this.crystalReportViewer1.ActiveViewIndex = -1;
@@ -130,22 +140,12 @@ namespace Users
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(21, 376);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 351);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(142, 112);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Size = new System.Drawing.Size(185, 148);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
-            // 
-            // pictureBoxLoading
-            // 
-            this.pictureBoxLoading.Image = global::Users.Properties.Resources.cargando;
-            this.pictureBoxLoading.Location = new System.Drawing.Point(3, 3);
-            this.pictureBoxLoading.Name = "pictureBoxLoading";
-            this.pictureBoxLoading.Size = new System.Drawing.Size(799, 485);
-            this.pictureBoxLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLoading.TabIndex = 13;
-            this.pictureBoxLoading.TabStop = false;
             // 
             // frmUser
             // 
@@ -174,8 +174,8 @@ namespace Users
             this.Controls.SetChildIndex(this.swtxtPhoto, 0);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoading)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
