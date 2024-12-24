@@ -39,7 +39,6 @@ namespace Login
             this.lblErrorMessage = new System.Windows.Forms.Label();
             this.btnShowConfirmPassword = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.Button_Close = new CustomControls.RJButton();
             this.btnSavePassword = new CustomControls.RJButton();
             this.button_arrow = new CustomControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -171,26 +170,6 @@ namespace Login
             this.label1.TabIndex = 21;
             this.label1.Text = "New Pass";
             // 
-            // Button_Close
-            // 
-            this.Button_Close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.Button_Close.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.Button_Close.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Button_Close.BorderRadius = 10;
-            this.Button_Close.BorderSize = 5;
-            this.Button_Close.FlatAppearance.BorderSize = 0;
-            this.Button_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_Close.ForeColor = System.Drawing.Color.White;
-            this.Button_Close.Location = new System.Drawing.Point(716, 12);
-            this.Button_Close.Name = "Button_Close";
-            this.Button_Close.Size = new System.Drawing.Size(33, 36);
-            this.Button_Close.TabIndex = 25;
-            this.Button_Close.Text = "❌";
-            this.Button_Close.TextColor = System.Drawing.Color.White;
-            this.Button_Close.UseVisualStyleBackColor = false;
-            this.Button_Close.Click += new System.EventHandler(this.Button_Close_Click);
-            // 
             // btnSavePassword
             // 
             this.btnSavePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(241)))));
@@ -216,7 +195,7 @@ namespace Login
             this.button_arrow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(198)))), ((int)(((byte)(250)))));
             this.button_arrow.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(198)))), ((int)(((byte)(250)))));
             this.button_arrow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(153)))));
-            this.button_arrow.BorderRadius = 20;
+            this.button_arrow.BorderRadius = 10;
             this.button_arrow.BorderSize = 5;
             this.button_arrow.FlatAppearance.BorderSize = 0;
             this.button_arrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -239,7 +218,6 @@ namespace Login
             this.BackgroundImage = global::Login.Properties.Resources._9496304;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(761, 670);
-            this.Controls.Add(this.Button_Close);
             this.Controls.Add(this.btnSavePassword);
             this.Controls.Add(this.button_arrow);
             this.Controls.Add(this.label1);
@@ -277,6 +255,5 @@ namespace Login
         private System.Windows.Forms.Label label1;
         private CustomControls.RJButton button_arrow;
         private CustomControls.RJButton btnSavePassword;
-        private CustomControls.RJButton Button_Close;
     }
 }
