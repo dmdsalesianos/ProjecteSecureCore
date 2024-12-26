@@ -69,14 +69,14 @@ namespace Users
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(11, 225);
+            this.comboBox1.Location = new System.Drawing.Point(133, 202);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(185, 24);
             this.comboBox1.TabIndex = 7;
             // 
             // btnMostrar
             // 
-            this.btnMostrar.Location = new System.Drawing.Point(23, 308);
+            this.btnMostrar.Location = new System.Drawing.Point(145, 285);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(120, 23);
             this.btnMostrar.TabIndex = 9;
@@ -87,26 +87,28 @@ namespace Users
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(11, 183);
+            this.comboBox2.Location = new System.Drawing.Point(133, 160);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(185, 24);
             this.comboBox2.TabIndex = 8;
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.pictureBoxLoading);
             this.panel1.Controls.Add(this.crystalReportViewer1);
-            this.panel1.Location = new System.Drawing.Point(812, 40);
+            this.panel1.Location = new System.Drawing.Point(898, 250);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(805, 491);
             this.panel1.TabIndex = 10;
+            this.panel1.Visible = false;
             // 
             // pictureBoxLoading
             // 
             this.pictureBoxLoading.Image = global::Users.Properties.Resources.cargando;
-            this.pictureBoxLoading.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxLoading.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxLoading.Name = "pictureBoxLoading";
-            this.pictureBoxLoading.Size = new System.Drawing.Size(799, 485);
+            this.pictureBoxLoading.Size = new System.Drawing.Size(805, 491);
             this.pictureBoxLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLoading.TabIndex = 13;
             this.pictureBoxLoading.TabStop = false;
@@ -128,7 +130,7 @@ namespace Users
             // swtxtPhoto
             // 
             this.swtxtPhoto.EsForanea = false;
-            this.swtxtPhoto.Location = new System.Drawing.Point(43, 428);
+            this.swtxtPhoto.Location = new System.Drawing.Point(165, 404);
             this.swtxtPhoto.Name = "swtxtPhoto";
             this.swtxtPhoto.NomCampBBDD = "Photo";
             this.swtxtPhoto.PermetreBuit = true;
@@ -140,10 +142,10 @@ namespace Users
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(11, 351);
+            this.pictureBox1.Location = new System.Drawing.Point(143, 353);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(185, 148);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.Size = new System.Drawing.Size(142, 112);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
@@ -152,7 +154,7 @@ namespace Users
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1629, 739);
+            this.ClientSize = new System.Drawing.Size(1754, 739);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.swtxtPhoto);
             this.Controls.Add(this.panel1);
