@@ -103,6 +103,7 @@ namespace Users
             {
                 // Mostrar animación de carga
                 pictureBoxLoading.Visible = true;
+                panel1.Visible = true;
 
                 // Ruta base dinámica para imágenes
                 string rutaBaseImagenes = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "imatges", "usuarios");

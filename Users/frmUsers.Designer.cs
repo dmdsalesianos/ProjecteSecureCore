@@ -94,19 +94,21 @@ namespace Users
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.pictureBoxLoading);
             this.panel1.Controls.Add(this.crystalReportViewer1);
-            this.panel1.Location = new System.Drawing.Point(890, 70);
+            this.panel1.Location = new System.Drawing.Point(898, 250);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(805, 491);
             this.panel1.TabIndex = 10;
+            this.panel1.Visible = false;
             // 
             // pictureBoxLoading
             // 
             this.pictureBoxLoading.Image = global::Users.Properties.Resources.cargando;
             this.pictureBoxLoading.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxLoading.Name = "pictureBoxLoading";
-            this.pictureBoxLoading.Size = new System.Drawing.Size(799, 485);
+            this.pictureBoxLoading.Size = new System.Drawing.Size(805, 491);
             this.pictureBoxLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLoading.TabIndex = 13;
             this.pictureBoxLoading.TabStop = false;
@@ -152,7 +154,7 @@ namespace Users
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1629, 739);
+            this.ClientSize = new System.Drawing.Size(1754, 739);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.swtxtPhoto);
             this.Controls.Add(this.panel1);
