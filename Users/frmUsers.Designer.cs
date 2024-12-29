@@ -53,7 +53,7 @@ namespace Users
             this.swTextbox1.PermetreBuit = true;
             this.swTextbox1.Size = new System.Drawing.Size(280, 22);
             this.swTextbox1.TabIndex = 5;
-            this.swTextbox1.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
+            this.swTextbox1.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
             // 
             // swTextbox2
             // 
@@ -64,7 +64,7 @@ namespace Users
             this.swTextbox2.PermetreBuit = true;
             this.swTextbox2.Size = new System.Drawing.Size(280, 22);
             this.swTextbox2.TabIndex = 6;
-            this.swTextbox2.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
+            this.swTextbox2.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
             // 
             // comboBox1
             // 
@@ -149,7 +149,7 @@ namespace Users
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // frmUser
+            // frmUsers
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -163,7 +163,7 @@ namespace Users
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.swTextbox2);
             this.Controls.Add(this.swTextbox1);
-            this.Name = "frmUser";
+            this.Name = "frmUsers";
             this.Text = "frmUsers";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.BaseForm_Load);
