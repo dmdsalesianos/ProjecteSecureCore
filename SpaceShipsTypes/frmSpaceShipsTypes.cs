@@ -21,11 +21,11 @@ namespace SpaceShipsTypes
             TableName = "SpaceShipTypes";
             querySelect = $"SELECT * FROM {TableName}";
 
-            filiationCmb.Tag = "idFiliation";
-            filiationCmb.DisplayMember = "DescFiliations";
-            filiationCmb.ValueMember = "idFiliation";
+            filiationCmb.Tag = "Filiations"; //Tabla foranea
+            filiationCmb.DisplayMember = "DescFiliations";//desc foranea a mostrar en vez de id
+            filiationCmb.ValueMember = "idFiliation";//id foranea
 
-            categoryCmb.Tag = "idSpaceShipCategory";
+            categoryCmb.Tag = "SpaceShipCategories";
             categoryCmb.DisplayMember = "DescSpaceShipCategory";
             categoryCmb.ValueMember = "idSpaceShipCategory";
         }
