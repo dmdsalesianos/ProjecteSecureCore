@@ -1,7 +1,7 @@
 ﻿
 namespace Users
 {
-    partial class frmUser
+    partial class frmUsers
     {
         /// <summary>
         /// Required designer variable.

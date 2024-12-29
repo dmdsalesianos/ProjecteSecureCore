@@ -19,14 +19,14 @@ using System.Web.WebPages;
 
 namespace Users
 {
-    public partial class frmUser : baseForm
+    public partial class frmUsers : baseForm
     {
         public DataSet dsFK;
         protected int idUserDG;
         string nombreCarpeta = "usuarios";
         string imagesDirectory = Path.Combine(Application.StartupPath, "imatges");
 
-        public frmUser()
+        public frmUsers()
         {
             InitializeComponent();
             TableName = "Users";
