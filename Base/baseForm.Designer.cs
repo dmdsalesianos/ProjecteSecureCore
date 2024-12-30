@@ -32,15 +32,16 @@ namespace Base
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(772, 36);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAgregar.Location = new System.Drawing.Point(778, 70);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(97, 41);
+            this.btnAgregar.Size = new System.Drawing.Size(86, 33);
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -48,10 +49,9 @@ namespace Base
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(772, 114);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnActualizar.Location = new System.Drawing.Point(778, 132);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(119, 41);
+            this.btnActualizar.Size = new System.Drawing.Size(106, 33);
             this.btnActualizar.TabIndex = 3;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -61,27 +61,38 @@ namespace Base
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(227, 261);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(294, 250);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(623, 286);
+            this.dataGridView1.Size = new System.Drawing.Size(554, 229);
             this.dataGridView1.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::Base.Properties.Resources.fondo;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(912, 502);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // baseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 562);
+            this.ClientSize = new System.Drawing.Size(912, 502);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "baseForm";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -91,6 +102,7 @@ namespace Base
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnActualizar;
         protected System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

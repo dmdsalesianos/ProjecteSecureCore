@@ -19,14 +19,14 @@ using System.Web.WebPages;
 
 namespace Users
 {
-    public partial class frmUser : baseForm
+    public partial class frmUsers : baseForm
     {
         public DataSet dsFK;
         protected int idUserDG;
         string nombreCarpeta = "usuarios";
         string imagesDirectory = Path.Combine(Application.StartupPath, "imatges");
 
-        public frmUser()
+        public frmUsers()
         {
             InitializeComponent();
             TableName = "Users";
@@ -39,6 +39,9 @@ namespace Users
             comboBox2.Tag = "UserRanks";
             comboBox2.DisplayMember = "DescRank";
             comboBox2.ValueMember = "idUserRank";
+
+            pictureBoxLoading.Visible = false;
+
 
             //comboBox3.Tag = "Species";
             //comboBox3.DisplayMember = "DescSpecie";
@@ -98,10 +101,21 @@ namespace Users
         {
             try
             {
+                // Mostrar animación de carga
+                pictureBoxLoading.Visible = true;
+                panel1.Visible = true;
+
+                // Ruta base dinámica para imágenes
+                string rutaBaseImagenes = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "imatges", "usuarios");
+
                 // Ruta del informe
-                string rutaInforme = Application.StartupPath;
+                string rutaInforme = Path.Combine(
+                    Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory.TrimEnd(Path.DirectorySeparatorChar)),
+                    "Users",
+                    "TarjetaIdentificacion.rpt"
+                );
                 ReportDocument informe = new ReportDocument();
-                informe.Load(@"C:\proyecto_clase_git\ProjecteSecureCore\Users\TarjetaIdentificacion.rpt");
+                informe.Load(rutaInforme);
 
                 // Configurar las credenciales de conexión
                 ConnectionInfo crConnectionInfo = new ConnectionInfo
@@ -121,17 +135,22 @@ namespace Users
                     crTable.ApplyLogOnInfo(crTableLogOnInfo);
                 }
 
-                // Configura el parámetro
+                // Configurar parámetros
                 ParameterFieldDefinitions parametros = informe.DataDefinition.ParameterFields;
-                ParameterFieldDefinition parametroPersonaId = parametros["idUser"];
-                ParameterDiscreteValue valorParametro = new ParameterDiscreteValue
-                {
-                    Value = idPersona
-                };
 
+                // Parámetro idUser
+                ParameterFieldDefinition parametroPersonaId = parametros["idUser"];
+                ParameterDiscreteValue valorParametroId = new ParameterDiscreteValue { Value = idPersona };
                 parametroPersonaId.CurrentValues.Clear();
-                parametroPersonaId.CurrentValues.Add(valorParametro);
+                parametroPersonaId.CurrentValues.Add(valorParametroId);
                 parametroPersonaId.ApplyCurrentValues(parametroPersonaId.CurrentValues);
+
+                // Parámetro RutaBase
+                ParameterFieldDefinition parametroRutaBase = parametros["RutaBase"];
+                ParameterDiscreteValue valorParametroRuta = new ParameterDiscreteValue { Value = rutaBaseImagenes };
+                parametroRutaBase.CurrentValues.Clear();
+                parametroRutaBase.CurrentValues.Add(valorParametroRuta);
+                parametroRutaBase.ApplyCurrentValues(parametroRutaBase.CurrentValues);
 
                 // Asignar el informe al visor
                 crystalReportViewer1.ReportSource = informe;
@@ -141,9 +160,11 @@ namespace Users
             {
                 MessageBox.Show($"Error al cargar el informe: {ex.Message}");
             }
-
-
-
+            finally
+            {
+                // Ocultar animación de carga
+                pictureBoxLoading.Visible = false;
+            }
         }
     }
 }
