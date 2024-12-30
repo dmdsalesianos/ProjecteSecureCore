@@ -6,6 +6,7 @@ using DataAccess;
 using CustomControls;
 using System.IO;
 using System.Drawing;
+using System.Collections.Generic;
 
 namespace Base
 {
@@ -15,6 +16,7 @@ namespace Base
         public bool esNuevo = false;
         public MantenimentDades dataAccess;
         public string TableName;
+        public List<string> TablesFK;
         public string querySelect;
 
         public baseForm()
@@ -69,60 +71,10 @@ namespace Base
                 }
                 else if (control is ComboBox comboBox)
                 {
-                    if (dataGridView1.Columns.Contains(comboBox.ValueMember))
-                    {
-                        dataGridView1.Columns.Remove(comboBox.ValueMember);
-                    }
-
-                    if (!dataGridView1.Columns.Contains(comboBox.DisplayMember.ToString()))
-                    {
-                        dataGridView1.Columns.Add(comboBox.DisplayMember.ToString(), comboBox.DisplayMember);
-                    }
-
-                    string tableName = comboBox.Tag.ToString();
-                    string query = $"SELECT * FROM {tableName}";
-
-                    DataSet dsComboBox = dataAccess.PortarPerConsulta(query);
-
-                    if (dsComboBox != null && dsComboBox.Tables.Count > 0)
-                    {
-                        DataTable comboBoxDataSource = dsComboBox.Tables[0];
-
-                        foreach (DataGridViewRow row in dataGridView1.Rows)
-                        {
-                            if (row.DataBoundItem is DataRowView dataRowView)
-                            {
-                                object value = dataRowView[comboBox.ValueMember];
-
-                                var matchingRows = comboBoxDataSource.Select($"{comboBox.ValueMember} = '{value}'");
-
-                                if (matchingRows != null && matchingRows.Length > 0)
-                                {
-                                    string columnName = $"{comboBox.DisplayMember}_";
-
-                                    // Eliminar columnas que coincidan con comboBox.DisplayMember
-                                    if (dataGridView1.Columns.Contains(comboBox.DisplayMember))
-                                    {
-                                        dataGridView1.Columns.Remove(comboBox.DisplayMember);
-                                    }
-
-                                    if (!dataGridView1.Columns.Contains(columnName))
-                                    {
-                                        dataGridView1.Columns.Add(columnName, columnName);
-                                    }
-
-                                    row.Cells[columnName].Value = matchingRows[0][comboBox.DisplayMember];
-                                }
-                            }
-                        }
-
-                    }
-                    else
-                    {
-                        MessageBox.Show($"No se pudieron cargar los datos para el ComboBox '{comboBox.Name}'.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
                     comboBox.DataBindings.Clear();
-                    comboBox.DataBindings.Add("SelectedValue", table, comboBox.ValueMember.ToString());
+                    comboBox.DataBindings.Add("SelectedValue", table, comboBox.Tag.ToString());
+
+                    //MakeRelations(comboBox);
                 }
             }
         }
@@ -134,6 +86,97 @@ namespace Base
 
             dataGridView1.DataSource = table;
             dataGridView1.Columns[0].Visible = false;
+
+            // Cargar las tablas relacionadas
+            foreach (string Table in TablesFK)
+            {
+                ds = dataAccess.PortarTaula(Table);
+            }
+
+            // Crear relaciones
+            ds.Relations.Add("Planets_Sectors", ds.Tables["Sectors"].Columns["idSector"], ds.Tables["Planets"].Columns["idSector"]);
+            ds.Relations.Add("Planets_Species", ds.Tables["Species"].Columns["idSpecie"], ds.Tables["Planets"].Columns["idNatives"]);
+            ds.Relations.Add("Planets_Filiations", ds.Tables["Filiations"].Columns["idFiliation"], ds.Tables["Planets"].Columns["idFiliation"]);
+
+            // Ocultar las columnas de los IDs en el DataGridView
+            dataGridView1.Columns["idSector"].Visible = false;
+            dataGridView1.Columns["idNatives"].Visible = false;
+            dataGridView1.Columns["idFiliation"].Visible = false;
+
+            // Crear y agregar ComboBoxColumn para Sector
+            DataGridViewComboBoxColumn sectorColumn = new DataGridViewComboBoxColumn
+            {
+                HeaderText = "Sector",
+                Name = "DescSector",
+                DataSource = ds.Tables["Sectors"],
+                DisplayMember = "DescSector",  // El campo a mostrar
+                ValueMember = "idSector",      // El valor que se almacena en el modelo
+                DataPropertyName = "idSector", // El campo del modelo que se vincula
+                DisplayStyleForCurrentCellOnly = true
+            };
+            dataGridView1.Columns.Add(sectorColumn);
+
+            // Crear y agregar ComboBoxColumn para Specie
+            DataGridViewComboBoxColumn speciesColumn = new DataGridViewComboBoxColumn
+            {
+                HeaderText = "Natives",
+                Name = "DescSpecie",
+                DataSource = ds.Tables["Species"],
+                DisplayMember = "DescSpecie", // El campo a mostrar
+                ValueMember = "idSpecie",    // El valor que se almacena en el modelo
+                DataPropertyName = "idNatives", // El campo del modelo que se vincula
+                DisplayStyleForCurrentCellOnly = true
+            };
+            dataGridView1.Columns.Add(speciesColumn);
+
+            // Crear y agregar ComboBoxColumn para Filiation
+            DataGridViewComboBoxColumn filiationColumn = new DataGridViewComboBoxColumn
+            {
+                HeaderText = "Filiation",
+                Name = "DescFiliation",
+                DataSource = ds.Tables["Filiations"],
+                DisplayMember = "DescFiliations", // El campo a mostrar
+                ValueMember = "idFiliation",     // El valor que se almacena en el modelo
+                DataPropertyName = "idFiliation", // El campo del modelo que se vincula
+                DisplayStyleForCurrentCellOnly = true
+            };
+            dataGridView1.Columns.Add(filiationColumn);
+
+            // Rellenar las celdas de las nuevas columnas con la descripción
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.DataBoundItem is DataRowView rowView)
+                {
+                    DataRow dataRow = rowView.Row;
+
+                    // Asignar los valores de los IDs a las celdas de las columnas de descripción
+                    row.Cells["DescSector"].Value = dataRow["idSector"];
+                    row.Cells["DescSpecie"].Value = dataRow["idNatives"];
+                    row.Cells["DescFiliation"].Value = dataRow["idFiliation"];
+                }
+            }
+        }
+
+
+        private void MakeRelations(ComboBox comboBox)
+        {
+            string Table = comboBox.ValueMember;
+            DataTable table = ds.Tables[TableName];
+
+            if (comboBox.ValueMember.StartsWith("id"))
+            {
+                Table = Table.Substring(2); // Elimina los dos primeros caracteres
+            }
+            if (!comboBox.ValueMember.EndsWith("s"))
+            {
+                Table = $"{Table}s";
+            }
+
+            ds.Relations.Add($"{TableName}_{Table}", ds.Tables[Table].Columns[comboBox.ValueMember], ds.Tables[TableName].Columns[comboBox.Tag.ToString()]);
+
+            table.Columns.Add("DescSector", typeof(string), "Parent(Planets_Sectors).DescSector");
+            table.Columns.Add("DescSpecie", typeof(string), "Parent(Planets_Species).DescSpecie");
+            table.Columns.Add("DescFiliation", typeof(string), "Parent(Planets_Filiations).DescFiliations");
 
         }
 

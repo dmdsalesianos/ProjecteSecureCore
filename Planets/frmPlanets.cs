@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Base;
 
+
 namespace Planets
 {
     public partial class frmPlanets : baseForm
     {
-        public DataSet dsFK;
         string nombreCarpeta = "planetas";
         string imagesDirectory = Path.Combine(Application.StartupPath, "imatges");
 
@@ -22,13 +22,14 @@ namespace Planets
         {
             InitializeComponent();
             TableName = "Planets";
+            TablesFK = new List<string> { "Sectors", "Species", "Filiations" };
             querySelect = $"SELECT * FROM {TableName}";
 
             cmbSector.Tag = "idSector";
             cmbSector.DisplayMember = "DescSector";
             cmbSector.ValueMember = "idSector";
 
-            cmbNatives.Tag = "idNatives"; 
+            cmbNatives.Tag = "idNatives";
             cmbNatives.DisplayMember = "DescSpecie";
             cmbNatives.ValueMember = "idSpecie";
 
@@ -41,14 +42,9 @@ namespace Planets
         {
             base.BaseForm_Load(sender, e);
 
-            dsFK = dataAccess.PortarTaula("Sectors");
-            cmbSector.DataSource = dsFK.Tables["Sectors"];
-
-            dsFK = dataAccess.PortarTaula("Species");
-            cmbNatives.DataSource = dsFK.Tables["Species"];
-
-            dsFK = dataAccess.PortarTaula("Filiations");
-            cmbFiliations.DataSource = dsFK.Tables["Filiations"];
+            cmbSector.DataSource = ds.Tables["Sectors"];
+            cmbNatives.DataSource = ds.Tables["Species"];
+            cmbFiliations.DataSource = ds.Tables["Filiations"];
         }
 
         private void btnImage_Click(object sender, EventArgs e)

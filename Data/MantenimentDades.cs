@@ -59,7 +59,10 @@ namespace DataAccess
         /// </example>
         public DataSet PortarTaula(string nomTaula)
         {
-            ds = new DataSet();
+            if (ds == null)
+            {
+                ds = new DataSet();
+            }
 
             try
             {
@@ -70,7 +73,6 @@ namespace DataAccess
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al obtener la tabla {nomTaula}: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                ds = null;
             }
             finally
             {
@@ -112,7 +114,6 @@ namespace DataAccess
             catch (Exception ex)
             {
                 MessageBox.Show($"Error en la consulta: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                ds = null;
             }
             finally
             {
@@ -290,7 +291,6 @@ namespace DataAccess
             catch (Exception ex)
             {
                 MessageBox.Show($"Error en la generación de la consulta de búsqueda: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                ds = null;
             }
             finally
             {
@@ -375,7 +375,6 @@ namespace DataAccess
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al ejecutar el procedimiento almacenado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                ds = null;
             }
             finally
             {
