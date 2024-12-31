@@ -13,19 +13,20 @@ namespace SpaceShipsTypes
 {
     public partial class frmSpaceShipsTypes : Base.baseForm
     {
-        private DataSet dsFK;
+      
 
         public frmSpaceShipsTypes()
         {
             InitializeComponent();
             TableName = "SpaceShipTypes";
+            TablesFK = new List<string> { "SpaceShipCategories", "Filiations" };
             querySelect = $"SELECT * FROM {TableName}";
 
-            filiationCmb.Tag = "Filiations"; //Tabla foranea
+            filiationCmb.Tag = "idFiliation"; //Tabla foranea
             filiationCmb.DisplayMember = "DescFiliations";//desc foranea a mostrar en vez de id
             filiationCmb.ValueMember = "idFiliation";//id foranea
 
-            categoryCmb.Tag = "SpaceShipCategories";
+            categoryCmb.Tag = "idSpaceShipCategory";
             categoryCmb.DisplayMember = "DescSpaceShipCategory";
             categoryCmb.ValueMember = "idSpaceShipCategory";
         }
@@ -34,14 +35,8 @@ namespace SpaceShipsTypes
         {
             base.BaseForm_Load(sender, e);
 
-            dsFK = dataAccess.PortarTaula("SpaceShipCategories");
-            categoryCmb.DataSource = dsFK.Tables["SpaceShipCategories"];
-
-            dsFK = dataAccess.PortarTaula("Filiations");
-            filiationCmb.DataSource = dsFK.Tables["Filiations"];
-
-
-
+            categoryCmb.DataSource = ds.Tables["SpaceShipCategories"];
+            filiationCmb.DataSource = ds.Tables["Filiations"];
         }
     }
 }

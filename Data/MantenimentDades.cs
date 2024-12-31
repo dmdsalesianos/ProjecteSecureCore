@@ -64,6 +64,11 @@ namespace DataAccess
                 ds = new DataSet();
             }
 
+            if (ds.Tables.Contains(nomTaula))
+            {
+                ds.Tables[nomTaula].Clear();
+            }
+
             try
             {
                 connection.Open();

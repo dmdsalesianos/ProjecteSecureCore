@@ -21,7 +21,6 @@ namespace Users
 {
     public partial class frmUsers : baseForm
     {
-        public DataSet dsFK;
         protected int idUserDG;
         string nombreCarpeta = "usuarios";
         string imagesDirectory = Path.Combine(Application.StartupPath, "imatges");
@@ -30,13 +29,14 @@ namespace Users
         {
             InitializeComponent();
             TableName = "Users";
+            TablesFK = new List<string> { "UserCategories", "UserRanks" };
             querySelect = $"SELECT * FROM {TableName}";
 
-            comboBox1.Tag = "UserCategories";
+            comboBox1.Tag = "idUserCategory";
             comboBox1.DisplayMember = "DescCategory";
             comboBox1.ValueMember = "idUserCategory";
 
-            comboBox2.Tag = "UserRanks";
+            comboBox2.Tag = "idUserRank";
             comboBox2.DisplayMember = "DescRank";
             comboBox2.ValueMember = "idUserRank";
 
@@ -57,11 +57,8 @@ namespace Users
         {
             base.BaseForm_Load(sender, e);
 
-            dsFK = dataAccess.PortarTaula("UserCategories");
-            comboBox1.DataSource = dsFK.Tables["UserCategories"];
-
-            dsFK = dataAccess.PortarTaula("UserRanks");
-            comboBox2.DataSource = dsFK.Tables["UserRanks"];
+            comboBox1.DataSource = ds.Tables["UserCategories"];
+            comboBox2.DataSource = ds.Tables["UserRanks"];
 
 
             //dsFK = dataAccess.PortarTaula("Species");

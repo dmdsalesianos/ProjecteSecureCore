@@ -19,6 +19,8 @@ namespace Base
         public List<string> TablesFK;
         public string querySelect;
 
+        private bool tablasFKCargadas = false;
+
         public baseForm()
         {
             InitializeComponent();
@@ -42,6 +44,8 @@ namespace Base
                     comboBox.Validated += ValidarCombobox;
                 }
             }
+
+            ds = new DataSet();
 
             CargarDatos();
             MakeDataBindigs();
@@ -74,110 +78,65 @@ namespace Base
                     comboBox.DataBindings.Clear();
                     comboBox.DataBindings.Add("SelectedValue", table, comboBox.Tag.ToString());
 
-                    //MakeRelations(comboBox);
+                    MakeRelations(comboBox);
                 }
             }
         }
 
         private void CargarDatos()
         {
+            // Cargar la tabla principal
             ds = dataAccess.PortarTaula(TableName);
             DataTable table = ds.Tables[TableName];
 
             dataGridView1.DataSource = table;
-            dataGridView1.Columns[0].Visible = false;
 
-            // Cargar las tablas relacionadas
-            foreach (string Table in TablesFK)
+            // Cargar las tablas foráneas solo una vez
+            if (TablesFK != null && !tablasFKCargadas)
             {
-                ds = dataAccess.PortarTaula(Table);
-            }
-
-            // Crear relaciones
-            ds.Relations.Add("Planets_Sectors", ds.Tables["Sectors"].Columns["idSector"], ds.Tables["Planets"].Columns["idSector"]);
-            ds.Relations.Add("Planets_Species", ds.Tables["Species"].Columns["idSpecie"], ds.Tables["Planets"].Columns["idNatives"]);
-            ds.Relations.Add("Planets_Filiations", ds.Tables["Filiations"].Columns["idFiliation"], ds.Tables["Planets"].Columns["idFiliation"]);
-
-            // Ocultar las columnas de los IDs en el DataGridView
-            dataGridView1.Columns["idSector"].Visible = false;
-            dataGridView1.Columns["idNatives"].Visible = false;
-            dataGridView1.Columns["idFiliation"].Visible = false;
-
-            // Crear y agregar ComboBoxColumn para Sector
-            DataGridViewComboBoxColumn sectorColumn = new DataGridViewComboBoxColumn
-            {
-                HeaderText = "Sector",
-                Name = "DescSector",
-                DataSource = ds.Tables["Sectors"],
-                DisplayMember = "DescSector",  // El campo a mostrar
-                ValueMember = "idSector",      // El valor que se almacena en el modelo
-                DataPropertyName = "idSector", // El campo del modelo que se vincula
-                DisplayStyleForCurrentCellOnly = true
-            };
-            dataGridView1.Columns.Add(sectorColumn);
-
-            // Crear y agregar ComboBoxColumn para Specie
-            DataGridViewComboBoxColumn speciesColumn = new DataGridViewComboBoxColumn
-            {
-                HeaderText = "Natives",
-                Name = "DescSpecie",
-                DataSource = ds.Tables["Species"],
-                DisplayMember = "DescSpecie", // El campo a mostrar
-                ValueMember = "idSpecie",    // El valor que se almacena en el modelo
-                DataPropertyName = "idNatives", // El campo del modelo que se vincula
-                DisplayStyleForCurrentCellOnly = true
-            };
-            dataGridView1.Columns.Add(speciesColumn);
-
-            // Crear y agregar ComboBoxColumn para Filiation
-            DataGridViewComboBoxColumn filiationColumn = new DataGridViewComboBoxColumn
-            {
-                HeaderText = "Filiation",
-                Name = "DescFiliation",
-                DataSource = ds.Tables["Filiations"],
-                DisplayMember = "DescFiliations", // El campo a mostrar
-                ValueMember = "idFiliation",     // El valor que se almacena en el modelo
-                DataPropertyName = "idFiliation", // El campo del modelo que se vincula
-                DisplayStyleForCurrentCellOnly = true
-            };
-            dataGridView1.Columns.Add(filiationColumn);
-
-            // Rellenar las celdas de las nuevas columnas con la descripción
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                if (row.DataBoundItem is DataRowView rowView)
+                foreach (string tableFK in TablesFK)
                 {
-                    DataRow dataRow = rowView.Row;
-
-                    // Asignar los valores de los IDs a las celdas de las columnas de descripción
-                    row.Cells["DescSector"].Value = dataRow["idSector"];
-                    row.Cells["DescSpecie"].Value = dataRow["idNatives"];
-                    row.Cells["DescFiliation"].Value = dataRow["idFiliation"];
+                    dataAccess.PortarTaula(tableFK);
                 }
+                tablasFKCargadas = true;
             }
+
+            dataGridView1.Columns[0].Visible = false; //Hago invisible la columna idPK
         }
 
 
         private void MakeRelations(ComboBox comboBox)
         {
-            string Table = comboBox.ValueMember;
+            string tablestr = comboBox.ValueMember;
             DataTable table = ds.Tables[TableName];
 
+            //Como 'comboBox.ValueMember' es siempre 'id<nombreTabla>' y yo lo que quiero es el <nombreTabla>, le elimino el 'id' del principio
             if (comboBox.ValueMember.StartsWith("id"))
             {
-                Table = Table.Substring(2); // Elimina los dos primeros caracteres
+                tablestr = tablestr.Substring(2); // Elimina los dos primeros caracteres
             }
+
+            if (comboBox.ValueMember.EndsWith("y"))
+            {
+                tablestr = tablestr.Substring(0, tablestr.Length - 1) + "ie";
+            }
+
             if (!comboBox.ValueMember.EndsWith("s"))
             {
-                Table = $"{Table}s";
+                tablestr = $"{tablestr}s";
+            }
+            
+            string relationName = $"{TableName}_{tablestr}"; //Defino el nombre de la relacion
+
+            //Hago la relacion y añado las nuevas columnas de Descripcion a la tabla
+            if (!ds.Relations.Contains(relationName))
+            {
+                ds.Relations.Add(relationName, ds.Tables[tablestr].Columns[comboBox.ValueMember], ds.Tables[TableName].Columns[comboBox.Tag.ToString()]);
+                table.Columns.Add(comboBox.DisplayMember.ToString(), typeof(string), $"Parent({relationName}).{comboBox.DisplayMember}");
+                dataGridView1.Columns[comboBox.DisplayMember].HeaderText = tablestr;
             }
 
-            ds.Relations.Add($"{TableName}_{Table}", ds.Tables[Table].Columns[comboBox.ValueMember], ds.Tables[TableName].Columns[comboBox.Tag.ToString()]);
-
-            table.Columns.Add("DescSector", typeof(string), "Parent(Planets_Sectors).DescSector");
-            table.Columns.Add("DescSpecie", typeof(string), "Parent(Planets_Species).DescSpecie");
-            table.Columns.Add("DescFiliation", typeof(string), "Parent(Planets_Filiations).DescFiliations");
-
+            dataGridView1.Columns[comboBox.Tag.ToString()].Visible = false; //Hago invisible la columna de las idsFK
         }
 
         //*****AÑADE UNA ROW VACIA*****//
