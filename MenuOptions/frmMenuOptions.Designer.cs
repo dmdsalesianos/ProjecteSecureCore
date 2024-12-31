@@ -4,14 +4,14 @@ namespace MenuOptions
     partial class frmMenuOptions
     {
         /// <summary>
-        /// Variable del diseñador necesaria.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Limpiar los recursos que se estén usando.
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -21,11 +21,11 @@ namespace MenuOptions
             base.Dispose(disposing);
         }
 
-        #region Código generado por el Diseñador de Windows Forms
+        #region Windows Form Designer generated code
 
         /// <summary>
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -48,10 +48,10 @@ namespace MenuOptions
             // 
             // pictureBox_icono
             // 
-            this.pictureBox_icono.Location = new System.Drawing.Point(41, 56);
+            this.pictureBox_icono.Location = new System.Drawing.Point(46, 70);
             this.pictureBox_icono.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox_icono.Name = "pictureBox_icono";
-            this.pictureBox_icono.Size = new System.Drawing.Size(117, 97);
+            this.pictureBox_icono.Size = new System.Drawing.Size(132, 121);
             this.pictureBox_icono.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_icono.TabIndex = 7;
             this.pictureBox_icono.TabStop = false;
@@ -60,9 +60,9 @@ namespace MenuOptions
             // 
             this.label_acceslevel.AutoSize = true;
             this.label_acceslevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_acceslevel.Location = new System.Drawing.Point(269, 69);
+            this.label_acceslevel.Location = new System.Drawing.Point(303, 86);
             this.label_acceslevel.Name = "label_acceslevel";
-            this.label_acceslevel.Size = new System.Drawing.Size(101, 20);
+            this.label_acceslevel.Size = new System.Drawing.Size(119, 25);
             this.label_acceslevel.TabIndex = 12;
             this.label_acceslevel.Text = "Acces Level";
             // 
@@ -70,9 +70,9 @@ namespace MenuOptions
             // 
             this.label_clase.AutoSize = true;
             this.label_clase.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_clase.Location = new System.Drawing.Point(311, 99);
+            this.label_clase.Location = new System.Drawing.Point(350, 124);
             this.label_clase.Name = "label_clase";
-            this.label_clase.Size = new System.Drawing.Size(61, 20);
+            this.label_clase.Size = new System.Drawing.Size(73, 25);
             this.label_clase.TabIndex = 14;
             this.label_clase.Text = "Classe";
             // 
@@ -80,9 +80,9 @@ namespace MenuOptions
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(322, 130);
+            this.label3.Location = new System.Drawing.Point(362, 162);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 20);
+            this.label3.Size = new System.Drawing.Size(57, 25);
             this.label3.TabIndex = 16;
             this.label3.Text = "Form";
             // 
@@ -90,9 +90,9 @@ namespace MenuOptions
             // 
             this.label_color.AutoSize = true;
             this.label_color.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_color.Location = new System.Drawing.Point(322, 160);
+            this.label_color.Location = new System.Drawing.Point(362, 200);
             this.label_color.Name = "label_color";
-            this.label_color.Size = new System.Drawing.Size(49, 20);
+            this.label_color.Size = new System.Drawing.Size(59, 25);
             this.label_color.TabIndex = 18;
             this.label_color.Text = "Color";
             // 
@@ -100,9 +100,9 @@ namespace MenuOptions
             // 
             this.label_ICONO.AutoSize = true;
             this.label_ICONO.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ICONO.Location = new System.Drawing.Point(60, 34);
+            this.label_ICONO.Location = new System.Drawing.Point(68, 42);
             this.label_ICONO.Name = "label_ICONO";
-            this.label_ICONO.Size = new System.Drawing.Size(63, 20);
+            this.label_ICONO.Size = new System.Drawing.Size(78, 25);
             this.label_ICONO.TabIndex = 21;
             this.label_ICONO.Text = "ICONO";
             // 
@@ -116,10 +116,10 @@ namespace MenuOptions
             this.rjButton_image.FlatAppearance.BorderSize = 0;
             this.rjButton_image.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton_image.ForeColor = System.Drawing.Color.White;
-            this.rjButton_image.Location = new System.Drawing.Point(36, 174);
+            this.rjButton_image.Location = new System.Drawing.Point(40, 218);
             this.rjButton_image.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rjButton_image.Name = "rjButton_image";
-            this.rjButton_image.Size = new System.Drawing.Size(117, 48);
+            this.rjButton_image.Size = new System.Drawing.Size(132, 60);
             this.rjButton_image.TabIndex = 26;
             this.rjButton_image.Text = "Cambiar Imagen";
             this.rjButton_image.TextColor = System.Drawing.Color.White;
@@ -130,9 +130,9 @@ namespace MenuOptions
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(317, 38);
+            this.label1.Location = new System.Drawing.Point(357, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 20);
+            this.label1.Size = new System.Drawing.Size(64, 25);
             this.label1.TabIndex = 27;
             this.label1.Text = "Name";
             // 
@@ -140,12 +140,12 @@ namespace MenuOptions
             // 
             this.swTextbox_Name.EsForanea = false;
             this.swTextbox_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.swTextbox_Name.Location = new System.Drawing.Point(380, 36);
+            this.swTextbox_Name.Location = new System.Drawing.Point(428, 45);
             this.swTextbox_Name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.swTextbox_Name.Name = "swTextbox_Name";
             this.swTextbox_Name.NomCampBBDD = "Texto";
             this.swTextbox_Name.PermetreBuit = true;
-            this.swTextbox_Name.Size = new System.Drawing.Size(206, 26);
+            this.swTextbox_Name.Size = new System.Drawing.Size(231, 30);
             this.swTextbox_Name.TabIndex = 29;
             this.swTextbox_Name.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
             // 
@@ -153,12 +153,12 @@ namespace MenuOptions
             // 
             this.swTextbox_Rank.EsForanea = false;
             this.swTextbox_Rank.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.swTextbox_Rank.Location = new System.Drawing.Point(380, 66);
+            this.swTextbox_Rank.Location = new System.Drawing.Point(428, 82);
             this.swTextbox_Rank.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.swTextbox_Rank.Name = "swTextbox_Rank";
             this.swTextbox_Rank.NomCampBBDD = "AccessLevel";
             this.swTextbox_Rank.PermetreBuit = true;
-            this.swTextbox_Rank.Size = new System.Drawing.Size(206, 26);
+            this.swTextbox_Rank.Size = new System.Drawing.Size(231, 30);
             this.swTextbox_Rank.TabIndex = 30;
             this.swTextbox_Rank.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
             // 
@@ -166,12 +166,12 @@ namespace MenuOptions
             // 
             this.swTextbox_Form.EsForanea = false;
             this.swTextbox_Form.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.swTextbox_Form.Location = new System.Drawing.Point(380, 129);
+            this.swTextbox_Form.Location = new System.Drawing.Point(428, 161);
             this.swTextbox_Form.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.swTextbox_Form.Name = "swTextbox_Form";
             this.swTextbox_Form.NomCampBBDD = "Form";
             this.swTextbox_Form.PermetreBuit = true;
-            this.swTextbox_Form.Size = new System.Drawing.Size(206, 26);
+            this.swTextbox_Form.Size = new System.Drawing.Size(231, 30);
             this.swTextbox_Form.TabIndex = 32;
             this.swTextbox_Form.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
             // 
@@ -179,12 +179,12 @@ namespace MenuOptions
             // 
             this.swTextbox_Classe.EsForanea = false;
             this.swTextbox_Classe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.swTextbox_Classe.Location = new System.Drawing.Point(380, 98);
+            this.swTextbox_Classe.Location = new System.Drawing.Point(428, 122);
             this.swTextbox_Classe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.swTextbox_Classe.Name = "swTextbox_Classe";
             this.swTextbox_Classe.NomCampBBDD = "Clase";
             this.swTextbox_Classe.PermetreBuit = true;
-            this.swTextbox_Classe.Size = new System.Drawing.Size(206, 26);
+            this.swTextbox_Classe.Size = new System.Drawing.Size(231, 30);
             this.swTextbox_Classe.TabIndex = 31;
             this.swTextbox_Classe.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
             // 
@@ -192,35 +192,35 @@ namespace MenuOptions
             // 
             this.swTextbox_Color.EsForanea = false;
             this.swTextbox_Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.swTextbox_Color.Location = new System.Drawing.Point(380, 160);
+            this.swTextbox_Color.Location = new System.Drawing.Point(428, 200);
             this.swTextbox_Color.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.swTextbox_Color.Name = "swTextbox_Color";
             this.swTextbox_Color.NomCampBBDD = "Color";
             this.swTextbox_Color.PermetreBuit = true;
-            this.swTextbox_Color.Size = new System.Drawing.Size(206, 26);
+            this.swTextbox_Color.Size = new System.Drawing.Size(231, 30);
             this.swTextbox_Color.TabIndex = 33;
             this.swTextbox_Color.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
             // 
             // swtxtImagen
             // 
             this.swtxtImagen.EsForanea = false;
-            this.swtxtImagen.Location = new System.Drawing.Point(56, 91);
+            this.swtxtImagen.Location = new System.Drawing.Point(63, 114);
             this.swtxtImagen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.swtxtImagen.Name = "swtxtImagen";
             this.swtxtImagen.NomCampBBDD = "Icono";
             this.swtxtImagen.PermetreBuit = true;
-            this.swtxtImagen.Size = new System.Drawing.Size(89, 22);
+            this.swtxtImagen.Size = new System.Drawing.Size(100, 26);
             this.swtxtImagen.TabIndex = 34;
             this.swtxtImagen.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
             this.swtxtImagen.TextChanged += new System.EventHandler(this.swtxtImagen_TextChanged);
             // 
-            // frmMenuOptions
+            // frmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(833, 461);
+            this.ClientSize = new System.Drawing.Size(1049, 627);
             this.Controls.Add(this.swTextbox_Color);
             this.Controls.Add(this.swTextbox_Form);
             this.Controls.Add(this.swTextbox_Classe);
@@ -236,7 +236,7 @@ namespace MenuOptions
             this.Controls.Add(this.pictureBox_icono);
             this.Controls.Add(this.swtxtImagen);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "frmMenuOptions";
+            this.Name = "frmMenu";
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "¡¡";
@@ -279,4 +279,3 @@ namespace MenuOptions
         private CustomControls.SWTextbox swtxtImagen;
     }
 }
-

@@ -1,7 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Base;
 
@@ -9,12 +14,10 @@ namespace MenuOptions
 {
     public partial class frmMenuOptions : baseForm
     {
-        //string imagesDirectory = Path.Combine(Directory.GetParent(Application.StartupPath)?.Parent.Parent.FullName, "App");
         string imagesDirectory;
         string nombreCarpeta;
 
         public DataSet dsFK;
-
         public frmMenuOptions()
         {
             InitializeComponent();
@@ -23,14 +26,12 @@ namespace MenuOptions
 
             nombreCarpeta = "iconos";
             imagesDirectory = Path.Combine(Application.StartupPath, "imatges");
-
         }
+
         private void frmMenuOptions_Load(object sender, EventArgs e)
         {
             base.BaseForm_Load(sender, e);
         }
-
-
         private void rjButton_image_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -83,9 +84,5 @@ namespace MenuOptions
                 pictureBox_icono.ImageLocation = null; // Borra la imagen si no se encuentra el archivo
             }
         }
-
-        
     }
-
 }
-

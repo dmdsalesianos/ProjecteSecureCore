@@ -14,7 +14,6 @@ namespace UserCategories
     public partial class frmUserCategories : baseForm
     {
         public DataSet dsFK;
-
         public frmUserCategories()
         {
             InitializeComponent();
@@ -22,10 +21,9 @@ namespace UserCategories
             querySelect = $"SELECT * FROM {TableName}";
         }
 
-        protected override void BaseForm_Load(object sender, EventArgs e)
+        private void frmUserCategories_Load(object sender, EventArgs e)
         {
-            base.BaseForm_Load(sender, e);      
-            
+            base.BaseForm_Load(sender, e);
         }
     }
 }
