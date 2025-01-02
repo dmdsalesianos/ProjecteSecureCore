@@ -35,7 +35,6 @@ namespace MenuOptions
             this.label3 = new System.Windows.Forms.Label();
             this.label_color = new System.Windows.Forms.Label();
             this.label_ICONO = new System.Windows.Forms.Label();
-            this.rjButton_image = new CustomControls.RJButton();
             this.label1 = new System.Windows.Forms.Label();
             this.swTextbox_Name = new CustomControls.SWTextbox();
             this.swTextbox_Rank = new CustomControls.SWTextbox();
@@ -43,15 +42,16 @@ namespace MenuOptions
             this.swTextbox_Classe = new CustomControls.SWTextbox();
             this.swTextbox_Color = new CustomControls.SWTextbox();
             this.swtxtImagen = new CustomControls.SWTextbox();
+            this.rjbtnImagen = new CustomControls.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_icono)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox_icono
             // 
-            this.pictureBox_icono.Location = new System.Drawing.Point(46, 70);
+            this.pictureBox_icono.Location = new System.Drawing.Point(63, 64);
             this.pictureBox_icono.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox_icono.Name = "pictureBox_icono";
-            this.pictureBox_icono.Size = new System.Drawing.Size(132, 121);
+            this.pictureBox_icono.Size = new System.Drawing.Size(179, 166);
             this.pictureBox_icono.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_icono.TabIndex = 7;
             this.pictureBox_icono.TabStop = false;
@@ -100,31 +100,11 @@ namespace MenuOptions
             // 
             this.label_ICONO.AutoSize = true;
             this.label_ICONO.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ICONO.Location = new System.Drawing.Point(68, 42);
+            this.label_ICONO.Location = new System.Drawing.Point(106, 37);
             this.label_ICONO.Name = "label_ICONO";
             this.label_ICONO.Size = new System.Drawing.Size(78, 25);
             this.label_ICONO.TabIndex = 21;
             this.label_ICONO.Text = "ICONO";
-            // 
-            // rjButton_image
-            // 
-            this.rjButton_image.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.rjButton_image.BackgroundColor = System.Drawing.Color.CornflowerBlue;
-            this.rjButton_image.BorderColor = System.Drawing.Color.Blue;
-            this.rjButton_image.BorderRadius = 20;
-            this.rjButton_image.BorderSize = 2;
-            this.rjButton_image.FlatAppearance.BorderSize = 0;
-            this.rjButton_image.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton_image.ForeColor = System.Drawing.Color.White;
-            this.rjButton_image.Location = new System.Drawing.Point(40, 218);
-            this.rjButton_image.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rjButton_image.Name = "rjButton_image";
-            this.rjButton_image.Size = new System.Drawing.Size(132, 60);
-            this.rjButton_image.TabIndex = 26;
-            this.rjButton_image.Text = "Cambiar Imagen";
-            this.rjButton_image.TextColor = System.Drawing.Color.White;
-            this.rjButton_image.UseVisualStyleBackColor = false;
-            this.rjButton_image.Click += new System.EventHandler(this.rjButton_image_Click);
             // 
             // label1
             // 
@@ -214,20 +194,39 @@ namespace MenuOptions
             this.swtxtImagen.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
             this.swtxtImagen.TextChanged += new System.EventHandler(this.swtxtImagen_TextChanged);
             // 
-            // frmMenu
+            // rjbtnImagen
+            // 
+            this.rjbtnImagen.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.rjbtnImagen.BackgroundColor = System.Drawing.Color.CornflowerBlue;
+            this.rjbtnImagen.BorderColor = System.Drawing.Color.Blue;
+            this.rjbtnImagen.BorderRadius = 10;
+            this.rjbtnImagen.BorderSize = 1;
+            this.rjbtnImagen.FlatAppearance.BorderSize = 0;
+            this.rjbtnImagen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjbtnImagen.ForeColor = System.Drawing.Color.White;
+            this.rjbtnImagen.Location = new System.Drawing.Point(63, 235);
+            this.rjbtnImagen.Name = "rjbtnImagen";
+            this.rjbtnImagen.Size = new System.Drawing.Size(179, 40);
+            this.rjbtnImagen.TabIndex = 35;
+            this.rjbtnImagen.Text = "Cambiar Imagen";
+            this.rjbtnImagen.TextColor = System.Drawing.Color.White;
+            this.rjbtnImagen.UseVisualStyleBackColor = false;
+            this.rjbtnImagen.Click += new System.EventHandler(this.rjbtnImagen_Click);
+            // 
+            // frmMenuOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1049, 627);
+            this.Controls.Add(this.rjbtnImagen);
             this.Controls.Add(this.swTextbox_Color);
             this.Controls.Add(this.swTextbox_Form);
             this.Controls.Add(this.swTextbox_Classe);
             this.Controls.Add(this.swTextbox_Rank);
             this.Controls.Add(this.swTextbox_Name);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.rjButton_image);
             this.Controls.Add(this.label_ICONO);
             this.Controls.Add(this.label_color);
             this.Controls.Add(this.label3);
@@ -235,12 +234,12 @@ namespace MenuOptions
             this.Controls.Add(this.label_acceslevel);
             this.Controls.Add(this.pictureBox_icono);
             this.Controls.Add(this.swtxtImagen);
+            this.Location = new System.Drawing.Point(0, 0);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "frmMenu";
+            this.Name = "frmMenuOptions";
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "¡¡";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMenuOptions_Load);
             this.Controls.SetChildIndex(this.swtxtImagen, 0);
             this.Controls.SetChildIndex(this.pictureBox_icono, 0);
@@ -249,13 +248,13 @@ namespace MenuOptions
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.label_color, 0);
             this.Controls.SetChildIndex(this.label_ICONO, 0);
-            this.Controls.SetChildIndex(this.rjButton_image, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.swTextbox_Name, 0);
             this.Controls.SetChildIndex(this.swTextbox_Rank, 0);
             this.Controls.SetChildIndex(this.swTextbox_Classe, 0);
             this.Controls.SetChildIndex(this.swTextbox_Form, 0);
             this.Controls.SetChildIndex(this.swTextbox_Color, 0);
+            this.Controls.SetChildIndex(this.rjbtnImagen, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_icono)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -269,7 +268,6 @@ namespace MenuOptions
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label_color;
         private System.Windows.Forms.Label label_ICONO;
-        private CustomControls.RJButton rjButton_image;
         private System.Windows.Forms.Label label1;
         private CustomControls.SWTextbox swTextbox_Name;
         private CustomControls.SWTextbox swTextbox_Rank;
@@ -277,5 +275,6 @@ namespace MenuOptions
         private CustomControls.SWTextbox swTextbox_Classe;
         private CustomControls.SWTextbox swTextbox_Color;
         private CustomControls.SWTextbox swtxtImagen;
+        private CustomControls.RJControls.RJButton rjbtnImagen;
     }
 }

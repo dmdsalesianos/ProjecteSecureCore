@@ -29,33 +29,53 @@ namespace UserCategories
         /// </summary>
         private void InitializeComponent()
         {
-            this.swTextbox1 = new CustomControls.SWTextbox();
-            this.swTextbox2 = new CustomControls.SWTextbox();
+            this.swtxtCodeCategory = new CustomControls.SWTextbox();
+            this.swtxtDescCategory = new CustomControls.SWTextbox();
+            this.lblCodeCategory = new System.Windows.Forms.Label();
+            this.lblDescCategory = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // swTextbox1
+            // swtxtCodeCategory
             // 
-            this.swTextbox1.EsForanea = false;
-            this.swTextbox1.Location = new System.Drawing.Point(151, 50);
-            this.swTextbox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.swTextbox1.Name = "swTextbox1";
-            this.swTextbox1.NomCampBBDD = "CodeCategory";
-            this.swTextbox1.PermetreBuit = true;
-            this.swTextbox1.Size = new System.Drawing.Size(314, 26);
-            this.swTextbox1.TabIndex = 5;
-            this.swTextbox1.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
+            this.swtxtCodeCategory.EsForanea = false;
+            this.swtxtCodeCategory.Location = new System.Drawing.Point(336, 117);
+            this.swtxtCodeCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.swtxtCodeCategory.Name = "swtxtCodeCategory";
+            this.swtxtCodeCategory.NomCampBBDD = "CodeCategory";
+            this.swtxtCodeCategory.PermetreBuit = true;
+            this.swtxtCodeCategory.Size = new System.Drawing.Size(314, 26);
+            this.swtxtCodeCategory.TabIndex = 5;
+            this.swtxtCodeCategory.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
             // 
-            // swTextbox2
+            // swtxtDescCategory
             // 
-            this.swTextbox2.EsForanea = false;
-            this.swTextbox2.Location = new System.Drawing.Point(151, 120);
-            this.swTextbox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.swTextbox2.Name = "swTextbox2";
-            this.swTextbox2.NomCampBBDD = "DescCategory";
-            this.swTextbox2.PermetreBuit = true;
-            this.swTextbox2.Size = new System.Drawing.Size(314, 26);
-            this.swTextbox2.TabIndex = 6;
-            this.swTextbox2.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
+            this.swtxtDescCategory.EsForanea = false;
+            this.swtxtDescCategory.Location = new System.Drawing.Point(336, 185);
+            this.swtxtDescCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.swtxtDescCategory.Name = "swtxtDescCategory";
+            this.swtxtDescCategory.NomCampBBDD = "DescCategory";
+            this.swtxtDescCategory.PermetreBuit = true;
+            this.swtxtDescCategory.Size = new System.Drawing.Size(314, 26);
+            this.swtxtDescCategory.TabIndex = 6;
+            this.swtxtDescCategory.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
+            // 
+            // lblCodeCategory
+            // 
+            this.lblCodeCategory.AutoSize = true;
+            this.lblCodeCategory.Location = new System.Drawing.Point(332, 93);
+            this.lblCodeCategory.Name = "lblCodeCategory";
+            this.lblCodeCategory.Size = new System.Drawing.Size(115, 20);
+            this.lblCodeCategory.TabIndex = 7;
+            this.lblCodeCategory.Text = "Code Category";
+            // 
+            // lblDescCategory
+            // 
+            this.lblDescCategory.AutoSize = true;
+            this.lblDescCategory.Location = new System.Drawing.Point(332, 161);
+            this.lblDescCategory.Name = "lblDescCategory";
+            this.lblDescCategory.Size = new System.Drawing.Size(151, 20);
+            this.lblDescCategory.TabIndex = 8;
+            this.lblDescCategory.Text = "Descripció Category";
             // 
             // frmUserCategories
             // 
@@ -63,14 +83,18 @@ namespace UserCategories
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1146, 676);
-            this.Controls.Add(this.swTextbox2);
-            this.Controls.Add(this.swTextbox1);
+            this.Controls.Add(this.lblDescCategory);
+            this.Controls.Add(this.lblCodeCategory);
+            this.Controls.Add(this.swtxtDescCategory);
+            this.Controls.Add(this.swtxtCodeCategory);
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "frmUserCategories";
             this.Text = "frmUsers";
             this.Load += new System.EventHandler(this.frmUserCategories_Load);
-            this.Controls.SetChildIndex(this.swTextbox1, 0);
-            this.Controls.SetChildIndex(this.swTextbox2, 0);
+            this.Controls.SetChildIndex(this.swtxtCodeCategory, 0);
+            this.Controls.SetChildIndex(this.swtxtDescCategory, 0);
+            this.Controls.SetChildIndex(this.lblCodeCategory, 0);
+            this.Controls.SetChildIndex(this.lblDescCategory, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -78,7 +102,9 @@ namespace UserCategories
 
         #endregion
 
-        private CustomControls.SWTextbox swTextbox1;
-        private CustomControls.SWTextbox swTextbox2;
+        private CustomControls.SWTextbox swtxtCodeCategory;
+        private CustomControls.SWTextbox swtxtDescCategory;
+        private System.Windows.Forms.Label lblCodeCategory;
+        private System.Windows.Forms.Label lblDescCategory;
     }
 }

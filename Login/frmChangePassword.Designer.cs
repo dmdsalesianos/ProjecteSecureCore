@@ -40,7 +40,7 @@ namespace Login
             this.btnShowConfirmPassword = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSavePassword = new CustomControls.RJButton();
-            this.button_arrow = new CustomControls.RJButton();
+            this.btnBack = new CustomControls.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -190,25 +190,25 @@ namespace Login
             this.btnSavePassword.UseVisualStyleBackColor = false;
             this.btnSavePassword.Click += new System.EventHandler(this.btnSavePassword_Click);
             // 
-            // button_arrow
+            // btnBack
             // 
-            this.button_arrow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(198)))), ((int)(((byte)(250)))));
-            this.button_arrow.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(198)))), ((int)(((byte)(250)))));
-            this.button_arrow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(153)))));
-            this.button_arrow.BorderRadius = 10;
-            this.button_arrow.BorderSize = 5;
-            this.button_arrow.FlatAppearance.BorderSize = 0;
-            this.button_arrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_arrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.button_arrow.ForeColor = System.Drawing.Color.White;
-            this.button_arrow.Location = new System.Drawing.Point(12, 12);
-            this.button_arrow.Name = "button_arrow";
-            this.button_arrow.Size = new System.Drawing.Size(57, 55);
-            this.button_arrow.TabIndex = 23;
-            this.button_arrow.Text = "🡨";
-            this.button_arrow.TextColor = System.Drawing.Color.White;
-            this.button_arrow.UseVisualStyleBackColor = false;
-            this.button_arrow.Click += new System.EventHandler(this.button_arrow_Click);
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(198)))), ((int)(((byte)(250)))));
+            this.btnBack.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(198)))), ((int)(((byte)(250)))));
+            this.btnBack.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(153)))));
+            this.btnBack.BorderRadius = 10;
+            this.btnBack.BorderSize = 2;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(26, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 75);
+            this.btnBack.TabIndex = 26;
+            this.btnBack.Text = "🡨";
+            this.btnBack.TextColor = System.Drawing.Color.White;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // frmChangePassword
             // 
@@ -218,8 +218,8 @@ namespace Login
             this.BackgroundImage = global::Login.Properties.Resources._9496304;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(761, 670);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSavePassword);
-            this.Controls.Add(this.button_arrow);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnShowConfirmPassword);
             this.Controls.Add(this.lblErrorMessage);
@@ -253,7 +253,7 @@ namespace Login
         private System.Windows.Forms.Label lblErrorMessage;
         private System.Windows.Forms.Button btnShowConfirmPassword;
         private System.Windows.Forms.Label label1;
-        private CustomControls.RJButton button_arrow;
         private CustomControls.RJButton btnSavePassword;
+        private CustomControls.RJControls.RJButton btnBack;
     }
 }

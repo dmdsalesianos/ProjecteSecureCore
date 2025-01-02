@@ -15,7 +15,7 @@ namespace CustomControls
 
         private string clase;
         private string form;
-        private string descripcion;
+        private string title;
         private Image image;
 
         [Category("Custom Properties")]
@@ -36,12 +36,12 @@ namespace CustomControls
         public string Form { get => form; set => form = value; }
 
         [Category("Custom Properties")]
-        public string Descripcion
+        public string Title
         {
-            get => descripcion;
+            get => title;
             set
             {
-                descripcion = value;
+                title = value;
                 UpdateLabels();
             }
         }
@@ -76,7 +76,7 @@ namespace CustomControls
         }
 
 
-        private void UpdateLabels() { titleLbl.Text = descripcion; }
+        private void UpdateLabels() { titleLbl.Text = title; }
 
         private void UpdateImage()
         {

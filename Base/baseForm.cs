@@ -20,7 +20,6 @@ namespace Base
         public string querySelect;
 
         private bool tablasFKCargadas = false;
-
         public baseForm()
         {
             InitializeComponent();
@@ -42,6 +41,12 @@ namespace Base
                 else if (control is ComboBox comboBox)
                 {
                     comboBox.Validated += ValidarCombobox;
+                }
+                else if (control is Label label)
+                {
+                    label.BackColor = Color.Transparent;
+                    label.ForeColor = Color.Black;
+                    label.Font = new Font("Microsoft Sans Serif", 8.0f);
                 }
             }
 
@@ -140,7 +145,7 @@ namespace Base
         }
 
         //*****AÑADE UNA ROW VACIA*****//
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void rjbtnAgregar_Click(object sender, EventArgs e)
         {
             DataTable table = ds.Tables[TableName];
             DataRow newRow = table.NewRow();
@@ -168,12 +173,11 @@ namespace Base
             }
         }
 
-        protected void btnActualizar_Click(object sender, EventArgs e)
+        protected void rjbtnActualitzar_Click(object sender, EventArgs e)
         {
             dataAccess.Actualitzar(querySelect, ds, TableName);
             CargarDatos();
             MakeDataBindigs();
         }
-
     }
 }

@@ -36,6 +36,8 @@ namespace Planets
             cmbFiliations.Tag = "idFiliation";
             cmbFiliations.DisplayMember = "DescFiliations";
             cmbFiliations.ValueMember = "idFiliation";
+
+            //picPlanet.SizeMode = PictureBoxSizeMode.AutoSize;
         }
 
         private void frmPlanets_Load(object sender, EventArgs e)
@@ -47,7 +49,7 @@ namespace Planets
             cmbFiliations.DataSource = ds.Tables["Filiations"];
         }
 
-        private void btnImage_Click(object sender, EventArgs e)
+        private void rjbtnImage_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
@@ -75,7 +77,7 @@ namespace Planets
 
                         //Hago focus sobre el swtxtImagen y luego lo pierdo para que se valide
                         swtxtImagen.Focus();
-                        btnImage.Focus();
+                        rjbtnImage.Focus();
 
                     }
                     catch (Exception ex)
@@ -92,12 +94,14 @@ namespace Planets
 
             if (File.Exists(imagePath))
             {
-                pictureBox1.ImageLocation = imagePath;
+                picPlanet.ImageLocation = imagePath;
             }
             else
             {
-                pictureBox1.ImageLocation = null; // Borra la imagen si no se encuentra el archivo
+                picPlanet.ImageLocation = null; // Borra la imagen si no se encuentra el archivo
             }
         }
+
+        
     }
 }

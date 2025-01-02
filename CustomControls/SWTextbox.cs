@@ -65,15 +65,15 @@ namespace CustomControls
 
         private bool ValidateInput(string text)
         {
-            if(string.IsNullOrEmpty(text))
+            if (string.IsNullOrEmpty(text))
                 return permetreBuit;
 
-            switch(tipusDada)
+            switch (tipusDada)
             {
                 case Tipus_Dada.Number:
                     return Regex.IsMatch(text, @"^\d+$"); // Només números
                 case Tipus_Dada.Text:
-                    return text.All(c => Char.IsLetter(c) || c == ' '); // Només text
+                    return text.All(c => Char.IsLetter(c) || c == ' ' || c == '\''); // Només text amb espais i cometes simples
                 case Tipus_Dada.Code:
                     return Regex.IsMatch(text, @"^[AEIOU][A-Z]{3}\d{2}[13579]$"); // Codi tipus AAAB1234
                 case Tipus_Dada.All:
@@ -82,6 +82,7 @@ namespace CustomControls
                     return true;
             }
         }
+
 
         private void SWTextbox_TextChanged(object sender, EventArgs e) { ActualizarColorValidación(); }
 

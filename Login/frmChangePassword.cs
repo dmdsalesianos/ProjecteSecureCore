@@ -149,7 +149,7 @@ namespace Login
             }
         }
 
-        private void button_arrow_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
             frmLogin frmLogin = new frmLogin();
@@ -164,9 +164,9 @@ namespace Login
             }
         }
 
-        private void Button_Close_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        //private void Button_Close_Click(object sender, EventArgs e)
+        //{
+        //    Application.Exit();
+        //}        
     }
 }

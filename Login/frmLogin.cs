@@ -66,7 +66,6 @@ namespace Login
 
                 if (password == "12345aA")
                 {
-
                     frmChangePassword changePasswordForm = new frmChangePassword(username);
                     changePasswordForm.Show();
                     this.Hide();
