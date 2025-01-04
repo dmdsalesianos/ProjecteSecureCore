@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataAccess;
+using System.Configuration;
 
 namespace Login
 {
@@ -17,17 +19,15 @@ namespace Login
         private int tiempoTotal = 1000;
         private int intervalo = 100;
         private int incremento;
-        private int userCategoryId;
-        public string NameUserLoa { get; private set; }
+        DataSet dsUser = new DataSet();        
 
         private int dotCount = 0;
 
-        public frmLoading(int currentUserCategoryId, string NameUser)
+        public frmLoading(DataSet ds)
         {
             InitializeComponent();
 
-            this.userCategoryId = currentUserCategoryId;
-            NameUserLoa = NameUser;
+            this.dsUser = ds;
 
             timer1.Interval = intervalo;
             timer1.Start();
@@ -45,7 +45,25 @@ namespace Login
             lblLoadingMessage.BackColor = Color.Transparent;                  // Transparencia en el texto
         }
 
-        
+        private void frmLoading_Load(object sender, EventArgs e)
+        {
+            Centrar();
+        }
+
+        private void Centrar()
+        {
+            int frmHeight = Height;
+            int frmWidth = Width;
+
+            int gboxHeight = panel1.Height;
+            int gboxWidth = panel1.Width;
+
+            int newHeight = (frmHeight - gboxHeight) / 3;
+            int newWidth = (frmWidth - gboxWidth) / 2;
+
+            panel1.Location = new Point(newWidth, newHeight);
+
+        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -61,9 +79,11 @@ namespace Login
                 timer1.Stop();
                 this.Hide();
 
-                frmMenu menu_frm = new frmMenu(userCategoryId, NameUserLoa);
+                frmMenu menu_frm = new frmMenu(dsUser);
                 menu_frm.Show();
             }
         }
+
+        
     }
 }

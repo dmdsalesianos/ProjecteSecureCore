@@ -14,23 +14,27 @@ namespace MenuOptions
 {
     public partial class frmMenuOptions : baseForm
     {
-        string imagesDirectory;
-        string nombreCarpeta;
+        string nombreCarpeta = "iconos";
+        string imagesDirectory = Path.Combine(Application.StartupPath, "imatges");
 
-        public DataSet dsFK;
         public frmMenuOptions()
         {
             InitializeComponent();
-            TableName = "MenuOptions";
+            TableName = "MenuOptionsPrueba";
+            TablesFK = new List<string> { "UserRanks" };
             querySelect = $"SELECT * FROM {TableName}";
 
-            nombreCarpeta = "iconos";
-            imagesDirectory = Path.Combine(Application.StartupPath, "imatges");
+            cmbUserRanks.Tag = "UserRankId";
+            cmbUserRanks.DisplayMember = "DescRank";
+            cmbUserRanks.ValueMember = "idUserRank";
+            
         }
 
         private void frmMenuOptions_Load(object sender, EventArgs e)
         {
             base.BaseForm_Load(sender, e);
+
+            cmbUserRanks.DataSource = ds.Tables["UserRanks"];
         }
         private void rjbtnImagen_Click(object sender, EventArgs e)
         {

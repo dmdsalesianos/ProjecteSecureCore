@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -16,34 +17,58 @@ namespace Login
 {
     public partial class frmChangePassword : Form
     {
-        private string username;
-        private string connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
+        private string login;
+        MantenimentDades manteniment;
+        private string connectionString;
 
 
-        public frmChangePassword(string username)
+        public frmChangePassword(string login)
         {
             InitializeComponent();
-            this.username = username;
+            this.login = login;
+
+        }
+
+        private void frmChangePassword_Load(object sender, EventArgs e)
+        {
+            connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
+            manteniment = new MantenimentDades(connectionString);
+            Centrar();
+        }
+
+        private void Centrar()
+        {
+            int frmHeight = Height;
+            int frmWidth = Width;
+
+            int pnlLoginHeight = pnlPass.Height;
+            int pnlLoginWidth = pnlPass.Width;
+
+            int newPnlLoginHeight = (frmHeight - pnlLoginHeight) / 3;
+            int newPnlLoginWidth = (frmWidth - pnlLoginWidth) / 2;
+
+            pnlPass.Location = new Point(newPnlLoginWidth, newPnlLoginHeight);
+
 
         }
 
 
-        private void btnSavePassword_Click(object sender, EventArgs e)
+        private void rjbtnSave_Click(object sender, EventArgs e)
         {
             string newPassword = txtNewPassword.Text;
             string confirmPassword = txtConfirmPassword.Text;
 
-           
+
             if (newPassword == confirmPassword && IsValidPassword(newPassword))
             {
-                
+
                 byte[] newSalt = GenerateSalt();
 
-               
+
                 string hashedPassword = ComputeHash(newPassword, newSalt);
 
-                
-                SetNewPassword(hashedPassword, newSalt);  
+
+                SetNewPassword(hashedPassword, newSalt);
 
                 MessageBox.Show("Contraseña cambiada exitosamente.");
                 this.Close();
@@ -98,25 +123,20 @@ namespace Login
 
             string base64Salt = Convert.ToBase64String(salt);
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            string query = "UPDATE Users " +
+                           $"SET Password = '{hashedPassword}', Salt = '{base64Salt}' " +
+                           $"WHERE Login = '{login}'";
+
+            try
             {
-                try
-                {
-                    conn.Open();
-                    string query = "UPDATE Users SET Password = @Password, Salt = @Salt WHERE UserName = @UserName";
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@Password", hashedPassword);
-                        cmd.Parameters.AddWithValue("@Salt", base64Salt);  
-                        cmd.Parameters.AddWithValue("@UserName", username);
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error al actualizar la contraseña en la base de datos: {ex.Message}");
-                }
+                manteniment.Executa(query);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al actualizar la contraseña en la base de datos: {ex.Message}");
+            }
+            
+
         }
 
         private void btnShowNewPassword_Click(object sender, EventArgs e)
@@ -149,24 +169,27 @@ namespace Login
             }
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            frmLogin frmLogin = new frmLogin();
-            frmLogin.Show();
-        }
+        
 
         private void txtConfirmPassword_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnSavePassword_Click(sender, e);
+                rjbtnSave_Click(sender, e);
             }
         }
 
-        //private void Button_Close_Click(object sender, EventArgs e)
-        //{
-        //    Application.Exit();
-        //}        
+        private void rjbtnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.Show();
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }       
     }
 }

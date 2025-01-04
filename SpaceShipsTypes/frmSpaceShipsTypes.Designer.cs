@@ -42,7 +42,7 @@ namespace SpaceShipsTypes
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(336, 38);
+            this.label1.Location = new System.Drawing.Point(333, 176);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 20);
             this.label1.TabIndex = 8;
@@ -51,7 +51,7 @@ namespace SpaceShipsTypes
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(338, 90);
+            this.label2.Location = new System.Drawing.Point(334, 227);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 20);
             this.label2.TabIndex = 9;
@@ -60,7 +60,7 @@ namespace SpaceShipsTypes
             // descTxt
             // 
             this.descTxt.EsForanea = false;
-            this.descTxt.Location = new System.Drawing.Point(402, 86);
+            this.descTxt.Location = new System.Drawing.Point(399, 224);
             this.descTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.descTxt.Name = "descTxt";
             this.descTxt.NomCampBBDD = "DescSpaceShipType";
@@ -72,7 +72,7 @@ namespace SpaceShipsTypes
             // codeTxt
             // 
             this.codeTxt.EsForanea = false;
-            this.codeTxt.Location = new System.Drawing.Point(399, 34);
+            this.codeTxt.Location = new System.Drawing.Point(396, 172);
             this.codeTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.codeTxt.Name = "codeTxt";
             this.codeTxt.NomCampBBDD = "CodeSpaceShipType";
@@ -84,7 +84,7 @@ namespace SpaceShipsTypes
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(320, 142);
+            this.label3.Location = new System.Drawing.Point(719, 179);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 20);
             this.label3.TabIndex = 12;
@@ -93,7 +93,7 @@ namespace SpaceShipsTypes
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(224, 190);
+            this.label4.Location = new System.Drawing.Point(623, 227);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(159, 20);
             this.label4.TabIndex = 13;
@@ -102,19 +102,19 @@ namespace SpaceShipsTypes
             // filiationCmb
             // 
             this.filiationCmb.FormattingEnabled = true;
-            this.filiationCmb.Location = new System.Drawing.Point(399, 139);
+            this.filiationCmb.Location = new System.Drawing.Point(798, 176);
             this.filiationCmb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.filiationCmb.Name = "filiationCmb";
-            this.filiationCmb.Size = new System.Drawing.Size(136, 28);
+            this.filiationCmb.Size = new System.Drawing.Size(191, 28);
             this.filiationCmb.TabIndex = 14;
             // 
             // categoryCmb
             // 
             this.categoryCmb.FormattingEnabled = true;
-            this.categoryCmb.Location = new System.Drawing.Point(399, 190);
+            this.categoryCmb.Location = new System.Drawing.Point(798, 227);
             this.categoryCmb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.categoryCmb.Name = "categoryCmb";
-            this.categoryCmb.Size = new System.Drawing.Size(136, 28);
+            this.categoryCmb.Size = new System.Drawing.Size(191, 28);
             this.categoryCmb.TabIndex = 15;
             // 
             // frmSpaceShipsTypes
@@ -130,6 +130,7 @@ namespace SpaceShipsTypes
             this.Controls.Add(this.label1);
             this.Controls.Add(this.descTxt);
             this.Controls.Add(this.codeTxt);
+            this.Location = new System.Drawing.Point(0, 0);
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "frmSpaceShipsTypes";
             this.Text = "frmSpaceShipsTypes";

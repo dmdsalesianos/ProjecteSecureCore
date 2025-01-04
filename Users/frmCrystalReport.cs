@@ -38,8 +38,15 @@ namespace Users
                 string rutaInforme = Path.Combine(
                     Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory.TrimEnd(Path.DirectorySeparatorChar)),
                     "Users",
-                    "TarjetaIdentificacion.rpt"
+                    "UserCard.rpt"
                 );
+
+                if (!File.Exists(rutaInforme))
+                {
+                    MessageBox.Show("El archivo del informe no existe en la ruta especificada.");
+                    return;
+                }
+
                 ReportDocument informe = new ReportDocument();
                 informe.Load(rutaInforme);
 
@@ -61,26 +68,18 @@ namespace Users
                     crTable.ApplyLogOnInfo(crTableLogOnInfo);
                 }
 
-                // Configurar parámetros
-                ParameterFieldDefinitions parametros = informe.DataDefinition.ParameterFields;
+                ParameterFieldDefinitions crParameterFieldDefinitions;
+                ParameterFieldDefinition crParameterFieldDefinition;
+                ParameterValues crParameterValues = new ParameterValues();
+                ParameterDiscreteValue crParameterDiscreteValue = new ParameterDiscreteValue();
 
-                // Parámetro idUser
-                ParameterFieldDefinition parametroPersonaId = parametros["idUser"];
-                ParameterDiscreteValue valorParametroId = new ParameterDiscreteValue { Value = idPersona };
-                parametroPersonaId.CurrentValues.Clear();
-                parametroPersonaId.CurrentValues.Add(valorParametroId);
-                parametroPersonaId.ApplyCurrentValues(parametroPersonaId.CurrentValues);
+                crParameterDiscreteValue.Value = idPersona;
+                crParameterFieldDefinitions = informe.DataDefinition.ParameterFields;
+                crParameterFieldDefinition = crParameterFieldDefinitions["idUser"];
 
-                // Parámetro RutaBase
-                ParameterFieldDefinition parametroRutaBase = parametros["RutaBase"];
-                ParameterDiscreteValue valorParametroRuta = new ParameterDiscreteValue { Value = rutaBaseImagenes };
-                parametroRutaBase.CurrentValues.Clear();
-                parametroRutaBase.CurrentValues.Add(valorParametroRuta);
-                parametroRutaBase.ApplyCurrentValues(parametroRutaBase.CurrentValues);
-
-                // Asignar el informe al visor
-                crystalReportViewer1.ReportSource = informe;
-                crystalReportViewer1.Refresh();
+                crParameterValues.Clear();
+                crParameterValues.Add(crParameterDiscreteValue);
+                crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
             }
             catch (Exception ex)
             {

@@ -99,6 +99,12 @@
     <Compile Include="RJTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RoundedPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RoundedPictureBox.Designer.cs">
+      <DependentUpon>RoundedPictureBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="SWCodi.cs">
       <SubType>UserControl</SubType>
     </Compile>

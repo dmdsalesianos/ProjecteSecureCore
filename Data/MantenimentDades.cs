@@ -152,36 +152,36 @@ namespace DataAccess
         /// </code>
         /// </example>
         public int Actualitzar(string querySelect, DataSet ds, string nomTaula)
+        {
+            int result = 0;
+            SqlTransaction transaction = null;
+
+            try
             {
-                int result = 0;
-                SqlTransaction transaction = null;
+                connection.Open();
+                transaction = connection.BeginTransaction();
 
-                try
-                {
-                    connection.Open();
-                    transaction = connection.BeginTransaction();
+                SqlDataAdapter da = new SqlDataAdapter(querySelect, connection);
+                da.SelectCommand.Transaction = transaction;
 
-                    SqlDataAdapter da = new SqlDataAdapter(querySelect, connection);
-                    da.SelectCommand.Transaction = transaction;
+                SqlCommandBuilder builder = new SqlCommandBuilder(da);
+                result = da.Update(ds.Tables[nomTaula]);
 
-                    SqlCommandBuilder builder = new SqlCommandBuilder(da);
-                    result = da.Update(ds.Tables[nomTaula]);
-
-                    transaction.Commit();
-                }
-                catch (Exception ex)
-                {
-                    transaction.Rollback();
-                    MessageBox.Show($"Error al actualizar la tabla {nomTaula}: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    result = -1; // Si es error devuelve -1
-                }
-                finally
-                {
-                    connection.Close();
-                }
-
-                return result;
+                transaction.Commit();
             }
+            catch (Exception ex)
+            {
+                transaction.Rollback();
+                MessageBox.Show($"Error al actualizar la tabla {nomTaula}: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                result = -1; // Si es error devuelve -1
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return result;
+        }
 
 
         /// <summary>

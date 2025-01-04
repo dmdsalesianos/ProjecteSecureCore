@@ -20,6 +20,21 @@ namespace Base
         public string querySelect;
 
         private bool tablasFKCargadas = false;
+
+
+        public int TabIndexAgregarBtn
+        {
+            get { return rjbtnAgregar.TabIndex; }
+            set { rjbtnAgregar.TabIndex = value; }
+        }
+
+        public int TabIndexActualitzarBtn
+        {
+            get { return rjbtnActualitzar.TabIndex; }
+            set { rjbtnActualitzar.TabIndex = value; }
+        }
+
+
         public baseForm()
         {
             InitializeComponent();
@@ -46,7 +61,7 @@ namespace Base
                 {
                     label.BackColor = Color.Transparent;
                     label.ForeColor = Color.Black;
-                    label.Font = new Font("Microsoft Sans Serif", 8.0f);
+                    label.Font = new Font("Arial Rounded MT Bold", 8.0f);
                 }
             }
 

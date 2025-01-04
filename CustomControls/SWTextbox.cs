@@ -60,6 +60,10 @@ namespace CustomControls
             {
                 this.BackColor = colorOriginal;
             }
+            else
+            {
+                Focus();
+            }
         }
 
 

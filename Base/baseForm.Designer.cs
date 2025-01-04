@@ -40,14 +40,15 @@ namespace Base
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(335, 328);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(223, 213);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1941, 896);
+            this.dataGridView1.Size = new System.Drawing.Size(1294, 582);
             this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.TabStop = false;
             // 
             // rjbtnActualitzar
             // 
@@ -59,9 +60,10 @@ namespace Base
             this.rjbtnActualitzar.FlatAppearance.BorderSize = 0;
             this.rjbtnActualitzar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjbtnActualitzar.ForeColor = System.Drawing.Color.White;
-            this.rjbtnActualitzar.Location = new System.Drawing.Point(2153, 270);
+            this.rjbtnActualitzar.Location = new System.Drawing.Point(1435, 175);
+            this.rjbtnActualitzar.Margin = new System.Windows.Forms.Padding(2);
             this.rjbtnActualitzar.Name = "rjbtnActualitzar";
-            this.rjbtnActualitzar.Size = new System.Drawing.Size(123, 40);
+            this.rjbtnActualitzar.Size = new System.Drawing.Size(82, 26);
             this.rjbtnActualitzar.TabIndex = 6;
             this.rjbtnActualitzar.Text = "Actualitzar";
             this.rjbtnActualitzar.TextColor = System.Drawing.Color.White;
@@ -78,9 +80,10 @@ namespace Base
             this.rjbtnAgregar.FlatAppearance.BorderSize = 0;
             this.rjbtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjbtnAgregar.ForeColor = System.Drawing.Color.White;
-            this.rjbtnAgregar.Location = new System.Drawing.Point(2024, 270);
+            this.rjbtnAgregar.Location = new System.Drawing.Point(1349, 175);
+            this.rjbtnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.rjbtnAgregar.Name = "rjbtnAgregar";
-            this.rjbtnAgregar.Size = new System.Drawing.Size(123, 40);
+            this.rjbtnAgregar.Size = new System.Drawing.Size(82, 26);
             this.rjbtnAgregar.TabIndex = 5;
             this.rjbtnAgregar.Text = "Agregar";
             this.rjbtnAgregar.TextColor = System.Drawing.Color.White;
@@ -89,14 +92,14 @@ namespace Base
             // 
             // baseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(198)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(2411, 1258);
+            this.ClientSize = new System.Drawing.Size(1418, 669);
             this.Controls.Add(this.rjbtnActualitzar);
             this.Controls.Add(this.rjbtnAgregar);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "baseForm";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

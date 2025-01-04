@@ -45,71 +45,74 @@ namespace Users
             this.lblSpecie = new System.Windows.Forms.Label();
             this.rjbtnImage = new CustomControls.RJControls.RJButton();
             this.rjbtnInforme = new CustomControls.RJControls.RJButton();
+            this.swtxtLogin = new CustomControls.SWTextbox();
+            this.lblLogin = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // swtxtCodeUser
             // 
             this.swtxtCodeUser.EsForanea = false;
-            this.swtxtCodeUser.Location = new System.Drawing.Point(450, 110);
-            this.swtxtCodeUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.swtxtCodeUser.Location = new System.Drawing.Point(300, 71);
+            this.swtxtCodeUser.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.swtxtCodeUser.Name = "swtxtCodeUser";
             this.swtxtCodeUser.NomCampBBDD = "CodeUser";
             this.swtxtCodeUser.PermetreBuit = true;
-            this.swtxtCodeUser.Size = new System.Drawing.Size(219, 26);
+            this.swtxtCodeUser.Size = new System.Drawing.Size(147, 20);
             this.swtxtCodeUser.TabIndex = 5;
             this.swtxtCodeUser.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
             // 
             // swtxtUserName
             // 
             this.swtxtUserName.EsForanea = false;
-            this.swtxtUserName.Location = new System.Drawing.Point(450, 154);
-            this.swtxtUserName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.swtxtUserName.Location = new System.Drawing.Point(300, 100);
+            this.swtxtUserName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.swtxtUserName.Name = "swtxtUserName";
             this.swtxtUserName.NomCampBBDD = "UserName";
             this.swtxtUserName.PermetreBuit = true;
-            this.swtxtUserName.Size = new System.Drawing.Size(219, 26);
+            this.swtxtUserName.Size = new System.Drawing.Size(147, 20);
             this.swtxtUserName.TabIndex = 6;
             this.swtxtUserName.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
             // 
             // cmbUserCategory
             // 
             this.cmbUserCategory.FormattingEnabled = true;
-            this.cmbUserCategory.Location = new System.Drawing.Point(874, 160);
-            this.cmbUserCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbUserCategory.Location = new System.Drawing.Point(583, 99);
+            this.cmbUserCategory.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmbUserCategory.Name = "cmbUserCategory";
-            this.cmbUserCategory.Size = new System.Drawing.Size(219, 28);
+            this.cmbUserCategory.Size = new System.Drawing.Size(147, 21);
             this.cmbUserCategory.TabIndex = 7;
             // 
             // cmbUserRank
             // 
             this.cmbUserRank.FormattingEnabled = true;
-            this.cmbUserRank.Location = new System.Drawing.Point(874, 110);
-            this.cmbUserRank.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbUserRank.Location = new System.Drawing.Point(583, 71);
+            this.cmbUserRank.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmbUserRank.Name = "cmbUserRank";
-            this.cmbUserRank.Size = new System.Drawing.Size(219, 28);
+            this.cmbUserRank.Size = new System.Drawing.Size(147, 21);
             this.cmbUserRank.TabIndex = 8;
             // 
             // swtxtPhoto
             // 
             this.swtxtPhoto.EsForanea = false;
-            this.swtxtPhoto.Location = new System.Drawing.Point(1559, 151);
-            this.swtxtPhoto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.swtxtPhoto.Location = new System.Drawing.Point(1039, 98);
+            this.swtxtPhoto.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.swtxtPhoto.Name = "swtxtPhoto";
             this.swtxtPhoto.NomCampBBDD = "Photo";
             this.swtxtPhoto.PermetreBuit = true;
-            this.swtxtPhoto.Size = new System.Drawing.Size(112, 26);
+            this.swtxtPhoto.Size = new System.Drawing.Size(76, 20);
             this.swtxtPhoto.TabIndex = 11;
+            this.swtxtPhoto.TabStop = false;
             this.swtxtPhoto.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
             this.swtxtPhoto.TextChanged += new System.EventHandler(this.swtxtPhoto_TextChanged);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(1525, 108);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(1017, 69);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(199, 140);
+            this.pictureBox1.Size = new System.Drawing.Size(133, 92);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
@@ -117,70 +120,78 @@ namespace Users
             // lblCodeUser
             // 
             this.lblCodeUser.AutoSize = true;
-            this.lblCodeUser.Location = new System.Drawing.Point(339, 116);
+            this.lblCodeUser.Location = new System.Drawing.Point(226, 75);
+            this.lblCodeUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCodeUser.Name = "lblCodeUser";
-            this.lblCodeUser.Size = new System.Drawing.Size(81, 20);
+            this.lblCodeUser.Size = new System.Drawing.Size(54, 13);
             this.lblCodeUser.TabIndex = 13;
             this.lblCodeUser.Text = "CodeUser";
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(331, 160);
+            this.lblUserName.Location = new System.Drawing.Point(221, 104);
+            this.lblUserName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(89, 20);
+            this.lblUserName.Size = new System.Drawing.Size(60, 13);
             this.lblUserName.TabIndex = 14;
             this.lblUserName.Text = "User Name";
             // 
             // lblUserRank
             // 
             this.lblUserRank.AutoSize = true;
-            this.lblUserRank.Location = new System.Drawing.Point(764, 116);
+            this.lblUserRank.Location = new System.Drawing.Point(509, 75);
+            this.lblUserRank.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserRank.Name = "lblUserRank";
-            this.lblUserRank.Size = new System.Drawing.Size(85, 20);
+            this.lblUserRank.Size = new System.Drawing.Size(58, 13);
             this.lblUserRank.TabIndex = 15;
             this.lblUserRank.Text = "User Rank";
             // 
             // lblUserCategory
             // 
             this.lblUserCategory.AutoSize = true;
-            this.lblUserCategory.Location = new System.Drawing.Point(738, 157);
+            this.lblUserCategory.Location = new System.Drawing.Point(492, 102);
+            this.lblUserCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserCategory.Name = "lblUserCategory";
-            this.lblUserCategory.Size = new System.Drawing.Size(111, 20);
+            this.lblUserCategory.Size = new System.Drawing.Size(74, 13);
             this.lblUserCategory.TabIndex = 16;
             this.lblUserCategory.Text = "User Category";
             // 
             // cmbPlanet
             // 
             this.cmbPlanet.FormattingEnabled = true;
-            this.cmbPlanet.Location = new System.Drawing.Point(1273, 108);
+            this.cmbPlanet.Location = new System.Drawing.Point(849, 70);
+            this.cmbPlanet.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPlanet.Name = "cmbPlanet";
-            this.cmbPlanet.Size = new System.Drawing.Size(219, 28);
+            this.cmbPlanet.Size = new System.Drawing.Size(147, 21);
             this.cmbPlanet.TabIndex = 17;
             // 
             // cmbSpecie
             // 
             this.cmbSpecie.FormattingEnabled = true;
-            this.cmbSpecie.Location = new System.Drawing.Point(1273, 160);
+            this.cmbSpecie.Location = new System.Drawing.Point(849, 100);
+            this.cmbSpecie.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSpecie.Name = "cmbSpecie";
-            this.cmbSpecie.Size = new System.Drawing.Size(219, 28);
+            this.cmbSpecie.Size = new System.Drawing.Size(147, 21);
             this.cmbSpecie.TabIndex = 18;
             // 
             // lblPlanet
             // 
             this.lblPlanet.AutoSize = true;
-            this.lblPlanet.Location = new System.Drawing.Point(1181, 116);
+            this.lblPlanet.Location = new System.Drawing.Point(787, 75);
+            this.lblPlanet.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPlanet.Name = "lblPlanet";
-            this.lblPlanet.Size = new System.Drawing.Size(54, 20);
+            this.lblPlanet.Size = new System.Drawing.Size(37, 13);
             this.lblPlanet.TabIndex = 19;
             this.lblPlanet.Text = "Planet";
             // 
             // lblSpecie
             // 
             this.lblSpecie.AutoSize = true;
-            this.lblSpecie.Location = new System.Drawing.Point(1177, 163);
+            this.lblSpecie.Location = new System.Drawing.Point(785, 106);
+            this.lblSpecie.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSpecie.Name = "lblSpecie";
-            this.lblSpecie.Size = new System.Drawing.Size(58, 20);
+            this.lblSpecie.Size = new System.Drawing.Size(40, 13);
             this.lblSpecie.TabIndex = 20;
             this.lblSpecie.Text = "Specie";
             // 
@@ -194,9 +205,10 @@ namespace Users
             this.rjbtnImage.FlatAppearance.BorderSize = 0;
             this.rjbtnImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjbtnImage.ForeColor = System.Drawing.Color.White;
-            this.rjbtnImage.Location = new System.Drawing.Point(1525, 255);
+            this.rjbtnImage.Location = new System.Drawing.Point(1017, 166);
+            this.rjbtnImage.Margin = new System.Windows.Forms.Padding(2);
             this.rjbtnImage.Name = "rjbtnImage";
-            this.rjbtnImage.Size = new System.Drawing.Size(199, 39);
+            this.rjbtnImage.Size = new System.Drawing.Size(133, 25);
             this.rjbtnImage.TabIndex = 31;
             this.rjbtnImage.Text = "Select Image";
             this.rjbtnImage.TextColor = System.Drawing.Color.White;
@@ -213,21 +225,46 @@ namespace Users
             this.rjbtnInforme.FlatAppearance.BorderSize = 0;
             this.rjbtnInforme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjbtnInforme.ForeColor = System.Drawing.Color.White;
-            this.rjbtnInforme.Location = new System.Drawing.Point(1867, 270);
+            this.rjbtnInforme.Location = new System.Drawing.Point(1245, 175);
+            this.rjbtnInforme.Margin = new System.Windows.Forms.Padding(2);
             this.rjbtnInforme.Name = "rjbtnInforme";
-            this.rjbtnInforme.Size = new System.Drawing.Size(151, 40);
+            this.rjbtnInforme.Size = new System.Drawing.Size(101, 26);
             this.rjbtnInforme.TabIndex = 32;
             this.rjbtnInforme.Text = "Mostrar Informe";
             this.rjbtnInforme.TextColor = System.Drawing.Color.White;
             this.rjbtnInforme.UseVisualStyleBackColor = false;
             this.rjbtnInforme.Click += new System.EventHandler(this.rjbtnInforme_Click);
             // 
+            // swtxtLogin
+            // 
+            this.swtxtLogin.EsForanea = false;
+            this.swtxtLogin.Location = new System.Drawing.Point(300, 126);
+            this.swtxtLogin.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.swtxtLogin.Name = "swtxtLogin";
+            this.swtxtLogin.NomCampBBDD = "Login";
+            this.swtxtLogin.PermetreBuit = true;
+            this.swtxtLogin.Size = new System.Drawing.Size(147, 20);
+            this.swtxtLogin.TabIndex = 33;
+            this.swtxtLogin.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
+            // 
+            // lblLogin
+            // 
+            this.lblLogin.AutoSize = true;
+            this.lblLogin.Location = new System.Drawing.Point(220, 129);
+            this.lblLogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(33, 13);
+            this.lblLogin.TabIndex = 34;
+            this.lblLogin.Text = "Login";
+            // 
             // frmUsers
             // 
             this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2469, 1131);
+            this.ClientSize = new System.Drawing.Size(1283, 690);
+            this.Controls.Add(this.lblLogin);
+            this.Controls.Add(this.swtxtLogin);
             this.Controls.Add(this.rjbtnInforme);
             this.Controls.Add(this.rjbtnImage);
             this.Controls.Add(this.lblSpecie);
@@ -245,7 +282,6 @@ namespace Users
             this.Controls.Add(this.swtxtUserName);
             this.Controls.Add(this.swtxtCodeUser);
             this.Location = new System.Drawing.Point(0, 0);
-            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "frmUsers";
             this.Text = "frmUsers";
             this.Load += new System.EventHandler(this.BaseForm_Load);
@@ -265,6 +301,8 @@ namespace Users
             this.Controls.SetChildIndex(this.lblSpecie, 0);
             this.Controls.SetChildIndex(this.rjbtnImage, 0);
             this.Controls.SetChildIndex(this.rjbtnInforme, 0);
+            this.Controls.SetChildIndex(this.swtxtLogin, 0);
+            this.Controls.SetChildIndex(this.lblLogin, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -289,5 +327,7 @@ namespace Users
         private System.Windows.Forms.Label lblSpecie;
         private CustomControls.RJControls.RJButton rjbtnImage;
         private CustomControls.RJControls.RJButton rjbtnInforme;
+        private CustomControls.SWTextbox swtxtLogin;
+        private System.Windows.Forms.Label lblLogin;
     }
 }

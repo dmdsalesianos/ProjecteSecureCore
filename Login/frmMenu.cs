@@ -17,25 +17,55 @@ namespace Login
 {
     public partial class frmMenu : Form
     {
-        private int accesLevel;
-        string imagesDirectory = Path.Combine(Application.StartupPath, "imatges", "iconos");
+        string IconImagesDirectory = Path.Combine(Application.StartupPath, "imatges", "iconos");
+        string UserImagesDirectory = Path.Combine(Application.StartupPath, "imatges", "usuarios");
         string UserNameM;
+        private MantenimentDades manteniment;
+        private string connectionString;
 
-        public frmMenu(int currentUserCategoryId, string UserName)
+
+        private DataSet dsUser;
+        public DataSet MyProperty
+        {
+            get { return dsUser; }
+            set { dsUser = value; }
+        }
+
+
+        public frmMenu(DataSet dsUser)
         {
             InitializeComponent();
             DoubleBuffered = true;
-            accesLevel = ObtenerAccessLevel(currentUserCategoryId);
-            UserNameM = UserName;
-            //MessageBox.Show($"Access Level: {accesLevel}");
 
-
+            this.dsUser = dsUser;
+            UserNameM = dsUser.Tables[0].Rows[0]["Login"].ToString().ToUpper();
         }
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
-            ButonForms();
+            connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
+            manteniment = new MantenimentDades(connectionString);
+
             label_name.Text = UserNameM;
+
+            string fileName = dsUser.Tables[0].Rows[0]["Photo"].ToString();
+
+            if (fileName != null)
+            {
+                string fileLocation = Path.Combine(UserImagesDirectory, fileName);
+
+                if (File.Exists(fileLocation))
+                {
+                    rndpicUser.ImageLocation = fileLocation;
+                }
+                else
+                {
+                    rndpicUser.ImageLocation = null;
+                }
+
+            }
+
+            ButonForms();
         }
 
         private void button_logaout_Click(object sender, EventArgs e)
@@ -43,112 +73,74 @@ namespace Login
             frmLogin login = new frmLogin();
             login.Show();
 
-            this.Hide();
-
-        }
-
-        private int ObtenerAccessLevel(int currentUserCategoryId)
-        {
-            accesLevel = 0;
-
-            string query = "SELECT cat.AccessLevel " +
-                           "FROM UserCategories cat " +
-                           "INNER JOIN Users us ON cat.idUserCategory = us.idUserCategory " +
-                           $"WHERE cat.idUserCategory = {currentUserCategoryId}";
-
-            string connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
-            MantenimentDades mantenimentDades = new MantenimentDades(connectionString);
-            DataSet ds = new DataSet();
-
-            ds = mantenimentDades.PortarPerConsulta(query);
-
-            accesLevel = Convert.ToInt32(ds.Tables[0].Rows[0]["AccessLevel"]);
-
-            return accesLevel; // Devolvemos el nivel de acceso
+            Close();
         }
 
         private void ButonForms()
         {
-            
-            string query = $"select Texto, AccessLevel, Clase, Form, Icono, Color from MenuOptions where AccessLevel <= {accesLevel}";
+            int UserRankId = int.Parse(dsUser.Tables[0].Rows[0]["idUserRank"].ToString());
 
-            string connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
-            MantenimentDades menuOptionsDataSet = new MantenimentDades(connectionString);
-            DataSet ds = new DataSet();
+            string query = "SELECT * " +
+                           "FROM MenuOptionsPrueba " +
+                           $"WHERE UserRankId >= {UserRankId}";
 
-      
-            ds = menuOptionsDataSet.PortarPerConsulta(query);
+            DataSet dsMenuOptions = manteniment.PortarPerConsulta(query);
 
-            //Para cada fila en el DataSet de MenuOptions que obtenemos de la base de datos
-            DataTable menuOptionsTable = ds.Tables[0];
-
-            
-
-
-            foreach (DataRow row in menuOptionsTable.Rows)
+            foreach (DataRow row in dsMenuOptions.Tables[0].Rows)
             {
+                // Creamos un nuevo botón de menú
+                MenuButton btn = new MenuButton();
 
-                // Comprobar si el nivel de acceso del usuario es mayor o igual al nivel de acceso de la fila de MenuOptions
-                if (accesLevel >= Convert.ToInt32(row["AccessLevel"]))
+                // Asignamos las propiedades del botón con los valores de la fila
+                btn.TargetPanel = PanelContenido;
+                btn.LabelText = row["Texto"].ToString();  // Asignamos el nombre de la opción
+                btn.Clase = row["Clase"].ToString();
+                btn.Form = row["Form"].ToString(); // Asignamos la clase
+                btn.RutaImagen = Path.Combine(IconImagesDirectory, row["Icono"].ToString());
+                btn.BottomBorderColor = Color.White;
+                // Obtén el valor del color desde la fila
+                string colorValue = row["Color"].ToString();
+
+                // Verifica si es un nombre de color
+                if (Color.FromName(colorValue).IsKnownColor)
                 {
-                    // Creamos un nuevo botón de menú
-                    MenuButton btn = new MenuButton();
-
-                    // Asignamos las propiedades del botón con los valores de la fila
-                    btn.TargetPanel = PanelContenido;
-                    btn.LabelText = row["Texto"].ToString();  // Asignamos el nombre de la opción
-                    btn.Clase = row["Clase"].ToString();
-                    btn.Form = row["Form"].ToString(); // Asignamos la clase
-                    btn.RutaImagen = Path.Combine(imagesDirectory, row["Icono"].ToString());
-                    btn.BottomBorderColor = Color.White;
-                    // Obtén el valor del color desde la fila
-                    string colorValue = row["Color"].ToString();
-
-                    // Verifica si es un nombre de color
-                    if (Color.FromName(colorValue).IsKnownColor)
-                    {
-                        // Es un nombre de color conocido
-                        btn.BackColor = Color.FromName(colorValue);
-                        btn.ColorOri = Color.FromName(colorValue);
-                    }
-                    else
-                    {
-                        // Intenta procesarlo como RGB separado por punto y coma
-                        try
-                        {
-                            // Divide el valor en componentes R, G, B
-                            string[] rgb = colorValue.Split(';');
-                            int r = int.Parse(rgb[0].Trim());
-                            int g = int.Parse(rgb[1].Trim());
-                            int b = int.Parse(rgb[2].Trim());
-
-                            // Asigna el color RGB
-                            btn.BackColor = Color.FromArgb(r, g, b);
-                            btn.ColorOri = Color.FromArgb(r, g, b);
-                        }
-                        catch
-                        {
-                            // En caso de error, asignar un color predeterminado
-                            btn.BackColor = Color.FromArgb(36, 144, 241);
-                            btn.ColorOri = Color.FromArgb(36, 144, 241);
-
-                        }
-                    } // Asignamos el color de fondoç
-                 
-
-                    flowLayoutPanel.Dock = DockStyle.Left;  // O DockStyle.Fill si deseas que ocupe todo el espacio disponible
-                    flowLayoutPanel.FlowDirection = FlowDirection.TopDown;  // Esto hará que los botones se apilen verticalmente
-                    flowLayoutPanel.WrapContents = false;
-                    flowLayoutPanel.Width = btn.Width + 15;
-                    // Lo añadimos al panel del formulario principal (en este caso 'targetPanel')
-                    flowLayoutPanel.Controls.Add(btn);
+                    // Es un nombre de color conocido
+                    btn.BackColor = Color.FromName(colorValue);
+                    btn.ColorOri = Color.FromName(colorValue);
                 }
-            }
-        }
+                else
+                {
+                    // Intenta procesarlo como RGB separado por punto y coma
+                    try
+                    {
+                        // Divide el valor en componentes R, G, B
+                        string[] rgb = colorValue.Split(';');
+                        int r = int.Parse(rgb[0].Trim());
+                        int g = int.Parse(rgb[1].Trim());
+                        int b = int.Parse(rgb[2].Trim());
 
-        private void button_Close_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
+                        // Asigna el color RGB
+                        btn.BackColor = Color.FromArgb(r, g, b);
+                        btn.ColorOri = Color.FromArgb(r, g, b);
+                    }
+                    catch
+                    {
+                        // En caso de error, asignar un color predeterminado
+                        btn.BackColor = Color.FromArgb(36, 144, 241);
+                        btn.ColorOri = Color.FromArgb(36, 144, 241);
+
+                    }
+                } // Asignamos el color de fondoç
+
+
+                flowLayoutPanel.Dock = DockStyle.Left;  // O DockStyle.Fill si deseas que ocupe todo el espacio disponible
+                flowLayoutPanel.FlowDirection = FlowDirection.TopDown;  // Esto hará que los botones se apilen verticalmente
+                flowLayoutPanel.WrapContents = false;
+                flowLayoutPanel.Width = btn.Width + 15;
+                // Lo añadimos al panel del formulario principal (en este caso 'targetPanel')
+                flowLayoutPanel.Controls.Add(btn);
+
+            }
         }
     }
 }

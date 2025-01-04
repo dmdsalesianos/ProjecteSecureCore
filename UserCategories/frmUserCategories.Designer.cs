@@ -38,7 +38,7 @@ namespace UserCategories
             // swtxtCodeCategory
             // 
             this.swtxtCodeCategory.EsForanea = false;
-            this.swtxtCodeCategory.Location = new System.Drawing.Point(336, 117);
+            this.swtxtCodeCategory.Location = new System.Drawing.Point(516, 164);
             this.swtxtCodeCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.swtxtCodeCategory.Name = "swtxtCodeCategory";
             this.swtxtCodeCategory.NomCampBBDD = "CodeCategory";
@@ -50,7 +50,7 @@ namespace UserCategories
             // swtxtDescCategory
             // 
             this.swtxtDescCategory.EsForanea = false;
-            this.swtxtDescCategory.Location = new System.Drawing.Point(336, 185);
+            this.swtxtDescCategory.Location = new System.Drawing.Point(516, 223);
             this.swtxtDescCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.swtxtDescCategory.Name = "swtxtDescCategory";
             this.swtxtDescCategory.NomCampBBDD = "DescCategory";
@@ -62,7 +62,7 @@ namespace UserCategories
             // lblCodeCategory
             // 
             this.lblCodeCategory.AutoSize = true;
-            this.lblCodeCategory.Location = new System.Drawing.Point(332, 93);
+            this.lblCodeCategory.Location = new System.Drawing.Point(365, 167);
             this.lblCodeCategory.Name = "lblCodeCategory";
             this.lblCodeCategory.Size = new System.Drawing.Size(115, 20);
             this.lblCodeCategory.TabIndex = 7;
@@ -71,7 +71,7 @@ namespace UserCategories
             // lblDescCategory
             // 
             this.lblDescCategory.AutoSize = true;
-            this.lblDescCategory.Location = new System.Drawing.Point(332, 161);
+            this.lblDescCategory.Location = new System.Drawing.Point(329, 223);
             this.lblDescCategory.Name = "lblDescCategory";
             this.lblDescCategory.Size = new System.Drawing.Size(151, 20);
             this.lblDescCategory.TabIndex = 8;
@@ -87,6 +87,7 @@ namespace UserCategories
             this.Controls.Add(this.lblCodeCategory);
             this.Controls.Add(this.swtxtDescCategory);
             this.Controls.Add(this.swtxtCodeCategory);
+            this.Location = new System.Drawing.Point(0, 0);
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "frmUserCategories";
             this.Text = "frmUsers";
