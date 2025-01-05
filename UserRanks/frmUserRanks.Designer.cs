@@ -38,57 +38,60 @@ namespace UserRanks
             // codeRankTxt
             // 
             this.codeRankTxt.EsForanea = false;
-            this.codeRankTxt.Location = new System.Drawing.Point(451, 192);
-            this.codeRankTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.codeRankTxt.Location = new System.Drawing.Point(301, 125);
+            this.codeRankTxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.codeRankTxt.Name = "codeRankTxt";
             this.codeRankTxt.NomCampBBDD = "CodeRank";
             this.codeRankTxt.PermetreBuit = true;
-            this.codeRankTxt.Size = new System.Drawing.Size(223, 26);
-            this.codeRankTxt.TabIndex = 5;
+            this.codeRankTxt.Size = new System.Drawing.Size(150, 20);
+            this.codeRankTxt.TabIndex = 1;
             this.codeRankTxt.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
             // 
             // descRankTxt
             // 
             this.descRankTxt.EsForanea = false;
-            this.descRankTxt.Location = new System.Drawing.Point(451, 241);
-            this.descRankTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.descRankTxt.Location = new System.Drawing.Point(301, 157);
+            this.descRankTxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.descRankTxt.Name = "descRankTxt";
             this.descRankTxt.NomCampBBDD = "DescRank";
             this.descRankTxt.PermetreBuit = true;
-            this.descRankTxt.Size = new System.Drawing.Size(223, 26);
-            this.descRankTxt.TabIndex = 6;
+            this.descRankTxt.Size = new System.Drawing.Size(150, 20);
+            this.descRankTxt.TabIndex = 2;
             this.descRankTxt.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
             // 
             // codeRankLbl
             // 
             this.codeRankLbl.AutoSize = true;
-            this.codeRankLbl.Location = new System.Drawing.Point(331, 198);
+            this.codeRankLbl.Location = new System.Drawing.Point(221, 129);
+            this.codeRankLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.codeRankLbl.Name = "codeRankLbl";
-            this.codeRankLbl.Size = new System.Drawing.Size(85, 20);
+            this.codeRankLbl.Size = new System.Drawing.Size(58, 13);
             this.codeRankLbl.TabIndex = 7;
             this.codeRankLbl.Text = "CodeRank";
             // 
             // descRankLbl
             // 
             this.descRankLbl.AutoSize = true;
-            this.descRankLbl.Location = new System.Drawing.Point(331, 247);
+            this.descRankLbl.Location = new System.Drawing.Point(221, 161);
+            this.descRankLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.descRankLbl.Name = "descRankLbl";
-            this.descRankLbl.Size = new System.Drawing.Size(84, 20);
+            this.descRankLbl.Size = new System.Drawing.Size(58, 13);
             this.descRankLbl.TabIndex = 8;
             this.descRankLbl.Text = "DescRank";
             // 
             // frmUserRanks
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1065, 662);
+            this.ClientSize = new System.Drawing.Size(710, 430);
             this.Controls.Add(this.descRankLbl);
             this.Controls.Add(this.codeRankLbl);
             this.Controls.Add(this.descRankTxt);
             this.Controls.Add(this.codeRankTxt);
             this.Location = new System.Drawing.Point(0, 0);
-            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "frmUserRanks";
+            this.TabIndexActualitzarBtn = 4;
+            this.TabIndexAgregarBtn = 3;
             this.Text = "frmUserRanks";
             this.Load += new System.EventHandler(this.BaseForm_Load);
             this.Controls.SetChildIndex(this.codeRankTxt, 0);

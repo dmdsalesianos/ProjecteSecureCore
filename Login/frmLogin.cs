@@ -67,22 +67,23 @@ namespace Login
 
         private void rjbtnLogin_Click(object sender, EventArgs e)
         {
-            string login = textBox_user.Text;
-            string password = textBox_password.Text;
+            string loginTxt = textBox_user.Text;
+            string passwordTxt = textBox_password.Text;
 
-            Dictionary<string, string> criterios = new Dictionary<string, string>
-            {
-                { "Login", login }
-            };
+            string query = "SELECT * " +
+                           "FROM Users " +
+                           $"WHERE Login = '{loginTxt}' COLLATE SQL_Latin1_General_CP1_CS_AS";
 
-            dsUser = manteniment.GeneraConsultaCerca("Users", criterios);
+            dsUser = manteniment.PortarPerConsulta(query);
 
             // Verificar si se encontró algún resultado
             if (dsUser.Tables[0].Rows.Count > 0)
             {
-                if (password == "12345aA")
+                string passwordBBD = dsUser.Tables[0].Rows[0]["Password"].ToString();
+
+                if (passwordBBD == "12345aA" && passwordTxt == "12345aA")
                 {
-                    frmChangePassword changePasswordForm = new frmChangePassword(login);
+                    frmChangePassword changePasswordForm = new frmChangePassword(loginTxt);
                     changePasswordForm.Show();
                     this.Hide();
 
@@ -90,7 +91,9 @@ namespace Login
                 }
                 else
                 {
-                    bool verify = VerifyUser(dsUser.Tables[0].Rows[0]["Password"].ToString(), dsUser.Tables[0].Rows[0]["Salt"].ToString(), password);
+                    string saltBBD = dsUser.Tables[0].Rows[0]["Salt"].ToString();
+
+                    bool verify = VerifyUser(passwordBBD, saltBBD, passwordTxt);
 
                     if (verify)
                     {

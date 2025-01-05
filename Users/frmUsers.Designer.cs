@@ -59,7 +59,7 @@ namespace Users
             this.swtxtCodeUser.NomCampBBDD = "CodeUser";
             this.swtxtCodeUser.PermetreBuit = true;
             this.swtxtCodeUser.Size = new System.Drawing.Size(147, 20);
-            this.swtxtCodeUser.TabIndex = 5;
+            this.swtxtCodeUser.TabIndex = 1;
             this.swtxtCodeUser.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
             // 
             // swtxtUserName
@@ -71,7 +71,7 @@ namespace Users
             this.swtxtUserName.NomCampBBDD = "UserName";
             this.swtxtUserName.PermetreBuit = true;
             this.swtxtUserName.Size = new System.Drawing.Size(147, 20);
-            this.swtxtUserName.TabIndex = 6;
+            this.swtxtUserName.TabIndex = 4;
             this.swtxtUserName.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
             // 
             // cmbUserCategory
@@ -81,7 +81,7 @@ namespace Users
             this.cmbUserCategory.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmbUserCategory.Name = "cmbUserCategory";
             this.cmbUserCategory.Size = new System.Drawing.Size(147, 21);
-            this.cmbUserCategory.TabIndex = 7;
+            this.cmbUserCategory.TabIndex = 5;
             // 
             // cmbUserRank
             // 
@@ -90,7 +90,7 @@ namespace Users
             this.cmbUserRank.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmbUserRank.Name = "cmbUserRank";
             this.cmbUserRank.Size = new System.Drawing.Size(147, 21);
-            this.cmbUserRank.TabIndex = 8;
+            this.cmbUserRank.TabIndex = 2;
             // 
             // swtxtPhoto
             // 
@@ -164,7 +164,7 @@ namespace Users
             this.cmbPlanet.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPlanet.Name = "cmbPlanet";
             this.cmbPlanet.Size = new System.Drawing.Size(147, 21);
-            this.cmbPlanet.TabIndex = 17;
+            this.cmbPlanet.TabIndex = 3;
             // 
             // cmbSpecie
             // 
@@ -173,7 +173,7 @@ namespace Users
             this.cmbSpecie.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSpecie.Name = "cmbSpecie";
             this.cmbSpecie.Size = new System.Drawing.Size(147, 21);
-            this.cmbSpecie.TabIndex = 18;
+            this.cmbSpecie.TabIndex = 6;
             // 
             // lblPlanet
             // 
@@ -209,7 +209,7 @@ namespace Users
             this.rjbtnImage.Margin = new System.Windows.Forms.Padding(2);
             this.rjbtnImage.Name = "rjbtnImage";
             this.rjbtnImage.Size = new System.Drawing.Size(133, 25);
-            this.rjbtnImage.TabIndex = 31;
+            this.rjbtnImage.TabIndex = 8;
             this.rjbtnImage.Text = "Select Image";
             this.rjbtnImage.TextColor = System.Drawing.Color.White;
             this.rjbtnImage.UseVisualStyleBackColor = false;
@@ -229,7 +229,7 @@ namespace Users
             this.rjbtnInforme.Margin = new System.Windows.Forms.Padding(2);
             this.rjbtnInforme.Name = "rjbtnInforme";
             this.rjbtnInforme.Size = new System.Drawing.Size(101, 26);
-            this.rjbtnInforme.TabIndex = 32;
+            this.rjbtnInforme.TabIndex = 9;
             this.rjbtnInforme.Text = "Mostrar Informe";
             this.rjbtnInforme.TextColor = System.Drawing.Color.White;
             this.rjbtnInforme.UseVisualStyleBackColor = false;
@@ -244,7 +244,7 @@ namespace Users
             this.swtxtLogin.NomCampBBDD = "Login";
             this.swtxtLogin.PermetreBuit = true;
             this.swtxtLogin.Size = new System.Drawing.Size(147, 20);
-            this.swtxtLogin.TabIndex = 33;
+            this.swtxtLogin.TabIndex = 7;
             this.swtxtLogin.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
             // 
             // lblLogin
@@ -283,6 +283,8 @@ namespace Users
             this.Controls.Add(this.swtxtCodeUser);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "frmUsers";
+            this.TabIndexActualitzarBtn = 11;
+            this.TabIndexAgregarBtn = 10;
             this.Text = "frmUsers";
             this.Load += new System.EventHandler(this.BaseForm_Load);
             this.Controls.SetChildIndex(this.swtxtCodeUser, 0);

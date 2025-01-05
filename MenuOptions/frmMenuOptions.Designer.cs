@@ -42,7 +42,7 @@ namespace MenuOptions
             this.swTextbox_Color = new CustomControls.SWTextbox();
             this.swtxtImagen = new CustomControls.SWTextbox();
             this.rjbtnImagen = new CustomControls.RJControls.RJButton();
-            this.cmbUserRanks = new System.Windows.Forms.ComboBox();
+            this.swtxtAccessLevel = new CustomControls.SWTextbox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_icono)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,12 +60,12 @@ namespace MenuOptions
             // 
             this.lblUserRank.AutoSize = true;
             this.lblUserRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserRank.Location = new System.Drawing.Point(391, 135);
+            this.lblUserRank.Location = new System.Drawing.Point(370, 138);
             this.lblUserRank.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserRank.Name = "lblUserRank";
-            this.lblUserRank.Size = new System.Drawing.Size(75, 17);
+            this.lblUserRank.Size = new System.Drawing.Size(91, 17);
             this.lblUserRank.TabIndex = 12;
-            this.lblUserRank.Text = "User Rank";
+            this.lblUserRank.Text = "Access Level";
             // 
             // label_clase
             // 
@@ -184,7 +184,8 @@ namespace MenuOptions
             this.swtxtImagen.PermetreBuit = true;
             this.swtxtImagen.Size = new System.Drawing.Size(68, 20);
             this.swtxtImagen.TabIndex = 34;
-            this.swtxtImagen.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
+            this.swtxtImagen.TabStop = false;
+            this.swtxtImagen.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
             this.swtxtImagen.TextChanged += new System.EventHandler(this.swtxtImagen_TextChanged);
             // 
             // rjbtnImagen
@@ -207,14 +208,18 @@ namespace MenuOptions
             this.rjbtnImagen.UseVisualStyleBackColor = false;
             this.rjbtnImagen.Click += new System.EventHandler(this.rjbtnImagen_Click);
             // 
-            // cmbUserRanks
+            // swtxtAccessLevel
             // 
-            this.cmbUserRanks.FormattingEnabled = true;
-            this.cmbUserRanks.Location = new System.Drawing.Point(465, 135);
-            this.cmbUserRanks.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbUserRanks.Name = "cmbUserRanks";
-            this.cmbUserRanks.Size = new System.Drawing.Size(155, 21);
-            this.cmbUserRanks.TabIndex = 5;
+            this.swtxtAccessLevel.EsForanea = false;
+            this.swtxtAccessLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.swtxtAccessLevel.Location = new System.Drawing.Point(465, 135);
+            this.swtxtAccessLevel.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.swtxtAccessLevel.Name = "swtxtAccessLevel";
+            this.swtxtAccessLevel.NomCampBBDD = "AccessLevel";
+            this.swtxtAccessLevel.PermetreBuit = true;
+            this.swtxtAccessLevel.Size = new System.Drawing.Size(155, 23);
+            this.swtxtAccessLevel.TabIndex = 5;
+            this.swtxtAccessLevel.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
             // 
             // frmMenuOptions
             // 
@@ -223,7 +228,7 @@ namespace MenuOptions
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(699, 408);
-            this.Controls.Add(this.cmbUserRanks);
+            this.Controls.Add(this.swtxtAccessLevel);
             this.Controls.Add(this.rjbtnImagen);
             this.Controls.Add(this.swTextbox_Color);
             this.Controls.Add(this.swTextbox_Form);
@@ -259,7 +264,7 @@ namespace MenuOptions
             this.Controls.SetChildIndex(this.swTextbox_Form, 0);
             this.Controls.SetChildIndex(this.swTextbox_Color, 0);
             this.Controls.SetChildIndex(this.rjbtnImagen, 0);
-            this.Controls.SetChildIndex(this.cmbUserRanks, 0);
+            this.Controls.SetChildIndex(this.swtxtAccessLevel, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_icono)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -280,6 +285,6 @@ namespace MenuOptions
         private CustomControls.SWTextbox swTextbox_Color;
         private CustomControls.SWTextbox swtxtImagen;
         private CustomControls.RJControls.RJButton rjbtnImagen;
-        private System.Windows.Forms.ComboBox cmbUserRanks;
+        private CustomControls.SWTextbox swtxtAccessLevel;
     }
 }

@@ -20,22 +20,15 @@ namespace MenuOptions
         public frmMenuOptions()
         {
             InitializeComponent();
-            TableName = "MenuOptionsPrueba";
-            TablesFK = new List<string> { "UserRanks" };
-            querySelect = $"SELECT * FROM {TableName}";
-
-            cmbUserRanks.Tag = "UserRankId";
-            cmbUserRanks.DisplayMember = "DescRank";
-            cmbUserRanks.ValueMember = "idUserRank";
-            
+            TableName = "MenuOptions";
+            querySelect = $"SELECT * FROM {TableName}";            
         }
 
         private void frmMenuOptions_Load(object sender, EventArgs e)
         {
             base.BaseForm_Load(sender, e);
-
-            cmbUserRanks.DataSource = ds.Tables["UserRanks"];
         }
+
         private void rjbtnImagen_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())

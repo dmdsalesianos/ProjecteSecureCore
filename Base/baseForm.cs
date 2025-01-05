@@ -12,14 +12,11 @@ namespace Base
 {
     public partial class baseForm : Form
     {
-        public DataSet ds;
-        public bool esNuevo = false;
-        public MantenimentDades dataAccess;
-        public string TableName;
-        public List<string> TablesFK;
-        public string querySelect;
-
-        private bool tablasFKCargadas = false;
+        protected MantenimentDades dataAccess;
+        protected DataSet ds;
+        protected string TableName;
+        protected List<string> TablesFK;
+        protected string querySelect;
 
 
         public int TabIndexAgregarBtn
@@ -112,13 +109,12 @@ namespace Base
             dataGridView1.DataSource = table;
 
             // Cargar las tablas foráneas solo una vez
-            if (TablesFK != null && !tablasFKCargadas)
+            if (TablesFK != null)
             {
                 foreach (string tableFK in TablesFK)
                 {
                     dataAccess.PortarTaula(tableFK);
                 }
-                tablasFKCargadas = true;
             }
 
             dataGridView1.Columns[0].Visible = false; //Hago invisible la columna idPK
@@ -159,6 +155,7 @@ namespace Base
             dataGridView1.Columns[comboBox.Tag.ToString()].Visible = false; //Hago invisible la columna de las idsFK
         }
 
+
         //*****AÑADE UNA ROW VACIA*****//
         private void rjbtnAgregar_Click(object sender, EventArgs e)
         {
@@ -191,8 +188,6 @@ namespace Base
         protected void rjbtnActualitzar_Click(object sender, EventArgs e)
         {
             dataAccess.Actualitzar(querySelect, ds, TableName);
-            CargarDatos();
-            MakeDataBindigs();
         }
     }
 }

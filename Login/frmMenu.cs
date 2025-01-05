@@ -20,17 +20,10 @@ namespace Login
         string IconImagesDirectory = Path.Combine(Application.StartupPath, "imatges", "iconos");
         string UserImagesDirectory = Path.Combine(Application.StartupPath, "imatges", "usuarios");
         string UserNameM;
+
         private MantenimentDades manteniment;
         private string connectionString;
-
-
         private DataSet dsUser;
-        public DataSet MyProperty
-        {
-            get { return dsUser; }
-            set { dsUser = value; }
-        }
-
 
         public frmMenu(DataSet dsUser)
         {
@@ -70,11 +63,13 @@ namespace Login
 
         private void ButonForms()
         {
-            int UserRankId = int.Parse(dsUser.Tables[0].Rows[0]["idUserRank"].ToString());
+            int idUser = int.Parse(dsUser.Tables[0].Rows[0]["idUser"].ToString());
 
-            string query = "SELECT * " +
-                           "FROM MenuOptionsPrueba " +
-                           $"WHERE UserRankId >= {UserRankId}";
+            string query = "SELECT mo.* " +
+                           "FROM MenuOptions mo, UserCategories uc, Users u " +
+                           "WHERE u.idUserCategory = uc.idUserCategory " +
+                           "AND mo.AccessLevel <= uc.AccessLevel " +
+                           $"AND u.idUser = {idUser}";                                                   
 
             DataSet dsMenuOptions = manteniment.PortarPerConsulta(query);
 
@@ -129,6 +124,7 @@ namespace Login
                 pnlMenu.FlowDirection = FlowDirection.TopDown;  // Esto hará que los botones se apilen verticalmente
                 pnlMenu.WrapContents = false;
                 pnlMenu.Width = btn.Width + 15;
+
                 // Lo añadimos al panel del formulario principal (en este caso 'targetPanel')
                 pnlMenu.Controls.Add(btn);
 
