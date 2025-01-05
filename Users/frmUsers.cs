@@ -59,6 +59,15 @@ namespace Users
             cmbUserRank.DataSource = ds.Tables["UserRanks"];
             cmbSpecie.DataSource = ds.Tables["Species"];
             cmbPlanet.DataSource = ds.Tables["Planets"];
+
+            if (dataGridView1.Columns.Contains("Password"))
+            {
+                dataGridView1.Columns["Password"].Visible = false;
+            }
+            if (dataGridView1.Columns.Contains("Salt"))
+            {
+                dataGridView1.Columns["Salt"].Visible = false;
+            }
         }
 
         private void rjbtnInforme_Click(object sender, EventArgs e)

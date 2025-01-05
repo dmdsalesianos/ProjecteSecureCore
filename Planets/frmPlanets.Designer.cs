@@ -184,7 +184,7 @@ namespace Planets
             // picPlanet
             // 
             this.picPlanet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picPlanet.Location = new System.Drawing.Point(223, 72);
+            this.picPlanet.Location = new System.Drawing.Point(223, 71);
             this.picPlanet.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.picPlanet.Name = "picPlanet";
             this.picPlanet.Size = new System.Drawing.Size(133, 88);
@@ -329,7 +329,7 @@ namespace Planets
             // swtxtImagen
             // 
             this.swtxtImagen.EsForanea = false;
-            this.swtxtImagen.Location = new System.Drawing.Point(255, 110);
+            this.swtxtImagen.Location = new System.Drawing.Point(252, 129);
             this.swtxtImagen.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.swtxtImagen.Name = "swtxtImagen";
             this.swtxtImagen.NomCampBBDD = "PlanetPicture";
@@ -337,7 +337,7 @@ namespace Planets
             this.swtxtImagen.Size = new System.Drawing.Size(73, 20);
             this.swtxtImagen.TabIndex = 23;
             this.swtxtImagen.TabStop = false;
-            this.swtxtImagen.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
+            this.swtxtImagen.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
             this.swtxtImagen.TextChanged += new System.EventHandler(this.swtxtImagen_TextChanged);
             // 
             // rjbtnImage

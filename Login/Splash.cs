@@ -18,7 +18,7 @@ namespace Login
         public Splash()
         {
             InitializeComponent();
-            timer1.Interval = 3100; 
+            timer1.Interval = 5600; 
             timer1.Start();
             //pictureBox1.ImageLocation = Path.Combine(imagesDirectory, "VE Project 2-highlight.gif");
         }

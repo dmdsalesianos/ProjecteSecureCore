@@ -53,7 +53,7 @@ namespace Users
             // swtxtCodeUser
             // 
             this.swtxtCodeUser.EsForanea = false;
-            this.swtxtCodeUser.Location = new System.Drawing.Point(300, 71);
+            this.swtxtCodeUser.Location = new System.Drawing.Point(452, 75);
             this.swtxtCodeUser.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.swtxtCodeUser.Name = "swtxtCodeUser";
             this.swtxtCodeUser.NomCampBBDD = "CodeUser";
@@ -65,7 +65,7 @@ namespace Users
             // swtxtUserName
             // 
             this.swtxtUserName.EsForanea = false;
-            this.swtxtUserName.Location = new System.Drawing.Point(300, 100);
+            this.swtxtUserName.Location = new System.Drawing.Point(452, 104);
             this.swtxtUserName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.swtxtUserName.Name = "swtxtUserName";
             this.swtxtUserName.NomCampBBDD = "UserName";
@@ -77,7 +77,7 @@ namespace Users
             // cmbUserCategory
             // 
             this.cmbUserCategory.FormattingEnabled = true;
-            this.cmbUserCategory.Location = new System.Drawing.Point(583, 99);
+            this.cmbUserCategory.Location = new System.Drawing.Point(735, 105);
             this.cmbUserCategory.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmbUserCategory.Name = "cmbUserCategory";
             this.cmbUserCategory.Size = new System.Drawing.Size(147, 21);
@@ -86,7 +86,7 @@ namespace Users
             // cmbUserRank
             // 
             this.cmbUserRank.FormattingEnabled = true;
-            this.cmbUserRank.Location = new System.Drawing.Point(583, 71);
+            this.cmbUserRank.Location = new System.Drawing.Point(735, 75);
             this.cmbUserRank.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmbUserRank.Name = "cmbUserRank";
             this.cmbUserRank.Size = new System.Drawing.Size(147, 21);
@@ -95,7 +95,7 @@ namespace Users
             // swtxtPhoto
             // 
             this.swtxtPhoto.EsForanea = false;
-            this.swtxtPhoto.Location = new System.Drawing.Point(1039, 98);
+            this.swtxtPhoto.Location = new System.Drawing.Point(245, 103);
             this.swtxtPhoto.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.swtxtPhoto.Name = "swtxtPhoto";
             this.swtxtPhoto.NomCampBBDD = "Photo";
@@ -103,13 +103,13 @@ namespace Users
             this.swtxtPhoto.Size = new System.Drawing.Size(76, 20);
             this.swtxtPhoto.TabIndex = 11;
             this.swtxtPhoto.TabStop = false;
-            this.swtxtPhoto.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
+            this.swtxtPhoto.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
             this.swtxtPhoto.TextChanged += new System.EventHandler(this.swtxtPhoto_TextChanged);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(1017, 69);
+            this.pictureBox1.Location = new System.Drawing.Point(223, 74);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(133, 92);
@@ -120,7 +120,7 @@ namespace Users
             // lblCodeUser
             // 
             this.lblCodeUser.AutoSize = true;
-            this.lblCodeUser.Location = new System.Drawing.Point(226, 75);
+            this.lblCodeUser.Location = new System.Drawing.Point(378, 79);
             this.lblCodeUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCodeUser.Name = "lblCodeUser";
             this.lblCodeUser.Size = new System.Drawing.Size(54, 13);
@@ -130,7 +130,7 @@ namespace Users
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(221, 104);
+            this.lblUserName.Location = new System.Drawing.Point(373, 108);
             this.lblUserName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(60, 13);
@@ -140,7 +140,7 @@ namespace Users
             // lblUserRank
             // 
             this.lblUserRank.AutoSize = true;
-            this.lblUserRank.Location = new System.Drawing.Point(509, 75);
+            this.lblUserRank.Location = new System.Drawing.Point(661, 79);
             this.lblUserRank.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserRank.Name = "lblUserRank";
             this.lblUserRank.Size = new System.Drawing.Size(58, 13);
@@ -150,7 +150,7 @@ namespace Users
             // lblUserCategory
             // 
             this.lblUserCategory.AutoSize = true;
-            this.lblUserCategory.Location = new System.Drawing.Point(492, 102);
+            this.lblUserCategory.Location = new System.Drawing.Point(645, 110);
             this.lblUserCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserCategory.Name = "lblUserCategory";
             this.lblUserCategory.Size = new System.Drawing.Size(74, 13);
@@ -160,7 +160,7 @@ namespace Users
             // cmbPlanet
             // 
             this.cmbPlanet.FormattingEnabled = true;
-            this.cmbPlanet.Location = new System.Drawing.Point(849, 70);
+            this.cmbPlanet.Location = new System.Drawing.Point(1001, 74);
             this.cmbPlanet.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPlanet.Name = "cmbPlanet";
             this.cmbPlanet.Size = new System.Drawing.Size(147, 21);
@@ -169,7 +169,7 @@ namespace Users
             // cmbSpecie
             // 
             this.cmbSpecie.FormattingEnabled = true;
-            this.cmbSpecie.Location = new System.Drawing.Point(849, 100);
+            this.cmbSpecie.Location = new System.Drawing.Point(1001, 104);
             this.cmbSpecie.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSpecie.Name = "cmbSpecie";
             this.cmbSpecie.Size = new System.Drawing.Size(147, 21);
@@ -178,7 +178,7 @@ namespace Users
             // lblPlanet
             // 
             this.lblPlanet.AutoSize = true;
-            this.lblPlanet.Location = new System.Drawing.Point(787, 75);
+            this.lblPlanet.Location = new System.Drawing.Point(939, 79);
             this.lblPlanet.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPlanet.Name = "lblPlanet";
             this.lblPlanet.Size = new System.Drawing.Size(37, 13);
@@ -188,7 +188,7 @@ namespace Users
             // lblSpecie
             // 
             this.lblSpecie.AutoSize = true;
-            this.lblSpecie.Location = new System.Drawing.Point(785, 106);
+            this.lblSpecie.Location = new System.Drawing.Point(937, 110);
             this.lblSpecie.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSpecie.Name = "lblSpecie";
             this.lblSpecie.Size = new System.Drawing.Size(40, 13);
@@ -205,7 +205,7 @@ namespace Users
             this.rjbtnImage.FlatAppearance.BorderSize = 0;
             this.rjbtnImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjbtnImage.ForeColor = System.Drawing.Color.White;
-            this.rjbtnImage.Location = new System.Drawing.Point(1017, 166);
+            this.rjbtnImage.Location = new System.Drawing.Point(223, 171);
             this.rjbtnImage.Margin = new System.Windows.Forms.Padding(2);
             this.rjbtnImage.Name = "rjbtnImage";
             this.rjbtnImage.Size = new System.Drawing.Size(133, 25);
@@ -238,7 +238,7 @@ namespace Users
             // swtxtLogin
             // 
             this.swtxtLogin.EsForanea = false;
-            this.swtxtLogin.Location = new System.Drawing.Point(300, 126);
+            this.swtxtLogin.Location = new System.Drawing.Point(452, 133);
             this.swtxtLogin.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.swtxtLogin.Name = "swtxtLogin";
             this.swtxtLogin.NomCampBBDD = "Login";
@@ -250,7 +250,7 @@ namespace Users
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
-            this.lblLogin.Location = new System.Drawing.Point(247, 129);
+            this.lblLogin.Location = new System.Drawing.Point(399, 136);
             this.lblLogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(33, 13);
