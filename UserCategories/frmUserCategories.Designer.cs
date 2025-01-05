@@ -40,7 +40,7 @@ namespace UserCategories
             // swtxtCodeCategory
             // 
             this.swtxtCodeCategory.EsForanea = false;
-            this.swtxtCodeCategory.Location = new System.Drawing.Point(344, 107);
+            this.swtxtCodeCategory.Location = new System.Drawing.Point(369, 107);
             this.swtxtCodeCategory.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.swtxtCodeCategory.Name = "swtxtCodeCategory";
             this.swtxtCodeCategory.NomCampBBDD = "CodeCategory";
@@ -52,7 +52,7 @@ namespace UserCategories
             // swtxtDescCategory
             // 
             this.swtxtDescCategory.EsForanea = false;
-            this.swtxtDescCategory.Location = new System.Drawing.Point(344, 145);
+            this.swtxtDescCategory.Location = new System.Drawing.Point(369, 137);
             this.swtxtDescCategory.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.swtxtDescCategory.Name = "swtxtDescCategory";
             this.swtxtDescCategory.NomCampBBDD = "DescCategory";
@@ -64,37 +64,40 @@ namespace UserCategories
             // lblCodeCategory
             // 
             this.lblCodeCategory.AutoSize = true;
-            this.lblCodeCategory.Location = new System.Drawing.Point(243, 109);
+            this.lblCodeCategory.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodeCategory.Location = new System.Drawing.Point(252, 111);
             this.lblCodeCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCodeCategory.Name = "lblCodeCategory";
-            this.lblCodeCategory.Size = new System.Drawing.Size(77, 13);
+            this.lblCodeCategory.Size = new System.Drawing.Size(88, 12);
             this.lblCodeCategory.TabIndex = 7;
             this.lblCodeCategory.Text = "Code Category";
             // 
             // lblDescCategory
             // 
             this.lblDescCategory.AutoSize = true;
-            this.lblDescCategory.Location = new System.Drawing.Point(219, 145);
+            this.lblDescCategory.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescCategory.Location = new System.Drawing.Point(221, 141);
             this.lblDescCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescCategory.Name = "lblDescCategory";
-            this.lblDescCategory.Size = new System.Drawing.Size(102, 13);
+            this.lblDescCategory.Size = new System.Drawing.Size(119, 12);
             this.lblDescCategory.TabIndex = 8;
             this.lblDescCategory.Text = "Descripció Category";
             // 
             // lblAccessLevel
             // 
             this.lblAccessLevel.AutoSize = true;
-            this.lblAccessLevel.Location = new System.Drawing.Point(249, 176);
+            this.lblAccessLevel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAccessLevel.Location = new System.Drawing.Point(261, 172);
             this.lblAccessLevel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAccessLevel.Name = "lblAccessLevel";
-            this.lblAccessLevel.Size = new System.Drawing.Size(71, 13);
+            this.lblAccessLevel.Size = new System.Drawing.Size(79, 12);
             this.lblAccessLevel.TabIndex = 9;
             this.lblAccessLevel.Text = "Access Level";
             // 
             // swtxtAccessLevel
             // 
             this.swtxtAccessLevel.EsForanea = false;
-            this.swtxtAccessLevel.Location = new System.Drawing.Point(344, 176);
+            this.swtxtAccessLevel.Location = new System.Drawing.Point(369, 168);
             this.swtxtAccessLevel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.swtxtAccessLevel.Name = "swtxtAccessLevel";
             this.swtxtAccessLevel.NomCampBBDD = "AccessLevel";

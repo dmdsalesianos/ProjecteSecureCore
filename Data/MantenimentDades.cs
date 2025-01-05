@@ -151,7 +151,7 @@ namespace DataAccess
         /// }
         /// </code>
         /// </example>
-        public int Actualitzar(string querySelect, DataSet ds, string nomTaula)
+        public int Actualitzar(string querySelect, ref DataSet ds, string nomTaula)
         {
             int result = 0;
             SqlTransaction transaction = null;

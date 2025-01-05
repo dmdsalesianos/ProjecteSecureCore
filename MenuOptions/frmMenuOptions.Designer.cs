@@ -59,66 +59,66 @@ namespace MenuOptions
             // lblUserRank
             // 
             this.lblUserRank.AutoSize = true;
-            this.lblUserRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserRank.Location = new System.Drawing.Point(370, 138);
+            this.lblUserRank.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserRank.Location = new System.Drawing.Point(377, 140);
             this.lblUserRank.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserRank.Name = "lblUserRank";
-            this.lblUserRank.Size = new System.Drawing.Size(91, 17);
+            this.lblUserRank.Size = new System.Drawing.Size(79, 12);
             this.lblUserRank.TabIndex = 12;
             this.lblUserRank.Text = "Access Level";
             // 
             // label_clase
             // 
             this.label_clase.AutoSize = true;
-            this.label_clase.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_clase.Location = new System.Drawing.Point(413, 59);
+            this.label_clase.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_clase.Location = new System.Drawing.Point(413, 63);
             this.label_clase.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_clase.Name = "label_clase";
-            this.label_clase.Size = new System.Drawing.Size(50, 17);
+            this.label_clase.Size = new System.Drawing.Size(42, 12);
             this.label_clase.TabIndex = 14;
             this.label_clase.Text = "Classe";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(421, 83);
+            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(422, 89);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 17);
+            this.label3.Size = new System.Drawing.Size(34, 12);
             this.label3.TabIndex = 16;
             this.label3.Text = "Form";
             // 
             // label_color
             // 
             this.label_color.AutoSize = true;
-            this.label_color.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_color.Location = new System.Drawing.Point(421, 108);
+            this.label_color.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_color.Location = new System.Drawing.Point(421, 114);
             this.label_color.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_color.Name = "label_color";
-            this.label_color.Size = new System.Drawing.Size(41, 17);
+            this.label_color.Size = new System.Drawing.Size(35, 12);
             this.label_color.TabIndex = 18;
             this.label_color.Text = "Color";
             // 
             // label_ICONO
             // 
             this.label_ICONO.AutoSize = true;
-            this.label_ICONO.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ICONO.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_ICONO.Location = new System.Drawing.Point(251, 26);
             this.label_ICONO.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_ICONO.Name = "label_ICONO";
-            this.label_ICONO.Size = new System.Drawing.Size(52, 17);
+            this.label_ICONO.Size = new System.Drawing.Size(51, 15);
             this.label_ICONO.TabIndex = 21;
             this.label_ICONO.Text = "ICONO";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(418, 33);
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(419, 37);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 17);
+            this.label1.Size = new System.Drawing.Size(37, 12);
             this.label1.TabIndex = 27;
             this.label1.Text = "Name";
             // 
@@ -197,6 +197,7 @@ namespace MenuOptions
             this.rjbtnImagen.BorderSize = 1;
             this.rjbtnImagen.FlatAppearance.BorderSize = 0;
             this.rjbtnImagen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjbtnImagen.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjbtnImagen.ForeColor = System.Drawing.Color.White;
             this.rjbtnImagen.Location = new System.Drawing.Point(222, 155);
             this.rjbtnImagen.Margin = new System.Windows.Forms.Padding(2);

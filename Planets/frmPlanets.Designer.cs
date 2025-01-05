@@ -349,6 +349,7 @@ namespace Planets
             this.rjbtnImage.BorderSize = 0;
             this.rjbtnImage.FlatAppearance.BorderSize = 0;
             this.rjbtnImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjbtnImage.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjbtnImage.ForeColor = System.Drawing.Color.White;
             this.rjbtnImage.Location = new System.Drawing.Point(223, 169);
             this.rjbtnImage.Margin = new System.Windows.Forms.Padding(2);

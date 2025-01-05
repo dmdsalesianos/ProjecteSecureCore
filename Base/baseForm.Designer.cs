@@ -59,6 +59,7 @@ namespace Base
             this.rjbtnActualitzar.BorderSize = 0;
             this.rjbtnActualitzar.FlatAppearance.BorderSize = 0;
             this.rjbtnActualitzar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjbtnActualitzar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjbtnActualitzar.ForeColor = System.Drawing.Color.White;
             this.rjbtnActualitzar.Location = new System.Drawing.Point(1435, 175);
             this.rjbtnActualitzar.Margin = new System.Windows.Forms.Padding(2);
@@ -79,6 +80,7 @@ namespace Base
             this.rjbtnAgregar.BorderSize = 0;
             this.rjbtnAgregar.FlatAppearance.BorderSize = 0;
             this.rjbtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjbtnAgregar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjbtnAgregar.ForeColor = System.Drawing.Color.White;
             this.rjbtnAgregar.Location = new System.Drawing.Point(1349, 175);
             this.rjbtnAgregar.Margin = new System.Windows.Forms.Padding(2);
@@ -97,7 +99,7 @@ namespace Base
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(198)))), ((int)(((byte)(250)))));
             this.BackgroundImage = global::Base.Properties.Resources._9496304;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(579, 508);
+            this.ClientSize = new System.Drawing.Size(1559, 508);
             this.Controls.Add(this.rjbtnActualitzar);
             this.Controls.Add(this.rjbtnAgregar);
             this.Controls.Add(this.dataGridView1);

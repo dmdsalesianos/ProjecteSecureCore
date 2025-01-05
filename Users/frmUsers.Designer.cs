@@ -120,47 +120,51 @@ namespace Users
             // lblCodeUser
             // 
             this.lblCodeUser.AutoSize = true;
+            this.lblCodeUser.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodeUser.Location = new System.Drawing.Point(378, 79);
             this.lblCodeUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCodeUser.Name = "lblCodeUser";
-            this.lblCodeUser.Size = new System.Drawing.Size(54, 13);
+            this.lblCodeUser.Size = new System.Drawing.Size(60, 12);
             this.lblCodeUser.TabIndex = 13;
             this.lblCodeUser.Text = "CodeUser";
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
+            this.lblUserName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserName.Location = new System.Drawing.Point(373, 108);
             this.lblUserName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(60, 13);
+            this.lblUserName.Size = new System.Drawing.Size(66, 12);
             this.lblUserName.TabIndex = 14;
             this.lblUserName.Text = "User Name";
             // 
             // lblUserRank
             // 
             this.lblUserRank.AutoSize = true;
+            this.lblUserRank.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserRank.Location = new System.Drawing.Point(661, 79);
             this.lblUserRank.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserRank.Name = "lblUserRank";
-            this.lblUserRank.Size = new System.Drawing.Size(58, 13);
+            this.lblUserRank.Size = new System.Drawing.Size(62, 12);
             this.lblUserRank.TabIndex = 15;
             this.lblUserRank.Text = "User Rank";
             // 
             // lblUserCategory
             // 
             this.lblUserCategory.AutoSize = true;
+            this.lblUserCategory.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserCategory.Location = new System.Drawing.Point(645, 110);
             this.lblUserCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserCategory.Name = "lblUserCategory";
-            this.lblUserCategory.Size = new System.Drawing.Size(74, 13);
+            this.lblUserCategory.Size = new System.Drawing.Size(85, 12);
             this.lblUserCategory.TabIndex = 16;
             this.lblUserCategory.Text = "User Category";
             // 
             // cmbPlanet
             // 
             this.cmbPlanet.FormattingEnabled = true;
-            this.cmbPlanet.Location = new System.Drawing.Point(1001, 74);
+            this.cmbPlanet.Location = new System.Drawing.Point(992, 74);
             this.cmbPlanet.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPlanet.Name = "cmbPlanet";
             this.cmbPlanet.Size = new System.Drawing.Size(147, 21);
@@ -169,7 +173,7 @@ namespace Users
             // cmbSpecie
             // 
             this.cmbSpecie.FormattingEnabled = true;
-            this.cmbSpecie.Location = new System.Drawing.Point(1001, 104);
+            this.cmbSpecie.Location = new System.Drawing.Point(992, 104);
             this.cmbSpecie.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSpecie.Name = "cmbSpecie";
             this.cmbSpecie.Size = new System.Drawing.Size(147, 21);
@@ -178,20 +182,22 @@ namespace Users
             // lblPlanet
             // 
             this.lblPlanet.AutoSize = true;
+            this.lblPlanet.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlanet.Location = new System.Drawing.Point(939, 79);
             this.lblPlanet.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPlanet.Name = "lblPlanet";
-            this.lblPlanet.Size = new System.Drawing.Size(37, 13);
+            this.lblPlanet.Size = new System.Drawing.Size(40, 12);
             this.lblPlanet.TabIndex = 19;
             this.lblPlanet.Text = "Planet";
             // 
             // lblSpecie
             // 
             this.lblSpecie.AutoSize = true;
+            this.lblSpecie.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSpecie.Location = new System.Drawing.Point(937, 110);
             this.lblSpecie.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSpecie.Name = "lblSpecie";
-            this.lblSpecie.Size = new System.Drawing.Size(40, 13);
+            this.lblSpecie.Size = new System.Drawing.Size(43, 12);
             this.lblSpecie.TabIndex = 20;
             this.lblSpecie.Text = "Specie";
             // 
@@ -204,6 +210,7 @@ namespace Users
             this.rjbtnImage.BorderSize = 0;
             this.rjbtnImage.FlatAppearance.BorderSize = 0;
             this.rjbtnImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjbtnImage.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjbtnImage.ForeColor = System.Drawing.Color.White;
             this.rjbtnImage.Location = new System.Drawing.Point(223, 171);
             this.rjbtnImage.Margin = new System.Windows.Forms.Padding(2);
@@ -224,11 +231,12 @@ namespace Users
             this.rjbtnInforme.BorderSize = 0;
             this.rjbtnInforme.FlatAppearance.BorderSize = 0;
             this.rjbtnInforme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjbtnInforme.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjbtnInforme.ForeColor = System.Drawing.Color.White;
-            this.rjbtnInforme.Location = new System.Drawing.Point(1245, 175);
+            this.rjbtnInforme.Location = new System.Drawing.Point(1236, 175);
             this.rjbtnInforme.Margin = new System.Windows.Forms.Padding(2);
             this.rjbtnInforme.Name = "rjbtnInforme";
-            this.rjbtnInforme.Size = new System.Drawing.Size(101, 26);
+            this.rjbtnInforme.Size = new System.Drawing.Size(110, 26);
             this.rjbtnInforme.TabIndex = 9;
             this.rjbtnInforme.Text = "Mostrar Informe";
             this.rjbtnInforme.TextColor = System.Drawing.Color.White;
@@ -250,10 +258,11 @@ namespace Users
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
+            this.lblLogin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogin.Location = new System.Drawing.Point(399, 136);
             this.lblLogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(33, 13);
+            this.lblLogin.Size = new System.Drawing.Size(36, 12);
             this.lblLogin.TabIndex = 34;
             this.lblLogin.Text = "Login";
             // 
@@ -262,7 +271,7 @@ namespace Users
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1283, 690);
+            this.ClientSize = new System.Drawing.Size(1393, 690);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.swtxtLogin);
             this.Controls.Add(this.rjbtnInforme);

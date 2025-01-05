@@ -70,7 +70,7 @@
             </code>
             </example>
         </member>
-        <member name="M:DataAccess.MantenimentDades.Actualitzar(System.String,System.Data.DataSet,System.String)">
+        <member name="M:DataAccess.MantenimentDades.Actualitzar(System.String,System.Data.DataSet@,System.String)">
             <summary>
             Actualiza los registros en la base de datos de acuerdo a los cambios realizados en el DataSet.
             Este método utiliza una transacción para garantizar que todas las actualizaciones se realicen de manera atómica.

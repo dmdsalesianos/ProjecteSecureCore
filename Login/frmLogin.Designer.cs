@@ -284,12 +284,12 @@ namespace Login
             // lblLoadingMessage
             // 
             this.lblLoadingMessage.AutoSize = true;
-            this.lblLoadingMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoadingMessage.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoadingMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(241)))));
-            this.lblLoadingMessage.Location = new System.Drawing.Point(150, 184);
+            this.lblLoadingMessage.Location = new System.Drawing.Point(142, 182);
             this.lblLoadingMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLoadingMessage.Name = "lblLoadingMessage";
-            this.lblLoadingMessage.Size = new System.Drawing.Size(152, 31);
+            this.lblLoadingMessage.Size = new System.Drawing.Size(162, 32);
             this.lblLoadingMessage.TabIndex = 12;
             this.lblLoadingMessage.Text = "Coocking...";
             // 

@@ -38,7 +38,7 @@ namespace UserRanks
             // codeRankTxt
             // 
             this.codeRankTxt.EsForanea = false;
-            this.codeRankTxt.Location = new System.Drawing.Point(301, 125);
+            this.codeRankTxt.Location = new System.Drawing.Point(312, 125);
             this.codeRankTxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.codeRankTxt.Name = "codeRankTxt";
             this.codeRankTxt.NomCampBBDD = "CodeRank";
@@ -50,7 +50,7 @@ namespace UserRanks
             // descRankTxt
             // 
             this.descRankTxt.EsForanea = false;
-            this.descRankTxt.Location = new System.Drawing.Point(301, 157);
+            this.descRankTxt.Location = new System.Drawing.Point(312, 153);
             this.descRankTxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.descRankTxt.Name = "descRankTxt";
             this.descRankTxt.NomCampBBDD = "DescRank";
@@ -62,20 +62,22 @@ namespace UserRanks
             // codeRankLbl
             // 
             this.codeRankLbl.AutoSize = true;
+            this.codeRankLbl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codeRankLbl.Location = new System.Drawing.Point(221, 129);
             this.codeRankLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.codeRankLbl.Name = "codeRankLbl";
-            this.codeRankLbl.Size = new System.Drawing.Size(58, 13);
+            this.codeRankLbl.Size = new System.Drawing.Size(62, 12);
             this.codeRankLbl.TabIndex = 7;
             this.codeRankLbl.Text = "CodeRank";
             // 
             // descRankLbl
             // 
             this.descRankLbl.AutoSize = true;
-            this.descRankLbl.Location = new System.Drawing.Point(221, 161);
+            this.descRankLbl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descRankLbl.Location = new System.Drawing.Point(222, 157);
             this.descRankLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.descRankLbl.Name = "descRankLbl";
-            this.descRankLbl.Size = new System.Drawing.Size(58, 13);
+            this.descRankLbl.Size = new System.Drawing.Size(61, 12);
             this.descRankLbl.TabIndex = 8;
             this.descRankLbl.Text = "DescRank";
             // 

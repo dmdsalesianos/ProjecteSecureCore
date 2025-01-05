@@ -34,8 +34,8 @@ namespace Login
             this.lblLoadingMessage = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.rjProgressBar = new CustomControls.RJProgressBar();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -49,12 +49,12 @@ namespace Login
             // lblLoadingMessage
             // 
             this.lblLoadingMessage.AutoSize = true;
-            this.lblLoadingMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoadingMessage.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoadingMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(241)))));
-            this.lblLoadingMessage.Location = new System.Drawing.Point(150, 184);
+            this.lblLoadingMessage.Location = new System.Drawing.Point(143, 181);
             this.lblLoadingMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLoadingMessage.Name = "lblLoadingMessage";
-            this.lblLoadingMessage.Size = new System.Drawing.Size(152, 31);
+            this.lblLoadingMessage.Size = new System.Drawing.Size(162, 32);
             this.lblLoadingMessage.TabIndex = 12;
             this.lblLoadingMessage.Text = "Coocking...";
             // 
@@ -81,17 +81,6 @@ namespace Login
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Login.Properties.Resources.Name_2490F1;
-            this.pictureBox2.Location = new System.Drawing.Point(130, 139);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(184, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
-            // 
             // rjProgressBar
             // 
             this.rjProgressBar.BackColor = System.Drawing.Color.Transparent;
@@ -110,6 +99,17 @@ namespace Login
             this.rjProgressBar.SymbolAfter = "";
             this.rjProgressBar.SymbolBefore = "";
             this.rjProgressBar.TabIndex = 13;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Login.Properties.Resources.Name_2490F1;
+            this.pictureBox2.Location = new System.Drawing.Point(130, 139);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(184, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
             // 
             // frmLoading
             // 

@@ -109,7 +109,7 @@ namespace Login
             this.lblConfirmPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfirmPassword.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.lblConfirmPassword.Location = new System.Drawing.Point(7, 261);
+            this.lblConfirmPassword.Location = new System.Drawing.Point(3, 261);
             this.lblConfirmPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblConfirmPassword.Name = "lblConfirmPassword";
             this.lblConfirmPassword.Size = new System.Drawing.Size(91, 17);
@@ -176,7 +176,7 @@ namespace Login
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label1.Location = new System.Drawing.Point(7, 209);
+            this.label1.Location = new System.Drawing.Point(2, 208);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 17);

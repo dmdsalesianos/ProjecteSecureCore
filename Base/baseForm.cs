@@ -17,7 +17,7 @@ namespace Base
         protected string TableName;
         protected List<string> TablesFK;
         protected string querySelect;
-
+        private bool tablasCargadas = false;
 
         public int TabIndexAgregarBtn
         {
@@ -58,7 +58,6 @@ namespace Base
                 {
                     label.BackColor = Color.Transparent;
                     label.ForeColor = Color.Black;
-                    label.Font = new Font("Arial Rounded MT Bold", 8.0f);
                 }
             }
 
@@ -109,12 +108,13 @@ namespace Base
             dataGridView1.DataSource = table;
 
             // Cargar las tablas foráneas solo una vez
-            if (TablesFK != null)
+            if (TablesFK != null && !tablasCargadas)
             {
                 foreach (string tableFK in TablesFK)
                 {
                     dataAccess.PortarTaula(tableFK);
                 }
+                tablasCargadas = true;
             }
 
             dataGridView1.Columns[0].Visible = false; //Hago invisible la columna idPK
@@ -162,8 +162,13 @@ namespace Base
             DataTable table = ds.Tables[TableName];
             DataRow newRow = table.NewRow();
 
+            if (TableName == "Users")
+            {
+                newRow["Password"] = "12345aA";
+            }
+
             ds.Tables[TableName].Rows.Add(newRow);
-            dataGridView1.DataSource = table;
+
             int rowIndex = dataGridView1.Rows.Count - 1;
 
             // Buscar la primera columna visible
@@ -185,9 +190,15 @@ namespace Base
             }
         }
 
+
         protected void rjbtnActualitzar_Click(object sender, EventArgs e)
         {
-            dataAccess.Actualitzar(querySelect, ds, TableName);
+            int result = dataAccess.Actualitzar(querySelect, ref ds, TableName);
+            if (result >= 0)
+            {
+                CargarDatos(); // Recarga los datos después de la actualización
+                MakeDataBindigs(); // Vuelve a establecer los bindings
+            }
         }
     }
 }
