@@ -127,51 +127,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\14777.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\9496304.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\94963041.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Captura.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-mantenimiento-50.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-trabajo-48.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Intento de fondo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Logo_2490F1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logo_2490F11.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Logo_FFFFFF.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Name_2490F1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Name_FFFFFF.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Only_logo_2490F1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Only_logo_FFFFFF.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pngtree-gradient-abstract-hexagon-blue-business-border-hd-png-image_6561344.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\CustomControls\CustomControls.csproj">
       <Project>{6b666b1c-7bd0-4e76-ab39-95ad671eb46b}</Project>
       <Name>CustomControls</Name>
@@ -199,6 +154,42 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Name_2490F1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Name_FFFFFF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Only_logo_2490F1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Only_logo_FFFFFF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VE-Project-2-highlight.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

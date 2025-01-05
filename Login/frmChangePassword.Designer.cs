@@ -136,6 +136,7 @@ namespace Login
             this.txtNewPassword.Size = new System.Drawing.Size(242, 32);
             this.txtNewPassword.TabIndex = 13;
             this.txtNewPassword.UseSystemPasswordChar = true;
+            this.txtNewPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNewPassword_KeyDown);
             // 
             // lblErrorMessage
             // 
@@ -144,9 +145,9 @@ namespace Login
             this.lblErrorMessage.Location = new System.Drawing.Point(3, 314);
             this.lblErrorMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblErrorMessage.Name = "lblErrorMessage";
-            this.lblErrorMessage.Size = new System.Drawing.Size(162, 13);
+            this.lblErrorMessage.Size = new System.Drawing.Size(117, 13);
             this.lblErrorMessage.TabIndex = 19;
-            this.lblErrorMessage.Text = "Wrong password or Confirm pass";
+            this.lblErrorMessage.Text = "Put the same password";
             this.lblErrorMessage.Visible = false;
             // 
             // btnShowConfirmPassword
@@ -246,7 +247,7 @@ namespace Login
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(241)))), ((int)(((byte)(254)))));
-            this.BackgroundImage = global::Login.Properties.Resources._9496304;
+            this.BackgroundImage = global::Login.Properties.Resources.fondo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(709, 607);
             this.ControlBox = false;

@@ -20,7 +20,7 @@ namespace Login
             InitializeComponent();
             timer1.Interval = 3100; 
             timer1.Start();
-            //axWindowsMediaPlayer1.URL = Path.Combine(imagesDirectory, "VE Project 2-highlight.mp4");
+            //pictureBox1.ImageLocation = Path.Combine(imagesDirectory, "VE Project 2-highlight.gif");
         }
 
         private void timer1_Tick(object sender, EventArgs e)

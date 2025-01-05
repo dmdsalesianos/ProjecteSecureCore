@@ -46,7 +46,7 @@ namespace Login
             connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
             manteniment = new MantenimentDades(connectionString);
 
-            label_name.Text = UserNameM;
+            lblName.Text = UserNameM;
 
             string fileName = dsUser.Tables[0].Rows[0]["Photo"].ToString();
 
@@ -68,14 +68,6 @@ namespace Login
             ButonForms();
         }
 
-        private void button_logaout_Click(object sender, EventArgs e)
-        {
-            frmLogin login = new frmLogin();
-            login.Show();
-
-            Close();
-        }
-
         private void ButonForms()
         {
             int UserRankId = int.Parse(dsUser.Tables[0].Rows[0]["idUserRank"].ToString());
@@ -92,7 +84,7 @@ namespace Login
                 MenuButton btn = new MenuButton();
 
                 // Asignamos las propiedades del botón con los valores de la fila
-                btn.TargetPanel = PanelContenido;
+                btn.TargetPanel = pnlContenido;
                 btn.LabelText = row["Texto"].ToString();  // Asignamos el nombre de la opción
                 btn.Clase = row["Clase"].ToString();
                 btn.Form = row["Form"].ToString(); // Asignamos la clase
@@ -133,14 +125,27 @@ namespace Login
                 } // Asignamos el color de fondoç
 
 
-                flowLayoutPanel.Dock = DockStyle.Left;  // O DockStyle.Fill si deseas que ocupe todo el espacio disponible
-                flowLayoutPanel.FlowDirection = FlowDirection.TopDown;  // Esto hará que los botones se apilen verticalmente
-                flowLayoutPanel.WrapContents = false;
-                flowLayoutPanel.Width = btn.Width + 15;
+                pnlMenu.Dock = DockStyle.Left;  // O DockStyle.Fill si deseas que ocupe todo el espacio disponible
+                pnlMenu.FlowDirection = FlowDirection.TopDown;  // Esto hará que los botones se apilen verticalmente
+                pnlMenu.WrapContents = false;
+                pnlMenu.Width = btn.Width + 15;
                 // Lo añadimos al panel del formulario principal (en este caso 'targetPanel')
-                flowLayoutPanel.Controls.Add(btn);
+                pnlMenu.Controls.Add(btn);
 
             }
+        }
+
+        private void rjbtnLogOut_Click(object sender, EventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            login.Show();
+
+            Close();
+        }
+
+        private void rjbtnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

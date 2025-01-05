@@ -63,9 +63,9 @@ namespace Login.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _14777 {
+        internal static System.Drawing.Bitmap close {
             get {
-                object obj = ResourceManager.GetObject("14777", resourceCulture);
+                object obj = ResourceManager.GetObject("close", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Login.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _9496304 {
+        internal static System.Drawing.Bitmap fondo {
             get {
-                object obj = ResourceManager.GetObject("9496304", resourceCulture);
+                object obj = ResourceManager.GetObject("fondo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace Login.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _94963041 {
+        internal static System.Drawing.Bitmap logout {
             get {
-                object obj = ResourceManager.GetObject("94963041", resourceCulture);
+                object obj = ResourceManager.GetObject("logout", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace Login.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Captura {
+        internal static System.Drawing.Bitmap logout_black {
             get {
-                object obj = ResourceManager.GetObject("Captura", resourceCulture);
+                object obj = ResourceManager.GetObject("logout_black", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace Login.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_mantenimiento_50 {
+        internal static System.Drawing.Bitmap logout_white {
             get {
-                object obj = ResourceManager.GetObject("icons8-mantenimiento-50", resourceCulture);
+                object obj = ResourceManager.GetObject("logout_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,49 +113,9 @@ namespace Login.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_trabajo_48 {
+        internal static System.Drawing.Bitmap logout2 {
             get {
-                object obj = ResourceManager.GetObject("icons8-trabajo-48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Intento_de_fondo {
-            get {
-                object obj = ResourceManager.GetObject("Intento de fondo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Logo_2490F1 {
-            get {
-                object obj = ResourceManager.GetObject("Logo_2490F1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap logo_2490F11 {
-            get {
-                object obj = ResourceManager.GetObject("logo_2490F11", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Logo_FFFFFF {
-            get {
-                object obj = ResourceManager.GetObject("Logo_FFFFFF", resourceCulture);
+                object obj = ResourceManager.GetObject("logout2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +163,19 @@ namespace Login.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pngtree_gradient_abstract_hexagon_blue_business_border_hd_png_image_6561344 {
+        internal static System.Drawing.Bitmap splash {
             get {
-                object obj = ResourceManager.GetObject("pngtree-gradient-abstract-hexagon-blue-business-border-hd-png-image_6561344", resourceCulture);
+                object obj = ResourceManager.GetObject("splash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VE_Project_2_highlight {
+            get {
+                object obj = ResourceManager.GetObject("VE-Project-2-highlight", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

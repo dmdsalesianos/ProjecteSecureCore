@@ -180,6 +180,13 @@ namespace Login
                 rjbtnLogin_Click(sender, e);
             }
         }
+        private void textBox_user_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                rjbtnLogin_Click(sender, e);
+            }
+        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -227,5 +234,7 @@ namespace Login
         {
             Application.Exit();
         }
+
+        
     }
 }

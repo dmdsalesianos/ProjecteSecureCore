@@ -178,6 +178,13 @@ namespace Login
                 rjbtnSave_Click(sender, e);
             }
         }
+        private void txtNewPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                rjbtnSave_Click(sender, e);
+            }
+        }
 
         private void rjbtnBack_Click(object sender, EventArgs e)
         {
@@ -190,6 +197,8 @@ namespace Login
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }       
+        }
+
+       
     }
 }

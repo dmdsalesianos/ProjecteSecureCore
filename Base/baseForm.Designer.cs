@@ -95,10 +95,13 @@ namespace Base
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(198)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(1418, 669);
+            this.BackgroundImage = global::Base.Properties.Resources._9496304;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(579, 508);
             this.Controls.Add(this.rjbtnActualitzar);
             this.Controls.Add(this.rjbtnAgregar);
             this.Controls.Add(this.dataGridView1);
+            this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "baseForm";
             this.Text = "Form1";

@@ -48,7 +48,7 @@ namespace MenuOptions
             // 
             // pictureBox_icono
             // 
-            this.pictureBox_icono.Location = new System.Drawing.Point(42, 42);
+            this.pictureBox_icono.Location = new System.Drawing.Point(222, 44);
             this.pictureBox_icono.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pictureBox_icono.Name = "pictureBox_icono";
             this.pictureBox_icono.Size = new System.Drawing.Size(119, 108);
@@ -60,7 +60,7 @@ namespace MenuOptions
             // 
             this.lblUserRank.AutoSize = true;
             this.lblUserRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserRank.Location = new System.Drawing.Point(211, 133);
+            this.lblUserRank.Location = new System.Drawing.Point(391, 135);
             this.lblUserRank.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserRank.Name = "lblUserRank";
             this.lblUserRank.Size = new System.Drawing.Size(75, 17);
@@ -71,7 +71,7 @@ namespace MenuOptions
             // 
             this.label_clase.AutoSize = true;
             this.label_clase.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_clase.Location = new System.Drawing.Point(233, 57);
+            this.label_clase.Location = new System.Drawing.Point(413, 59);
             this.label_clase.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_clase.Name = "label_clase";
             this.label_clase.Size = new System.Drawing.Size(50, 17);
@@ -82,7 +82,7 @@ namespace MenuOptions
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(241, 81);
+            this.label3.Location = new System.Drawing.Point(421, 83);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 17);
@@ -93,7 +93,7 @@ namespace MenuOptions
             // 
             this.label_color.AutoSize = true;
             this.label_color.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_color.Location = new System.Drawing.Point(241, 106);
+            this.label_color.Location = new System.Drawing.Point(421, 108);
             this.label_color.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_color.Name = "label_color";
             this.label_color.Size = new System.Drawing.Size(41, 17);
@@ -104,7 +104,7 @@ namespace MenuOptions
             // 
             this.label_ICONO.AutoSize = true;
             this.label_ICONO.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ICONO.Location = new System.Drawing.Point(71, 24);
+            this.label_ICONO.Location = new System.Drawing.Point(251, 26);
             this.label_ICONO.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_ICONO.Name = "label_ICONO";
             this.label_ICONO.Size = new System.Drawing.Size(52, 17);
@@ -115,7 +115,7 @@ namespace MenuOptions
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(238, 31);
+            this.label1.Location = new System.Drawing.Point(418, 33);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 17);
@@ -126,7 +126,7 @@ namespace MenuOptions
             // 
             this.swTextbox_Name.EsForanea = false;
             this.swTextbox_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.swTextbox_Name.Location = new System.Drawing.Point(285, 29);
+            this.swTextbox_Name.Location = new System.Drawing.Point(465, 31);
             this.swTextbox_Name.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.swTextbox_Name.Name = "swTextbox_Name";
             this.swTextbox_Name.NomCampBBDD = "Texto";
@@ -139,7 +139,7 @@ namespace MenuOptions
             // 
             this.swTextbox_Form.EsForanea = false;
             this.swTextbox_Form.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.swTextbox_Form.Location = new System.Drawing.Point(285, 81);
+            this.swTextbox_Form.Location = new System.Drawing.Point(465, 83);
             this.swTextbox_Form.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.swTextbox_Form.Name = "swTextbox_Form";
             this.swTextbox_Form.NomCampBBDD = "Form";
@@ -152,7 +152,7 @@ namespace MenuOptions
             // 
             this.swTextbox_Classe.EsForanea = false;
             this.swTextbox_Classe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.swTextbox_Classe.Location = new System.Drawing.Point(285, 55);
+            this.swTextbox_Classe.Location = new System.Drawing.Point(465, 57);
             this.swTextbox_Classe.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.swTextbox_Classe.Name = "swTextbox_Classe";
             this.swTextbox_Classe.NomCampBBDD = "Clase";
@@ -165,7 +165,7 @@ namespace MenuOptions
             // 
             this.swTextbox_Color.EsForanea = false;
             this.swTextbox_Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.swTextbox_Color.Location = new System.Drawing.Point(285, 106);
+            this.swTextbox_Color.Location = new System.Drawing.Point(465, 108);
             this.swTextbox_Color.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.swTextbox_Color.Name = "swTextbox_Color";
             this.swTextbox_Color.NomCampBBDD = "Color";
@@ -177,7 +177,7 @@ namespace MenuOptions
             // swtxtImagen
             // 
             this.swtxtImagen.EsForanea = false;
-            this.swtxtImagen.Location = new System.Drawing.Point(42, 74);
+            this.swtxtImagen.Location = new System.Drawing.Point(222, 76);
             this.swtxtImagen.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.swtxtImagen.Name = "swtxtImagen";
             this.swtxtImagen.NomCampBBDD = "Icono";
@@ -197,8 +197,8 @@ namespace MenuOptions
             this.rjbtnImagen.FlatAppearance.BorderSize = 0;
             this.rjbtnImagen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjbtnImagen.ForeColor = System.Drawing.Color.White;
-            this.rjbtnImagen.Location = new System.Drawing.Point(42, 153);
-            this.rjbtnImagen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rjbtnImagen.Location = new System.Drawing.Point(222, 155);
+            this.rjbtnImagen.Margin = new System.Windows.Forms.Padding(2);
             this.rjbtnImagen.Name = "rjbtnImagen";
             this.rjbtnImagen.Size = new System.Drawing.Size(119, 26);
             this.rjbtnImagen.TabIndex = 6;
@@ -210,8 +210,8 @@ namespace MenuOptions
             // cmbUserRanks
             // 
             this.cmbUserRanks.FormattingEnabled = true;
-            this.cmbUserRanks.Location = new System.Drawing.Point(285, 133);
-            this.cmbUserRanks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbUserRanks.Location = new System.Drawing.Point(465, 135);
+            this.cmbUserRanks.Margin = new System.Windows.Forms.Padding(2);
             this.cmbUserRanks.Name = "cmbUserRanks";
             this.cmbUserRanks.Size = new System.Drawing.Size(155, 21);
             this.cmbUserRanks.TabIndex = 5;

@@ -31,6 +31,7 @@ namespace Login
         {
             this.components = new System.ComponentModel.Container();
             this.pnlLogin = new System.Windows.Forms.Panel();
+            this.btnClose = new CustomControls.RJControls.RJButton();
             this.rjbtnLogin = new CustomControls.RJControls.RJButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Login = new System.Windows.Forms.Label();
@@ -47,7 +48,6 @@ namespace Login
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lblLoadingMessage = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnClose = new CustomControls.RJControls.RJButton();
             this.pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -73,6 +73,27 @@ namespace Login
             this.pnlLogin.Name = "pnlLogin";
             this.pnlLogin.Size = new System.Drawing.Size(211, 383);
             this.pnlLogin.TabIndex = 12;
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnClose.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnClose.BorderRadius = 10;
+            this.btnClose.BorderSize = 2;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(107, 331);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(96, 40);
+            this.btnClose.TabIndex = 27;
+            this.btnClose.Text = "EXIT";
+            this.btnClose.TextColor = System.Drawing.Color.White;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // rjbtnLogin
             // 
@@ -161,6 +182,7 @@ namespace Login
             this.textBox_user.Name = "textBox_user";
             this.textBox_user.Size = new System.Drawing.Size(203, 30);
             this.textBox_user.TabIndex = 2;
+            this.textBox_user.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_user_KeyDown);
             // 
             // Vision_button
             // 
@@ -192,7 +214,7 @@ namespace Login
             this.Error_label.Name = "Error_label";
             this.Error_label.Size = new System.Drawing.Size(122, 13);
             this.Error_label.TabIndex = 8;
-            this.Error_label.Text = "Wrong password or user";
+            this.Error_label.Text = "Wrong user or password";
             this.Error_label.Visible = false;
             // 
             // textBox_password
@@ -275,33 +297,12 @@ namespace Login
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnClose.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnClose.BorderRadius = 10;
-            this.btnClose.BorderSize = 2;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(107, 331);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(96, 40);
-            this.btnClose.TabIndex = 27;
-            this.btnClose.Text = "EXIT";
-            this.btnClose.TextColor = System.Drawing.Color.White;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(241)))), ((int)(((byte)(254)))));
-            this.BackgroundImage = global::Login.Properties.Resources._9496304;
+            this.BackgroundImage = global::Login.Properties.Resources.fondo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1293, 711);
             this.Controls.Add(this.pnlLoading);
@@ -344,11 +345,11 @@ namespace Login
         private System.Windows.Forms.Panel pnlLoading;
         private System.Windows.Forms.PictureBox pictureBox3;
         private CustomControls.RJProgressBar rjProgressBar;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label lblLoadingMessage;
         private System.Windows.Forms.Timer timer1;
         private CustomControls.RJControls.RJButton rjbtnLogin;
         private CustomControls.RJControls.RJButton btnClose;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
 

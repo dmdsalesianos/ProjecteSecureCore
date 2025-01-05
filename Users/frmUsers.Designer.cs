@@ -250,7 +250,7 @@ namespace Users
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
-            this.lblLogin.Location = new System.Drawing.Point(220, 129);
+            this.lblLogin.Location = new System.Drawing.Point(247, 129);
             this.lblLogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(33, 13);

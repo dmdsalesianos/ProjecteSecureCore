@@ -31,20 +31,44 @@ namespace Login
         {
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblLoadingMessage = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lblLoadingMessage = new System.Windows.Forms.Label();
             this.rjProgressBar = new CustomControls.RJProgressBar();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lblLoadingMessage
+            // 
+            this.lblLoadingMessage.AutoSize = true;
+            this.lblLoadingMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoadingMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(241)))));
+            this.lblLoadingMessage.Location = new System.Drawing.Point(150, 184);
+            this.lblLoadingMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLoadingMessage.Name = "lblLoadingMessage";
+            this.lblLoadingMessage.Size = new System.Drawing.Size(152, 31);
+            this.lblLoadingMessage.TabIndex = 12;
+            this.lblLoadingMessage.Text = "Coocking...";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.rjProgressBar);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.lblLoadingMessage);
+            this.panel1.Location = new System.Drawing.Point(120, 42);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(432, 265);
+            this.panel1.TabIndex = 14;
             // 
             // pictureBox1
             // 
@@ -68,18 +92,6 @@ namespace Login
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             // 
-            // lblLoadingMessage
-            // 
-            this.lblLoadingMessage.AutoSize = true;
-            this.lblLoadingMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoadingMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(241)))));
-            this.lblLoadingMessage.Location = new System.Drawing.Point(150, 184);
-            this.lblLoadingMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblLoadingMessage.Name = "lblLoadingMessage";
-            this.lblLoadingMessage.Size = new System.Drawing.Size(152, 31);
-            this.lblLoadingMessage.TabIndex = 12;
-            this.lblLoadingMessage.Text = "Coocking...";
-            // 
             // rjProgressBar
             // 
             this.rjProgressBar.BackColor = System.Drawing.Color.Transparent;
@@ -99,24 +111,12 @@ namespace Login
             this.rjProgressBar.SymbolBefore = "";
             this.rjProgressBar.TabIndex = 13;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.rjProgressBar);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.lblLoadingMessage);
-            this.panel1.Location = new System.Drawing.Point(120, 42);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(432, 265);
-            this.panel1.TabIndex = 14;
-            // 
             // frmLoading
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(241)))), ((int)(((byte)(254)))));
-            this.BackgroundImage = global::Login.Properties.Resources._9496304;
+            this.BackgroundImage = global::Login.Properties.Resources.fondo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(687, 354);
             this.Controls.Add(this.panel1);
@@ -131,10 +131,10 @@ namespace Login
             this.TransparencyKey = System.Drawing.Color.Blue;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmLoading_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

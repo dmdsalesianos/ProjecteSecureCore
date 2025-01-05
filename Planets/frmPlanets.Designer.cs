@@ -62,7 +62,7 @@ namespace Planets
             this.lblCodePlanet.AutoSize = true;
             this.lblCodePlanet.BackColor = System.Drawing.Color.Transparent;
             this.lblCodePlanet.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodePlanet.Location = new System.Drawing.Point(237, 66);
+            this.lblCodePlanet.Location = new System.Drawing.Point(395, 72);
             this.lblCodePlanet.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCodePlanet.Name = "lblCodePlanet";
             this.lblCodePlanet.Size = new System.Drawing.Size(72, 12);
@@ -74,7 +74,7 @@ namespace Planets
             this.lblDescPlanet.AutoSize = true;
             this.lblDescPlanet.BackColor = System.Drawing.Color.Transparent;
             this.lblDescPlanet.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescPlanet.Location = new System.Drawing.Point(212, 101);
+            this.lblDescPlanet.Location = new System.Drawing.Point(370, 107);
             this.lblDescPlanet.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescPlanet.Name = "lblDescPlanet";
             this.lblDescPlanet.Size = new System.Drawing.Size(103, 12);
@@ -86,7 +86,7 @@ namespace Planets
             this.lblParsecs.AutoSize = true;
             this.lblParsecs.BackColor = System.Drawing.Color.Transparent;
             this.lblParsecs.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblParsecs.Location = new System.Drawing.Point(715, 69);
+            this.lblParsecs.Location = new System.Drawing.Point(873, 75);
             this.lblParsecs.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblParsecs.Name = "lblParsecs";
             this.lblParsecs.Size = new System.Drawing.Size(50, 12);
@@ -98,7 +98,7 @@ namespace Planets
             this.lblLongitud.AutoSize = true;
             this.lblLongitud.BackColor = System.Drawing.Color.Transparent;
             this.lblLongitud.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLongitud.Location = new System.Drawing.Point(481, 69);
+            this.lblLongitud.Location = new System.Drawing.Point(639, 75);
             this.lblLongitud.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLongitud.Name = "lblLongitud";
             this.lblLongitud.Size = new System.Drawing.Size(54, 12);
@@ -110,7 +110,7 @@ namespace Planets
             this.lblLatitud.AutoSize = true;
             this.lblLatitud.BackColor = System.Drawing.Color.Transparent;
             this.lblLatitud.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLatitud.Location = new System.Drawing.Point(491, 101);
+            this.lblLatitud.Location = new System.Drawing.Point(649, 107);
             this.lblLatitud.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLatitud.Name = "lblLatitud";
             this.lblLatitud.Size = new System.Drawing.Size(44, 12);
@@ -120,7 +120,7 @@ namespace Planets
             // cmbNatives
             // 
             this.cmbNatives.FormattingEnabled = true;
-            this.cmbNatives.Location = new System.Drawing.Point(323, 129);
+            this.cmbNatives.Location = new System.Drawing.Point(481, 135);
             this.cmbNatives.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.cmbNatives.Name = "cmbNatives";
             this.cmbNatives.Size = new System.Drawing.Size(131, 21);
@@ -129,7 +129,7 @@ namespace Planets
             // cmbFiliations
             // 
             this.cmbFiliations.FormattingEnabled = true;
-            this.cmbFiliations.Location = new System.Drawing.Point(552, 129);
+            this.cmbFiliations.Location = new System.Drawing.Point(710, 135);
             this.cmbFiliations.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.cmbFiliations.Name = "cmbFiliations";
             this.cmbFiliations.Size = new System.Drawing.Size(131, 21);
@@ -138,7 +138,7 @@ namespace Planets
             // cmbSector
             // 
             this.cmbSector.FormattingEnabled = true;
-            this.cmbSector.Location = new System.Drawing.Point(781, 129);
+            this.cmbSector.Location = new System.Drawing.Point(939, 135);
             this.cmbSector.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.cmbSector.Name = "cmbSector";
             this.cmbSector.Size = new System.Drawing.Size(131, 21);
@@ -150,7 +150,7 @@ namespace Planets
             this.lblSector.AutoSize = true;
             this.lblSector.BackColor = System.Drawing.Color.Transparent;
             this.lblSector.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSector.Location = new System.Drawing.Point(723, 131);
+            this.lblSector.Location = new System.Drawing.Point(881, 137);
             this.lblSector.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSector.Name = "lblSector";
             this.lblSector.Size = new System.Drawing.Size(42, 12);
@@ -162,7 +162,7 @@ namespace Planets
             this.lblNatives.AutoSize = true;
             this.lblNatives.BackColor = System.Drawing.Color.Transparent;
             this.lblNatives.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNatives.Location = new System.Drawing.Point(269, 133);
+            this.lblNatives.Location = new System.Drawing.Point(427, 139);
             this.lblNatives.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNatives.Name = "lblNatives";
             this.lblNatives.Size = new System.Drawing.Size(46, 12);
@@ -174,7 +174,7 @@ namespace Planets
             this.lblFiliation.AutoSize = true;
             this.lblFiliation.BackColor = System.Drawing.Color.Transparent;
             this.lblFiliation.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFiliation.Location = new System.Drawing.Point(486, 133);
+            this.lblFiliation.Location = new System.Drawing.Point(644, 139);
             this.lblFiliation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFiliation.Name = "lblFiliation";
             this.lblFiliation.Size = new System.Drawing.Size(49, 12);
@@ -184,7 +184,7 @@ namespace Planets
             // picPlanet
             // 
             this.picPlanet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picPlanet.Location = new System.Drawing.Point(1173, 65);
+            this.picPlanet.Location = new System.Drawing.Point(223, 72);
             this.picPlanet.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.picPlanet.Name = "picPlanet";
             this.picPlanet.Size = new System.Drawing.Size(133, 88);
@@ -198,7 +198,7 @@ namespace Planets
             this.lblIPPlanet.AutoSize = true;
             this.lblIPPlanet.BackColor = System.Drawing.Color.Transparent;
             this.lblIPPlanet.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIPPlanet.Location = new System.Drawing.Point(715, 101);
+            this.lblIPPlanet.Location = new System.Drawing.Point(873, 107);
             this.lblIPPlanet.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblIPPlanet.Name = "lblIPPlanet";
             this.lblIPPlanet.Size = new System.Drawing.Size(50, 12);
@@ -210,7 +210,7 @@ namespace Planets
             this.lblPortPlanet.AutoSize = true;
             this.lblPortPlanet.BackColor = System.Drawing.Color.Transparent;
             this.lblPortPlanet.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPortPlanet.Location = new System.Drawing.Point(939, 72);
+            this.lblPortPlanet.Location = new System.Drawing.Point(1097, 78);
             this.lblPortPlanet.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPortPlanet.Name = "lblPortPlanet";
             this.lblPortPlanet.Size = new System.Drawing.Size(66, 12);
@@ -222,7 +222,7 @@ namespace Planets
             this.lblPortPlanet1.AutoSize = true;
             this.lblPortPlanet1.BackColor = System.Drawing.Color.Transparent;
             this.lblPortPlanet1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPortPlanet1.Location = new System.Drawing.Point(929, 105);
+            this.lblPortPlanet1.Location = new System.Drawing.Point(1087, 111);
             this.lblPortPlanet1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPortPlanet1.Name = "lblPortPlanet1";
             this.lblPortPlanet1.Size = new System.Drawing.Size(76, 12);
@@ -232,7 +232,7 @@ namespace Planets
             // swtxtPortPlanet
             // 
             this.swtxtPortPlanet.EsForanea = false;
-            this.swtxtPortPlanet.Location = new System.Drawing.Point(1021, 101);
+            this.swtxtPortPlanet.Location = new System.Drawing.Point(1179, 107);
             this.swtxtPortPlanet.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.swtxtPortPlanet.Name = "swtxtPortPlanet";
             this.swtxtPortPlanet.NomCampBBDD = "PortPlanet1";
@@ -244,7 +244,7 @@ namespace Planets
             // swtxtbox
             // 
             this.swtxtbox.EsForanea = false;
-            this.swtxtbox.Location = new System.Drawing.Point(1021, 68);
+            this.swtxtbox.Location = new System.Drawing.Point(1179, 74);
             this.swtxtbox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.swtxtbox.Name = "swtxtbox";
             this.swtxtbox.NomCampBBDD = "PortPlanet";
@@ -256,7 +256,7 @@ namespace Planets
             // swtxtIPPlanet
             // 
             this.swtxtIPPlanet.EsForanea = false;
-            this.swtxtIPPlanet.Location = new System.Drawing.Point(781, 101);
+            this.swtxtIPPlanet.Location = new System.Drawing.Point(939, 107);
             this.swtxtIPPlanet.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.swtxtIPPlanet.Name = "swtxtIPPlanet";
             this.swtxtIPPlanet.NomCampBBDD = "IPPlanet";
@@ -268,7 +268,7 @@ namespace Planets
             // swtxtLat
             // 
             this.swtxtLat.EsForanea = false;
-            this.swtxtLat.Location = new System.Drawing.Point(552, 97);
+            this.swtxtLat.Location = new System.Drawing.Point(710, 103);
             this.swtxtLat.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.swtxtLat.Name = "swtxtLat";
             this.swtxtLat.NomCampBBDD = "lat";
@@ -281,7 +281,7 @@ namespace Planets
             // swtxtLong
             // 
             this.swtxtLong.EsForanea = false;
-            this.swtxtLong.Location = new System.Drawing.Point(552, 66);
+            this.swtxtLong.Location = new System.Drawing.Point(710, 72);
             this.swtxtLong.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.swtxtLong.Name = "swtxtLong";
             this.swtxtLong.NomCampBBDD = "long";
@@ -293,7 +293,7 @@ namespace Planets
             // swtxtParsecs
             // 
             this.swtxtParsecs.EsForanea = false;
-            this.swtxtParsecs.Location = new System.Drawing.Point(781, 68);
+            this.swtxtParsecs.Location = new System.Drawing.Point(939, 74);
             this.swtxtParsecs.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.swtxtParsecs.Name = "swtxtParsecs";
             this.swtxtParsecs.NomCampBBDD = "parsecs";
@@ -305,7 +305,7 @@ namespace Planets
             // swtxtDescPlanet
             // 
             this.swtxtDescPlanet.EsForanea = false;
-            this.swtxtDescPlanet.Location = new System.Drawing.Point(323, 99);
+            this.swtxtDescPlanet.Location = new System.Drawing.Point(481, 105);
             this.swtxtDescPlanet.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.swtxtDescPlanet.Name = "swtxtDescPlanet";
             this.swtxtDescPlanet.NomCampBBDD = "DescPlanet";
@@ -317,7 +317,7 @@ namespace Planets
             // swtxtCodePlanet
             // 
             this.swtxtCodePlanet.EsForanea = false;
-            this.swtxtCodePlanet.Location = new System.Drawing.Point(323, 65);
+            this.swtxtCodePlanet.Location = new System.Drawing.Point(481, 71);
             this.swtxtCodePlanet.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.swtxtCodePlanet.Name = "swtxtCodePlanet";
             this.swtxtCodePlanet.NomCampBBDD = "CodePlanet";
@@ -329,7 +329,7 @@ namespace Planets
             // swtxtImagen
             // 
             this.swtxtImagen.EsForanea = false;
-            this.swtxtImagen.Location = new System.Drawing.Point(1205, 103);
+            this.swtxtImagen.Location = new System.Drawing.Point(255, 110);
             this.swtxtImagen.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.swtxtImagen.Name = "swtxtImagen";
             this.swtxtImagen.NomCampBBDD = "PlanetPicture";
@@ -350,7 +350,7 @@ namespace Planets
             this.rjbtnImage.FlatAppearance.BorderSize = 0;
             this.rjbtnImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjbtnImage.ForeColor = System.Drawing.Color.White;
-            this.rjbtnImage.Location = new System.Drawing.Point(1173, 162);
+            this.rjbtnImage.Location = new System.Drawing.Point(223, 169);
             this.rjbtnImage.Margin = new System.Windows.Forms.Padding(2);
             this.rjbtnImage.Name = "rjbtnImage";
             this.rjbtnImage.Size = new System.Drawing.Size(133, 25);
