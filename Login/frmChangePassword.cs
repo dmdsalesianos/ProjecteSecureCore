@@ -70,7 +70,7 @@ namespace Login
 
                 SetNewPassword(hashedPassword, newSalt);
 
-                MessageBox.Show("Contraseña cambiada exitosamente.");
+                //MessageBox.Show("Contraseña cambiada exitosamente.");
                 this.Close();
                 frmLogin frmLogin = new frmLogin();
                 frmLogin.Show();

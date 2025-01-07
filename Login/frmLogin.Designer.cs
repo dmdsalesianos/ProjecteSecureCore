@@ -31,8 +31,6 @@ namespace Login
         {
             this.components = new System.ComponentModel.Container();
             this.pnlLogin = new System.Windows.Forms.Panel();
-            this.btnClose = new CustomControls.RJControls.RJButton();
-            this.rjbtnLogin = new CustomControls.RJControls.RJButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Login = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,10 +42,13 @@ namespace Login
             this.textBox_password = new System.Windows.Forms.TextBox();
             this.pnlLoading = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.rjProgressBar = new CustomControls.RJProgressBar();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lblLoadingMessage = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.rjProgressBar = new CustomControls.RJProgressBar();
+            this.btnClose = new CustomControls.RJControls.RJButton();
+            this.rjbtnLogin = new CustomControls.RJControls.RJButton();
+            this.lblChangePassword = new System.Windows.Forms.Label();
             this.pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -58,6 +59,7 @@ namespace Login
             // 
             // pnlLogin
             // 
+            this.pnlLogin.Controls.Add(this.lblChangePassword);
             this.pnlLogin.Controls.Add(this.btnClose);
             this.pnlLogin.Controls.Add(this.rjbtnLogin);
             this.pnlLogin.Controls.Add(this.pictureBox1);
@@ -69,51 +71,11 @@ namespace Login
             this.pnlLogin.Controls.Add(this.Vision_button);
             this.pnlLogin.Controls.Add(this.Error_label);
             this.pnlLogin.Controls.Add(this.textBox_password);
+            this.pnlLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(241)))));
             this.pnlLogin.Location = new System.Drawing.Point(544, 106);
             this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(211, 383);
+            this.pnlLogin.Size = new System.Drawing.Size(211, 425);
             this.pnlLogin.TabIndex = 12;
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnClose.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnClose.BorderRadius = 10;
-            this.btnClose.BorderSize = 2;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(107, 331);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(96, 40);
-            this.btnClose.TabIndex = 27;
-            this.btnClose.Text = "EXIT";
-            this.btnClose.TextColor = System.Drawing.Color.White;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // rjbtnLogin
-            // 
-            this.rjbtnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(241)))));
-            this.rjbtnLogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(241)))));
-            this.rjbtnLogin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(106)))), ((int)(((byte)(197)))));
-            this.rjbtnLogin.BorderRadius = 10;
-            this.rjbtnLogin.BorderSize = 2;
-            this.rjbtnLogin.FlatAppearance.BorderSize = 0;
-            this.rjbtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjbtnLogin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
-            this.rjbtnLogin.ForeColor = System.Drawing.Color.White;
-            this.rjbtnLogin.Location = new System.Drawing.Point(6, 331);
-            this.rjbtnLogin.Name = "rjbtnLogin";
-            this.rjbtnLogin.Size = new System.Drawing.Size(96, 40);
-            this.rjbtnLogin.TabIndex = 16;
-            this.rjbtnLogin.Text = "LOGIN";
-            this.rjbtnLogin.TextColor = System.Drawing.Color.White;
-            this.rjbtnLogin.UseVisualStyleBackColor = false;
-            this.rjbtnLogin.Click += new System.EventHandler(this.rjbtnLogin_Click);
             // 
             // pictureBox1
             // 
@@ -195,6 +157,7 @@ namespace Login
             this.Vision_button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Vision_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Vision_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Vision_button.ForeColor = System.Drawing.Color.Black;
             this.Vision_button.Location = new System.Drawing.Point(186, 288);
             this.Vision_button.Margin = new System.Windows.Forms.Padding(2);
             this.Vision_button.Name = "Vision_button";
@@ -251,6 +214,33 @@ namespace Login
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Login.Properties.Resources.Name_2490F1;
+            this.pictureBox4.Location = new System.Drawing.Point(130, 139);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(184, 32);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 10;
+            this.pictureBox4.TabStop = false;
+            // 
+            // lblLoadingMessage
+            // 
+            this.lblLoadingMessage.AutoSize = true;
+            this.lblLoadingMessage.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoadingMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(241)))));
+            this.lblLoadingMessage.Location = new System.Drawing.Point(152, 182);
+            this.lblLoadingMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLoadingMessage.Name = "lblLoadingMessage";
+            this.lblLoadingMessage.Size = new System.Drawing.Size(162, 32);
+            this.lblLoadingMessage.TabIndex = 12;
+            this.lblLoadingMessage.Text = "Coocking...";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // rjProgressBar
             // 
             this.rjProgressBar.BackColor = System.Drawing.Color.Transparent;
@@ -270,32 +260,59 @@ namespace Login
             this.rjProgressBar.SymbolBefore = "";
             this.rjProgressBar.TabIndex = 13;
             // 
-            // pictureBox4
+            // btnClose
             // 
-            this.pictureBox4.Image = global::Login.Properties.Resources.Name_2490F1;
-            this.pictureBox4.Location = new System.Drawing.Point(130, 139);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(184, 32);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 10;
-            this.pictureBox4.TabStop = false;
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnClose.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnClose.BorderRadius = 10;
+            this.btnClose.BorderSize = 2;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(107, 331);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(96, 40);
+            this.btnClose.TabIndex = 27;
+            this.btnClose.Text = "EXIT";
+            this.btnClose.TextColor = System.Drawing.Color.White;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // lblLoadingMessage
+            // rjbtnLogin
             // 
-            this.lblLoadingMessage.AutoSize = true;
-            this.lblLoadingMessage.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoadingMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(241)))));
-            this.lblLoadingMessage.Location = new System.Drawing.Point(142, 182);
-            this.lblLoadingMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblLoadingMessage.Name = "lblLoadingMessage";
-            this.lblLoadingMessage.Size = new System.Drawing.Size(162, 32);
-            this.lblLoadingMessage.TabIndex = 12;
-            this.lblLoadingMessage.Text = "Coocking...";
+            this.rjbtnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(241)))));
+            this.rjbtnLogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(241)))));
+            this.rjbtnLogin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(106)))), ((int)(((byte)(197)))));
+            this.rjbtnLogin.BorderRadius = 10;
+            this.rjbtnLogin.BorderSize = 2;
+            this.rjbtnLogin.FlatAppearance.BorderSize = 0;
+            this.rjbtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjbtnLogin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
+            this.rjbtnLogin.ForeColor = System.Drawing.Color.White;
+            this.rjbtnLogin.Location = new System.Drawing.Point(6, 331);
+            this.rjbtnLogin.Name = "rjbtnLogin";
+            this.rjbtnLogin.Size = new System.Drawing.Size(96, 40);
+            this.rjbtnLogin.TabIndex = 16;
+            this.rjbtnLogin.Text = "LOGIN";
+            this.rjbtnLogin.TextColor = System.Drawing.Color.White;
+            this.rjbtnLogin.UseVisualStyleBackColor = false;
+            this.rjbtnLogin.Click += new System.EventHandler(this.rjbtnLogin_Click);
             // 
-            // timer1
+            // lblChangePassword
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.lblChangePassword.AutoSize = true;
+            this.lblChangePassword.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChangePassword.Location = new System.Drawing.Point(56, 383);
+            this.lblChangePassword.Name = "lblChangePassword";
+            this.lblChangePassword.Size = new System.Drawing.Size(105, 12);
+            this.lblChangePassword.TabIndex = 16;
+            this.lblChangePassword.Text = "Change Password";
+            this.lblChangePassword.Click += new System.EventHandler(this.lblChangePassword_Click);
+            this.lblChangePassword.MouseEnter += new System.EventHandler(this.lblChangePassword_MouseEnter);
+            this.lblChangePassword.MouseLeave += new System.EventHandler(this.lblChangePassword_MouseLeave);
             // 
             // frmLogin
             // 
@@ -350,6 +367,7 @@ namespace Login
         private CustomControls.RJControls.RJButton rjbtnLogin;
         private CustomControls.RJControls.RJButton btnClose;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label lblChangePassword;
     }
 }
 

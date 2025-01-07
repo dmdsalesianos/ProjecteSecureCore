@@ -228,7 +228,7 @@ namespace MenuOptions
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(699, 408);
+            this.ClientSize = new System.Drawing.Size(1270, 408);
             this.Controls.Add(this.swtxtAccessLevel);
             this.Controls.Add(this.rjbtnImagen);
             this.Controls.Add(this.swTextbox_Color);

@@ -238,6 +238,35 @@ namespace Login
             Application.Exit();
         }
 
-        
+        private void lblChangePassword_Click(object sender, EventArgs e)
+        {
+            frmChangePassword changePasswordForm = new frmChangePassword(textBox_user.Text);
+            changePasswordForm.Show();
+            this.Hide();
+
+            Close();
+        }
+
+        private void lblChangePassword_MouseEnter(object sender, EventArgs e)
+        {
+            Label label = sender as Label;
+            if (label != null)
+            {
+                // Aplica el subrayado manteniendo la fuente original
+                label.Font = new Font("Arial Rounded MT Bold", 8.25f, FontStyle.Underline);
+                label.Cursor = Cursors.Hand; // Cambia el cursor a mano
+            }
+        }
+
+        private void lblChangePassword_MouseLeave(object sender, EventArgs e)
+        {
+            Label label = sender as Label;
+            if (label != null)
+            {
+                // Restaura la fuente original
+                label.Font = new Font("Arial Rounded MT Bold", 8.25f, FontStyle.Regular);
+                label.Cursor = Cursors.Default; // Cambia el cursor a predeterminado
+            }
+        }
     }
 }
