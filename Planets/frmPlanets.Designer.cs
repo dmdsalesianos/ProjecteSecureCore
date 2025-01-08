@@ -176,7 +176,7 @@ namespace Planets
             // picPlanet
             // 
             this.picPlanet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picPlanet.Location = new System.Drawing.Point(35, 87);
+            this.picPlanet.Location = new System.Drawing.Point(35, 80);
             this.picPlanet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picPlanet.Name = "picPlanet";
             this.picPlanet.Size = new System.Drawing.Size(198, 134);
