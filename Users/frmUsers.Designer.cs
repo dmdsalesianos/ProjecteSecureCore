@@ -47,6 +47,8 @@ namespace Users
             this.rjbtnInforme = new CustomControls.RJControls.RJButton();
             this.swtxtLogin = new CustomControls.SWTextbox();
             this.lblLogin = new System.Windows.Forms.Label();
+            this.rjbtnRestablecerContraseña = new CustomControls.RJControls.RJButton();
+            this.swtxtPassword = new CustomControls.SWTextbox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,7 +111,7 @@ namespace Users
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(35, 105);
+            this.pictureBox1.Location = new System.Drawing.Point(37, 105);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(198, 140);
@@ -255,12 +257,47 @@ namespace Users
             this.lblLogin.TabIndex = 34;
             this.lblLogin.Text = "Login";
             // 
+            // rjbtnRestablecerContraseña
+            // 
+            this.rjbtnRestablecerContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.rjbtnRestablecerContraseña.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.rjbtnRestablecerContraseña.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjbtnRestablecerContraseña.BorderRadius = 0;
+            this.rjbtnRestablecerContraseña.BorderSize = 0;
+            this.rjbtnRestablecerContraseña.FlatAppearance.BorderSize = 0;
+            this.rjbtnRestablecerContraseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjbtnRestablecerContraseña.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjbtnRestablecerContraseña.ForeColor = System.Drawing.Color.White;
+            this.rjbtnRestablecerContraseña.Location = new System.Drawing.Point(850, 283);
+            this.rjbtnRestablecerContraseña.Name = "rjbtnRestablecerContraseña";
+            this.rjbtnRestablecerContraseña.Size = new System.Drawing.Size(223, 40);
+            this.rjbtnRestablecerContraseña.TabIndex = 35;
+            this.rjbtnRestablecerContraseña.Text = "Restablecer Contraseña";
+            this.rjbtnRestablecerContraseña.TextColor = System.Drawing.Color.White;
+            this.rjbtnRestablecerContraseña.UseVisualStyleBackColor = false;
+            this.rjbtnRestablecerContraseña.Click += new System.EventHandler(this.rjbtnRestablecerContraseña_Click);
+            // 
+            // swtxtPassword
+            // 
+            this.swtxtPassword.BackColor = System.Drawing.SystemColors.Window;
+            this.swtxtPassword.EsForanea = false;
+            this.swtxtPassword.Location = new System.Drawing.Point(379, 239);
+            this.swtxtPassword.Name = "swtxtPassword";
+            this.swtxtPassword.NomCampBBDD = "Password";
+            this.swtxtPassword.PermetreBuit = true;
+            this.swtxtPassword.Size = new System.Drawing.Size(218, 26);
+            this.swtxtPassword.TabIndex = 36;
+            this.swtxtPassword.TabStop = false;
+            this.swtxtPassword.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
+            this.swtxtPassword.Visible = false;
+            // 
             // frmUsers
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1050);
+            this.Controls.Add(this.rjbtnRestablecerContraseña);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.swtxtLogin);
             this.Controls.Add(this.rjbtnInforme);
@@ -279,6 +316,7 @@ namespace Users
             this.Controls.Add(this.cmbUserCategory);
             this.Controls.Add(this.swtxtUserName);
             this.Controls.Add(this.swtxtCodeUser);
+            this.Controls.Add(this.swtxtPassword);
             this.Location = new System.Drawing.Point(0, 0);
             this.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.Name = "frmUsers";
@@ -286,6 +324,7 @@ namespace Users
             this.TabIndexAgregarBtn = 10;
             this.Text = "frmUsers";
             this.Load += new System.EventHandler(this.BaseForm_Load);
+            this.Controls.SetChildIndex(this.swtxtPassword, 0);
             this.Controls.SetChildIndex(this.swtxtCodeUser, 0);
             this.Controls.SetChildIndex(this.swtxtUserName, 0);
             this.Controls.SetChildIndex(this.cmbUserCategory, 0);
@@ -304,6 +343,7 @@ namespace Users
             this.Controls.SetChildIndex(this.rjbtnInforme, 0);
             this.Controls.SetChildIndex(this.swtxtLogin, 0);
             this.Controls.SetChildIndex(this.lblLogin, 0);
+            this.Controls.SetChildIndex(this.rjbtnRestablecerContraseña, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -330,5 +370,7 @@ namespace Users
         private CustomControls.RJControls.RJButton rjbtnInforme;
         private CustomControls.SWTextbox swtxtLogin;
         private System.Windows.Forms.Label lblLogin;
+        private CustomControls.RJControls.RJButton rjbtnRestablecerContraseña;
+        private CustomControls.SWTextbox swtxtPassword;
     }
 }

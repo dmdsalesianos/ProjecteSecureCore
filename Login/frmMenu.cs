@@ -123,7 +123,7 @@ namespace Login
                 pnlMenu.Dock = DockStyle.Left;  // O DockStyle.Fill si deseas que ocupe todo el espacio disponible
                 pnlMenu.FlowDirection = FlowDirection.TopDown;  // Esto hará que los botones se apilen verticalmente
                 pnlMenu.WrapContents = false;
-                pnlMenu.Width = btn.Width + 15;
+                pnlMenu.Width = btn.Width + 18;
 
                 // Lo añadimos al panel del formulario principal (en este caso 'targetPanel')
                 pnlMenu.Controls.Add(btn);

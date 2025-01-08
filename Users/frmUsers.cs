@@ -207,6 +207,12 @@ namespace Users
             }
         }
 
-        
+        private void rjbtnRestablecerContraseña_Click(object sender, EventArgs e)
+        {
+
+            swtxtPassword.Text = "12345aA";
+            base.ValidarTextBox(swtxtPassword, e);
+            base.rjbtnActualitzar_Click(sender, e);
+        }
     }
 }
