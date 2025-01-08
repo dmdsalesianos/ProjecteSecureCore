@@ -38,24 +38,22 @@ namespace SpaceShipCategories
             // txtBoxCodeSpaceShipCategory
             // 
             this.txtBoxCodeSpaceShipCategory.EsForanea = false;
-            this.txtBoxCodeSpaceShipCategory.Location = new System.Drawing.Point(489, 127);
-            this.txtBoxCodeSpaceShipCategory.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBoxCodeSpaceShipCategory.Location = new System.Drawing.Point(435, 198);
             this.txtBoxCodeSpaceShipCategory.Name = "txtBoxCodeSpaceShipCategory";
             this.txtBoxCodeSpaceShipCategory.NomCampBBDD = "CodeSpaceShipCategory";
             this.txtBoxCodeSpaceShipCategory.PermetreBuit = true;
-            this.txtBoxCodeSpaceShipCategory.Size = new System.Drawing.Size(174, 20);
+            this.txtBoxCodeSpaceShipCategory.Size = new System.Drawing.Size(259, 26);
             this.txtBoxCodeSpaceShipCategory.TabIndex = 1;
             this.txtBoxCodeSpaceShipCategory.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
             // 
             // txtBoxDescSpaceShipCategory
             // 
             this.txtBoxDescSpaceShipCategory.EsForanea = false;
-            this.txtBoxDescSpaceShipCategory.Location = new System.Drawing.Point(489, 160);
-            this.txtBoxDescSpaceShipCategory.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBoxDescSpaceShipCategory.Location = new System.Drawing.Point(435, 249);
             this.txtBoxDescSpaceShipCategory.Name = "txtBoxDescSpaceShipCategory";
             this.txtBoxDescSpaceShipCategory.NomCampBBDD = "DescSpaceShipCategory";
             this.txtBoxDescSpaceShipCategory.PermetreBuit = true;
-            this.txtBoxDescSpaceShipCategory.Size = new System.Drawing.Size(174, 20);
+            this.txtBoxDescSpaceShipCategory.Size = new System.Drawing.Size(259, 26);
             this.txtBoxDescSpaceShipCategory.TabIndex = 2;
             this.txtBoxDescSpaceShipCategory.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
             // 
@@ -63,10 +61,9 @@ namespace SpaceShipCategories
             // 
             this.lblCodeSpaceShipCategory.AutoSize = true;
             this.lblCodeSpaceShipCategory.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodeSpaceShipCategory.Location = new System.Drawing.Point(226, 123);
-            this.lblCodeSpaceShipCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCodeSpaceShipCategory.Location = new System.Drawing.Point(40, 192);
             this.lblCodeSpaceShipCategory.Name = "lblCodeSpaceShipCategory";
-            this.lblCodeSpaceShipCategory.Size = new System.Drawing.Size(232, 22);
+            this.lblCodeSpaceShipCategory.Size = new System.Drawing.Size(358, 33);
             this.lblCodeSpaceShipCategory.TabIndex = 7;
             this.lblCodeSpaceShipCategory.Text = "Code spacehip category";
             // 
@@ -74,24 +71,23 @@ namespace SpaceShipCategories
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(221, 156);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(33, 243);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(240, 22);
+            this.label1.Size = new System.Drawing.Size(371, 33);
             this.label1.TabIndex = 8;
             this.label1.Text = "Desc spaceship category";
             // 
             // frmSpaceShipCategories
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1023, 502);
+            this.ClientSize = new System.Drawing.Size(1534, 772);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCodeSpaceShipCategory);
             this.Controls.Add(this.txtBoxDescSpaceShipCategory);
             this.Controls.Add(this.txtBoxCodeSpaceShipCategory);
             this.Location = new System.Drawing.Point(0, 0);
-            this.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "frmSpaceShipCategories";
             this.TabIndexActualitzarBtn = 4;
             this.TabIndexAgregarBtn = 3;

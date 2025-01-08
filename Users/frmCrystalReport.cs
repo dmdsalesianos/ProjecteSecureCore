@@ -10,12 +10,6 @@ namespace Users
     {
         private int idPersona;
 
-        public int IdPersona
-        {
-            get { return idPersona; }
-            set { idPersona = value; }
-        }
-
         public frmCrystalReport(int idPersona)
         {
             InitializeComponent();
@@ -38,7 +32,7 @@ namespace Users
                 string rutaInforme = Path.Combine(
                     Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory.TrimEnd(Path.DirectorySeparatorChar)),
                     "Users",
-                    "UserCard.rpt"
+                    "TarjetaIdentificacion.rpt"
                 );
 
                 if (!File.Exists(rutaInforme))

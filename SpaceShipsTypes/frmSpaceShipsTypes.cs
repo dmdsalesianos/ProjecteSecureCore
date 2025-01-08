@@ -1,13 +1,10 @@
-﻿using System;
+﻿using Base;
 using System.Collections.Generic;
-using Base;
 
 namespace SpaceShipsTypes
 {
     public partial class frmSpaceShipsTypes : baseForm
     {
-      
-
         public frmSpaceShipsTypes()
         {
             InitializeComponent();
@@ -24,12 +21,13 @@ namespace SpaceShipsTypes
             categoryCmb.ValueMember = "idSpaceShipCategory";
         }
 
-        protected override void BaseForm_Load(object sender, EventArgs e)
+        private void frmSpaceShipsTypes_Load(object sender, System.EventArgs e)
         {
             base.BaseForm_Load(sender, e);
 
             categoryCmb.DataSource = ds.Tables["SpaceShipCategories"];
             filiationCmb.DataSource = ds.Tables["Filiations"];
+
         }
     }
 }
