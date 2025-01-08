@@ -141,7 +141,7 @@ namespace Base
             {
                 tablestr = $"{tablestr}s";
             }
-            
+
             string relationName = $"{TableName}_{tablestr}"; //Defino el nombre de la relacion
 
             //Hago la relacion y añado las nuevas columnas de Descripcion a la tabla
@@ -198,6 +198,87 @@ namespace Base
             {
                 CargarDatos(); // Recarga los datos después de la actualización
                 MakeDataBindigs(); // Vuelve a establecer los bindings
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            // Verificar si el formulario ya está en modo oscuro
+            bool isDarkMode = this.BackColor == Color.Black;
+
+            if (isDarkMode)
+            {
+                // Cambiar al modo claro
+                this.BackColor = Color.White;
+                this.ForeColor = Color.Black;
+
+                foreach (Control control in this.Controls)
+                {
+                    if (control is Label || control is Button)
+                    {
+                        control.BackColor = Color.White;
+                        control.ForeColor = Color.Black;
+                    }
+                    else if (control is TextBox textBox)
+                    {
+                        textBox.BackColor = Color.White;
+                        textBox.ForeColor = Color.Black;
+                    }
+                    else if (control is ComboBox comboBox)
+                    {
+                        comboBox.BackColor = Color.White;
+                        comboBox.ForeColor = Color.Black;
+                    }
+                    else if (control is DataGridView dataGridView)
+                    {
+                        dataGridView.BackgroundColor = Color.White;
+                        dataGridView.DefaultCellStyle.BackColor = Color.White;
+                        dataGridView.DefaultCellStyle.ForeColor = Color.Black;
+                        dataGridView.ColumnHeadersDefaultCellStyle.BackColor = SystemColors.Control;
+                        dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = SystemColors.ControlText;
+                        dataGridView.RowHeadersDefaultCellStyle.BackColor = SystemColors.Control;
+                        dataGridView.RowHeadersDefaultCellStyle.ForeColor = SystemColors.ControlText;
+                    }
+                }
+                btnModoOscuro.Text = "Modo Oscuro";
+            }
+            else
+            {
+                // Cambiar al modo oscuro
+                this.BackColor = Color.Black;
+                this.ForeColor = Color.White;
+
+                foreach (Control control in this.Controls)
+                {
+                    if (control is Label || control is Button)
+                    {
+                        control.BackColor = Color.Black;
+                        control.ForeColor = Color.White;
+                    }
+                    else if (control is TextBox textBox)
+                    {
+                        textBox.BackColor = Color.DimGray;
+                        textBox.ForeColor = Color.White;
+                    }
+                    else if (control is ComboBox comboBox)
+                    {
+                        comboBox.BackColor = Color.DimGray;
+                        comboBox.ForeColor = Color.White;
+                    }
+                    else if (control is DataGridView dataGridView)
+                    {
+                        dataGridView.BackgroundColor = Color.Black;
+                        dataGridView.DefaultCellStyle.BackColor = Color.DimGray;
+                        dataGridView.DefaultCellStyle.ForeColor = Color.White;
+                        dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.Gray;
+                        dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                        dataGridView.RowHeadersDefaultCellStyle.BackColor = Color.Gray;
+                        dataGridView.RowHeadersDefaultCellStyle.ForeColor = Color.White;
+                    }
+                }
+                btnModoOscuro.Text = "Modo Claro";
+
             }
         }
     }
