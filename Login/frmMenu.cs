@@ -69,7 +69,7 @@ namespace Login
                            "FROM MenuOptions mo, UserCategories uc, Users u " +
                            "WHERE u.idUserCategory = uc.idUserCategory " +
                            "AND mo.AccessLevel <= uc.AccessLevel " +
-                           $"AND u.idUser = {idUser}";                                                   
+                           $"AND u.idUser = {idUser}";
 
             DataSet dsMenuOptions = manteniment.PortarPerConsulta(query);
 

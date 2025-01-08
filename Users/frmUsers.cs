@@ -210,9 +210,21 @@ namespace Users
         private void rjbtnRestablecerContraseña_Click(object sender, EventArgs e)
         {
 
-            swtxtPassword.Text = "12345aA";
-            base.ValidarTextBox(swtxtPassword, e);
-            base.rjbtnActualitzar_Click(sender, e);
+            // Mostrar ventana de confirmación
+            DialogResult resultado = MessageBox.Show(
+                "¿Estás seguro de que deseas restablecer la contraseña?",
+                "Confirmación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            // Si el usuario confirma, realiza la acción
+            if (resultado == DialogResult.Yes)
+            {
+                swtxtPassword.Text = "12345aA";
+                base.ValidarTextBox(swtxtPassword, e);
+                base.rjbtnActualitzar_Click(sender, e);
+            }
         }
     }
 }

@@ -111,7 +111,7 @@ namespace Users
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(37, 105);
+            this.pictureBox1.Location = new System.Drawing.Point(35, 105);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(198, 140);
@@ -281,15 +281,14 @@ namespace Users
             // 
             this.swtxtPassword.BackColor = System.Drawing.SystemColors.Window;
             this.swtxtPassword.EsForanea = false;
-            this.swtxtPassword.Location = new System.Drawing.Point(379, 239);
+            this.swtxtPassword.Location = new System.Drawing.Point(100, 200);
             this.swtxtPassword.Name = "swtxtPassword";
             this.swtxtPassword.NomCampBBDD = "Password";
             this.swtxtPassword.PermetreBuit = true;
-            this.swtxtPassword.Size = new System.Drawing.Size(218, 26);
+            this.swtxtPassword.Size = new System.Drawing.Size(105, 26);
             this.swtxtPassword.TabIndex = 36;
             this.swtxtPassword.TabStop = false;
             this.swtxtPassword.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
-            this.swtxtPassword.Visible = false;
             // 
             // frmUsers
             // 

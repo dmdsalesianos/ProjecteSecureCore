@@ -50,10 +50,9 @@ namespace Login
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Login.Properties.Resources.Name_2490F1;
-            this.pictureBox2.Location = new System.Drawing.Point(32, 128);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Location = new System.Drawing.Point(48, 197);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(184, 32);
+            this.pictureBox2.Size = new System.Drawing.Size(276, 49);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 12;
             this.pictureBox2.TabStop = false;
@@ -64,20 +63,18 @@ namespace Login
             this.Login.BackColor = System.Drawing.Color.Transparent;
             this.Login.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Login.ForeColor = System.Drawing.Color.Black;
-            this.Login.Location = new System.Drawing.Point(46, 172);
-            this.Login.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Login.Location = new System.Drawing.Point(69, 265);
             this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(159, 32);
+            this.Login.Size = new System.Drawing.Size(235, 46);
             this.Login.TabIndex = 11;
             this.Login.Text = "NEW PASS";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Login.Properties.Resources.Only_logo_2490F1;
-            this.pictureBox1.Location = new System.Drawing.Point(80, 8);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(120, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(93, 122);
+            this.pictureBox1.Size = new System.Drawing.Size(140, 188);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
@@ -93,10 +90,9 @@ namespace Login
             this.btnShowNewPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowNewPassword.ForeColor = System.Drawing.Color.Black;
-            this.btnShowNewPassword.Location = new System.Drawing.Point(217, 231);
-            this.btnShowNewPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.btnShowNewPassword.Location = new System.Drawing.Point(326, 355);
             this.btnShowNewPassword.Name = "btnShowNewPassword";
-            this.btnShowNewPassword.Size = new System.Drawing.Size(21, 23);
+            this.btnShowNewPassword.Size = new System.Drawing.Size(32, 35);
             this.btnShowNewPassword.TabIndex = 17;
             this.btnShowNewPassword.Text = "👁";
             this.btnShowNewPassword.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -109,20 +105,18 @@ namespace Login
             this.lblConfirmPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfirmPassword.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.lblConfirmPassword.Location = new System.Drawing.Point(3, 261);
-            this.lblConfirmPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblConfirmPassword.Location = new System.Drawing.Point(4, 402);
             this.lblConfirmPassword.Name = "lblConfirmPassword";
-            this.lblConfirmPassword.Size = new System.Drawing.Size(91, 17);
+            this.lblConfirmPassword.Size = new System.Drawing.Size(129, 25);
             this.lblConfirmPassword.TabIndex = 16;
             this.lblConfirmPassword.Text = "Confirm Pass";
             // 
             // txtConfirmPassword
             // 
             this.txtConfirmPassword.Font = new System.Drawing.Font("Arial", 16F);
-            this.txtConfirmPassword.Location = new System.Drawing.Point(6, 279);
-            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(9, 429);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Size = new System.Drawing.Size(242, 32);
+            this.txtConfirmPassword.Size = new System.Drawing.Size(361, 44);
             this.txtConfirmPassword.TabIndex = 14;
             this.txtConfirmPassword.UseSystemPasswordChar = true;
             this.txtConfirmPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtConfirmPassword_KeyDown);
@@ -130,10 +124,9 @@ namespace Login
             // txtNewPassword
             // 
             this.txtNewPassword.Font = new System.Drawing.Font("Arial", 16F);
-            this.txtNewPassword.Location = new System.Drawing.Point(6, 227);
-            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNewPassword.Location = new System.Drawing.Point(9, 349);
             this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.Size = new System.Drawing.Size(242, 32);
+            this.txtNewPassword.Size = new System.Drawing.Size(361, 44);
             this.txtNewPassword.TabIndex = 13;
             this.txtNewPassword.UseSystemPasswordChar = true;
             this.txtNewPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNewPassword_KeyDown);
@@ -142,10 +135,9 @@ namespace Login
             // 
             this.lblErrorMessage.AutoSize = true;
             this.lblErrorMessage.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorMessage.Location = new System.Drawing.Point(3, 314);
-            this.lblErrorMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblErrorMessage.Location = new System.Drawing.Point(4, 483);
             this.lblErrorMessage.Name = "lblErrorMessage";
-            this.lblErrorMessage.Size = new System.Drawing.Size(117, 13);
+            this.lblErrorMessage.Size = new System.Drawing.Size(175, 20);
             this.lblErrorMessage.TabIndex = 19;
             this.lblErrorMessage.Text = "Put the same password";
             this.lblErrorMessage.Visible = false;
@@ -160,10 +152,9 @@ namespace Login
             this.btnShowConfirmPassword.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnShowConfirmPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowConfirmPassword.Location = new System.Drawing.Point(217, 283);
-            this.btnShowConfirmPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.btnShowConfirmPassword.Location = new System.Drawing.Point(326, 435);
             this.btnShowConfirmPassword.Name = "btnShowConfirmPassword";
-            this.btnShowConfirmPassword.Size = new System.Drawing.Size(21, 23);
+            this.btnShowConfirmPassword.Size = new System.Drawing.Size(32, 35);
             this.btnShowConfirmPassword.TabIndex = 20;
             this.btnShowConfirmPassword.Text = "👁";
             this.btnShowConfirmPassword.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -176,10 +167,9 @@ namespace Login
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label1.Location = new System.Drawing.Point(2, 208);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(3, 320);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 17);
+            this.label1.Size = new System.Drawing.Size(100, 25);
             this.label1.TabIndex = 21;
             this.label1.Text = "New Pass";
             // 
@@ -197,9 +187,10 @@ namespace Login
             this.pnlPass.Controls.Add(this.lblConfirmPassword);
             this.pnlPass.Controls.Add(this.btnShowNewPassword);
             this.pnlPass.Controls.Add(this.txtNewPassword);
-            this.pnlPass.Location = new System.Drawing.Point(238, 26);
+            this.pnlPass.Location = new System.Drawing.Point(357, 40);
+            this.pnlPass.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlPass.Name = "pnlPass";
-            this.pnlPass.Size = new System.Drawing.Size(250, 382);
+            this.pnlPass.Size = new System.Drawing.Size(375, 588);
             this.pnlPass.TabIndex = 27;
             // 
             // rjbtnBack
@@ -213,9 +204,10 @@ namespace Login
             this.rjbtnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjbtnBack.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
             this.rjbtnBack.ForeColor = System.Drawing.Color.White;
-            this.rjbtnBack.Location = new System.Drawing.Point(132, 330);
+            this.rjbtnBack.Location = new System.Drawing.Point(198, 508);
+            this.rjbtnBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rjbtnBack.Name = "rjbtnBack";
-            this.rjbtnBack.Size = new System.Drawing.Size(116, 40);
+            this.rjbtnBack.Size = new System.Drawing.Size(174, 62);
             this.rjbtnBack.TabIndex = 29;
             this.rjbtnBack.Text = "BACK";
             this.rjbtnBack.TextColor = System.Drawing.Color.White;
@@ -233,9 +225,10 @@ namespace Login
             this.rjbtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjbtnSave.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
             this.rjbtnSave.ForeColor = System.Drawing.Color.White;
-            this.rjbtnSave.Location = new System.Drawing.Point(6, 330);
+            this.rjbtnSave.Location = new System.Drawing.Point(9, 508);
+            this.rjbtnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rjbtnSave.Name = "rjbtnSave";
-            this.rjbtnSave.Size = new System.Drawing.Size(116, 40);
+            this.rjbtnSave.Size = new System.Drawing.Size(174, 62);
             this.rjbtnSave.TabIndex = 28;
             this.rjbtnSave.Text = "SAVE";
             this.rjbtnSave.TextColor = System.Drawing.Color.White;
@@ -244,17 +237,16 @@ namespace Login
             // 
             // frmChangePassword
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(241)))), ((int)(((byte)(254)))));
             this.BackgroundImage = global::Login.Properties.Resources.fondo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(709, 607);
+            this.ClientSize = new System.Drawing.Size(1064, 934);
             this.ControlBox = false;
             this.Controls.Add(this.pnlPass);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmChangePassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmChangePassword";
