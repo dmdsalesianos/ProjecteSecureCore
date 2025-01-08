@@ -146,12 +146,6 @@
       <DependentUpon>TarjetaIdentificacion.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UserCard.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserCard.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <EmbeddedResource Include="frmCrystalReport.resx">
       <DependentUpon>frmCrystalReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,10 +162,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserCard.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>UserCard.cs</LastGenOutput>
-    </EmbeddedResource>
     <None Include="TarjetaIdentificacion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>TarjetaIdentificacion.cs</LastGenOutput>
