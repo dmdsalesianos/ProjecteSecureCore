@@ -18,10 +18,10 @@ namespace Users
 
         private void frmCrystalReport_Load(object sender, EventArgs e)
         {
-            MostrarInforme(idPersona);
+            MostrarInforme();
         }
 
-        private void MostrarInforme(int idPersona)
+        private void MostrarInforme()
         {
             try
             {
@@ -41,6 +41,7 @@ namespace Users
                     return;
                 }
 
+                // Crear el documento del informe
                 ReportDocument informe = new ReportDocument();
                 informe.Load(rutaInforme);
 
@@ -62,18 +63,34 @@ namespace Users
                     crTable.ApplyLogOnInfo(crTableLogOnInfo);
                 }
 
-                ParameterFieldDefinitions crParameterFieldDefinitions;
-                ParameterFieldDefinition crParameterFieldDefinition;
+                // Configurar el parámetro idUser
+                ParameterFieldDefinitions crParameterFieldDefinitions = informe.DataDefinition.ParameterFields;
+                ParameterFieldDefinition crParameterFieldDefinition = crParameterFieldDefinitions["idUser"];
                 ParameterValues crParameterValues = new ParameterValues();
-                ParameterDiscreteValue crParameterDiscreteValue = new ParameterDiscreteValue();
-
-                crParameterDiscreteValue.Value = idPersona;
-                crParameterFieldDefinitions = informe.DataDefinition.ParameterFields;
-                crParameterFieldDefinition = crParameterFieldDefinitions["idUser"];
+                ParameterDiscreteValue crParameterDiscreteValue = new ParameterDiscreteValue
+                {
+                    Value = idPersona
+                };
 
                 crParameterValues.Clear();
                 crParameterValues.Add(crParameterDiscreteValue);
                 crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
+
+                // Configurar el parámetro RutaBase
+                crParameterFieldDefinition = crParameterFieldDefinitions["RutaBase"];
+                crParameterValues = new ParameterValues();
+                crParameterDiscreteValue = new ParameterDiscreteValue
+                {
+                    Value = rutaBaseImagenes
+                };
+
+                crParameterValues.Clear();
+                crParameterValues.Add(crParameterDiscreteValue);
+                crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
+
+                // Asignar el informe al visor
+                crystalReportViewer1.ReportSource = informe;
+                crystalReportViewer1.Refresh();
             }
             catch (Exception ex)
             {
@@ -81,6 +98,7 @@ namespace Users
             }
         }
 
-        
+
+
     }
 }
