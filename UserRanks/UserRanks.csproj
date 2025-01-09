@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>App\</OutputPath>
+    <OutputPath>..\App\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -51,7 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmUserRanks.cs" />
+    <Compile Include="frmUserRanks.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmUserRanks.Designer.cs">
       <DependentUpon>frmUserRanks.cs</DependentUpon>
     </Compile>

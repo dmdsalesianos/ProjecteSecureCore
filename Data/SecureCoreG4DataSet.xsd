@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SecureCoreG4ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SecureCoreG4ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DataLibraryDMD.Properties.Settings.GlobalReference.Default.SecureCoreG4ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SecureCoreG4ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SecureCoreG4ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DataAcess.Properties.Settings.GlobalReference.Default.SecureCoreG4ConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SpeciesTableAdapter" GeneratorDataComponentClassName="SpeciesTableAdapter" Name="Species" UserDataComponentName="SpeciesTableAdapter">
@@ -71,7 +71,7 @@ SELECT idSpecie, CodeSpecie, DescSpecie FROM Species WHERE (idSpecie = @idSpecie
   <xs:element name="SecureCoreG4DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SecureCoreG4DataSet" msprop:Generator_UserDSName="SecureCoreG4DataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Species" msprop:Generator_TableClassName="SpeciesDataTable" msprop:Generator_TableVarName="tableSpecies" msprop:Generator_TablePropName="Species" msprop:Generator_RowDeletingName="SpeciesRowDeleting" msprop:Generator_RowChangingName="SpeciesRowChanging" msprop:Generator_RowEvHandlerName="SpeciesRowChangeEventHandler" msprop:Generator_RowDeletedName="SpeciesRowDeleted" msprop:Generator_UserTableName="Species" msprop:Generator_RowChangedName="SpeciesRowChanged" msprop:Generator_RowEvArgName="SpeciesRowChangeEvent" msprop:Generator_RowClassName="SpeciesRow">
+        <xs:element name="Species" msprop:Generator_TableClassName="SpeciesDataTable" msprop:Generator_TableVarName="tableSpecies" msprop:Generator_RowChangedName="SpeciesRowChanged" msprop:Generator_TablePropName="Species" msprop:Generator_RowDeletingName="SpeciesRowDeleting" msprop:Generator_RowChangingName="SpeciesRowChanging" msprop:Generator_RowEvHandlerName="SpeciesRowChangeEventHandler" msprop:Generator_RowDeletedName="SpeciesRowDeleted" msprop:Generator_RowClassName="SpeciesRow" msprop:Generator_UserTableName="Species" msprop:Generator_RowEvArgName="SpeciesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idSpecie" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidSpecie" msprop:Generator_ColumnPropNameInRow="idSpecie" msprop:Generator_ColumnPropNameInTable="idSpecieColumn" msprop:Generator_UserColumnName="idSpecie" type="xs:int" />
