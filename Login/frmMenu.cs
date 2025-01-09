@@ -143,5 +143,11 @@ namespace Login
         {
             Application.Exit();
         }
+
+        private void rndpicUser_MouseHover(object sender, EventArgs e)
+        {
+            frmImageZoom frmZoom = new frmImageZoom(rndpicUser);
+            frmZoom.Show();
+        }
     }
 }
