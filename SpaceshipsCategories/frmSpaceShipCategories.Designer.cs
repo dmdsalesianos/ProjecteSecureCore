@@ -38,7 +38,7 @@ namespace SpaceShipCategories
             // txtBoxCodeSpaceShipCategory
             // 
             this.txtBoxCodeSpaceShipCategory.EsForanea = false;
-            this.txtBoxCodeSpaceShipCategory.Location = new System.Drawing.Point(435, 198);
+            this.txtBoxCodeSpaceShipCategory.Location = new System.Drawing.Point(289, 189);
             this.txtBoxCodeSpaceShipCategory.Name = "txtBoxCodeSpaceShipCategory";
             this.txtBoxCodeSpaceShipCategory.NomCampBBDD = "CodeSpaceShipCategory";
             this.txtBoxCodeSpaceShipCategory.PermetreBuit = true;
@@ -49,7 +49,7 @@ namespace SpaceShipCategories
             // txtBoxDescSpaceShipCategory
             // 
             this.txtBoxDescSpaceShipCategory.EsForanea = false;
-            this.txtBoxDescSpaceShipCategory.Location = new System.Drawing.Point(435, 249);
+            this.txtBoxDescSpaceShipCategory.Location = new System.Drawing.Point(289, 240);
             this.txtBoxDescSpaceShipCategory.Name = "txtBoxDescSpaceShipCategory";
             this.txtBoxDescSpaceShipCategory.NomCampBBDD = "DescSpaceShipCategory";
             this.txtBoxDescSpaceShipCategory.PermetreBuit = true;
@@ -60,20 +60,20 @@ namespace SpaceShipCategories
             // lblCodeSpaceShipCategory
             // 
             this.lblCodeSpaceShipCategory.AutoSize = true;
-            this.lblCodeSpaceShipCategory.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodeSpaceShipCategory.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F);
             this.lblCodeSpaceShipCategory.Location = new System.Drawing.Point(40, 192);
             this.lblCodeSpaceShipCategory.Name = "lblCodeSpaceShipCategory";
-            this.lblCodeSpaceShipCategory.Size = new System.Drawing.Size(358, 33);
+            this.lblCodeSpaceShipCategory.Size = new System.Drawing.Size(210, 20);
             this.lblCodeSpaceShipCategory.TabIndex = 7;
             this.lblCodeSpaceShipCategory.Text = "Code spacehip category";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F);
             this.label1.Location = new System.Drawing.Point(33, 243);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(371, 33);
+            this.label1.Size = new System.Drawing.Size(217, 20);
             this.label1.TabIndex = 8;
             this.label1.Text = "Desc spaceship category";
             // 

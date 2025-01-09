@@ -38,6 +38,7 @@ namespace Base
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(35, 342);
@@ -46,7 +47,7 @@ namespace Base
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1467, 565);
+            this.dataGridView1.Size = new System.Drawing.Size(1467, 652);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.TabStop = false;
             // 
@@ -112,9 +113,9 @@ namespace Base
         }
 
         #endregion
-        protected System.Windows.Forms.DataGridView dataGridView1;
         private CustomControls.RJControls.RJButton rjbtnAgregar;
         private CustomControls.RJControls.RJButton rjbtnActualitzar;
+        protected System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

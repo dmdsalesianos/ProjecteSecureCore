@@ -206,6 +206,7 @@ namespace Planets
             this.lblPortPlanet.Size = new System.Drawing.Size(99, 20);
             this.lblPortPlanet.TabIndex = 27;
             this.lblPortPlanet.Text = "Port Planet";
+            this.lblPortPlanet.Visible = false;
             // 
             // lblPortPlanet1
             // 
@@ -217,6 +218,7 @@ namespace Planets
             this.lblPortPlanet1.Size = new System.Drawing.Size(113, 20);
             this.lblPortPlanet1.TabIndex = 29;
             this.lblPortPlanet1.Text = "Port Planet 1";
+            this.lblPortPlanet1.Visible = false;
             // 
             // swtxtPortPlanet
             // 
@@ -229,6 +231,7 @@ namespace Planets
             this.swtxtPortPlanet.Size = new System.Drawing.Size(194, 26);
             this.swtxtPortPlanet.TabIndex = 8;
             this.swtxtPortPlanet.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
+            this.swtxtPortPlanet.Visible = false;
             // 
             // swtxtbox
             // 
@@ -241,6 +244,7 @@ namespace Planets
             this.swtxtbox.Size = new System.Drawing.Size(194, 26);
             this.swtxtbox.TabIndex = 4;
             this.swtxtbox.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
+            this.swtxtbox.Visible = false;
             // 
             // swtxtIPPlanet
             // 

@@ -29,11 +29,7 @@ namespace Users
                 string rutaBaseImagenes = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "imatges", "usuarios");
 
                 // Ruta del informe
-                string rutaInforme = Path.Combine(
-                    Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory.TrimEnd(Path.DirectorySeparatorChar)),
-                    "Users",
-                    "UserCard.rpt"
-                );
+                string rutaInforme = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "UserCard.rpt");
 
                 if (!File.Exists(rutaInforme))
                 {
