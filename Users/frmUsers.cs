@@ -1,27 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Base;
-using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.Shared;
-using System.Configuration;
-using System.Data.SqlClient; // Para SqlConnection y SqlDataAdapter
-using System.Web.WebPages;
-
 
 
 namespace Users
 {
     public partial class frmUsers : baseForm
     {
-        protected int idUserDG;
         string nombreCarpeta = "usuarios";
         string imagesDirectory = Path.Combine(Application.StartupPath, "imatges");
 
@@ -50,8 +37,7 @@ namespace Users
 
             //pictureBoxLoading.Visible = false;
         }
-
-        protected override void BaseForm_Load(object sender, EventArgs e)
+        private void frmUsers_Load(object sender, EventArgs e)
         {
             base.BaseForm_Load(sender, e);
 
@@ -68,21 +54,22 @@ namespace Users
             {
                 dataGridView1.Columns["Salt"].Visible = false;
             }
+            if (dataGridView1.Columns.Contains("Photo"))
+            {
+                dataGridView1.Columns["Photo"].Visible = false;
+            }
         }
 
         private void rjbtnInforme_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dataGridView1.SelectedCells.Count > 0)
             {
-                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-                idUserDG = Convert.ToInt32(selectedRow.Cells[0].Value);
-            }
+                int rowIndex = dataGridView1.SelectedCells[0].RowIndex;
+                int userId = int.Parse(dataGridView1.Rows[rowIndex].Cells["idUser"].Value.ToString());
 
-
-            //MostrarInforme(idUserDG);
-
-            frmCrystalReport frmCrystal = new frmCrystalReport(idUserDG);
-            frmCrystal.Show();
+                frmCrystalReport frmCrystal = new frmCrystalReport(userId);
+                frmCrystal.Show();
+            }            
         }
 
         private void rjbtnImage_Click(object sender, EventArgs e)

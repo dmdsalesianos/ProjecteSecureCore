@@ -32,7 +32,7 @@ namespace Users
                 string rutaInforme = Path.Combine(
                     Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory.TrimEnd(Path.DirectorySeparatorChar)),
                     "Users",
-                    "TarjetaIdentificacion.rpt"
+                    "UserCard.rpt"
                 );
 
                 if (!File.Exists(rutaInforme))
@@ -43,7 +43,7 @@ namespace Users
 
                 // Crear el documento del informe
                 ReportDocument informe = new ReportDocument();
-                informe.Load(rutaInforme);
+                informe.Load("UserCard.rpt");
 
                 // Configurar las credenciales de conexión
                 ConnectionInfo crConnectionInfo = new ConnectionInfo
@@ -65,7 +65,9 @@ namespace Users
 
                 // Configurar el parámetro idUser
                 ParameterFieldDefinitions crParameterFieldDefinitions = informe.DataDefinition.ParameterFields;
-                ParameterFieldDefinition crParameterFieldDefinition = crParameterFieldDefinitions["idUser"];
+
+
+                ParameterFieldDefinition crParameterFieldDefinition = crParameterFieldDefinitions["UserId"];
                 ParameterValues crParameterValues = new ParameterValues();
                 ParameterDiscreteValue crParameterDiscreteValue = new ParameterDiscreteValue
                 {
@@ -78,13 +80,11 @@ namespace Users
 
                 // Configurar el parámetro RutaBase
                 crParameterFieldDefinition = crParameterFieldDefinitions["RutaBase"];
-                crParameterValues = new ParameterValues();
                 crParameterDiscreteValue = new ParameterDiscreteValue
                 {
                     Value = rutaBaseImagenes
                 };
 
-                crParameterValues.Clear();
                 crParameterValues.Add(crParameterDiscreteValue);
                 crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
 

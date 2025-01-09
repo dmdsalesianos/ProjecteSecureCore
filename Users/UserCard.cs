@@ -16,14 +16,14 @@ namespace Users {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class TarjetaIdentificacion : ReportClass {
+    public class UserCard : ReportClass {
         
-        public TarjetaIdentificacion() {
+        public UserCard() {
         }
         
         public override string ResourceName {
             get {
-                return "TarjetaIdentificacion.rpt";
+                return "UserCard.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Users {
         
         public override string FullResourceName {
             get {
-                return "Users.TarjetaIdentificacion.rpt";
+                return "Users.UserCard.rpt";
             }
             set {
                 // Do nothing
@@ -90,7 +90,7 @@ namespace Users {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_idUser {
+        public CrystalDecisions.Shared.IParameterField Parameter_UserId {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -98,57 +98,17 @@ namespace Users {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_idUserCategory {
-            get {
-                return this.DataDefinition.ParameterFields[1];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_idPlanet {
-            get {
-                return this.DataDefinition.ParameterFields[2];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_idUserRank {
-            get {
-                return this.DataDefinition.ParameterFields[3];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_idSpecie {
-            get {
-                return this.DataDefinition.ParameterFields[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.Shared.IParameterField Parameter_RutaBase {
             get {
-                return this.DataDefinition.ParameterFields[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_UsuarioID {
-            get {
-                return this.DataDefinition.ParameterFields[6];
+                return this.DataDefinition.ParameterFields[1];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedTarjetaIdentificacion : Component, ICachedReport {
+    public class CachedUserCard : Component, ICachedReport {
         
-        public CachedTarjetaIdentificacion() {
+        public CachedUserCard() {
         }
         
         [Browsable(false)]
@@ -185,7 +145,7 @@ namespace Users {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            TarjetaIdentificacion rpt = new TarjetaIdentificacion();
+            UserCard rpt = new UserCard();
             rpt.Site = this.Site;
             return rpt;
         }
