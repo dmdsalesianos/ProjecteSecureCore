@@ -49,7 +49,7 @@ namespace Login
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Login.Properties.Resources.Name_2490F1;
+            this.pictureBox2.Image = global::Login.Properties.Resources.Name_FFFFFF;
             this.pictureBox2.Location = new System.Drawing.Point(48, 197);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(276, 49);
@@ -71,7 +71,7 @@ namespace Login
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Login.Properties.Resources.Only_logo_2490F1;
+            this.pictureBox1.Image = global::Login.Properties.Resources.Only_logo_FFFFFF;
             this.pictureBox1.Location = new System.Drawing.Point(120, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(140, 188);
@@ -104,7 +104,7 @@ namespace Login
             this.lblConfirmPassword.AutoSize = true;
             this.lblConfirmPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfirmPassword.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.lblConfirmPassword.ForeColor = System.Drawing.Color.White;
             this.lblConfirmPassword.Location = new System.Drawing.Point(4, 402);
             this.lblConfirmPassword.Name = "lblConfirmPassword";
             this.lblConfirmPassword.Size = new System.Drawing.Size(129, 25);
@@ -166,7 +166,7 @@ namespace Login
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 320);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 25);
@@ -175,6 +175,7 @@ namespace Login
             // 
             // pnlPass
             // 
+            this.pnlPass.BackColor = System.Drawing.Color.Transparent;
             this.pnlPass.Controls.Add(this.rjbtnBack);
             this.pnlPass.Controls.Add(this.rjbtnSave);
             this.pnlPass.Controls.Add(this.pictureBox1);
@@ -187,17 +188,17 @@ namespace Login
             this.pnlPass.Controls.Add(this.lblConfirmPassword);
             this.pnlPass.Controls.Add(this.btnShowNewPassword);
             this.pnlPass.Controls.Add(this.txtNewPassword);
-            this.pnlPass.Location = new System.Drawing.Point(357, 40);
+            this.pnlPass.Location = new System.Drawing.Point(352, 40);
             this.pnlPass.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlPass.Name = "pnlPass";
-            this.pnlPass.Size = new System.Drawing.Size(375, 588);
+            this.pnlPass.Size = new System.Drawing.Size(392, 588);
             this.pnlPass.TabIndex = 27;
             // 
             // rjbtnBack
             // 
-            this.rjbtnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.rjbtnBack.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.rjbtnBack.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.rjbtnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.rjbtnBack.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.rjbtnBack.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.rjbtnBack.BorderRadius = 10;
             this.rjbtnBack.BorderSize = 2;
             this.rjbtnBack.FlatAppearance.BorderSize = 0;
@@ -240,7 +241,7 @@ namespace Login
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(241)))), ((int)(((byte)(254)))));
-            this.BackgroundImage = global::Login.Properties.Resources.fondo;
+            this.BackgroundImage = global::Login.Properties.Resources.fondo_chat;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1064, 934);
             this.ControlBox = false;

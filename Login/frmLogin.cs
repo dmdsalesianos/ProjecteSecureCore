@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Security.Cryptography;
@@ -7,7 +6,6 @@ using System.Text;
 using System.Windows.Forms;
 using DataAccess;
 using System.Drawing;
-using System.Threading;
 using CustomControls;
 
 namespace Login
@@ -197,6 +195,7 @@ namespace Login
 
             dotCount = (dotCount + 1) % 4;
             lblLoadingMessage.Text = "Cooking" + new string('.', dotCount);
+            lblLoadingMessage.ForeColor = Color.White;
 
 
             if (rjProgressBar.Value >= rjProgressBar.Maximum)
@@ -222,7 +221,7 @@ namespace Login
             incremento = rjProgressBar.Maximum / (tiempoTotal / intervalo);
             rjProgressBar.Value = 0;
             rjProgressBar.ChannelColor = ColorTranslator.FromHtml("#232F5F");   // Color del canal de fondo
-            rjProgressBar.SliderColor = ColorTranslator.FromHtml("#2490F1");   // Color del progreso
+            rjProgressBar.SliderColor = Color.White;   // Color del progreso
             rjProgressBar.ForeBackColor = Color.Transparent;              // Fondo del texto transparente
             rjProgressBar.ShowValue = TextPosition.None;                  // No mostrar porcentaje
 

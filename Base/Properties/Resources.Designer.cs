@@ -83,6 +83,26 @@ namespace Base.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fondo_chat {
+            get {
+                object obj = ResourceManager.GetObject("fondo_chat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondo_chat_blanco {
+            get {
+                object obj = ResourceManager.GetObject("fondo_chat_blanco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fondo_cuadrados {
             get {
                 object obj = ResourceManager.GetObject("fondo_cuadrados", resourceCulture);

@@ -31,33 +31,70 @@ namespace Login
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.pnlHeader = new System.Windows.Forms.Panel();
+            this.pnlLogo = new System.Windows.Forms.Panel();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.pibLogoName = new System.Windows.Forms.PictureBox();
             this.pnlUserInfo = new System.Windows.Forms.Panel();
             this.rjbtnClose = new CustomControls.RJControls.RJButton();
             this.rndpicUser = new CustomControls.RoundedPictureBox();
             this.rjbtnLogOut = new CustomControls.RJControls.RJButton();
             this.lblName = new System.Windows.Forms.Label();
-            this.picLogo = new System.Windows.Forms.PictureBox();
-            this.pibLogoName = new System.Windows.Forms.PictureBox();
             this.pnlContenido = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlHeader.SuspendLayout();
-            this.pnlUserInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rndpicUser)).BeginInit();
+            this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pibLogoName)).BeginInit();
+            this.pnlUserInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rndpicUser)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlHeader
             // 
             this.pnlHeader.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.pnlHeader.Controls.Add(this.pnlLogo);
             this.pnlHeader.Controls.Add(this.pnlUserInfo);
-            this.pnlHeader.Controls.Add(this.picLogo);
-            this.pnlHeader.Controls.Add(this.pibLogoName);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(1084, 69);
             this.pnlHeader.TabIndex = 0;
+            // 
+            // pnlLogo
+            // 
+            this.pnlLogo.Controls.Add(this.picLogo);
+            this.pnlLogo.Controls.Add(this.pibLogoName);
+            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
+            this.pnlLogo.Name = "pnlLogo";
+            this.pnlLogo.Size = new System.Drawing.Size(279, 69);
+            this.pnlLogo.TabIndex = 0;
+            this.pnlLogo.Click += new System.EventHandler(this.pnlLogo_Click);
+            // 
+            // picLogo
+            // 
+            this.picLogo.BackColor = System.Drawing.Color.Transparent;
+            this.picLogo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.picLogo.Image = global::Login.Properties.Resources.Only_logo_FFFFFF;
+            this.picLogo.Location = new System.Drawing.Point(0, 0);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(76, 69);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 1;
+            this.picLogo.TabStop = false;
+            this.picLogo.Click += new System.EventHandler(this.picLogo_Click_1);
+            // 
+            // pibLogoName
+            // 
+            this.pibLogoName.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pibLogoName.Image = global::Login.Properties.Resources.Name_FFFFFF;
+            this.pibLogoName.Location = new System.Drawing.Point(78, 0);
+            this.pibLogoName.Name = "pibLogoName";
+            this.pibLogoName.Size = new System.Drawing.Size(201, 69);
+            this.pibLogoName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pibLogoName.TabIndex = 2;
+            this.pibLogoName.TabStop = false;
+            this.pibLogoName.Click += new System.EventHandler(this.pibLogoName_Click_1);
             // 
             // pnlUserInfo
             // 
@@ -137,28 +174,6 @@ namespace Login
             this.lblName.Text = "Login";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // picLogo
-            // 
-            this.picLogo.BackColor = System.Drawing.Color.Transparent;
-            this.picLogo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picLogo.Image = global::Login.Properties.Resources.Only_logo_FFFFFF;
-            this.picLogo.Location = new System.Drawing.Point(0, 0);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(76, 69);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogo.TabIndex = 1;
-            this.picLogo.TabStop = false;
-            // 
-            // pibLogoName
-            // 
-            this.pibLogoName.Image = global::Login.Properties.Resources.Name_FFFFFF;
-            this.pibLogoName.Location = new System.Drawing.Point(92, 15);
-            this.pibLogoName.Name = "pibLogoName";
-            this.pibLogoName.Size = new System.Drawing.Size(201, 38);
-            this.pibLogoName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pibLogoName.TabIndex = 2;
-            this.pibLogoName.TabStop = false;
-            // 
             // pnlContenido
             // 
             this.pnlContenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(198)))), ((int)(((byte)(250)))));
@@ -194,10 +209,11 @@ namespace Login
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.pnlHeader.ResumeLayout(false);
-            this.pnlUserInfo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.rndpicUser)).EndInit();
+            this.pnlLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pibLogoName)).EndInit();
+            this.pnlUserInfo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.rndpicUser)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -214,5 +230,6 @@ namespace Login
         private System.Windows.Forms.Panel pnlUserInfo;
         private CustomControls.RJControls.RJButton rjbtnLogOut;
         private CustomControls.RJControls.RJButton rjbtnClose;
+        private System.Windows.Forms.Panel pnlLogo;
     }
 }
