@@ -99,7 +99,7 @@ namespace Base
             }
         }
 
-        private void CargarDatos()
+        protected void CargarDatos()
         {
             // Cargar la tabla principal
             ds = dataAccess.PortarTaula(TableName);
