@@ -258,8 +258,8 @@ namespace Users
             // 
             // rjbtnRestablecerContraseña
             // 
-            this.rjbtnRestablecerContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.rjbtnRestablecerContraseña.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.rjbtnRestablecerContraseña.BackColor = System.Drawing.Color.Red;
+            this.rjbtnRestablecerContraseña.BackgroundColor = System.Drawing.Color.Red;
             this.rjbtnRestablecerContraseña.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjbtnRestablecerContraseña.BorderRadius = 0;
             this.rjbtnRestablecerContraseña.BorderSize = 0;
