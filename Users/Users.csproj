@@ -126,6 +126,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserCard.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserCard.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="frmCrystalReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +153,11 @@
       <DependentUpon>TarjetaIdentificacion.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="UserCard.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UserCard.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCrystalReport.resx">
       <DependentUpon>frmCrystalReport.cs</DependentUpon>
     </EmbeddedResource>

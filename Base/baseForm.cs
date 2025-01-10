@@ -65,6 +65,8 @@ namespace Base
 
             CargarDatos();
             MakeDataBindigs();
+
+            
         }
 
         protected void ValidarTextBox(object sender, EventArgs e)
@@ -99,7 +101,7 @@ namespace Base
             }
         }
 
-        private void CargarDatos()
+        protected void CargarDatos()
         {
             // Cargar la tabla principal
             ds = dataAccess.PortarTaula(TableName);

@@ -47,6 +47,11 @@ namespace Planets
             cmbSector.DataSource = ds.Tables["Sectors"];
             cmbNatives.DataSource = ds.Tables["Species"];
             cmbFiliations.DataSource = ds.Tables["Filiations"];
+
+            if (dataGridView1.Columns.Contains("PlanetPicture"))
+            {
+                dataGridView1.Columns["PlanetPicture"].Visible = false;
+            }
         }
 
         private void rjbtnImage_Click(object sender, EventArgs e)

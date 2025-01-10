@@ -49,9 +49,9 @@ namespace Login
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Login.Properties.Resources.Name_2490F1;
+            this.pictureBox2.Image = global::Login.Properties.Resources.Name_FFFFFF;
             this.pictureBox2.Location = new System.Drawing.Point(32, 128);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(184, 32);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -73,9 +73,9 @@ namespace Login
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Login.Properties.Resources.Only_logo_2490F1;
+            this.pictureBox1.Image = global::Login.Properties.Resources.Only_logo_FFFFFF;
             this.pictureBox1.Location = new System.Drawing.Point(80, 8);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(93, 122);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -94,7 +94,7 @@ namespace Login
             this.btnShowNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowNewPassword.ForeColor = System.Drawing.Color.Black;
             this.btnShowNewPassword.Location = new System.Drawing.Point(217, 231);
-            this.btnShowNewPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.btnShowNewPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnShowNewPassword.Name = "btnShowNewPassword";
             this.btnShowNewPassword.Size = new System.Drawing.Size(21, 23);
             this.btnShowNewPassword.TabIndex = 17;
@@ -108,7 +108,7 @@ namespace Login
             this.lblConfirmPassword.AutoSize = true;
             this.lblConfirmPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfirmPassword.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.lblConfirmPassword.ForeColor = System.Drawing.Color.White;
             this.lblConfirmPassword.Location = new System.Drawing.Point(3, 261);
             this.lblConfirmPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblConfirmPassword.Name = "lblConfirmPassword";
@@ -120,7 +120,7 @@ namespace Login
             // 
             this.txtConfirmPassword.Font = new System.Drawing.Font("Arial", 16F);
             this.txtConfirmPassword.Location = new System.Drawing.Point(6, 279);
-            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.Size = new System.Drawing.Size(242, 32);
             this.txtConfirmPassword.TabIndex = 14;
@@ -131,7 +131,7 @@ namespace Login
             // 
             this.txtNewPassword.Font = new System.Drawing.Font("Arial", 16F);
             this.txtNewPassword.Location = new System.Drawing.Point(6, 227);
-            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.Size = new System.Drawing.Size(242, 32);
             this.txtNewPassword.TabIndex = 13;
@@ -161,7 +161,7 @@ namespace Login
             this.btnShowConfirmPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowConfirmPassword.Location = new System.Drawing.Point(217, 283);
-            this.btnShowConfirmPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.btnShowConfirmPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnShowConfirmPassword.Name = "btnShowConfirmPassword";
             this.btnShowConfirmPassword.Size = new System.Drawing.Size(21, 23);
             this.btnShowConfirmPassword.TabIndex = 20;
@@ -175,7 +175,7 @@ namespace Login
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(2, 208);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
@@ -185,6 +185,7 @@ namespace Login
             // 
             // pnlPass
             // 
+            this.pnlPass.BackColor = System.Drawing.Color.Transparent;
             this.pnlPass.Controls.Add(this.rjbtnBack);
             this.pnlPass.Controls.Add(this.rjbtnSave);
             this.pnlPass.Controls.Add(this.pictureBox1);
@@ -197,16 +198,16 @@ namespace Login
             this.pnlPass.Controls.Add(this.lblConfirmPassword);
             this.pnlPass.Controls.Add(this.btnShowNewPassword);
             this.pnlPass.Controls.Add(this.txtNewPassword);
-            this.pnlPass.Location = new System.Drawing.Point(238, 26);
+            this.pnlPass.Location = new System.Drawing.Point(235, 26);
             this.pnlPass.Name = "pnlPass";
-            this.pnlPass.Size = new System.Drawing.Size(250, 382);
+            this.pnlPass.Size = new System.Drawing.Size(261, 382);
             this.pnlPass.TabIndex = 27;
             // 
             // rjbtnBack
             // 
-            this.rjbtnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.rjbtnBack.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.rjbtnBack.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.rjbtnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.rjbtnBack.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.rjbtnBack.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.rjbtnBack.BorderRadius = 10;
             this.rjbtnBack.BorderSize = 2;
             this.rjbtnBack.FlatAppearance.BorderSize = 0;
@@ -242,20 +243,20 @@ namespace Login
             this.rjbtnSave.UseVisualStyleBackColor = false;
             this.rjbtnSave.Click += new System.EventHandler(this.rjbtnSave_Click);
             // 
-            // frmChangePassword
+            // frmChangePasswordd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(241)))), ((int)(((byte)(254)))));
-            this.BackgroundImage = global::Login.Properties.Resources.fondo;
+            this.BackgroundImage = global::Login.Properties.Resources.fondo_chat;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(709, 607);
             this.ControlBox = false;
             this.Controls.Add(this.pnlPass);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "frmChangePassword";
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "frmChangePasswordd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmChangePassword";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

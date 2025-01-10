@@ -41,19 +41,22 @@ namespace Users
             this.crystalReportViewer1.DisplayToolbar = false;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(907, 952);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(605, 619);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             this.crystalReportViewer1.ToolPanelWidth = 675;
             // 
             // frmCrystalReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 952);
+            this.ClientSize = new System.Drawing.Size(605, 619);
             this.Controls.Add(this.crystalReportViewer1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmCrystalReport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCrystalReport";
             this.Load += new System.EventHandler(this.frmCrystalReport_Load);
             this.ResumeLayout(false);

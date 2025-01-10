@@ -24,6 +24,8 @@ namespace Login
         private MantenimentDades manteniment;
         private string connectionString;
         private DataSet dsUser;
+        private bool isDarkMode = false;
+        private Dictionary<Control, (Color BackColor, Color ForeColor)> originalColors = new Dictionary<Control, (Color, Color)>();
 
         public frmMenu(DataSet dsUser)
         {
@@ -55,11 +57,22 @@ namespace Login
                 {
                     rndpicUser.ImageLocation = null;
                 }
-
             }
 
             ButonForms();
+
+            foreach (Control control in this.Controls)
+            {
+                // Verifica si el control es uno de los tipos especificados
+                
+                    // Guardamos tanto el BackColor como el ForeColor en una tupla
+                    originalColors[control] = (control.BackColor, control.ForeColor); // Guardamos la tupla de colores
+                
+            }
+
+
         }
+
 
         private void ButonForms()
         {
@@ -69,7 +82,7 @@ namespace Login
                            "FROM MenuOptions mo, UserCategories uc, Users u " +
                            "WHERE u.idUserCategory = uc.idUserCategory " +
                            "AND mo.AccessLevel <= uc.AccessLevel " +
-                           $"AND u.idUser = {idUser}";                                                   
+                           $"AND u.idUser = {idUser}";
 
             DataSet dsMenuOptions = manteniment.PortarPerConsulta(query);
 
@@ -123,7 +136,7 @@ namespace Login
                 pnlMenu.Dock = DockStyle.Left;  // O DockStyle.Fill si deseas que ocupe todo el espacio disponible
                 pnlMenu.FlowDirection = FlowDirection.TopDown;  // Esto hará que los botones se apilen verticalmente
                 pnlMenu.WrapContents = false;
-                pnlMenu.Width = btn.Width + 15;
+                pnlMenu.Width = btn.Width + 18;
 
                 // Lo añadimos al panel del formulario principal (en este caso 'targetPanel')
                 pnlMenu.Controls.Add(btn);
@@ -142,6 +155,164 @@ namespace Login
         private void rjbtnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void pnlLogo_Click(object sender, EventArgs e)
+        {
+            pnlContenido.Controls.Clear();
+            foreach (MenuButton btn in pnlMenu.Controls)
+            {
+                btn.BorderStyle = BorderStyle.None;
+                if (btn.BackColor != btn.ColorOri)
+                {
+                    btn.BackColor = btn.ColorOri;
+                }
+
+            }
+        }
+        private void pibLogoName_Click_1(object sender, EventArgs e)
+        {
+            pnlContenido.Controls.Clear();
+            foreach (MenuButton btn in pnlMenu.Controls)
+            {
+                btn.BorderStyle = BorderStyle.None;
+                if (btn.BackColor != btn.ColorOri)
+                {
+                    btn.BackColor = btn.ColorOri;
+                }
+            }
+        }
+
+        private void picLogo_Click_1(object sender, EventArgs e)
+        {
+            pnlContenido.Controls.Clear();
+            foreach (MenuButton btn in pnlMenu.Controls)
+            {
+                btn.BorderStyle = BorderStyle.None;
+                if (btn.BackColor != btn.ColorOri)
+                {
+                    btn.BackColor = btn.ColorOri;
+                }
+            }
+        }
+
+        private void rndpicUser_Click(object sender, EventArgs e)
+        {
+            frmImageZoom frmZoom = new frmImageZoom(rndpicUser);
+
+            frmZoom.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            isDarkMode = !isDarkMode;
+            SetMode(this); // Llamamos al método SetMode con el formulario principal
+        }
+
+        private void SetMode(Control parentControl)
+        {
+            if (isDarkMode)
+            {
+                // Almacenar los colores originales si aún no están almacenados
+                if (!originalColors.ContainsKey(parentControl))
+                {
+                    originalColors[parentControl] = (parentControl.BackColor, parentControl.ForeColor);
+                }
+
+                // Cambiar los colores al modo oscuro
+                parentControl.BackColor = Color.FromArgb(30, 30, 30); // Fondo oscuro
+                parentControl.ForeColor = Color.White; // Texto blanco
+
+                foreach (Control control in parentControl.Controls)
+                {
+                    if (!originalColors.ContainsKey(control)) // Almacenar colores originales si no están
+                    {
+                        originalColors[control] = (control.BackColor, control.ForeColor);
+                    }
+
+                    // Excluir controles específicos como TextBox, Button, etc.
+                    if (control is TextBox || control is Button || control is RoundedPictureBox)
+                    {
+                        continue;
+                    }
+
+                    // Cambiar el fondo de Labels, Panels, etc.
+                    if (control is Label || control is Panel)
+                    {
+                        control.BackColor = Color.FromArgb(50, 50, 50); // Fondo oscuro para estos controles
+                        control.ForeColor = Color.White; // Texto blanco
+                    }
+
+                    // Cambiar el estilo de DataGridView para modo oscuro
+                    if (control is DataGridView dataGridView)
+                    {
+                        dataGridView.BackgroundColor = Color.FromArgb(18, 18, 18); // Fondo azul oscuro
+                        dataGridView.DefaultCellStyle.BackColor = Color.FromArgb(30, 30, 30); // Fondo de celdas oscuro
+                        dataGridView.DefaultCellStyle.ForeColor = Color.White; // Texto blanco
+                        dataGridView.GridColor = Color.FromArgb(80, 80, 80); // Color de la cuadrícula
+                    }
+
+                    // Recursión para los controles dentro de otros formularios o user controls
+                    if (control.Controls.Count > 0)
+                    {
+                        SetMode(control); // Recursión para los controles dentro de este control
+                    }
+                }
+            }
+            else
+            {
+                // Restaurar los colores originales
+                if (originalColors.ContainsKey(parentControl))
+                {
+                    parentControl.BackColor = originalColors[parentControl].BackColor;
+                    parentControl.ForeColor = originalColors[parentControl].ForeColor;
+                }
+
+                foreach (Control control in parentControl.Controls)
+                {
+                    // Restaurar colores originales para cada control
+                    if (originalColors.ContainsKey(control))
+                    {
+                        control.BackColor = originalColors[control].BackColor;
+                        control.ForeColor = originalColors[control].ForeColor;
+                    }
+
+                    // Excluir controles específicos como TextBox, Button, etc.
+                    if (control is TextBox || control is Button)
+                    {
+                        continue;
+                    }
+
+                    lblName.BackColor = Color.RoyalBlue;
+                    picLogo.BackColor = Color.RoyalBlue;
+                    pibLogoName.BackColor = Color.RoyalBlue;
+                    pnlUserInfo.BackColor = Color.RoyalBlue;
+
+                    // Restaurar DataGridView al estilo original
+                    if (control is DataGridView dataGridView)
+                    {
+                        dataGridView.BackgroundColor = SystemColors.Control; // Fondo original
+                        dataGridView.DefaultCellStyle.BackColor = SystemColors.Window; // Fondo de celdas original
+                        dataGridView.DefaultCellStyle.ForeColor = SystemColors.ControlText; // Texto negro original
+                        dataGridView.GridColor = SystemColors.ControlDark; // Color de cuadrícula original
+                    }
+
+                    // Recursión para los controles dentro de otros formularios o user controls
+                    if (control.Controls.Count > 0)
+                    {
+                        SetMode(control); // Recursión para los controles dentro de este control
+                    }
+                }
+            }
+        }
+
+
+
+        private void rndpicUser_MouseHover(object sender, EventArgs e)
+        {
+            frmImageZoom frmZoom = new frmImageZoom(rndpicUser);
+
+            frmZoom.Show();
         }
     }
 }

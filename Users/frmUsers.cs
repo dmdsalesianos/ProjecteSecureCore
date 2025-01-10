@@ -1,27 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Base;
-using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.Shared;
-using System.Configuration;
-using System.Data.SqlClient; // Para SqlConnection y SqlDataAdapter
-using System.Web.WebPages;
-
 
 
 namespace Users
 {
     public partial class frmUsers : baseForm
     {
-        protected int idUserDG;
         string nombreCarpeta = "usuarios";
         string imagesDirectory = Path.Combine(Application.StartupPath, "imatges");
 
@@ -50,8 +38,7 @@ namespace Users
 
             //pictureBoxLoading.Visible = false;
         }
-
-        protected override void BaseForm_Load(object sender, EventArgs e)
+        private void frmUsers_Load(object sender, EventArgs e)
         {
             base.BaseForm_Load(sender, e);
 
@@ -68,92 +55,23 @@ namespace Users
             {
                 dataGridView1.Columns["Salt"].Visible = false;
             }
+            if (dataGridView1.Columns.Contains("Photo"))
+            {
+                dataGridView1.Columns["Photo"].Visible = false;
+            }
         }
 
         private void rjbtnInforme_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dataGridView1.SelectedCells.Count > 0)
             {
-                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-                idUserDG = Convert.ToInt32(selectedRow.Cells[0].Value);
-            }
+                int rowIndex = dataGridView1.SelectedCells[0].RowIndex;
+                int userId = int.Parse(dataGridView1.Rows[rowIndex].Cells["idUser"].Value.ToString());
 
-
-            //MostrarInforme(idUserDG);
-
-            frmCrystalReport frmCrystal = new frmCrystalReport(idUserDG);
-            frmCrystal.Show();
+                frmCrystalReport frmCrystal = new frmCrystalReport(userId);
+                frmCrystal.Show();
+            }            
         }
-
-        //private void MostrarInforme(int idPersona)
-        //{
-        //    try
-        //    {
-        //        // Mostrar animación de carga
-        //        pictureBoxLoading.Visible = true;
-        //        panel1.Visible = true;
-
-        //        // Ruta base dinámica para imágenes
-        //        string rutaBaseImagenes = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "imatges", "usuarios");
-
-        //        // Ruta del informe
-        //        string rutaInforme = Path.Combine(
-        //            Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory.TrimEnd(Path.DirectorySeparatorChar)),
-        //            "Users",
-        //            "TarjetaIdentificacion.rpt"
-        //        );
-        //        ReportDocument informe = new ReportDocument();
-        //        informe.Load(rutaInforme);
-
-        //        // Configurar las credenciales de conexión
-        //        ConnectionInfo crConnectionInfo = new ConnectionInfo
-        //        {
-        //            ServerName = "sqlserver.S2AM.sdslab.cat",
-        //            DatabaseName = "SecureCoreG4",
-        //            UserID = "G4",
-        //            Password = "12345G4aA2425."
-        //        };
-
-        //        // Aplicar las credenciales a todas las tablas del informe
-        //        Tables crTables = informe.Database.Tables;
-        //        foreach (Table crTable in crTables)
-        //        {
-        //            TableLogOnInfo crTableLogOnInfo = crTable.LogOnInfo;
-        //            crTableLogOnInfo.ConnectionInfo = crConnectionInfo;
-        //            crTable.ApplyLogOnInfo(crTableLogOnInfo);
-        //        }
-
-        //        // Configurar parámetros
-        //        ParameterFieldDefinitions parametros = informe.DataDefinition.ParameterFields;
-
-        //        // Parámetro idUser
-        //        ParameterFieldDefinition parametroPersonaId = parametros["idUser"];
-        //        ParameterDiscreteValue valorParametroId = new ParameterDiscreteValue { Value = idPersona };
-        //        parametroPersonaId.CurrentValues.Clear();
-        //        parametroPersonaId.CurrentValues.Add(valorParametroId);
-        //        parametroPersonaId.ApplyCurrentValues(parametroPersonaId.CurrentValues);
-
-        //        // Parámetro RutaBase
-        //        ParameterFieldDefinition parametroRutaBase = parametros["RutaBase"];
-        //        ParameterDiscreteValue valorParametroRuta = new ParameterDiscreteValue { Value = rutaBaseImagenes };
-        //        parametroRutaBase.CurrentValues.Clear();
-        //        parametroRutaBase.CurrentValues.Add(valorParametroRuta);
-        //        parametroRutaBase.ApplyCurrentValues(parametroRutaBase.CurrentValues);
-
-        //        // Asignar el informe al visor
-        //        crystalReportViewer1.ReportSource = informe;
-        //        crystalReportViewer1.Refresh();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"Error al cargar el informe: {ex.Message}");
-        //    }
-        //    finally
-        //    {
-        //        // Ocultar animación de carga
-        //        pictureBoxLoading.Visible = false;
-        //    }
-        //}
 
         private void rjbtnImage_Click(object sender, EventArgs e)
         {
@@ -207,7 +125,36 @@ namespace Users
             }
         }
 
-        
+        private void rjbtnRestablecerContraseña_Click(object sender, EventArgs e)
+        {
 
+            // Mostrar ventana de confirmación
+            DialogResult resultado = MessageBox.Show(
+                "¿Estás seguro de que deseas restablecer la contraseña?",
+                "Confirmación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            // Si el usuario confirma, realiza la acción
+            if (resultado == DialogResult.Yes)
+            {
+                if (dataGridView1.SelectedCells.Count > 0)
+                {
+                    int rowIndex = dataGridView1.SelectedCells[0].RowIndex;
+                    var userId = dataGridView1.Rows[rowIndex].Cells["idUser"].Value;
+
+                    if (userId != null)
+                    {
+                        string query = "UPDATE Users " +
+                               "SET password = '12345aA' " +
+                               $"WHERE idUser = {userId}";
+
+                        dataAccess.Executa(query);
+                        base.CargarDatos();
+                    }
+                }
+            }
+        }
     }
 }

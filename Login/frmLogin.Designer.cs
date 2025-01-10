@@ -31,6 +31,7 @@ namespace Login
         {
             this.components = new System.ComponentModel.Container();
             this.pnlLogin = new System.Windows.Forms.Panel();
+            this.lblChangePassword = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Login = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,24 +42,23 @@ namespace Login
             this.Error_label = new System.Windows.Forms.Label();
             this.textBox_password = new System.Windows.Forms.TextBox();
             this.pnlLoading = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.lblLoadingMessage = new System.Windows.Forms.Label();
+            this.lblUserCategory = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.imgUser = new CustomControls.RoundedPictureBox();
             this.rjProgressBar = new CustomControls.RJProgressBar();
             this.btnClose = new CustomControls.RJControls.RJButton();
             this.rjbtnLogin = new CustomControls.RJControls.RJButton();
-            this.lblChangePassword = new System.Windows.Forms.Label();
             this.pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlLoading.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgUser)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLogin
             // 
+            this.pnlLogin.BackColor = System.Drawing.Color.Transparent;
             this.pnlLogin.Controls.Add(this.lblChangePassword);
             this.pnlLogin.Controls.Add(this.btnClose);
             this.pnlLogin.Controls.Add(this.rjbtnLogin);
@@ -77,9 +77,23 @@ namespace Login
             this.pnlLogin.Size = new System.Drawing.Size(211, 425);
             this.pnlLogin.TabIndex = 12;
             // 
+            // lblChangePassword
+            // 
+            this.lblChangePassword.AutoSize = true;
+            this.lblChangePassword.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChangePassword.Location = new System.Drawing.Point(56, 383);
+            this.lblChangePassword.Name = "lblChangePassword";
+            this.lblChangePassword.Size = new System.Drawing.Size(105, 12);
+            this.lblChangePassword.TabIndex = 16;
+            this.lblChangePassword.Text = "Change Password";
+            this.lblChangePassword.Visible = false;
+            this.lblChangePassword.Click += new System.EventHandler(this.lblChangePassword_Click);
+            this.lblChangePassword.MouseEnter += new System.EventHandler(this.lblChangePassword_MouseEnter);
+            this.lblChangePassword.MouseLeave += new System.EventHandler(this.lblChangePassword_MouseLeave);
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Login.Properties.Resources.Only_logo_2490F1;
+            this.pictureBox1.Image = global::Login.Properties.Resources.Only_logo_FFFFFF;
             this.pictureBox1.Location = new System.Drawing.Point(68, 1);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
@@ -105,17 +119,18 @@ namespace Login
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label2.Location = new System.Drawing.Point(3, 270);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(2, 266);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(69, 17);
             this.label2.TabIndex = 6;
             this.label2.Text = "Password";
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Login.Properties.Resources.Name_2490F1;
+            this.pictureBox2.Image = global::Login.Properties.Resources.Name_FFFFFF;
             this.pictureBox2.Location = new System.Drawing.Point(23, 126);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
@@ -128,11 +143,12 @@ namespace Login
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label1.Location = new System.Drawing.Point(3, 218);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(2, 215);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.Size = new System.Drawing.Size(38, 17);
             this.label1.TabIndex = 5;
             this.label1.Text = "User";
             // 
@@ -194,52 +210,49 @@ namespace Login
             // pnlLoading
             // 
             this.pnlLoading.BackColor = System.Drawing.Color.Transparent;
-            this.pnlLoading.Controls.Add(this.pictureBox3);
+            this.pnlLoading.Controls.Add(this.imgUser);
+            this.pnlLoading.Controls.Add(this.lblUserCategory);
+            this.pnlLoading.Controls.Add(this.lblName);
             this.pnlLoading.Controls.Add(this.rjProgressBar);
-            this.pnlLoading.Controls.Add(this.pictureBox4);
-            this.pnlLoading.Controls.Add(this.lblLoadingMessage);
             this.pnlLoading.Location = new System.Drawing.Point(50, 127);
             this.pnlLoading.Name = "pnlLoading";
-            this.pnlLoading.Size = new System.Drawing.Size(432, 265);
+            this.pnlLoading.Size = new System.Drawing.Size(432, 307);
             this.pnlLoading.TabIndex = 15;
             // 
-            // pictureBox3
+            // lblUserCategory
             // 
-            this.pictureBox3.Image = global::Login.Properties.Resources.Only_logo_2490F1;
-            this.pictureBox3.Location = new System.Drawing.Point(179, 14);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(93, 122);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
+            this.lblUserCategory.AutoSize = true;
+            this.lblUserCategory.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserCategory.ForeColor = System.Drawing.Color.White;
+            this.lblUserCategory.Location = new System.Drawing.Point(150, 243);
+            this.lblUserCategory.Name = "lblUserCategory";
+            this.lblUserCategory.Size = new System.Drawing.Size(138, 18);
+            this.lblUserCategory.TabIndex = 15;
+            this.lblUserCategory.Text = "lblUserCategory";
             // 
-            // pictureBox4
+            // lblName
             // 
-            this.pictureBox4.Image = global::Login.Properties.Resources.Name_2490F1;
-            this.pictureBox4.Location = new System.Drawing.Point(130, 139);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(184, 32);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 10;
-            this.pictureBox4.TabStop = false;
-            // 
-            // lblLoadingMessage
-            // 
-            this.lblLoadingMessage.AutoSize = true;
-            this.lblLoadingMessage.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoadingMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(144)))), ((int)(((byte)(241)))));
-            this.lblLoadingMessage.Location = new System.Drawing.Point(152, 182);
-            this.lblLoadingMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblLoadingMessage.Name = "lblLoadingMessage";
-            this.lblLoadingMessage.Size = new System.Drawing.Size(162, 32);
-            this.lblLoadingMessage.TabIndex = 12;
-            this.lblLoadingMessage.Text = "Coocking...";
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.White;
+            this.lblName.Location = new System.Drawing.Point(180, 212);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(72, 18);
+            this.lblName.TabIndex = 14;
+            this.lblName.Text = "lblName";
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // imgUser
+            // 
+            this.imgUser.Location = new System.Drawing.Point(138, 33);
+            this.imgUser.Name = "imgUser";
+            this.imgUser.Size = new System.Drawing.Size(150, 150);
+            this.imgUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgUser.TabIndex = 16;
+            this.imgUser.TabStop = false;
             // 
             // rjProgressBar
             // 
@@ -248,13 +261,13 @@ namespace Login
             this.rjProgressBar.ChannelHeight = 25;
             this.rjProgressBar.ForeBackColor = System.Drawing.Color.Transparent;
             this.rjProgressBar.ForeColor = System.Drawing.Color.White;
-            this.rjProgressBar.Location = new System.Drawing.Point(28, 231);
+            this.rjProgressBar.Location = new System.Drawing.Point(30, 276);
             this.rjProgressBar.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.rjProgressBar.Name = "rjProgressBar";
             this.rjProgressBar.ShowMaximun = false;
             this.rjProgressBar.ShowValue = CustomControls.TextPosition.Right;
             this.rjProgressBar.Size = new System.Drawing.Size(368, 14);
-            this.rjProgressBar.SliderColor = System.Drawing.Color.RoyalBlue;
+            this.rjProgressBar.SliderColor = System.Drawing.Color.White;
             this.rjProgressBar.SliderHeight = 25;
             this.rjProgressBar.SymbolAfter = "";
             this.rjProgressBar.SymbolBefore = "";
@@ -301,25 +314,12 @@ namespace Login
             this.rjbtnLogin.UseVisualStyleBackColor = false;
             this.rjbtnLogin.Click += new System.EventHandler(this.rjbtnLogin_Click);
             // 
-            // lblChangePassword
-            // 
-            this.lblChangePassword.AutoSize = true;
-            this.lblChangePassword.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChangePassword.Location = new System.Drawing.Point(56, 383);
-            this.lblChangePassword.Name = "lblChangePassword";
-            this.lblChangePassword.Size = new System.Drawing.Size(105, 12);
-            this.lblChangePassword.TabIndex = 16;
-            this.lblChangePassword.Text = "Change Password";
-            this.lblChangePassword.Click += new System.EventHandler(this.lblChangePassword_Click);
-            this.lblChangePassword.MouseEnter += new System.EventHandler(this.lblChangePassword_MouseEnter);
-            this.lblChangePassword.MouseLeave += new System.EventHandler(this.lblChangePassword_MouseLeave);
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(241)))), ((int)(((byte)(254)))));
-            this.BackgroundImage = global::Login.Properties.Resources.fondo;
+            this.BackgroundImage = global::Login.Properties.Resources.fondo_chat;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1293, 711);
             this.Controls.Add(this.pnlLoading);
@@ -341,8 +341,7 @@ namespace Login
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlLoading.ResumeLayout(false);
             this.pnlLoading.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgUser)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -360,14 +359,14 @@ namespace Login
         private System.Windows.Forms.Label Error_label;
         private System.Windows.Forms.TextBox textBox_password;
         private System.Windows.Forms.Panel pnlLoading;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private CustomControls.RJProgressBar rjProgressBar;
-        private System.Windows.Forms.Label lblLoadingMessage;
         private System.Windows.Forms.Timer timer1;
         private CustomControls.RJControls.RJButton rjbtnLogin;
         private CustomControls.RJControls.RJButton btnClose;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label lblChangePassword;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblUserCategory;
+        private CustomControls.RoundedPictureBox imgUser;
     }
 }
 

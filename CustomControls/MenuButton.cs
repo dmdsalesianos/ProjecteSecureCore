@@ -111,6 +111,7 @@ namespace CustomControls
             isSelected = true;
             BorderStyle = BorderStyle.Fixed3D;
             selectedButton = this;
+            this.BackColor = Color.FromArgb(34, 68, 153);
         }
 
         private void MenuButton_MouseEnter(object sender, EventArgs e)
