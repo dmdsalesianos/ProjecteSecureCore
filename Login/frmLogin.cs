@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using DataAccess;
 using System.Drawing;
 using CustomControls;
+using System.IO;
 
 namespace Login
 {
@@ -16,11 +17,12 @@ namespace Login
         MantenimentDades manteniment;
         DataSet dsUser = new DataSet();
 
-        private int tiempoTotal = 1000;
+        private int tiempoTotal = 5000;
         private int intervalo = 100;
         private int incremento;
         private int dotCount = 0;
 
+        string imagesDirectory = Path.Combine(Application.StartupPath, "imatges", "usuarios");
 
         public frmLogin()
         {
@@ -34,15 +36,15 @@ namespace Login
         {
             connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
             manteniment = new MantenimentDades(connectionString);
-            Centrar();
+            CentrarPanel();
         }
 
         private void frmLogin_SizeChanged(object sender, EventArgs e)
         {
-            Centrar();
+            CentrarPanel();
         }
 
-        private void Centrar()
+        private void CentrarPanel()
         {
             int frmHeight = Height;
             int frmWidth = Width;
@@ -229,8 +231,43 @@ namespace Login
             lblLoadingMessage.ForeColor = ColorTranslator.FromHtml("#2490F1");
             lblLoadingMessage.BackColor = Color.Transparent;
 
+            lblName.Text = $"{dsUser.Tables[0].Rows[0]["UserName"]}";
+
+            string query = "SELECT [DescCategory] " +
+                           "FROM [UserCategories] " +
+                           $"WHERE [idUserCategory] = {dsUser.Tables[0].Rows[0]["idUserCategory"]}";
+
+            DataSet ds = manteniment.PortarPerConsulta(query);
+
+            lblUserCategory.Text = $"{ds.Tables[0].Rows[0]["DescCategory"]}";
+
+            CentrarLabel();
+
+            imgUser.ImageLocation = Path.Combine(imagesDirectory, dsUser.Tables[0].Rows[0]["Photo"].ToString());
+
             pnlLoading.Visible = true;
         }
+
+        private void CentrarLabel()
+        {
+            // Obtener el ancho del panel
+            int pnlLoadingWidth = pnlLoading.Width;
+
+            // Obtener el ancho de cada label
+            int lblNameWidth = lblName.Width;
+            int lblUserCategoryWidth = lblUserCategory.Width;
+
+            // Calcular la posición Left para centrar lblName
+            lblName.Left = (pnlLoadingWidth - lblNameWidth) / 2;
+
+            // Calcular la posición Left para centrar lblUserCategory
+            lblUserCategory.Left = (pnlLoadingWidth - lblUserCategoryWidth) / 2;
+
+            // Si quieres que también estén centrados uno debajo del otro,
+            // ajusta las propiedades Top para evitar que se solapen.
+            lblUserCategory.Top = lblName.Bottom + 10; // Separación de 10 píxeles
+        }
+
 
         private void btnClose_Click(object sender, EventArgs e)
         {

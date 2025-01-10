@@ -4,14 +4,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 
 namespace Login
 {
@@ -20,7 +18,6 @@ namespace Login
         private string login;
         MantenimentDades manteniment;
         private string connectionString;
-
 
         public frmChangePassword(string login)
         {
@@ -51,7 +48,6 @@ namespace Login
 
 
         }
-
 
         private void rjbtnSave_Click(object sender, EventArgs e)
         {
@@ -98,7 +94,7 @@ namespace Login
         {
             using (var rng = new RNGCryptoServiceProvider())
             {
-                byte[] salt = new byte[16]; 
+                byte[] salt = new byte[16];
                 rng.GetBytes(salt);
                 return salt;
             }
@@ -135,13 +131,10 @@ namespace Login
             {
                 MessageBox.Show($"Error al actualizar la contraseña en la base de datos: {ex.Message}");
             }
-            
-
         }
 
         private void btnShowNewPassword_Click(object sender, EventArgs e)
         {
-            
             if (txtNewPassword.UseSystemPasswordChar)
             {
                 txtNewPassword.UseSystemPasswordChar = false;
@@ -156,7 +149,6 @@ namespace Login
 
         private void btnShowConfirmPassword_Click(object sender, EventArgs e)
         {
-
             if (txtConfirmPassword.UseSystemPasswordChar)
             {
                 txtConfirmPassword.UseSystemPasswordChar = false;
@@ -169,16 +161,15 @@ namespace Login
             }
         }
 
-        
-
-        private void txtConfirmPassword_KeyDown(object sender, KeyEventArgs e)
+        private void txtNewPassword_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 rjbtnSave_Click(sender, e);
             }
         }
-        private void txtNewPassword_KeyDown(object sender, KeyEventArgs e)
+
+        private void txtConfirmPassword_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -191,14 +182,6 @@ namespace Login
             this.Close();
             frmLogin frmLogin = new frmLogin();
             frmLogin.Show();
-
         }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-       
     }
 }
