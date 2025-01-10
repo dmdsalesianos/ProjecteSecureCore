@@ -64,6 +64,7 @@ namespace Login
             // 
             this.pnlLogo.Controls.Add(this.picLogo);
             this.pnlLogo.Controls.Add(this.pibLogoName);
+            this.pnlLogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
             this.pnlLogo.Name = "pnlLogo";
@@ -74,6 +75,7 @@ namespace Login
             // picLogo
             // 
             this.picLogo.BackColor = System.Drawing.Color.Transparent;
+            this.picLogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picLogo.Dock = System.Windows.Forms.DockStyle.Left;
             this.picLogo.Image = global::Login.Properties.Resources.Only_logo_FFFFFF;
             this.picLogo.Location = new System.Drawing.Point(0, 0);
@@ -86,6 +88,7 @@ namespace Login
             // 
             // pibLogoName
             // 
+            this.pibLogoName.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pibLogoName.Dock = System.Windows.Forms.DockStyle.Right;
             this.pibLogoName.Image = global::Login.Properties.Resources.Name_FFFFFF;
             this.pibLogoName.Location = new System.Drawing.Point(78, 0);

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Login.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="Login.exe" version="1.0.0.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="Login" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>747nI0i5NleKV1rI2LWIXH5azbblE2QCZDWUXHTsueY=</dsig:DigestValue>
+        <dsig:DigestValue>rvePNfsyen42IOb9eeIgHT+E29clPkTqi4X0LeO9glg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -289,7 +289,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+q55UyU7Yu4VgFlwirdjt39i/aUwnNqY2ALpkUmu7tQ=</dsig:DigestValue>
+        <dsig:DigestValue>MlcwbPAPr9XG8+OeEXHHFS/lyvZJEO7tlcmqMynz7Nw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -301,7 +301,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>GZMQNtHivdS4MYfJBVHYFDOS2UdjsSwHbkyuS2m4GFI=</dsig:DigestValue>
+        <dsig:DigestValue>sAWaq39eK8jjq93u/O6IhC+HrJJkUNgm5v7wUQtZCSs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -329,6 +329,24 @@
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="CustomControls.pdb" size="206336">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>dfNYi9cA3lJBol13zz1wBFpkLl7ZQQclSou3FlU/XLM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DataAccess.pdb" size="81408">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>cX8vSU0sdoKTcHJeIy9oSXMSfhjfMprr9A/+uBQc44g=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Login.exe.config" size="1103">
     <hash>
       <dsig:Transforms>
@@ -336,6 +354,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>30GaihKrfyh0jkoXdrFlh2rvHnryhgyC8vJCo/QiL+g=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Login.pdb" size="91648">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>OW+i5WTHTF4EdUUh1gLhvrZH9zfqNi9A4gaOYuwZK/g=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
