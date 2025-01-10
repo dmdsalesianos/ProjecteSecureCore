@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>rvePNfsyen42IOb9eeIgHT+E29clPkTqi4X0LeO9glg=</dsig:DigestValue>
+        <dsig:DigestValue>gl4JAbnzesc3uPcSQGteb1vijbV4e9Fth8vdJG6trx0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -289,7 +289,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>MlcwbPAPr9XG8+OeEXHHFS/lyvZJEO7tlcmqMynz7Nw=</dsig:DigestValue>
+        <dsig:DigestValue>WZepFFbIZ1Y77PhnNJKwfsVZKu/tZ9/OI09+5toa/Ik=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -301,7 +301,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sAWaq39eK8jjq93u/O6IhC+HrJJkUNgm5v7wUQtZCSs=</dsig:DigestValue>
+        <dsig:DigestValue>6adS4gFLeQbd95SWlTWaCOlUWvTmFtm6/BPUPfkG8/Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -356,13 +356,13 @@
       <dsig:DigestValue>30GaihKrfyh0jkoXdrFlh2rvHnryhgyC8vJCo/QiL+g=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Login.pdb" size="91648">
+  <file name="Login.pdb" size="89600">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>OW+i5WTHTF4EdUUh1gLhvrZH9zfqNi9A4gaOYuwZK/g=</dsig:DigestValue>
+      <dsig:DigestValue>PPcY9aTydyIx7l03NtcCB6fSU9pCFeHUpkI7p9kHe6Q=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

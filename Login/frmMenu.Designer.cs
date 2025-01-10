@@ -62,6 +62,7 @@ namespace Login
             // 
             // pnlLogo
             // 
+            this.pnlLogo.BackColor = System.Drawing.Color.Transparent;
             this.pnlLogo.Controls.Add(this.picLogo);
             this.pnlLogo.Controls.Add(this.pibLogoName);
             this.pnlLogo.Cursor = System.Windows.Forms.Cursors.Hand;
