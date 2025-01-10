@@ -55,7 +55,6 @@
     <Compile Include="frmUserCategories.Designer.cs">
       <DependentUpon>frmUserCategories.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmUserCategories.resx">
       <DependentUpon>frmUserCategories.cs</DependentUpon>

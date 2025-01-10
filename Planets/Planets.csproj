@@ -59,7 +59,6 @@
     <Compile Include="frmPlanets.Designer.cs">
       <DependentUpon>frmPlanets.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmPlanets.resx">
       <DependentUpon>frmPlanets.cs</DependentUpon>

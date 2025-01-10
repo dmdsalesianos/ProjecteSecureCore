@@ -60,7 +60,6 @@
     <Compile Include="frmMenuOptions.Designer.cs">
       <DependentUpon>frmMenuOptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmMenuOptions.resx">
       <DependentUpon>frmMenuOptions.cs</DependentUpon>

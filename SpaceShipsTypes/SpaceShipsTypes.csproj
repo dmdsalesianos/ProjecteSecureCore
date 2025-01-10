@@ -57,7 +57,6 @@
     <Compile Include="frmSpaceShipsTypes.Designer.cs">
       <DependentUpon>frmSpaceShipsTypes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

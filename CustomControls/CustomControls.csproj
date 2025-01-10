@@ -58,9 +58,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RjButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="RJControls\MenuColorTable.cs" />
     <Compile Include="RJControls\MenuRenderer.cs" />
     <Compile Include="RJControls\RJButton.cs">
@@ -94,9 +91,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="RJProgressBar.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="RJTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="RoundedPictureBox.cs">

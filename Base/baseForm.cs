@@ -4,7 +4,6 @@ using System.Windows.Forms;
 using System.Configuration;
 using DataAccess;
 using CustomControls;
-using System.IO;
 using System.Drawing;
 using System.Collections.Generic;
 
