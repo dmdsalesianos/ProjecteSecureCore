@@ -35,27 +35,29 @@ namespace Login
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(853, 383);
+            this.pictureBox1.Location = new System.Drawing.Point(689, 350);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(646, 501);
+            this.pictureBox1.Size = new System.Drawing.Size(484, 407);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // frmImageZoom
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1273, 631);
+            this.ClientSize = new System.Drawing.Size(955, 513);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmImageZoom";
             this.Opacity = 0.2D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.MouseLeave += new System.EventHandler(this.frmImageZoom_MouseLeave);
+            this.Click += new System.EventHandler(this.frmImageZoom_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

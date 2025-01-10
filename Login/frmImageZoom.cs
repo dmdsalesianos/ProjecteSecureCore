@@ -29,9 +29,10 @@ namespace Login
             }
         }
 
-        private void frmImageZoom_MouseLeave(object sender, EventArgs e)
+        private void frmImageZoom_Click(object sender, EventArgs e)
         {
             this.Close();
+
         }
     }
 }
