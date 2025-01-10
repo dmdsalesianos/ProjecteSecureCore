@@ -196,9 +196,6 @@ namespace Login
             rjProgressBar.Value += incremento;
 
             dotCount = (dotCount + 1) % 4;
-            lblLoadingMessage.Text = "Cooking" + new string('.', dotCount);
-            lblLoadingMessage.ForeColor = Color.White;
-
 
             if (rjProgressBar.Value >= rjProgressBar.Maximum)
 
@@ -226,10 +223,6 @@ namespace Login
             rjProgressBar.SliderColor = Color.White;   // Color del progreso
             rjProgressBar.ForeBackColor = Color.Transparent;              // Fondo del texto transparente
             rjProgressBar.ShowValue = TextPosition.None;                  // No mostrar porcentaje
-
-
-            lblLoadingMessage.ForeColor = ColorTranslator.FromHtml("#2490F1");
-            lblLoadingMessage.BackColor = Color.Transparent;
 
             lblName.Text = $"{dsUser.Tables[0].Rows[0]["UserName"]}";
 

@@ -44,7 +44,6 @@ namespace Login
             this.pnlLoading = new System.Windows.Forms.Panel();
             this.lblUserCategory = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.lblLoadingMessage = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.imgUser = new CustomControls.RoundedPictureBox();
             this.rjProgressBar = new CustomControls.RJProgressBar();
@@ -215,10 +214,9 @@ namespace Login
             this.pnlLoading.Controls.Add(this.lblUserCategory);
             this.pnlLoading.Controls.Add(this.lblName);
             this.pnlLoading.Controls.Add(this.rjProgressBar);
-            this.pnlLoading.Controls.Add(this.lblLoadingMessage);
             this.pnlLoading.Location = new System.Drawing.Point(50, 127);
             this.pnlLoading.Name = "pnlLoading";
-            this.pnlLoading.Size = new System.Drawing.Size(432, 392);
+            this.pnlLoading.Size = new System.Drawing.Size(432, 307);
             this.pnlLoading.TabIndex = 15;
             // 
             // lblUserCategory
@@ -243,18 +241,6 @@ namespace Login
             this.lblName.TabIndex = 14;
             this.lblName.Text = "lblName";
             // 
-            // lblLoadingMessage
-            // 
-            this.lblLoadingMessage.AutoSize = true;
-            this.lblLoadingMessage.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoadingMessage.ForeColor = System.Drawing.Color.White;
-            this.lblLoadingMessage.Location = new System.Drawing.Point(147, 275);
-            this.lblLoadingMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblLoadingMessage.Name = "lblLoadingMessage";
-            this.lblLoadingMessage.Size = new System.Drawing.Size(162, 32);
-            this.lblLoadingMessage.TabIndex = 12;
-            this.lblLoadingMessage.Text = "Coocking...";
-            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
@@ -275,7 +261,7 @@ namespace Login
             this.rjProgressBar.ChannelHeight = 25;
             this.rjProgressBar.ForeBackColor = System.Drawing.Color.Transparent;
             this.rjProgressBar.ForeColor = System.Drawing.Color.White;
-            this.rjProgressBar.Location = new System.Drawing.Point(27, 317);
+            this.rjProgressBar.Location = new System.Drawing.Point(30, 276);
             this.rjProgressBar.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.rjProgressBar.Name = "rjProgressBar";
             this.rjProgressBar.ShowMaximun = false;
@@ -374,7 +360,6 @@ namespace Login
         private System.Windows.Forms.TextBox textBox_password;
         private System.Windows.Forms.Panel pnlLoading;
         private CustomControls.RJProgressBar rjProgressBar;
-        private System.Windows.Forms.Label lblLoadingMessage;
         private System.Windows.Forms.Timer timer1;
         private CustomControls.RJControls.RJButton rjbtnLogin;
         private CustomControls.RJControls.RJButton btnClose;
