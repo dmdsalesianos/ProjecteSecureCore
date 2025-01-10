@@ -144,10 +144,43 @@ namespace Login
             Application.Exit();
         }
 
-        private void rndpicUser_MouseHover(object sender, EventArgs e)
+        private void pnlLogo_Click(object sender, EventArgs e)
         {
-            frmImageZoom frmZoom = new frmImageZoom(rndpicUser);
-            frmZoom.Show();
+            pnlContenido.Controls.Clear();
+            foreach (MenuButton btn in pnlMenu.Controls)
+            {
+                btn.BorderStyle = BorderStyle.None;
+                if (btn.BackColor != btn.ColorOri)
+                {
+                    btn.BackColor = btn.ColorOri;
+                }
+               
+            }
+        }
+        private void pibLogoName_Click_1(object sender, EventArgs e)
+        {
+            pnlContenido.Controls.Clear();
+            foreach (MenuButton btn in pnlMenu.Controls)
+            {
+                btn.BorderStyle = BorderStyle.None;
+                if (btn.BackColor != btn.ColorOri)
+                {
+                    btn.BackColor = btn.ColorOri;
+                }
+            }
+        }
+
+        private void picLogo_Click_1(object sender, EventArgs e)
+        {
+            pnlContenido.Controls.Clear();
+            foreach (MenuButton btn in pnlMenu.Controls)
+            {
+                btn.BorderStyle = BorderStyle.None;
+                if (btn.BackColor != btn.ColorOri)
+                {
+                    btn.BackColor = btn.ColorOri;
+                }
+            }
         }
     }
 }

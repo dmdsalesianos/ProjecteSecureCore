@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Security.Cryptography;
@@ -7,8 +6,8 @@ using System.Text;
 using System.Windows.Forms;
 using DataAccess;
 using System.Drawing;
-using System.Threading;
 using CustomControls;
+using System.IO;
 
 namespace Login
 {
@@ -18,11 +17,12 @@ namespace Login
         MantenimentDades manteniment;
         DataSet dsUser = new DataSet();
 
-        private int tiempoTotal = 1000;
+        private int tiempoTotal = 5000;
         private int intervalo = 100;
         private int incremento;
         private int dotCount = 0;
 
+        string imagesDirectory = Path.Combine(Application.StartupPath, "imatges", "usuarios");
 
         public frmLogin()
         {
@@ -36,15 +36,15 @@ namespace Login
         {
             connectionString = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
             manteniment = new MantenimentDades(connectionString);
-            Centrar();
+            CentrarPanel();
         }
 
         private void frmLogin_SizeChanged(object sender, EventArgs e)
         {
-            Centrar();
+            CentrarPanel();
         }
 
-        private void Centrar()
+        private void CentrarPanel()
         {
             int frmHeight = Height;
             int frmWidth = Width;
@@ -196,8 +196,6 @@ namespace Login
             rjProgressBar.Value += incremento;
 
             dotCount = (dotCount + 1) % 4;
-            lblLoadingMessage.Text = "Cooking" + new string('.', dotCount);
-
 
             if (rjProgressBar.Value >= rjProgressBar.Maximum)
 
@@ -222,16 +220,47 @@ namespace Login
             incremento = rjProgressBar.Maximum / (tiempoTotal / intervalo);
             rjProgressBar.Value = 0;
             rjProgressBar.ChannelColor = ColorTranslator.FromHtml("#232F5F");   // Color del canal de fondo
-            rjProgressBar.SliderColor = ColorTranslator.FromHtml("#2490F1");   // Color del progreso
+            rjProgressBar.SliderColor = Color.White;   // Color del progreso
             rjProgressBar.ForeBackColor = Color.Transparent;              // Fondo del texto transparente
             rjProgressBar.ShowValue = TextPosition.None;                  // No mostrar porcentaje
 
+            lblName.Text = $"{dsUser.Tables[0].Rows[0]["UserName"]}";
 
-            lblLoadingMessage.ForeColor = ColorTranslator.FromHtml("#2490F1");
-            lblLoadingMessage.BackColor = Color.Transparent;
+            string query = "SELECT [DescCategory] " +
+                           "FROM [UserCategories] " +
+                           $"WHERE [idUserCategory] = {dsUser.Tables[0].Rows[0]["idUserCategory"]}";
+
+            DataSet ds = manteniment.PortarPerConsulta(query);
+
+            lblUserCategory.Text = $"{ds.Tables[0].Rows[0]["DescCategory"]}";
+
+            CentrarLabel();
+
+            imgUser.ImageLocation = Path.Combine(imagesDirectory, dsUser.Tables[0].Rows[0]["Photo"].ToString());
 
             pnlLoading.Visible = true;
         }
+
+        private void CentrarLabel()
+        {
+            // Obtener el ancho del panel
+            int pnlLoadingWidth = pnlLoading.Width;
+
+            // Obtener el ancho de cada label
+            int lblNameWidth = lblName.Width;
+            int lblUserCategoryWidth = lblUserCategory.Width;
+
+            // Calcular la posición Left para centrar lblName
+            lblName.Left = (pnlLoadingWidth - lblNameWidth) / 2;
+
+            // Calcular la posición Left para centrar lblUserCategory
+            lblUserCategory.Left = (pnlLoadingWidth - lblUserCategoryWidth) / 2;
+
+            // Si quieres que también estén centrados uno debajo del otro,
+            // ajusta las propiedades Top para evitar que se solapen.
+            lblUserCategory.Top = lblName.Bottom + 10; // Separación de 10 píxeles
+        }
+
 
         private void btnClose_Click(object sender, EventArgs e)
         {

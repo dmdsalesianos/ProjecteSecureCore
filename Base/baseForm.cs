@@ -65,6 +65,8 @@ namespace Base
 
             CargarDatos();
             MakeDataBindigs();
+
+            
         }
 
         protected void ValidarTextBox(object sender, EventArgs e)
