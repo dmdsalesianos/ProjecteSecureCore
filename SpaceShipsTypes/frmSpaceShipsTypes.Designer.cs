@@ -47,7 +47,7 @@ namespace SpaceShipsTypes
             this.categoryCmb.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.categoryCmb.Name = "categoryCmb";
             this.categoryCmb.Size = new System.Drawing.Size(210, 28);
-            this.categoryCmb.TabIndex = 17;
+            this.categoryCmb.TabIndex = 4;
             // 
             // filiationCmb
             // 
@@ -57,7 +57,7 @@ namespace SpaceShipsTypes
             this.filiationCmb.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.filiationCmb.Name = "filiationCmb";
             this.filiationCmb.Size = new System.Drawing.Size(210, 28);
-            this.filiationCmb.TabIndex = 15;
+            this.filiationCmb.TabIndex = 3;
             // 
             // label4
             // 
@@ -113,7 +113,7 @@ namespace SpaceShipsTypes
             this.descTxt.NomCampBBDD = "DescSpaceShipType";
             this.descTxt.PermetreBuit = true;
             this.descTxt.Size = new System.Drawing.Size(210, 26);
-            this.descTxt.TabIndex = 16;
+            this.descTxt.TabIndex = 2;
             this.descTxt.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
             // 
             // codeTxt
@@ -126,14 +126,14 @@ namespace SpaceShipsTypes
             this.codeTxt.NomCampBBDD = "CodeSpaceShipType";
             this.codeTxt.PermetreBuit = true;
             this.codeTxt.Size = new System.Drawing.Size(210, 26);
-            this.codeTxt.TabIndex = 14;
+            this.codeTxt.TabIndex = 1;
             this.codeTxt.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
             // 
-            // frmSpaceShipssType
+            // frmSpaceShipsTypes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1534, 450);
             this.Controls.Add(this.categoryCmb);
             this.Controls.Add(this.filiationCmb);
             this.Controls.Add(this.label4);
@@ -143,7 +143,7 @@ namespace SpaceShipsTypes
             this.Controls.Add(this.descTxt);
             this.Controls.Add(this.codeTxt);
             this.Location = new System.Drawing.Point(0, 0);
-            this.Name = "frmSpaceShipssType";
+            this.Name = "frmSpaceShipsTypes";
             this.Text = "frmSpaceShipssType";
             this.Load += new System.EventHandler(this.frmSpaceShipsTypes_Load);
             this.Controls.SetChildIndex(this.codeTxt, 0);

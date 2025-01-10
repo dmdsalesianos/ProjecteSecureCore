@@ -228,7 +228,7 @@ namespace Users
             this.rjbtnInforme.Location = new System.Drawing.Point(1078, 283);
             this.rjbtnInforme.Name = "rjbtnInforme";
             this.rjbtnInforme.Size = new System.Drawing.Size(165, 40);
-            this.rjbtnInforme.TabIndex = 9;
+            this.rjbtnInforme.TabIndex = 10;
             this.rjbtnInforme.Text = "Mostrar Informe";
             this.rjbtnInforme.TextColor = System.Drawing.Color.White;
             this.rjbtnInforme.UseVisualStyleBackColor = false;
@@ -270,7 +270,7 @@ namespace Users
             this.rjbtnRestablecerContraseña.Location = new System.Drawing.Point(850, 283);
             this.rjbtnRestablecerContraseña.Name = "rjbtnRestablecerContraseña";
             this.rjbtnRestablecerContraseña.Size = new System.Drawing.Size(224, 40);
-            this.rjbtnRestablecerContraseña.TabIndex = 35;
+            this.rjbtnRestablecerContraseña.TabIndex = 9;
             this.rjbtnRestablecerContraseña.Text = "Restablecer Contraseña";
             this.rjbtnRestablecerContraseña.TextColor = System.Drawing.Color.White;
             this.rjbtnRestablecerContraseña.UseVisualStyleBackColor = false;
@@ -304,8 +304,8 @@ namespace Users
             this.Location = new System.Drawing.Point(0, 0);
             this.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.Name = "frmUsers";
-            this.TabIndexActualitzarBtn = 11;
-            this.TabIndexAgregarBtn = 10;
+            this.TabIndexActualitzarBtn = 12;
+            this.TabIndexAgregarBtn = 11;
             this.Text = "frmUsers";
             this.Load += new System.EventHandler(this.frmUsers_Load);
             this.Controls.SetChildIndex(this.swtxtCodeUser, 0);
