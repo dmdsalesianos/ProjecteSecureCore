@@ -43,11 +43,11 @@ namespace Login
 
                 if (File.Exists(fileLocation))
                 {
-                    rndpicUser.ImageLocation = fileLocation;
+                    picUser.ImageLocation = fileLocation;
                 }
                 else
                 {
-                    rndpicUser.ImageLocation = null;
+                    picUser.ImageLocation = null;
                 }
 
             }
@@ -175,6 +175,11 @@ namespace Login
                     btn.BackColor = btn.ColorOri;
                 }
             }
+        }
+        private void picUser_Click(object sender, EventArgs e)
+        {
+            frmImageZoom frmImageZoom = new frmImageZoom(picUser);
+            frmImageZoom.Show();
         }
     }
 }

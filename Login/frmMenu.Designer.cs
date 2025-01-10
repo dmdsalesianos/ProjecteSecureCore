@@ -32,21 +32,21 @@ namespace Login
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.pnlLogo = new System.Windows.Forms.Panel();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.pibLogoName = new System.Windows.Forms.PictureBox();
             this.pnlUserInfo = new System.Windows.Forms.Panel();
+            this.rjbtnClose = new CustomControls.RJControls.RJButton();
+            this.picUser = new CustomControls.RoundedPictureBox();
+            this.rjbtnLogOut = new CustomControls.RJControls.RJButton();
             this.lblName = new System.Windows.Forms.Label();
             this.pnlContenido = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.FlowLayoutPanel();
-            this.picLogo = new System.Windows.Forms.PictureBox();
-            this.pibLogoName = new System.Windows.Forms.PictureBox();
-            this.rjbtnClose = new CustomControls.RJControls.RJButton();
-            this.rndpicUser = new CustomControls.RoundedPictureBox();
-            this.rjbtnLogOut = new CustomControls.RJControls.RJButton();
             this.pnlHeader.SuspendLayout();
             this.pnlLogo.SuspendLayout();
-            this.pnlUserInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pibLogoName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rndpicUser)).BeginInit();
+            this.pnlUserInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlHeader
@@ -73,10 +73,37 @@ namespace Login
             this.pnlLogo.TabIndex = 0;
             this.pnlLogo.Click += new System.EventHandler(this.pnlLogo_Click);
             // 
+            // picLogo
+            // 
+            this.picLogo.BackColor = System.Drawing.Color.Transparent;
+            this.picLogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picLogo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.picLogo.Image = global::Login.Properties.Resources.Only_logo_FFFFFF;
+            this.picLogo.Location = new System.Drawing.Point(0, 0);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(76, 69);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 1;
+            this.picLogo.TabStop = false;
+            this.picLogo.Click += new System.EventHandler(this.picLogo_Click_1);
+            // 
+            // pibLogoName
+            // 
+            this.pibLogoName.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pibLogoName.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pibLogoName.Image = global::Login.Properties.Resources.Name_FFFFFF;
+            this.pibLogoName.Location = new System.Drawing.Point(78, 0);
+            this.pibLogoName.Name = "pibLogoName";
+            this.pibLogoName.Size = new System.Drawing.Size(201, 69);
+            this.pibLogoName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pibLogoName.TabIndex = 2;
+            this.pibLogoName.TabStop = false;
+            this.pibLogoName.Click += new System.EventHandler(this.pibLogoName_Click_1);
+            // 
             // pnlUserInfo
             // 
             this.pnlUserInfo.Controls.Add(this.rjbtnClose);
-            this.pnlUserInfo.Controls.Add(this.rndpicUser);
+            this.pnlUserInfo.Controls.Add(this.picUser);
             this.pnlUserInfo.Controls.Add(this.rjbtnLogOut);
             this.pnlUserInfo.Controls.Add(this.lblName);
             this.pnlUserInfo.Dock = System.Windows.Forms.DockStyle.Right;
@@ -84,6 +111,62 @@ namespace Login
             this.pnlUserInfo.Name = "pnlUserInfo";
             this.pnlUserInfo.Size = new System.Drawing.Size(465, 69);
             this.pnlUserInfo.TabIndex = 5;
+            // 
+            // rjbtnClose
+            // 
+            this.rjbtnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.rjbtnClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.rjbtnClose.BackgroundImage = global::Login.Properties.Resources.close;
+            this.rjbtnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.rjbtnClose.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.rjbtnClose.BorderRadius = 0;
+            this.rjbtnClose.BorderSize = 0;
+            this.rjbtnClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.rjbtnClose.FlatAppearance.BorderSize = 0;
+            this.rjbtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjbtnClose.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjbtnClose.ForeColor = System.Drawing.Color.White;
+            this.rjbtnClose.Location = new System.Drawing.Point(397, 0);
+            this.rjbtnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rjbtnClose.Name = "rjbtnClose";
+            this.rjbtnClose.Size = new System.Drawing.Size(68, 69);
+            this.rjbtnClose.TabIndex = 5;
+            this.rjbtnClose.TextColor = System.Drawing.Color.White;
+            this.rjbtnClose.UseVisualStyleBackColor = false;
+            this.rjbtnClose.Click += new System.EventHandler(this.rjbtnClose_Click);
+            // 
+            // picUser
+            // 
+            this.picUser.Dock = System.Windows.Forms.DockStyle.Left;
+            this.picUser.Location = new System.Drawing.Point(0, 0);
+            this.picUser.Name = "picUser";
+            this.picUser.Size = new System.Drawing.Size(82, 69);
+            this.picUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picUser.TabIndex = 4;
+            this.picUser.TabStop = false;
+            this.picUser.Click += new System.EventHandler(this.picUser_Click);
+            // 
+            // rjbtnLogOut
+            // 
+            this.rjbtnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(166)))), ((int)(((byte)(165)))));
+            this.rjbtnLogOut.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(166)))), ((int)(((byte)(165)))));
+            this.rjbtnLogOut.BackgroundImage = global::Login.Properties.Resources.logout2;
+            this.rjbtnLogOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.rjbtnLogOut.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjbtnLogOut.BorderRadius = 0;
+            this.rjbtnLogOut.BorderSize = 0;
+            this.rjbtnLogOut.FlatAppearance.BorderSize = 0;
+            this.rjbtnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjbtnLogOut.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjbtnLogOut.ForeColor = System.Drawing.Color.White;
+            this.rjbtnLogOut.Location = new System.Drawing.Point(333, 0);
+            this.rjbtnLogOut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rjbtnLogOut.Name = "rjbtnLogOut";
+            this.rjbtnLogOut.Size = new System.Drawing.Size(68, 69);
+            this.rjbtnLogOut.TabIndex = 0;
+            this.rjbtnLogOut.TextColor = System.Drawing.Color.White;
+            this.rjbtnLogOut.UseVisualStyleBackColor = false;
+            this.rjbtnLogOut.Click += new System.EventHandler(this.rjbtnLogOut_Click);
             // 
             // lblName
             // 
@@ -116,88 +199,6 @@ namespace Login
             this.pnlMenu.Size = new System.Drawing.Size(441, 739);
             this.pnlMenu.TabIndex = 0;
             // 
-            // picLogo
-            // 
-            this.picLogo.BackColor = System.Drawing.Color.Transparent;
-            this.picLogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picLogo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picLogo.Image = global::Login.Properties.Resources.Only_logo_FFFFFF;
-            this.picLogo.Location = new System.Drawing.Point(0, 0);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(76, 69);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogo.TabIndex = 1;
-            this.picLogo.TabStop = false;
-            this.picLogo.Click += new System.EventHandler(this.picLogo_Click_1);
-            // 
-            // pibLogoName
-            // 
-            this.pibLogoName.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pibLogoName.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pibLogoName.Image = global::Login.Properties.Resources.Name_FFFFFF;
-            this.pibLogoName.Location = new System.Drawing.Point(78, 0);
-            this.pibLogoName.Name = "pibLogoName";
-            this.pibLogoName.Size = new System.Drawing.Size(201, 69);
-            this.pibLogoName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pibLogoName.TabIndex = 2;
-            this.pibLogoName.TabStop = false;
-            this.pibLogoName.Click += new System.EventHandler(this.pibLogoName_Click_1);
-            // 
-            // rjbtnClose
-            // 
-            this.rjbtnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.rjbtnClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.rjbtnClose.BackgroundImage = global::Login.Properties.Resources.close;
-            this.rjbtnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.rjbtnClose.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.rjbtnClose.BorderRadius = 0;
-            this.rjbtnClose.BorderSize = 0;
-            this.rjbtnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rjbtnClose.FlatAppearance.BorderSize = 0;
-            this.rjbtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjbtnClose.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjbtnClose.ForeColor = System.Drawing.Color.White;
-            this.rjbtnClose.Location = new System.Drawing.Point(397, 0);
-            this.rjbtnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.rjbtnClose.Name = "rjbtnClose";
-            this.rjbtnClose.Size = new System.Drawing.Size(68, 69);
-            this.rjbtnClose.TabIndex = 5;
-            this.rjbtnClose.TextColor = System.Drawing.Color.White;
-            this.rjbtnClose.UseVisualStyleBackColor = false;
-            this.rjbtnClose.Click += new System.EventHandler(this.rjbtnClose_Click);
-            // 
-            // rndpicUser
-            // 
-            this.rndpicUser.Dock = System.Windows.Forms.DockStyle.Left;
-            this.rndpicUser.Location = new System.Drawing.Point(0, 0);
-            this.rndpicUser.Name = "rndpicUser";
-            this.rndpicUser.Size = new System.Drawing.Size(82, 69);
-            this.rndpicUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rndpicUser.TabIndex = 4;
-            this.rndpicUser.TabStop = false;
-            // 
-            // rjbtnLogOut
-            // 
-            this.rjbtnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(166)))), ((int)(((byte)(165)))));
-            this.rjbtnLogOut.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(166)))), ((int)(((byte)(165)))));
-            this.rjbtnLogOut.BackgroundImage = global::Login.Properties.Resources.logout2;
-            this.rjbtnLogOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.rjbtnLogOut.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjbtnLogOut.BorderRadius = 0;
-            this.rjbtnLogOut.BorderSize = 0;
-            this.rjbtnLogOut.FlatAppearance.BorderSize = 0;
-            this.rjbtnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjbtnLogOut.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjbtnLogOut.ForeColor = System.Drawing.Color.White;
-            this.rjbtnLogOut.Location = new System.Drawing.Point(333, 0);
-            this.rjbtnLogOut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.rjbtnLogOut.Name = "rjbtnLogOut";
-            this.rjbtnLogOut.Size = new System.Drawing.Size(68, 69);
-            this.rjbtnLogOut.TabIndex = 0;
-            this.rjbtnLogOut.TextColor = System.Drawing.Color.White;
-            this.rjbtnLogOut.UseVisualStyleBackColor = false;
-            this.rjbtnLogOut.Click += new System.EventHandler(this.rjbtnLogOut_Click);
-            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -214,10 +215,10 @@ namespace Login
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.pnlHeader.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
-            this.pnlUserInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pibLogoName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rndpicUser)).EndInit();
+            this.pnlUserInfo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picUser)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -230,7 +231,7 @@ namespace Login
         private System.Windows.Forms.Panel pnlContenido;
         private System.Windows.Forms.FlowLayoutPanel pnlMenu;
         private System.Windows.Forms.Label lblName;
-        private CustomControls.RoundedPictureBox rndpicUser;
+        private CustomControls.RoundedPictureBox picUser;
         private System.Windows.Forms.Panel pnlUserInfo;
         private CustomControls.RJControls.RJButton rjbtnLogOut;
         private CustomControls.RJControls.RJButton rjbtnClose;
