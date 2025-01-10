@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>i9HSPZwSr9Wex0eaj7ogGAoUznL1CTlhaGlgMX5YfH4=</dsig:DigestValue>
+        <dsig:DigestValue>q8dJ3ZQNeBKnMH8zWQ3TcdPUfHP2Je/q1aWPwhTmQmc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -289,19 +289,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>aERVexnw8dxP+7SIAEGjkVwCcjJFE7zbgWVx7TDifRQ=</dsig:DigestValue>
+        <dsig:DigestValue>RtL5QDy8bn3LSVHbuJkre0t/zF8OdMyYuLo5/Q/i9Nk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Login.exe" size="16216576">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Login.exe" size="16289280">
       <assemblyIdentity name="Login" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>LwRZbS16oVtN3A0o2EM328pg72s9t/Im3n115qst9rY=</dsig:DigestValue>
+        <dsig:DigestValue>9XiH+D/wbMMSorSO/VKcgjCaZqPNSMzPMZMm5X2Miss=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -362,7 +362,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>9RmzubK4CqWArcC5A4MPRuPfn54rdErgEZ3TNp+YHrE=</dsig:DigestValue>
+      <dsig:DigestValue>dPaCy0WkwDLM3qsG/ReZ3YED65Xknk2dWzJ1Hghc9c8=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
