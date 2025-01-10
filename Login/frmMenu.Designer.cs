@@ -32,20 +32,20 @@ namespace Login
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.pnlLogo = new System.Windows.Forms.Panel();
-            this.picLogo = new System.Windows.Forms.PictureBox();
-            this.pibLogoName = new System.Windows.Forms.PictureBox();
             this.pnlUserInfo = new System.Windows.Forms.Panel();
-            this.rjbtnClose = new CustomControls.RJControls.RJButton();
-            this.rndpicUser = new CustomControls.RoundedPictureBox();
-            this.rjbtnLogOut = new CustomControls.RJControls.RJButton();
             this.lblName = new System.Windows.Forms.Label();
             this.pnlContenido = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.FlowLayoutPanel();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.pibLogoName = new System.Windows.Forms.PictureBox();
+            this.rjbtnClose = new CustomControls.RJControls.RJButton();
+            this.rndpicUser = new CustomControls.RoundedPictureBox();
+            this.rjbtnLogOut = new CustomControls.RJControls.RJButton();
             this.pnlHeader.SuspendLayout();
             this.pnlLogo.SuspendLayout();
+            this.pnlUserInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pibLogoName)).BeginInit();
-            this.pnlUserInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rndpicUser)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,6 +71,49 @@ namespace Login
             this.pnlLogo.Size = new System.Drawing.Size(279, 69);
             this.pnlLogo.TabIndex = 0;
             this.pnlLogo.Click += new System.EventHandler(this.pnlLogo_Click);
+            // 
+            // pnlUserInfo
+            // 
+            this.pnlUserInfo.Controls.Add(this.rjbtnClose);
+            this.pnlUserInfo.Controls.Add(this.rndpicUser);
+            this.pnlUserInfo.Controls.Add(this.rjbtnLogOut);
+            this.pnlUserInfo.Controls.Add(this.lblName);
+            this.pnlUserInfo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlUserInfo.Location = new System.Drawing.Point(619, 0);
+            this.pnlUserInfo.Name = "pnlUserInfo";
+            this.pnlUserInfo.Size = new System.Drawing.Size(465, 69);
+            this.pnlUserInfo.TabIndex = 5;
+            // 
+            // lblName
+            // 
+            this.lblName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.White;
+            this.lblName.Location = new System.Drawing.Point(120, 0);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(206, 69);
+            this.lblName.TabIndex = 3;
+            this.lblName.Text = "Login";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pnlContenido
+            // 
+            this.pnlContenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(198)))), ((int)(((byte)(250)))));
+            this.pnlContenido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnlContenido.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContenido.Location = new System.Drawing.Point(441, 69);
+            this.pnlContenido.Name = "pnlContenido";
+            this.pnlContenido.Size = new System.Drawing.Size(643, 739);
+            this.pnlContenido.TabIndex = 2;
+            // 
+            // pnlMenu
+            // 
+            this.pnlMenu.AutoScroll = true;
+            this.pnlMenu.BackColor = System.Drawing.Color.White;
+            this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlMenu.Location = new System.Drawing.Point(0, 69);
+            this.pnlMenu.Name = "pnlMenu";
+            this.pnlMenu.Size = new System.Drawing.Size(441, 739);
+            this.pnlMenu.TabIndex = 0;
             // 
             // picLogo
             // 
@@ -98,18 +141,6 @@ namespace Login
             this.pibLogoName.TabIndex = 2;
             this.pibLogoName.TabStop = false;
             this.pibLogoName.Click += new System.EventHandler(this.pibLogoName_Click_1);
-            // 
-            // pnlUserInfo
-            // 
-            this.pnlUserInfo.Controls.Add(this.rjbtnClose);
-            this.pnlUserInfo.Controls.Add(this.rndpicUser);
-            this.pnlUserInfo.Controls.Add(this.rjbtnLogOut);
-            this.pnlUserInfo.Controls.Add(this.lblName);
-            this.pnlUserInfo.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlUserInfo.Location = new System.Drawing.Point(619, 0);
-            this.pnlUserInfo.Name = "pnlUserInfo";
-            this.pnlUserInfo.Size = new System.Drawing.Size(465, 69);
-            this.pnlUserInfo.TabIndex = 5;
             // 
             // rjbtnClose
             // 
@@ -166,37 +197,6 @@ namespace Login
             this.rjbtnLogOut.UseVisualStyleBackColor = false;
             this.rjbtnLogOut.Click += new System.EventHandler(this.rjbtnLogOut_Click);
             // 
-            // lblName
-            // 
-            this.lblName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(120, 0);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(206, 69);
-            this.lblName.TabIndex = 3;
-            this.lblName.Text = "Login";
-            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pnlContenido
-            // 
-            this.pnlContenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(198)))), ((int)(((byte)(250)))));
-            this.pnlContenido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnlContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContenido.Location = new System.Drawing.Point(441, 69);
-            this.pnlContenido.Name = "pnlContenido";
-            this.pnlContenido.Size = new System.Drawing.Size(643, 739);
-            this.pnlContenido.TabIndex = 2;
-            // 
-            // pnlMenu
-            // 
-            this.pnlMenu.AutoScroll = true;
-            this.pnlMenu.BackColor = System.Drawing.Color.White;
-            this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlMenu.Location = new System.Drawing.Point(0, 69);
-            this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(441, 739);
-            this.pnlMenu.TabIndex = 0;
-            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -213,9 +213,9 @@ namespace Login
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.pnlHeader.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
+            this.pnlUserInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pibLogoName)).EndInit();
-            this.pnlUserInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rndpicUser)).EndInit();
             this.ResumeLayout(false);
 
