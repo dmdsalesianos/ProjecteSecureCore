@@ -14,7 +14,7 @@ namespace FrmLlistat
         public FrmLlistat()
         {
             InitializeComponent();
-            cnx = ConfigurationManager.ConnectionStrings["CRComandes.Properties.Settings.SecureCoreG4ConnectionString"].ConnectionString;
+            cnx = ConfigurationManager.ConnectionStrings["ConexioStr"].ConnectionString;
         }
 
         private void btnInforme_Click(object sender, EventArgs e)
