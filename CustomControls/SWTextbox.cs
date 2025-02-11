@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace CustomControls
 {
@@ -27,6 +28,7 @@ namespace CustomControls
             Number,
             Text,
             Code,
+            Date,
             All
         }
 
@@ -48,7 +50,7 @@ namespace CustomControls
 
         private void SWTextbox_GotFocus(object sender, EventArgs e)
         {
-            if(esValid)
+            if (esValid)
             {
                 this.BackColor = Color.LightYellow;
             }
@@ -56,7 +58,7 @@ namespace CustomControls
 
         private void SWTextbox_LostFocus(object sender, EventArgs e)
         {
-            if(esValid)
+            if (esValid)
             {
                 this.BackColor = colorOriginal;
             }
@@ -80,8 +82,16 @@ namespace CustomControls
                     return text.All(c => Char.IsLetter(c) || c == ' ' || c == '\''); // Només text amb espais i cometes simples
                 case Tipus_Dada.Code:
                     return Regex.IsMatch(text, @"^[AEIOU][A-Z]{3}\d{2}[13579]$"); // Codi tipus AAAB1234
+                case Tipus_Dada.Date:
+                    return DateTime.TryParseExact( //Data
+                        text,
+                        "dd/MM/yyyy",
+                        CultureInfo.InvariantCulture,
+                        DateTimeStyles.None,
+                        out _);
                 case Tipus_Dada.All:
                     return true; // Permet tot
+
                 default:
                     return true;
             }
@@ -94,11 +104,12 @@ namespace CustomControls
         {
             esValid = ValidateInput(this.Text);
 
-            if(esValid)
+            if (esValid)
             {
                 // Si el dato es válido y el control tiene el foco, se pone amarillo
                 this.BackColor = this.Focused ? Color.LightYellow : colorOriginal;
-            } else
+            }
+            else
             {
                 // Si el dato es inválido, se pone LightCoral
                 this.BackColor = Color.LightCoral;
