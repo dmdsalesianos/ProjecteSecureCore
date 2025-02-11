@@ -29,6 +29,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRComandes", "CRComandes\CR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrmLlistat", "FrmLlistat\FrmLlistat.csproj", "{EB17E818-9521-4835-9F2B-86614531C586}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FTP_Client", "FTP_Client\FTP_Client.csproj", "{D5A8C8ED-3E27-4A5F-ADFE-726C6BAEBE55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FTP_File_Processor", "FTP_File_Processor\FTP_File_Processor.csproj", "{713D8957-3433-41DE-BE86-E0D37AB9DDB8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +91,14 @@ Global
 		{EB17E818-9521-4835-9F2B-86614531C586}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB17E818-9521-4835-9F2B-86614531C586}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB17E818-9521-4835-9F2B-86614531C586}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5A8C8ED-3E27-4A5F-ADFE-726C6BAEBE55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5A8C8ED-3E27-4A5F-ADFE-726C6BAEBE55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5A8C8ED-3E27-4A5F-ADFE-726C6BAEBE55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5A8C8ED-3E27-4A5F-ADFE-726C6BAEBE55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{713D8957-3433-41DE-BE86-E0D37AB9DDB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{713D8957-3433-41DE-BE86-E0D37AB9DDB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{713D8957-3433-41DE-BE86-E0D37AB9DDB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{713D8957-3433-41DE-BE86-E0D37AB9DDB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
