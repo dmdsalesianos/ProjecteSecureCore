@@ -29,6 +29,7 @@ namespace FrmFactories
             dtgFactories.DataSource = factories;
             ActivarBinding();
 
+            //HAY QUE CAMBIAR ESTO Y QUE LO HAGA PARA LOS CAMPOS QUE NO TENGAN TAG O OTRA MANERA QUE NO SEA ESCRIBIR EL NOMBRE DEL CAMPO
             if (dtgFactories.Columns.Contains("idFactory"))
             {
                 dtgFactories.Columns["idFactory"].Visible = false;

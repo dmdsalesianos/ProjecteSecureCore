@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A4713DA1-C01B-4BF4-BA40-A6CEB02F69AC}</ProjectGuid>
+    <ProjectGuid>{A26C329D-2E28-4DEB-8B1F-58BA19A9B920}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>FrmFactories</RootNamespace>
     <AssemblyName>FrmFactories</AssemblyName>
@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\App\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -33,20 +33,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\App\DataAccess.dll</HintPath>
+    <Reference Include="BBDD_Factories">
+      <HintPath>..\App\BBDD_Factories.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="CustomControls">
+      <HintPath>..\App\CustomControls.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
       <HintPath>..\App\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\App\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -92,18 +91,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BBDD_Factories\BBDD_Factories.csproj">
-      <Project>{9cc304df-c323-46ce-ad08-6c07fc5807af}</Project>
-      <Name>BBDD_Factories</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CustomControls\CustomControls.csproj">
-      <Project>{6B666B1C-7BD0-4E76-AB39-95AD671EB46B}</Project>
-      <Name>CustomControls</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>FrmFactories</PreBuildEvent>
-  </PropertyGroup>
 </Project>
