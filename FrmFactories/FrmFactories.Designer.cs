@@ -75,6 +75,7 @@ namespace FrmFactories
             this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnNew
             // 
@@ -84,6 +85,7 @@ namespace FrmFactories
             this.btnNew.TabIndex = 4;
             this.btnNew.Text = "New";
             this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // txtDescFactory
             // 
@@ -96,7 +98,7 @@ namespace FrmFactories
             this.txtDescFactory.Size = new System.Drawing.Size(133, 22);
             this.txtDescFactory.TabIndex = 6;
             this.txtDescFactory.Tag = "DescFactory";
-            this.txtDescFactory.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
+            this.txtDescFactory.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
             // 
             // txtCodeFactory
             // 
@@ -109,7 +111,7 @@ namespace FrmFactories
             this.txtCodeFactory.Size = new System.Drawing.Size(133, 22);
             this.txtCodeFactory.TabIndex = 5;
             this.txtCodeFactory.Tag = "codeFactory";
-            this.txtCodeFactory.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
+            this.txtCodeFactory.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
             // 
             // FrmFactories
             // 
@@ -125,6 +127,7 @@ namespace FrmFactories
             this.Controls.Add(this.lblCodeFactory);
             this.Name = "FrmFactories";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FrmFactories_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgFactories)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

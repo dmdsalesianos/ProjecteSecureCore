@@ -29,6 +29,7 @@ namespace FrmFactories
             dtgFactories.DataSource = factories;
             ActivarBinding();
 
+            //AL HACER NEW Y UPDATE HACE DOS VECES LA NUEVA FILA, EL BOTON DE NEW Y UPDATE FUNCIONAN PERO HACEN COSAS RARAS
             //HAY QUE CAMBIAR ESTO Y QUE LO HAGA PARA LOS CAMPOS QUE NO TENGAN TAG O OTRA MANERA QUE NO SEA ESCRIBIR EL NOMBRE DEL CAMPO
             if (dtgFactories.Columns.Contains("idFactory"))
             {
@@ -40,8 +41,9 @@ namespace FrmFactories
         {
             foreach (Control ct in this.Controls)
             {
-                if (ct is TextBox txt)
+                if (ct is TextBox )
                 {
+                    TextBox txt = (TextBox)ct;
                     txt.DataBindings.Clear();
                     txt.Clear();
                     txt.DataBindings.Add("Text", factories, txt.Tag.ToString());
@@ -53,8 +55,9 @@ namespace FrmFactories
         {
             foreach (Control ct in this.Controls)
             {
-                if (ct is TextBox txt)
+                if (ct is TextBox)
                 {
+                    TextBox txt = (TextBox)ct;
                     txt.Clear();
                 }
             }
@@ -64,12 +67,12 @@ namespace FrmFactories
         {
             if (esNou)
             {
-                Factory factory = new Factory
+                Factory fac = new Factory();
                 {
-                    codeFactory = txtCodeFactory.Text,
-                    DescFactory = txtDescFactory.Text
-                };
-                db.Factories.Add(factory);
+                    fac.codeFactory = txtCodeFactory.Text;
+                    fac.DescFactory = txtDescFactory.Text;
+                }
+                db.Factories.Add(fac);
             }
             db.SaveChanges();
             RellenarDTG();
