@@ -8,74 +8,97 @@ namespace FrmFactories
 {
     public partial class FrmFactories : Form
     {
-        private BBDD_Factories.SecureCoreG4Entities db;
-        private List<BBDD_Factories.Factory> factories;
+        private SecureCoreG4Entities db;
+        private List<Factory> factories;
+        private BindingSource bindingSource;
         private bool esNou = false;
 
-        public FrmFactories()
-        {
-            InitializeComponent();
-        }
+        public FrmFactories() { InitializeComponent(); }
 
         private void FrmFactories_Load(object sender, EventArgs e)
         {
             RellenarDTG();
+            OcultarColumnasSinBinding();
         }
 
         private void RellenarDTG()
         {
-            db = new BBDD_Factories.SecureCoreG4Entities();
-            factories = db.Factories.ToList();
-            dtgFactories.DataSource = factories;
-            ActivarBinding();
+            bindingSource = new BindingSource();
+            db = new SecureCoreG4Entities();
 
-            //AL HACER NEW Y UPDATE HACE DOS VECES LA NUEVA FILA, EL BOTON DE NEW Y UPDATE FUNCIONAN PERO HACEN COSAS RARAS
-            //HAY QUE CAMBIAR ESTO Y QUE LO HAGA PARA LOS CAMPOS QUE NO TENGAN TAG O OTRA MANERA QUE NO SEA ESCRIBIR EL NOMBRE DEL CAMPO
-            if (dtgFactories.Columns.Contains("idFactory"))
-            {
-                dtgFactories.Columns["idFactory"].Visible = false;
-            }
+            factories = db.Factories.ToList();
+            bindingSource.DataSource = factories;
+            dtgFactories.DataSource = bindingSource;
+
+            ActivarBinding();
         }
 
         private void ActivarBinding()
         {
-            foreach (Control ct in this.Controls)
+            foreach(Control ct in this.Controls)
             {
-                if (ct is TextBox )
+                if(ct is TextBox txt)
                 {
-                    TextBox txt = (TextBox)ct;
                     txt.DataBindings.Clear();
                     txt.Clear();
-                    txt.DataBindings.Add("Text", factories, txt.Tag.ToString());
+
+                    if(!string.IsNullOrEmpty(txt.Tag?.ToString()))
+                    {
+                        txt.DataBindings.Add("Text", bindingSource, txt.Tag.ToString());
+                    }
                 }
             }
         }
 
         private void DesactivarBinding()
         {
-            foreach (Control ct in this.Controls)
+            foreach(Control ct in this.Controls)
             {
-                if (ct is TextBox)
+                if(ct is TextBox txt)
                 {
-                    TextBox txt = (TextBox)ct;
+                    txt.DataBindings.Clear();
                     txt.Clear();
+                }
+            }
+        }
+
+        private void OcultarColumnasSinBinding()
+        {
+            var camposVinculados = this.Controls
+                .OfType<TextBox>()
+                .Where(txt => !string.IsNullOrEmpty(txt.Tag?.ToString()))
+                .Select(txt => txt.Tag.ToString())
+                .ToList();
+
+            foreach(DataGridViewColumn col in dtgFactories.Columns)
+            {
+                if(!camposVinculados.Contains(col.DataPropertyName))
+                {
+                    col.Visible = false;
                 }
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (esNou)
+            try
             {
-                Factory fac = new Factory();
+                if(esNou)
                 {
-                    fac.codeFactory = txtCodeFactory.Text;
-                    fac.DescFactory = txtDescFactory.Text;
+                    esNou = false;
+                    Factory fac = new Factory { codeFactory = txtCodeFactory.Text, DescFactory = txtDescFactory.Text };
+                    db.Factories.Add(fac);
                 }
-                db.Factories.Add(fac);
+                db.SaveChanges();
+                RellenarDTG();
+            } catch(Exception ex)
+            {
+                MessageBox.Show(
+                    $"Error al actualizar los datos: {ex.Message}",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
-            db.SaveChanges();
-            RellenarDTG();
         }
 
         private void btnNew_Click(object sender, EventArgs e)

@@ -31,11 +31,11 @@ namespace FrmFactories
         {
             this.lblCodeFactory = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dtgFactories = new System.Windows.Forms.DataGridView();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.txtDescFactory = new CustomControls.SWTextbox();
             this.txtCodeFactory = new CustomControls.SWTextbox();
+            this.dtgFactories = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dtgFactories)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,16 +56,6 @@ namespace FrmFactories
             this.label2.Size = new System.Drawing.Size(132, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Factory description:";
-            // 
-            // dtgFactories
-            // 
-            this.dtgFactories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgFactories.Location = new System.Drawing.Point(67, 102);
-            this.dtgFactories.Name = "dtgFactories";
-            this.dtgFactories.RowHeadersWidth = 51;
-            this.dtgFactories.RowTemplate.Height = 24;
-            this.dtgFactories.Size = new System.Drawing.Size(682, 313);
-            this.dtgFactories.TabIndex = 2;
             // 
             // btnUpdate
             // 
@@ -113,16 +103,29 @@ namespace FrmFactories
             this.txtCodeFactory.Tag = "codeFactory";
             this.txtCodeFactory.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
             // 
+            // dtgFactories
+            // 
+            this.dtgFactories.AllowUserToAddRows = false;
+            this.dtgFactories.AllowUserToDeleteRows = false;
+            this.dtgFactories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgFactories.Location = new System.Drawing.Point(67, 141);
+            this.dtgFactories.Name = "dtgFactories";
+            this.dtgFactories.ReadOnly = true;
+            this.dtgFactories.RowHeadersWidth = 51;
+            this.dtgFactories.RowTemplate.Height = 24;
+            this.dtgFactories.Size = new System.Drawing.Size(682, 288);
+            this.dtgFactories.TabIndex = 7;
+            // 
             // FrmFactories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dtgFactories);
             this.Controls.Add(this.txtDescFactory);
             this.Controls.Add(this.txtCodeFactory);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.dtgFactories);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblCodeFactory);
             this.Name = "FrmFactories";
@@ -138,11 +141,11 @@ namespace FrmFactories
 
         private System.Windows.Forms.Label lblCodeFactory;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dtgFactories;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnNew;
         private CustomControls.SWTextbox txtCodeFactory;
         private CustomControls.SWTextbox txtDescFactory;
+        private System.Windows.Forms.DataGridView dtgFactories;
     }
 }
 
