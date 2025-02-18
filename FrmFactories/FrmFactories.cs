@@ -8,8 +8,8 @@ namespace FrmFactories
 {
     public partial class FrmFactories : Form
     {
-        private BBDD_Factories.SecureCoreG4Entities db;
-        private List<BBDD_Factories.Factory> factories;
+        private SecureCoreG4Entities db;
+        private List<Factory> factories;
         private bool esNou = false;
 
         public FrmFactories()
@@ -28,25 +28,23 @@ namespace FrmFactories
             factories = db.Factories.ToList();
             dtgFactories.DataSource = factories;
             ActivarBinding();
-
-            //AL HACER NEW Y UPDATE HACE DOS VECES LA NUEVA FILA, EL BOTON DE NEW Y UPDATE FUNCIONAN PERO HACEN COSAS RARAS
-            //HAY QUE CAMBIAR ESTO Y QUE LO HAGA PARA LOS CAMPOS QUE NO TENGAN TAG O OTRA MANERA QUE NO SEA ESCRIBIR EL NOMBRE DEL CAMPO
-            if (dtgFactories.Columns.Contains("idFactory"))
-            {
-                dtgFactories.Columns["idFactory"].Visible = false;
-            }
         }
 
         private void ActivarBinding()
         {
             foreach (Control ct in this.Controls)
             {
-                if (ct is TextBox )
+                if (ct is TextBox)
                 {
                     TextBox txt = (TextBox)ct;
                     txt.DataBindings.Clear();
                     txt.Clear();
                     txt.DataBindings.Add("Text", factories, txt.Tag.ToString());
+
+                    if (txt.Tag.ToString() == null)
+                    {
+                        txt.Visible = false;
+                    }
                 }
             }
         }
@@ -75,6 +73,7 @@ namespace FrmFactories
                 db.Factories.Add(fac);
             }
             db.SaveChanges();
+            esNou = false;
             RellenarDTG();
         }
 
