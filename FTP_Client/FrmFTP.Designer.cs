@@ -37,25 +37,27 @@ namespace FTP_Client
             // 
             // txtFileName
             // 
-            this.txtFileName.Location = new System.Drawing.Point(119, 27);
+            this.txtFileName.Location = new System.Drawing.Point(134, 34);
+            this.txtFileName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFileName.Name = "txtFileName";
-            this.txtFileName.Size = new System.Drawing.Size(555, 22);
+            this.txtFileName.Size = new System.Drawing.Size(624, 26);
             this.txtFileName.TabIndex = 0;
             // 
             // lblArxiu
             // 
             this.lblArxiu.AutoSize = true;
-            this.lblArxiu.Location = new System.Drawing.Point(12, 30);
+            this.lblArxiu.Location = new System.Drawing.Point(14, 38);
             this.lblArxiu.Name = "lblArxiu";
-            this.lblArxiu.Size = new System.Drawing.Size(101, 17);
+            this.lblArxiu.Size = new System.Drawing.Size(111, 20);
             this.lblArxiu.TabIndex = 1;
             this.lblArxiu.Text = "Nom de l\'arxiu:";
             // 
             // btnDownload
             // 
-            this.btnDownload.Location = new System.Drawing.Point(680, 23);
+            this.btnDownload.Location = new System.Drawing.Point(765, 29);
+            this.btnDownload.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(108, 30);
+            this.btnDownload.Size = new System.Drawing.Size(122, 38);
             this.btnDownload.TabIndex = 2;
             this.btnDownload.Text = "Download";
             this.btnDownload.UseVisualStyleBackColor = true;
@@ -64,26 +66,27 @@ namespace FTP_Client
             // lstResults
             // 
             this.lstResults.FormattingEnabled = true;
-            this.lstResults.ItemHeight = 16;
-            this.lstResults.Location = new System.Drawing.Point(119, 87);
+            this.lstResults.ItemHeight = 20;
+            this.lstResults.Location = new System.Drawing.Point(134, 109);
+            this.lstResults.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lstResults.Name = "lstResults";
-            this.lstResults.Size = new System.Drawing.Size(555, 260);
+            this.lstResults.Size = new System.Drawing.Size(624, 324);
             this.lstResults.TabIndex = 3;
             // 
             // FrmFTP
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.lstResults);
             this.Controls.Add(this.btnDownload);
             this.Controls.Add(this.lblArxiu);
             this.Controls.Add(this.txtFileName);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmFTP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_FTP_Client";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmFTP_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -83,12 +83,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FTP_File_Processor\FTP_File_Processor.csproj">
-      <Project>{713d8957-3433-41de-be86-e0d37ab9ddb8}</Project>
-      <Name>FTP_File_Processor</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="FTPCredentials.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
