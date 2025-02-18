@@ -54,7 +54,7 @@ namespace FTP_Client
             // 
             // btnDownload
             // 
-            this.btnDownload.Location = new System.Drawing.Point(765, 29);
+            this.btnDownload.Location = new System.Drawing.Point(773, 109);
             this.btnDownload.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDownload.Name = "btnDownload";
             this.btnDownload.Size = new System.Drawing.Size(122, 38);
@@ -77,7 +77,7 @@ namespace FTP_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 562);
+            this.ClientSize = new System.Drawing.Size(1120, 562);
             this.Controls.Add(this.lstResults);
             this.Controls.Add(this.btnDownload);
             this.Controls.Add(this.lblArxiu);
