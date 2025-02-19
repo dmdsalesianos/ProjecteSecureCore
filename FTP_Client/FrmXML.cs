@@ -10,26 +10,23 @@ namespace FTP_Client
     {
         private XDocument doc; // Almacenar el documento cargado
 
-        public FrmXML()
+        public FrmXML(XDocument xDocument)
         {
             InitializeComponent();
+
+            doc = xDocument;
         }
 
         private void FormXML_Load(object sender, EventArgs e)
         {
-            string xmlPath = Path.Combine(Directory.GetParent(Application.StartupPath)?.FullName, "FTP_Client", "FTPCredentials.xml");
-
             try
             {
-                doc = XDocument.Load(xmlPath); // Cargar el archivo XML
-
-                // Mostrar el XML completo en el RichTextBox
                 rtbXML.Text = doc.ToString();
 
-                // Vincular cada TextBox con un campo específico del XML
                 txtServer.Text = doc.Root.Element("ip")?.Value;
                 txtUser.Text = doc.Root.Element("credencials")?.Element("username")?.Value;
                 txtPassword.Text = doc.Root.Element("credencials")?.Element("password")?.Value;
+                txtRuta.Text = doc.Root.Element("rutadescarga")?.Value;
             }
             catch (Exception ex)
             {
@@ -44,6 +41,7 @@ namespace FTP_Client
                 doc.Root.Element("ip")?.SetValue(txtServer.Text);
                 doc.Root.Element("credencials")?.Element("username")?.SetValue(txtUser.Text);
                 doc.Root.Element("credencials")?.Element("password")?.SetValue(txtPassword.Text);
+                doc.Root.Element("rutadescarga")?.SetValue(txtRuta.Text);
 
                 string xmlPath = Path.Combine(Directory.GetParent(Application.StartupPath)?.FullName, "FTP_Client", "FTPCredentials.xml");
                 doc.Save(xmlPath);
@@ -60,5 +58,21 @@ namespace FTP_Client
         {
             Close();
         }
+
+        private void btnRuta_Click(object sender, EventArgs e)
+        {
+            using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
+            {
+                folderDialog.Description = "Seleccione la carpeta donde desea guardar los archivos";
+                folderDialog.ShowNewFolderButton = true;
+
+                if (folderDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string selectedPath = folderDialog.SelectedPath;
+                    txtRuta.Text = selectedPath;
+                }
+            }
+        }
+
     }
 }

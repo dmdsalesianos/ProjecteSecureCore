@@ -62,14 +62,14 @@ namespace FTP_Client
             return response;
         }
 
-        public FtpWebResponse Download(string fileName)
+        public FtpWebResponse Download(string fileName, string rutaDescarga)
         {
             try
             {
                 ftpRequest = (FtpWebRequest)WebRequest.Create($"ftp://{ftpServer}/{fileName}");
                 ftpRequest.Credentials = new NetworkCredential(ftpUser, ftpPassword);
                 Console.WriteLine("Solicitud FTP creada con éxito.");
-                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
+                string filePath = Path.Combine(rutaDescarga, fileName);
 
                 //**** DESCARGAR ARCHIVO ****
                 ftpRequest.Method = WebRequestMethods.Ftp.DownloadFile;
@@ -85,13 +85,13 @@ namespace FTP_Client
             return response;
         }
 
-        public FtpWebResponse Download(string fileName, string moveDirectory)
+        public FtpWebResponse Download(string fileName, string rutaDescarga, string moveDirectory)
         {
             try
             {
                 ftpRequest = (FtpWebRequest)WebRequest.Create($"ftp://{ftpServer}/{fileName}");
                 ftpRequest.Credentials = new NetworkCredential(ftpUser, ftpPassword);
-                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
+                string filePath = Path.Combine(rutaDescarga, fileName);
 
                 //**** DESCARGAR ARCHIVO ****
                 ftpRequest.Method = WebRequestMethods.Ftp.DownloadFile;

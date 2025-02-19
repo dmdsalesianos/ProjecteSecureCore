@@ -19,11 +19,19 @@ namespace FTP_Client
         FTP FTP;
         FtpWebResponse response;
         StreamReader reader;
+        XDocument doc;
+
+        string rutaDescarga;
 
         private void FrmFTP_Load(object sender, EventArgs e)
         {
             LoadFtpCredentials();
             FTP = new FTP(ftpServer, ftpUser, ftpPassword);
+
+            string xmlPath = Path.Combine(Directory.GetParent(Application.StartupPath)?.FullName, "FTP_Client", "FTPCredentials.xml");
+            doc = XDocument.Load(xmlPath);
+
+            rutaDescarga = doc.Root.Element("rutadescarga")?.Value;
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
@@ -54,7 +62,7 @@ namespace FTP_Client
 
                 picConnexion.Image = Properties.Resources.LOADING;
                 lblConnexio2.Text = $"DESCARGANDO {txtNomArxiu.Text}...";
-                response = FTP.Download(txtNomArxiu.Text, "tractats");
+                response = FTP.Download(txtNomArxiu.Text, rutaDescarga,"tractats");
 
                 if (response != null && response.StatusCode == FtpStatusCode.FileActionOK)
                 {
@@ -105,7 +113,7 @@ namespace FTP_Client
 
         private void btnXML_Click(object sender, EventArgs e)
         {
-            FrmXML frmXML = new FrmXML();
+            FrmXML frmXML = new FrmXML(doc);
             frmXML.Show();
         }
         private void btnClear_Click(object sender, EventArgs e)

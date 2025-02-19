@@ -38,15 +38,18 @@ namespace FTP_Client
             this.lblPassword = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblRuta = new System.Windows.Forms.Label();
+            this.txtRuta = new System.Windows.Forms.TextBox();
+            this.btnRuta = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // rtbXML
             // 
             this.rtbXML.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbXML.Location = new System.Drawing.Point(48, 104);
+            this.rtbXML.Location = new System.Drawing.Point(48, 165);
             this.rtbXML.Name = "rtbXML";
             this.rtbXML.ReadOnly = true;
-            this.rtbXML.Size = new System.Drawing.Size(772, 415);
+            this.rtbXML.Size = new System.Drawing.Size(772, 354);
             this.rtbXML.TabIndex = 0;
             this.rtbXML.TabStop = false;
             this.rtbXML.Text = "";
@@ -103,7 +106,7 @@ namespace FTP_Client
             // 
             this.btnGuardar.Location = new System.Drawing.Point(730, 525);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(90, 43);
+            this.btnGuardar.Size = new System.Drawing.Size(90, 44);
             this.btnGuardar.TabIndex = 7;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -113,17 +116,46 @@ namespace FTP_Client
             // 
             this.btnCancelar.Location = new System.Drawing.Point(634, 525);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(90, 43);
+            this.btnCancelar.Size = new System.Drawing.Size(90, 44);
             this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // lblRuta
+            // 
+            this.lblRuta.AutoSize = true;
+            this.lblRuta.Location = new System.Drawing.Point(44, 97);
+            this.lblRuta.Name = "lblRuta";
+            this.lblRuta.Size = new System.Drawing.Size(117, 20);
+            this.lblRuta.TabIndex = 10;
+            this.lblRuta.Text = "Ruta Descarga";
+            // 
+            // txtRuta
+            // 
+            this.txtRuta.Location = new System.Drawing.Point(48, 120);
+            this.txtRuta.Name = "txtRuta";
+            this.txtRuta.Size = new System.Drawing.Size(558, 26);
+            this.txtRuta.TabIndex = 9;
+            // 
+            // btnRuta
+            // 
+            this.btnRuta.Location = new System.Drawing.Point(612, 117);
+            this.btnRuta.Name = "btnRuta";
+            this.btnRuta.Size = new System.Drawing.Size(122, 33);
+            this.btnRuta.TabIndex = 11;
+            this.btnRuta.Text = "Select Ruta";
+            this.btnRuta.UseVisualStyleBackColor = true;
+            this.btnRuta.Click += new System.EventHandler(this.btnRuta_Click);
             // 
             // FrmXML
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1051, 631);
+            this.Controls.Add(this.btnRuta);
+            this.Controls.Add(this.lblRuta);
+            this.Controls.Add(this.txtRuta);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.lblPassword);
@@ -134,6 +166,7 @@ namespace FTP_Client
             this.Controls.Add(this.txtServer);
             this.Controls.Add(this.rtbXML);
             this.Name = "FrmXML";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormXML";
             this.Load += new System.EventHandler(this.FormXML_Load);
             this.ResumeLayout(false);
@@ -152,5 +185,8 @@ namespace FTP_Client
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lblRuta;
+        private System.Windows.Forms.TextBox txtRuta;
+        private System.Windows.Forms.Button btnRuta;
     }
 }
