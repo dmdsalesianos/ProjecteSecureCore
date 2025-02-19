@@ -121,12 +121,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FrmFactories\FrmFactories.csproj">
-      <Project>{a26c329d-2e28-4deb-8b1f-58ba19a9b920}</Project>
-      <Name>FrmFactories</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>

@@ -12,26 +12,26 @@ namespace FrmProductes
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+
     public partial class SecureCoreG4Entities1 : DbContext
     {
         public SecureCoreG4Entities1()
-            : base("name=SecureCoreG4Entities1")
+        : base("name=SecureCoreG4Entities1")  // 👈 Debe coincidir con `App.config`
         {
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            throw new UnintentionalCodeFirstException();
-
+            // ⚠️ Elimina el `throw new UnintentionalCodeFirstException();`
+            // Esto evita que falle la generación de modelos
             modelBuilder.Entity<Products>()
-            .HasRequired(p => p.Factories)  
-            .WithMany(f => f.Products)    
-            .HasForeignKey(p => p.idFactory); 
+                .HasRequired(p => p.Factories)
+                .WithMany(f => f.Products)
+                .HasForeignKey(p => p.idFactory);
 
             base.OnModelCreating(modelBuilder);
         }
-    
+
         public virtual DbSet<Factories> Factories { get; set; }
         public virtual DbSet<Products> Products { get; set; }
     }

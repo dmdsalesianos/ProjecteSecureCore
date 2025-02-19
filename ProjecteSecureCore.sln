@@ -34,6 +34,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBDD_Factories", "BBDD_Factories\BBDD_Factories.csproj", "{9CC304DF-C323-46CE-AD08-6C07FC5807AF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrmFactories", "FrmFactories\FrmFactories.csproj", "{A26C329D-2E28-4DEB-8B1F-58BA19A9B920}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6B666B1C-7BD0-4E76-AB39-95AD671EB46B} = {6B666B1C-7BD0-4E76-AB39-95AD671EB46B}
+		{9CC304DF-C323-46CE-AD08-6C07FC5807AF} = {9CC304DF-C323-46CE-AD08-6C07FC5807AF}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrmProductes", "FrmProductes\FrmProductes.csproj", "{9EB95AF9-B88E-4753-B1A4-47605BD5A6B6}"
 EndProject
