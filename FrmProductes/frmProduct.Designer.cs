@@ -43,9 +43,12 @@ namespace FrmProductes
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(94, 219);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(1015, 318);
@@ -53,7 +56,7 @@ namespace FrmProductes
             // 
             // textBox_name
             // 
-            this.textBox_name.Location = new System.Drawing.Point(188, 52);
+            this.textBox_name.Location = new System.Drawing.Point(188, 54);
             this.textBox_name.Name = "textBox_name";
             this.textBox_name.Size = new System.Drawing.Size(214, 26);
             this.textBox_name.TabIndex = 1;
@@ -70,7 +73,7 @@ namespace FrmProductes
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(75, 52);
+            this.label1.Location = new System.Drawing.Point(131, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 3;
@@ -79,7 +82,7 @@ namespace FrmProductes
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(75, 121);
+            this.label2.Location = new System.Drawing.Point(138, 124);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 20);
             this.label2.TabIndex = 4;
@@ -118,9 +121,9 @@ namespace FrmProductes
             // comboBox_relacional
             // 
             this.comboBox_relacional.FormattingEnabled = true;
-            this.comboBox_relacional.Location = new System.Drawing.Point(520, 52);
+            this.comboBox_relacional.Location = new System.Drawing.Point(570, 52);
             this.comboBox_relacional.Name = "comboBox_relacional";
-            this.comboBox_relacional.Size = new System.Drawing.Size(224, 28);
+            this.comboBox_relacional.Size = new System.Drawing.Size(213, 28);
             this.comboBox_relacional.TabIndex = 8;
             // 
             // frmProduct
