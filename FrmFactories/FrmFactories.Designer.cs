@@ -29,6 +29,7 @@ namespace FrmFactories
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFactories));
             this.lblCodeFactory = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -120,6 +121,8 @@ namespace FrmFactories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dtgFactories);
             this.Controls.Add(this.txtDescFactory);
@@ -128,8 +131,10 @@ namespace FrmFactories
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblCodeFactory);
+            this.DoubleBuffered = true;
             this.Name = "FrmFactories";
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmFactories_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgFactories)).EndInit();
             this.ResumeLayout(false);
