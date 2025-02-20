@@ -107,7 +107,6 @@ namespace FrmFactories
             // dtgFactories
             // 
             this.dtgFactories.AllowUserToAddRows = false;
-            this.dtgFactories.AllowUserToDeleteRows = false;
             this.dtgFactories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgFactories.Location = new System.Drawing.Point(67, 141);
             this.dtgFactories.Name = "dtgFactories";
