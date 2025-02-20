@@ -39,7 +39,8 @@
     <Reference Include="BBDD_Factories">
       <HintPath>..\App\BBDD_Factories.dll</HintPath>
     </Reference>
-    <Reference Include="CustomControls">
+    <Reference Include="CustomControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\App\CustomControls.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework">
