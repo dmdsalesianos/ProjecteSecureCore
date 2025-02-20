@@ -33,6 +33,7 @@ namespace EDI
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblFile = new System.Windows.Forms.Label();
             this.btnSelectFile = new System.Windows.Forms.Button();
+            this.btnMakeOrder = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // rtbDoc
@@ -40,7 +41,7 @@ namespace EDI
             this.rtbDoc.Location = new System.Drawing.Point(38, 157);
             this.rtbDoc.Name = "rtbDoc";
             this.rtbDoc.ReadOnly = true;
-            this.rtbDoc.Size = new System.Drawing.Size(631, 281);
+            this.rtbDoc.Size = new System.Drawing.Size(669, 368);
             this.rtbDoc.TabIndex = 0;
             this.rtbDoc.TabStop = false;
             this.rtbDoc.Text = "";
@@ -49,6 +50,7 @@ namespace EDI
             // 
             this.textBox1.Location = new System.Drawing.Point(38, 86);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(381, 26);
             this.textBox1.TabIndex = 1;
             // 
@@ -71,17 +73,28 @@ namespace EDI
             this.btnSelectFile.UseVisualStyleBackColor = true;
             this.btnSelectFile.Click += new System.EventHandler(this.btnSelectFile_Click);
             // 
+            // btnMakeOrder
+            // 
+            this.btnMakeOrder.Location = new System.Drawing.Point(593, 117);
+            this.btnMakeOrder.Name = "btnMakeOrder";
+            this.btnMakeOrder.Size = new System.Drawing.Size(114, 34);
+            this.btnMakeOrder.TabIndex = 4;
+            this.btnMakeOrder.Text = "Make Order";
+            this.btnMakeOrder.UseVisualStyleBackColor = true;
+            // 
             // frmEDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(797, 537);
+            this.Controls.Add(this.btnMakeOrder);
             this.Controls.Add(this.btnSelectFile);
             this.Controls.Add(this.lblFile);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.rtbDoc);
             this.Name = "frmEDI";
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -93,6 +106,7 @@ namespace EDI
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblFile;
         private System.Windows.Forms.Button btnSelectFile;
+        private System.Windows.Forms.Button btnMakeOrder;
     }
 }
 

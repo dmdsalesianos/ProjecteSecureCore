@@ -25,6 +25,7 @@ namespace FTP_Client
 
         private void FrmFTP_Load(object sender, EventArgs e)
         {
+
             LoadFtpCredentials();
             FTP = new FTP(ftpServer, ftpUser, ftpPassword);
 
@@ -36,6 +37,9 @@ namespace FTP_Client
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
+            picConnexion.Image = Properties.Resources.LOADING;
+            lblConnexio2.Text = "LOADING...";
+
             LoadFtpCredentials();
             FTP = new FTP(ftpServer, ftpUser, ftpPassword);
 
@@ -57,6 +61,9 @@ namespace FTP_Client
 
         private void btnDownload_Click(object sender, EventArgs e)
         {
+            picConnexion.Image = Properties.Resources.LOADING;
+            lblConnexio2.Text = "LOADING...";
+
             if (!string.IsNullOrWhiteSpace(txtNomArxiu.Text))
             {
 

@@ -30,9 +30,25 @@ namespace EDI
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     string selectedFile = openFileDialog.FileName;
-                    MessageBox.Show($"Archivo seleccionado: {selectedFile}");
+                    
+                    using (StreamReader reader = new StreamReader(selectedFile))
+                    {
+                        string line;
+                        while ((line = reader.ReadLine()) != null)
+                        {
+
+                            string[] partes = line.Split('|');
+                            
+                            
+                            line = "";
+                        }
+                    }
                 }
+
+                
             }
+
+
         }
 
     }
