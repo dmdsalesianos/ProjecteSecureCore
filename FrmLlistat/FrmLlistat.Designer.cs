@@ -31,9 +31,9 @@ namespace FrmLlistat
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLlistat));
             this.label1 = new System.Windows.Forms.Label();
-            this.txtParametre = new System.Windows.Forms.TextBox();
             this.btnInforme = new System.Windows.Forms.Button();
             this.CRVReports = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.txtParametre = new CustomControls.SWTextbox();
             this.SuspendLayout();
             // 
             // label1
@@ -44,13 +44,6 @@ namespace FrmLlistat
             this.label1.Size = new System.Drawing.Size(144, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Número de comanda:";
-            // 
-            // txtParametre
-            // 
-            this.txtParametre.Location = new System.Drawing.Point(178, 48);
-            this.txtParametre.Name = "txtParametre";
-            this.txtParametre.Size = new System.Drawing.Size(100, 22);
-            this.txtParametre.TabIndex = 1;
             // 
             // btnInforme
             // 
@@ -72,6 +65,18 @@ namespace FrmLlistat
             this.CRVReports.Size = new System.Drawing.Size(1407, 740);
             this.CRVReports.TabIndex = 3;
             // 
+            // txtParametre
+            // 
+            this.txtParametre.BackColor = System.Drawing.SystemColors.Window;
+            this.txtParametre.EsForanea = false;
+            this.txtParametre.Location = new System.Drawing.Point(178, 48);
+            this.txtParametre.Name = "txtParametre";
+            this.txtParametre.NomCampBBDD = null;
+            this.txtParametre.PermetreBuit = true;
+            this.txtParametre.Size = new System.Drawing.Size(100, 22);
+            this.txtParametre.TabIndex = 4;
+            this.txtParametre.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
+            // 
             // FrmLlistat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -79,9 +84,9 @@ namespace FrmLlistat
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1498, 859);
+            this.Controls.Add(this.txtParametre);
             this.Controls.Add(this.CRVReports);
             this.Controls.Add(this.btnInforme);
-            this.Controls.Add(this.txtParametre);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Name = "FrmLlistat";
@@ -96,9 +101,9 @@ namespace FrmLlistat
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtParametre;
         private System.Windows.Forms.Button btnInforme;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer CRVReports;
+        private CustomControls.SWTextbox txtParametre;
     }
 }
 
