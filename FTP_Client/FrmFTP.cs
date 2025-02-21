@@ -4,120 +4,165 @@ using System.Net;
 using System.Windows.Forms;
 using System.Xml;
 using System.Drawing;
+using System.Xml.Linq;
 
 namespace FTP_Client
 {
     public partial class FrmFTP : Form
     {
-        private FTP_File_Processor ftp;
-
         public FrmFTP() { InitializeComponent(); }
 
-        private void btnDownload_Click(object sender, EventArgs e)
-        {
-            lstResults.Items.Clear();
-            string fileName = txtFileName.Text;
-            if(string.IsNullOrEmpty(fileName))
-            {
-                MessageBox.Show("Introdueix el nom del fitxer.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+        private static string ftpServer;
+        private static string ftpUser;
+        private static string ftpPassword;
 
-            string localPath = Path.Combine(Directory.GetCurrentDirectory(), fileName);
+        FTP FTP;
+        FtpWebResponse response;
+        StreamReader reader;
+        XDocument doc;
 
-            ftp.DownloadFile(fileName, localPath);
-        }
-
-        // Método que maneja el evento de la operación de descarga completada
-        private void OnFileOperationComplete(object sender, string message)
-        {
-            MessageBox.Show(message, "Èxit", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            string localPath = Path.Combine(Directory.GetCurrentDirectory(), txtFileName.Text);
-
-            try
-            {
-                // Leer el archivo y mostrar las líneas que contienen "LIN"
-                using(StreamReader reader = new StreamReader(localPath))
-                {
-                    string line;
-                    while((line = reader.ReadLine()) != null)
-                    {
-                        if(line.StartsWith("LIN"))
-                        {
-                            string[] parts = line.Split('|');
-                            if(parts.Length > 2)
-                            {
-                                lstResults.Items.Add("Nau trobada: " + parts[2]);
-                            }
-                        }
-                    }
-                }
-
-                // Comprobar si existe la carpeta "tractats", si no, crearla
-                string treatedDir = Path.Combine(Directory.GetCurrentDirectory(), "tractats");
-                if(!Directory.Exists(treatedDir))
-                {
-                    Directory.CreateDirectory(treatedDir);
-                }
-
-                // Definir el nuevo nombre del archivo (sobreescribible)
-                string newFileName = Path.Combine(
-                    treatedDir,
-                    Path.GetFileNameWithoutExtension(txtFileName.Text) + "_OK" + Path.GetExtension(txtFileName.Text));
-
-                // Si el archivo ya existe, eliminarlo antes de mover el nuevo
-                if(File.Exists(newFileName))
-                {
-                    File.Delete(newFileName);
-                }
-
-                // Mover el archivo a la carpeta "tractats"
-                File.Move(localPath, newFileName);
-
-                MessageBox.Show(
-                    "Fitxer mogut a: " + newFileName,
-                    "Èxit",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-            } catch(Exception ex)
-            {
-                MessageBox.Show(
-                    "Error al processar l'arxiu: " + ex.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-        }
-
-        // Método que maneja el evento de error de operación de archivo
-        private void OnFileOperationError(object sender, string message)
-        { MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        string rutaDescarga;
 
         private void FrmFTP_Load(object sender, EventArgs e)
         {
-            ftp = new FTP_File_Processor("FTPCredentials.xml");
 
-            // Conectar al servidor y mostrar el estado
-            if(ftp.Connection)
+            LoadFtpCredentials();
+            FTP = new FTP(ftpServer, ftpUser, ftpPassword);
+
+            string xmlPath = Path.Combine(Directory.GetParent(Application.StartupPath)?.FullName, "FTP_Client", "FTPCredentials.xml");
+            doc = XDocument.Load(xmlPath);
+
+            rutaDescarga = doc.Root.Element("rutadescarga")?.Value;
+        }
+
+        private void btnConnect_Click(object sender, EventArgs e)
+        {
+            picConnexion.Image = Properties.Resources.LOADING;
+            lblConnexio2.Text = "LOADING...";
+
+            LoadFtpCredentials();
+            FTP = new FTP(ftpServer, ftpUser, ftpPassword);
+
+            response = FTP.Connectar();
+
+            if (response != null && response.StatusCode == FtpStatusCode.OpeningData)
             {
-                MessageBox.Show(
-                    "Conexió amb el servidor FTP establerta exitòsament.",
-                    "Informació",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-            } else
+                picConnexion.Image = Properties.Resources.OK;
+                lblConnexio2.Text = "CONNEXIO CORRECTA";
+
+                MostrarArchivosFTP();
+            }
+            else
             {
-                MessageBox.Show(
-                    "Conexión con servidor FTP no establecida.",
-                    "Información",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                picConnexion.Image = Properties.Resources.NOK;
+                lblConnexio2.Text = "CONNEXIO FALLIDA";
+            }
+        }
+
+        private void btnDownload_Click(object sender, EventArgs e)
+        {
+            picConnexion.Image = Properties.Resources.LOADING;
+            lblConnexio2.Text = "LOADING...";
+
+            if (!string.IsNullOrWhiteSpace(txtNomArxiu.Text))
+            {
+
+                picConnexion.Image = Properties.Resources.LOADING;
+                lblConnexio2.Text = $"DESCARGANDO {txtNomArxiu.Text}...";
+                response = FTP.Download(txtNomArxiu.Text, rutaDescarga,"tractats");
+
+                if (response != null && response.StatusCode == FtpStatusCode.FileActionOK)
+                {
+                    picConnexion.Image = Properties.Resources.OK;
+                    lblConnexio2.Text = $"{txtNomArxiu.Text} DESCARGADO";
+                    txtNomArxiu.Text = "";
+
+                    btnConnect_Click(sender, e);
+                }
+                else
+                {
+                    picConnexion.Image = Properties.Resources.NOK;
+                    lblConnexio2.Text = $"ERROR AL DESCARGAR {txtNomArxiu.Text}";
+                    txtNomArxiu.Text = "";
+                }
+            }
+            else
+            {
+                picConnexion.Image = Properties.Resources.NOK;
+                lblConnexio2.Text = "INTRODUCE UN NOMBRE";
+            }
+        }      
+
+        private void btnSelectFile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Archivos EDI (*.edi)|*.edi";
+            openFileDialog.Title = "Seleccionar archivo EDI";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string fileName = Path.GetFileName(openFileDialog.FileName);
+
+                response = FTP.Upload(fileName);
+                if (response != null && response.StatusCode == FtpStatusCode.ClosingData)
+                {
+                    picConnexion.Image = Properties.Resources.OK;
+                    lblConnexio2.Text = "ARCHIVO SUBIDO CORRECTAMENTE";
+                }
+                else
+                {
+                    picConnexion.Image = Properties.Resources.NOK;
+                    lblConnexio2.Text = "ERROR AL SUBIR EL ARCHIVO";
+                }
             }
 
-            // Subscribir a los eventos de la clase FTP_File_Processor
-            ftp.FileOperationComplete += OnFileOperationComplete;
-            ftp.FileOperationError += OnFileOperationError;
         }
+
+        private void btnXML_Click(object sender, EventArgs e)
+        {
+            FrmXML frmXML = new FrmXML(doc);
+            frmXML.Show();
+        }
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            rtbFiles.Clear();
+        }
+
+
+        private void LoadFtpCredentials()
+        {
+            string xmlpath = Path.Combine(Directory.GetParent(Application.StartupPath)?.FullName, "FTP_Client", "FTPCredentials.xml");
+            try
+            {
+                XDocument doc = XDocument.Load(xmlpath);
+                ftpServer = doc.Root.Element("ip")?.Value;
+                ftpUser = doc.Root.Element("credencials")?.Element("username")?.Value;
+                ftpPassword = doc.Root.Element("credencials")?.Element("password")?.Value;
+            }
+            catch
+            {
+                picConnexion.Image = Properties.Resources.NOK;
+                lblConnexio2.Text = "CREDENCIALES NO CARGADAS CORRECTAMENTE";
+            }
+        }
+        private void MostrarArchivosFTP()
+        {
+            reader = new StreamReader(response.GetResponseStream());
+            // Mostrar archivos
+            rtbFiles.AppendText("\nARCHIVOS DISPONIBLES\n");
+            rtbFiles.AppendText("-------------------------------------------------------\n");
+
+            string line;
+            while ((line = reader.ReadLine()) != null)
+            {
+                if (line.EndsWith(".edi", StringComparison.OrdinalIgnoreCase))
+                {
+                    rtbFiles.AppendText(line + Environment.NewLine);
+                }
+            }
+            rtbFiles.ScrollToCaret();
+        }
+
+
     }
 }
