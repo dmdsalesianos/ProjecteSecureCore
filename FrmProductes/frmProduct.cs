@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+
 
 namespace FrmProductes
 {
@@ -20,13 +22,17 @@ namespace FrmProductes
         public frmProduct()
         {
             InitializeComponent();
+
+
             db = new SecureCoreG4Entities1();
         }
 
         private void frmProduct_Load(object sender, EventArgs e)
         {
+            
             RellenarDTG();
             LlenarComboBoxFactories();
+
         }
 
         private void RellenarDTG()

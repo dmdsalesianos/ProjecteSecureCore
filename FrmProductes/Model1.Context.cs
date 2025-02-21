@@ -16,14 +16,12 @@ namespace FrmProductes
     public partial class SecureCoreG4Entities1 : DbContext
     {
         public SecureCoreG4Entities1()
-        : base("name=SecureCoreG4Entities1")  // 👈 Debe coincidir con `App.config`
+        : base("name=SecureCoreG4Entities1")
         {
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            // ⚠️ Elimina el `throw new UnintentionalCodeFirstException();`
-            // Esto evita que falle la generación de modelos
             modelBuilder.Entity<Products>()
                 .HasRequired(p => p.Factories)
                 .WithMany(f => f.Products)
