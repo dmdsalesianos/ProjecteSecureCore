@@ -29,7 +29,6 @@ namespace FTP_Client
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmXML));
             this.rtbXML = new System.Windows.Forms.RichTextBox();
             this.lblServer = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
@@ -201,7 +200,7 @@ namespace FTP_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(198)))), ((int)(((byte)(250)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(934, 505);
             this.Controls.Add(this.btnGuardar);
@@ -219,7 +218,7 @@ namespace FTP_Client
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmXML";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormXML";
+            this.Text = "Modify Credentials";
             this.Load += new System.EventHandler(this.FormXML_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

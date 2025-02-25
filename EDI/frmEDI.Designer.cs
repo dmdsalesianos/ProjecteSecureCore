@@ -32,13 +32,14 @@ namespace EDI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEDI));
             this.rtbDoc = new System.Windows.Forms.RichTextBox();
             this.lblFile = new System.Windows.Forms.Label();
-            this.txtArxiu = new CustomControls.SWTextbox();
-            this.btnSelectFile = new CustomControls.RJControls.RJButton();
             this.btnMakeOrder = new CustomControls.RJControls.RJButton();
+            this.btnSelectFile = new CustomControls.RJControls.RJButton();
+            this.txtArxiu = new CustomControls.SWTextbox();
             this.SuspendLayout();
             // 
             // rtbDoc
             // 
+            this.rtbDoc.Enabled = false;
             this.rtbDoc.Location = new System.Drawing.Point(34, 126);
             this.rtbDoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbDoc.Name = "rtbDoc";
@@ -57,18 +58,24 @@ namespace EDI
             this.lblFile.TabIndex = 2;
             this.lblFile.Text = "Archivo Seleccionado";
             // 
-            // txtArxiu
+            // btnMakeOrder
             // 
-            this.txtArxiu.BackColor = System.Drawing.SystemColors.Control;
-            this.txtArxiu.Enabled = false;
-            this.txtArxiu.EsForanea = false;
-            this.txtArxiu.Location = new System.Drawing.Point(34, 68);
-            this.txtArxiu.Name = "txtArxiu";
-            this.txtArxiu.NomCampBBDD = null;
-            this.txtArxiu.PermetreBuit = true;
-            this.txtArxiu.Size = new System.Drawing.Size(340, 22);
-            this.txtArxiu.TabIndex = 11;
-            this.txtArxiu.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
+            this.btnMakeOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
+            this.btnMakeOrder.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
+            this.btnMakeOrder.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnMakeOrder.BorderRadius = 0;
+            this.btnMakeOrder.BorderSize = 0;
+            this.btnMakeOrder.FlatAppearance.BorderSize = 0;
+            this.btnMakeOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMakeOrder.ForeColor = System.Drawing.Color.White;
+            this.btnMakeOrder.Location = new System.Drawing.Point(528, 95);
+            this.btnMakeOrder.Name = "btnMakeOrder";
+            this.btnMakeOrder.Size = new System.Drawing.Size(101, 26);
+            this.btnMakeOrder.TabIndex = 13;
+            this.btnMakeOrder.Text = "Make Order";
+            this.btnMakeOrder.TextColor = System.Drawing.Color.White;
+            this.btnMakeOrder.UseVisualStyleBackColor = false;
+            this.btnMakeOrder.Click += new System.EventHandler(this.btnMakeOrder_Click);
             // 
             // btnSelectFile
             // 
@@ -89,24 +96,18 @@ namespace EDI
             this.btnSelectFile.UseVisualStyleBackColor = false;
             this.btnSelectFile.Click += new System.EventHandler(this.btnSelectFile_Click);
             // 
-            // btnMakeOrder
+            // txtArxiu
             // 
-            this.btnMakeOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
-            this.btnMakeOrder.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
-            this.btnMakeOrder.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnMakeOrder.BorderRadius = 0;
-            this.btnMakeOrder.BorderSize = 0;
-            this.btnMakeOrder.FlatAppearance.BorderSize = 0;
-            this.btnMakeOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMakeOrder.ForeColor = System.Drawing.Color.White;
-            this.btnMakeOrder.Location = new System.Drawing.Point(528, 95);
-            this.btnMakeOrder.Name = "btnMakeOrder";
-            this.btnMakeOrder.Size = new System.Drawing.Size(101, 26);
-            this.btnMakeOrder.TabIndex = 13;
-            this.btnMakeOrder.Text = "Make Order";
-            this.btnMakeOrder.TextColor = System.Drawing.Color.White;
-            this.btnMakeOrder.UseVisualStyleBackColor = false;
-            this.btnMakeOrder.Click += new System.EventHandler(this.btnMakeOrder_Click);
+            this.txtArxiu.BackColor = System.Drawing.SystemColors.Control;
+            this.txtArxiu.Enabled = false;
+            this.txtArxiu.EsForanea = false;
+            this.txtArxiu.Location = new System.Drawing.Point(34, 68);
+            this.txtArxiu.Name = "txtArxiu";
+            this.txtArxiu.NomCampBBDD = null;
+            this.txtArxiu.PermetreBuit = true;
+            this.txtArxiu.Size = new System.Drawing.Size(340, 22);
+            this.txtArxiu.TabIndex = 11;
+            this.txtArxiu.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
             // 
             // frmEDI
             // 

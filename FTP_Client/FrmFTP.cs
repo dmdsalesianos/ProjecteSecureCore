@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Drawing;
 using System.Xml.Linq;
+using System.Threading.Tasks;
 
 namespace FTP_Client
 {
@@ -35,15 +36,22 @@ namespace FTP_Client
             rutaDescarga = doc.Root.Element("rutadescarga")?.Value;
         }
 
-        private void btnConnect_Click(object sender, EventArgs e)
+        private async void btnConnect_Click(object sender, EventArgs e)
         {
-            picConnexion.Image = Properties.Resources.LOADING;
             lblConnexio2.Text = "LOADING...";
+            lblConnexio2.Visible = true;
+            picConnexion.Image = Properties.Resources.LOADING;
 
-            LoadFtpCredentials();
-            FTP = new FTP(ftpServer, ftpUser, ftpPassword);
+            // Utilitzem fils per que tot carregui correctament
+            await Task.Delay(100);
 
-            response = FTP.Connectar();
+            // Carga credencials i conecta amb l'FTP en un fil secundari
+            response = await Task.Run(() =>
+            {
+                LoadFtpCredentials();
+                FTP = new FTP(ftpServer, ftpUser, ftpPassword);
+                return FTP.Connectar();
+            });
 
             if (response != null && response.StatusCode == FtpStatusCode.OpeningData)
             {
@@ -58,6 +66,7 @@ namespace FTP_Client
                 lblConnexio2.Text = "CONNEXIO FALLIDA";
             }
         }
+
 
         private void btnDownload_Click(object sender, EventArgs e)
         {

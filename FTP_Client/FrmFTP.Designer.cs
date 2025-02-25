@@ -36,21 +36,21 @@ namespace FTP_Client
             this.picConnexion = new System.Windows.Forms.PictureBox();
             this.rtbFiles = new System.Windows.Forms.RichTextBox();
             this.lblNameArxiu = new System.Windows.Forms.Label();
-            this.txtNomArxiu = new CustomControls.SWTextbox();
-            this.btnDownload = new CustomControls.RJControls.RJButton();
-            this.btnConnect = new CustomControls.RJControls.RJButton();
-            this.btnUploadFile = new CustomControls.RJControls.RJButton();
-            this.btnXML = new CustomControls.RJControls.RJButton();
             this.btnClear = new CustomControls.RJControls.RJButton();
+            this.btnXML = new CustomControls.RJControls.RJButton();
+            this.btnUploadFile = new CustomControls.RJControls.RJButton();
+            this.btnConnect = new CustomControls.RJControls.RJButton();
+            this.btnDownload = new CustomControls.RJControls.RJButton();
+            this.txtNomArxiu = new CustomControls.SWTextbox();
             this.gbVerificacio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picConnexion)).BeginInit();
             this.SuspendLayout();
             // 
             // gbVerificacio
             // 
+            this.gbVerificacio.Controls.Add(this.picConnexion);
             this.gbVerificacio.Controls.Add(this.lblConnexio2);
             this.gbVerificacio.Controls.Add(this.lblConnexio);
-            this.gbVerificacio.Controls.Add(this.picConnexion);
             this.gbVerificacio.Location = new System.Drawing.Point(562, 129);
             this.gbVerificacio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbVerificacio.Name = "gbVerificacio";
@@ -62,19 +62,19 @@ namespace FTP_Client
             // 
             // lblConnexio2
             // 
-            this.lblConnexio2.AutoSize = true;
             this.lblConnexio2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConnexio2.Location = new System.Drawing.Point(104, 65);
             this.lblConnexio2.Name = "lblConnexio2";
-            this.lblConnexio2.Size = new System.Drawing.Size(0, 17);
+            this.lblConnexio2.Size = new System.Drawing.Size(231, 21);
             this.lblConnexio2.TabIndex = 2;
+            this.lblConnexio2.Text = "resultat2";
+            this.lblConnexio2.Visible = false;
             // 
             // lblConnexio
             // 
-            this.lblConnexio.AutoSize = true;
             this.lblConnexio.Location = new System.Drawing.Point(12, 18);
             this.lblConnexio.Name = "lblConnexio";
-            this.lblConnexio.Size = new System.Drawing.Size(122, 17);
+            this.lblConnexio.Size = new System.Drawing.Size(382, 25);
             this.lblConnexio.TabIndex = 1;
             this.lblConnexio.Text = "Resultat Connexió";
             // 
@@ -108,74 +108,24 @@ namespace FTP_Client
             this.lblNameArxiu.TabIndex = 6;
             this.lblNameArxiu.Text = "Nom Arxiu";
             // 
-            // txtNomArxiu
+            // btnClear
             // 
-            this.txtNomArxiu.BackColor = System.Drawing.SystemColors.Control;
-            this.txtNomArxiu.EsForanea = false;
-            this.txtNomArxiu.Location = new System.Drawing.Point(51, 98);
-            this.txtNomArxiu.Name = "txtNomArxiu";
-            this.txtNomArxiu.NomCampBBDD = null;
-            this.txtNomArxiu.PermetreBuit = true;
-            this.txtNomArxiu.Size = new System.Drawing.Size(392, 22);
-            this.txtNomArxiu.TabIndex = 10;
-            this.txtNomArxiu.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
-            // 
-            // btnDownload
-            // 
-            this.btnDownload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
-            this.btnDownload.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
-            this.btnDownload.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnDownload.BorderRadius = 0;
-            this.btnDownload.BorderSize = 0;
-            this.btnDownload.FlatAppearance.BorderSize = 0;
-            this.btnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDownload.ForeColor = System.Drawing.Color.White;
-            this.btnDownload.Location = new System.Drawing.Point(449, 94);
-            this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(94, 26);
-            this.btnDownload.TabIndex = 11;
-            this.btnDownload.Text = "Download";
-            this.btnDownload.TextColor = System.Drawing.Color.White;
-            this.btnDownload.UseVisualStyleBackColor = false;
-            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
-            // 
-            // btnConnect
-            // 
-            this.btnConnect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
-            this.btnConnect.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
-            this.btnConnect.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnConnect.BorderRadius = 0;
-            this.btnConnect.BorderSize = 0;
-            this.btnConnect.FlatAppearance.BorderSize = 0;
-            this.btnConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConnect.ForeColor = System.Drawing.Color.White;
-            this.btnConnect.Location = new System.Drawing.Point(562, 94);
-            this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(94, 26);
-            this.btnConnect.TabIndex = 12;
-            this.btnConnect.Text = "Connect";
-            this.btnConnect.TextColor = System.Drawing.Color.White;
-            this.btnConnect.UseVisualStyleBackColor = false;
-            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
-            // 
-            // btnUploadFile
-            // 
-            this.btnUploadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
-            this.btnUploadFile.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
-            this.btnUploadFile.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnUploadFile.BorderRadius = 0;
-            this.btnUploadFile.BorderSize = 0;
-            this.btnUploadFile.FlatAppearance.BorderSize = 0;
-            this.btnUploadFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUploadFile.ForeColor = System.Drawing.Color.White;
-            this.btnUploadFile.Location = new System.Drawing.Point(662, 94);
-            this.btnUploadFile.Name = "btnUploadFile";
-            this.btnUploadFile.Size = new System.Drawing.Size(94, 26);
-            this.btnUploadFile.TabIndex = 13;
-            this.btnUploadFile.Text = "Upload File";
-            this.btnUploadFile.TextColor = System.Drawing.Color.White;
-            this.btnUploadFile.UseVisualStyleBackColor = false;
-            this.btnUploadFile.Click += new System.EventHandler(this.btnSelectFile_Click);
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
+            this.btnClear.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
+            this.btnClear.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnClear.BorderRadius = 0;
+            this.btnClear.BorderSize = 0;
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(407, 324);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(136, 26);
+            this.btnClear.TabIndex = 15;
+            this.btnClear.Text = "Clear Terminal";
+            this.btnClear.TextColor = System.Drawing.Color.White;
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnXML
             // 
@@ -196,24 +146,74 @@ namespace FTP_Client
             this.btnXML.UseVisualStyleBackColor = false;
             this.btnXML.Click += new System.EventHandler(this.btnXML_Click);
             // 
-            // btnClear
+            // btnUploadFile
             // 
-            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
-            this.btnClear.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
-            this.btnClear.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnClear.BorderRadius = 0;
-            this.btnClear.BorderSize = 0;
-            this.btnClear.FlatAppearance.BorderSize = 0;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(407, 324);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(136, 26);
-            this.btnClear.TabIndex = 15;
-            this.btnClear.Text = "Clear Terminal";
-            this.btnClear.TextColor = System.Drawing.Color.White;
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            this.btnUploadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
+            this.btnUploadFile.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
+            this.btnUploadFile.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnUploadFile.BorderRadius = 0;
+            this.btnUploadFile.BorderSize = 0;
+            this.btnUploadFile.FlatAppearance.BorderSize = 0;
+            this.btnUploadFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUploadFile.ForeColor = System.Drawing.Color.White;
+            this.btnUploadFile.Location = new System.Drawing.Point(662, 94);
+            this.btnUploadFile.Name = "btnUploadFile";
+            this.btnUploadFile.Size = new System.Drawing.Size(94, 26);
+            this.btnUploadFile.TabIndex = 13;
+            this.btnUploadFile.Text = "Upload File";
+            this.btnUploadFile.TextColor = System.Drawing.Color.White;
+            this.btnUploadFile.UseVisualStyleBackColor = false;
+            this.btnUploadFile.Click += new System.EventHandler(this.btnSelectFile_Click);
+            // 
+            // btnConnect
+            // 
+            this.btnConnect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
+            this.btnConnect.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
+            this.btnConnect.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnConnect.BorderRadius = 0;
+            this.btnConnect.BorderSize = 0;
+            this.btnConnect.FlatAppearance.BorderSize = 0;
+            this.btnConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConnect.ForeColor = System.Drawing.Color.White;
+            this.btnConnect.Location = new System.Drawing.Point(562, 94);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(94, 26);
+            this.btnConnect.TabIndex = 12;
+            this.btnConnect.Text = "Connect";
+            this.btnConnect.TextColor = System.Drawing.Color.White;
+            this.btnConnect.UseVisualStyleBackColor = false;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            // 
+            // btnDownload
+            // 
+            this.btnDownload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
+            this.btnDownload.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
+            this.btnDownload.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDownload.BorderRadius = 0;
+            this.btnDownload.BorderSize = 0;
+            this.btnDownload.FlatAppearance.BorderSize = 0;
+            this.btnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDownload.ForeColor = System.Drawing.Color.White;
+            this.btnDownload.Location = new System.Drawing.Point(449, 94);
+            this.btnDownload.Name = "btnDownload";
+            this.btnDownload.Size = new System.Drawing.Size(94, 26);
+            this.btnDownload.TabIndex = 11;
+            this.btnDownload.Text = "Download";
+            this.btnDownload.TextColor = System.Drawing.Color.White;
+            this.btnDownload.UseVisualStyleBackColor = false;
+            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
+            // 
+            // txtNomArxiu
+            // 
+            this.txtNomArxiu.BackColor = System.Drawing.SystemColors.Control;
+            this.txtNomArxiu.EsForanea = false;
+            this.txtNomArxiu.Location = new System.Drawing.Point(50, 96);
+            this.txtNomArxiu.Name = "txtNomArxiu";
+            this.txtNomArxiu.NomCampBBDD = null;
+            this.txtNomArxiu.PermetreBuit = true;
+            this.txtNomArxiu.Size = new System.Drawing.Size(392, 22);
+            this.txtNomArxiu.TabIndex = 10;
+            this.txtNomArxiu.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
             // 
             // FrmFTP
             // 
@@ -239,7 +239,6 @@ namespace FTP_Client
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmFTP_Load);
             this.gbVerificacio.ResumeLayout(false);
-            this.gbVerificacio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picConnexion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
