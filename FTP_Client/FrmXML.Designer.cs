@@ -29,6 +29,7 @@ namespace FTP_Client
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmXML));
             this.rtbXML = new System.Windows.Forms.RichTextBox();
             this.txtServer = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -46,67 +47,72 @@ namespace FTP_Client
             // rtbXML
             // 
             this.rtbXML.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbXML.Location = new System.Drawing.Point(48, 165);
+            this.rtbXML.Location = new System.Drawing.Point(43, 132);
+            this.rtbXML.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbXML.Name = "rtbXML";
             this.rtbXML.ReadOnly = true;
-            this.rtbXML.Size = new System.Drawing.Size(772, 354);
+            this.rtbXML.Size = new System.Drawing.Size(687, 284);
             this.rtbXML.TabIndex = 0;
             this.rtbXML.TabStop = false;
             this.rtbXML.Text = "";
             // 
             // txtServer
             // 
-            this.txtServer.Location = new System.Drawing.Point(48, 59);
+            this.txtServer.Location = new System.Drawing.Point(43, 47);
+            this.txtServer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtServer.Name = "txtServer";
-            this.txtServer.Size = new System.Drawing.Size(315, 26);
+            this.txtServer.Size = new System.Drawing.Size(280, 22);
             this.txtServer.TabIndex = 1;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(593, 59);
+            this.txtPassword.Location = new System.Drawing.Point(527, 47);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(173, 26);
+            this.txtPassword.Size = new System.Drawing.Size(154, 22);
             this.txtPassword.TabIndex = 2;
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(383, 59);
+            this.txtUser.Location = new System.Drawing.Point(340, 47);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(173, 26);
+            this.txtUser.Size = new System.Drawing.Size(154, 22);
             this.txtUser.TabIndex = 3;
             // 
             // lblServer
             // 
             this.lblServer.AutoSize = true;
-            this.lblServer.Location = new System.Drawing.Point(44, 36);
+            this.lblServer.Location = new System.Drawing.Point(39, 29);
             this.lblServer.Name = "lblServer";
-            this.lblServer.Size = new System.Drawing.Size(67, 20);
+            this.lblServer.Size = new System.Drawing.Size(61, 17);
             this.lblServer.TabIndex = 4;
             this.lblServer.Text = "Servidor";
             // 
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(379, 36);
+            this.lblUser.Location = new System.Drawing.Point(337, 29);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(55, 20);
+            this.lblUser.Size = new System.Drawing.Size(49, 17);
             this.lblUser.TabIndex = 5;
             this.lblUser.Text = "Usuari";
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(589, 36);
+            this.lblPassword.Location = new System.Drawing.Point(524, 29);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(78, 20);
+            this.lblPassword.Size = new System.Drawing.Size(69, 17);
             this.lblPassword.TabIndex = 6;
             this.lblPassword.Text = "Password";
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(730, 525);
+            this.btnGuardar.Location = new System.Drawing.Point(649, 420);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(90, 44);
+            this.btnGuardar.Size = new System.Drawing.Size(80, 35);
             this.btnGuardar.TabIndex = 7;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -114,9 +120,10 @@ namespace FTP_Client
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(634, 525);
+            this.btnCancelar.Location = new System.Drawing.Point(564, 420);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(90, 44);
+            this.btnCancelar.Size = new System.Drawing.Size(80, 35);
             this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -125,24 +132,26 @@ namespace FTP_Client
             // lblRuta
             // 
             this.lblRuta.AutoSize = true;
-            this.lblRuta.Location = new System.Drawing.Point(44, 97);
+            this.lblRuta.Location = new System.Drawing.Point(39, 78);
             this.lblRuta.Name = "lblRuta";
-            this.lblRuta.Size = new System.Drawing.Size(117, 20);
+            this.lblRuta.Size = new System.Drawing.Size(103, 17);
             this.lblRuta.TabIndex = 10;
             this.lblRuta.Text = "Ruta Descarga";
             // 
             // txtRuta
             // 
-            this.txtRuta.Location = new System.Drawing.Point(48, 120);
+            this.txtRuta.Location = new System.Drawing.Point(43, 96);
+            this.txtRuta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRuta.Name = "txtRuta";
-            this.txtRuta.Size = new System.Drawing.Size(558, 26);
+            this.txtRuta.Size = new System.Drawing.Size(496, 22);
             this.txtRuta.TabIndex = 9;
             // 
             // btnRuta
             // 
-            this.btnRuta.Location = new System.Drawing.Point(612, 117);
+            this.btnRuta.Location = new System.Drawing.Point(544, 94);
+            this.btnRuta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRuta.Name = "btnRuta";
-            this.btnRuta.Size = new System.Drawing.Size(122, 33);
+            this.btnRuta.Size = new System.Drawing.Size(108, 26);
             this.btnRuta.TabIndex = 11;
             this.btnRuta.Text = "Select Ruta";
             this.btnRuta.UseVisualStyleBackColor = true;
@@ -150,9 +159,11 @@ namespace FTP_Client
             // 
             // FrmXML
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1051, 631);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(934, 505);
             this.Controls.Add(this.btnRuta);
             this.Controls.Add(this.lblRuta);
             this.Controls.Add(this.txtRuta);
@@ -165,6 +176,7 @@ namespace FTP_Client
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtServer);
             this.Controls.Add(this.rtbXML);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmXML";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormXML";

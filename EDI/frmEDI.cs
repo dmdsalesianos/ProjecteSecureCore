@@ -145,12 +145,34 @@ namespace EDI
 
         private void btnMakeOrder_Click(object sender, EventArgs e)
         {
-            string destino = Path.Combine(Path.GetDirectoryName(selectedFile), "tractats", Path.GetFileName(selectedFile));
-            File.Move(selectedFile, destino);
+            try
+            {
+                if (string.IsNullOrEmpty(selectedFile))
+                {
+                    throw new InvalidOperationException("No se ha seleccionado un archivo.");
+                }
 
-            entities.SaveChanges();
+                string destino = Path.Combine(Path.GetDirectoryName(selectedFile), "tractats", Path.GetFileName(selectedFile));
 
-            rtbDoc.AppendText("Order made!\n");
+                if (!Directory.Exists(Path.GetDirectoryName(destino)))
+                {
+                    Directory.CreateDirectory(Path.GetDirectoryName(destino));
+                }
+
+                File.Move(selectedFile, destino);
+                entities.SaveChanges();
+
+                rtbDoc.AppendText("Order made!\n");
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
 
         }
     }
