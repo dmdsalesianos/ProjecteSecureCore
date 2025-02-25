@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{738A3E17-456B-4EDD-BB4C-3AFABA09FD47}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>EDI</RootNamespace>
     <AssemblyName>EDI</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -31,6 +31,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DataAccess">
@@ -59,11 +62,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Agencies.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+    <Compile Include="Agency.cs">
+      <DependentUpon>EDIModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Factories.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+    <Compile Include="EDIModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDIModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDIModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDIModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDIModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDIModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Factory.cs">
+      <DependentUpon>EDIModel.tt</DependentUpon>
     </Compile>
     <Compile Include="frmEDI.cs">
       <SubType>Form</SubType>
@@ -71,43 +89,28 @@
     <Compile Include="frmEDI.Designer.cs">
       <DependentUpon>frmEDI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
+    <Compile Include="OperationalArea.cs">
+      <DependentUpon>EDIModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="OperationalAreas.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+    <Compile Include="Order.cs">
+      <DependentUpon>EDIModel.tt</DependentUpon>
     </Compile>
     <Compile Include="OrderInfo.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Orders.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>EDIModel.tt</DependentUpon>
     </Compile>
     <Compile Include="OrdersDetail.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>EDIModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Planets.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+    <Compile Include="Planet.cs">
+      <DependentUpon>EDIModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Priority.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>EDIModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="References.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+    <Compile Include="Reference.cs">
+      <DependentUpon>EDIModel.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmEDI.resx">
       <DependentUpon>frmEDI.cs</DependentUpon>
@@ -121,12 +124,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="Model1.edmx">
+    <EntityDeploy Include="EDIModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>EDIModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <None Include="App.Config" />
+    <None Include="EDIModel.edmx.diagram">
+      <DependentUpon>EDIModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -140,28 +144,25 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\CustomControls\CustomControls.csproj">
       <Project>{6B666B1C-7BD0-4E76-AB39-95AD671EB46B}</Project>
       <Name>CustomControls</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
-    <Content Include="Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="EDIModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EDIModel.edmx</DependentUpon>
+      <LastGenOutput>EDIModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EDIModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EDIModel.edmx</DependentUpon>
+      <LastGenOutput>EDIModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
