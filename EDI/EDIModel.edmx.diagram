@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7f8971e819ec4bcdbbd68a16e4a31ac4" Name="Diagram1">
+        <EntityTypeShape EntityType="SecureCoreG4Model.Agency" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureCoreG4Model.Factory" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureCoreG4Model.OperationalArea" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureCoreG4Model.OrderInfo" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureCoreG4Model.Order" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureCoreG4Model.OrdersDetail" Width="1.5" PointX="8.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureCoreG4Model.Planet" Width="1.5" PointX="6" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureCoreG4Model.Priority" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureCoreG4Model.Reference" Width="1.5" PointX="6" PointY="13.875" IsExpanded="true" />
+        <AssociationConnector Association="SecureCoreG4Model.FK_OrderInfo_Agencies" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureCoreG4Model.FK_Orders_Factories" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureCoreG4Model.FK_OrderInfo_OperationalAreas" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureCoreG4Model.FK_OrderInfo_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureCoreG4Model.FK_Orders_Priority" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureCoreG4Model.FK_OrdersDetail_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureCoreG4Model.FK_OrdersDetail_Planets" ManuallyRouted="false" />
+        <AssociationConnector Association="SecureCoreG4Model.FK_OrdersDetail_References" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

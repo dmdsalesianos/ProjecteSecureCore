@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>6xWCUYn7rgFKNH+bve3G4cTFjh+LjB78BoIyqtgvxe4=</dsig:DigestValue>
+        <dsig:DigestValue>g0eBxtPCVxASu/6XJC/YXQ+pNzXBd6nWuIEPQpFQ46c=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -289,7 +289,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>v9nZDNWBKj8Pri9HVBm9Xhrdj1fZmNILqmIPAI0eJa8=</dsig:DigestValue>
+        <dsig:DigestValue>dfhukh+VgMxdlDXJQZWUeLwcVZhBtqFhZMqvEEVcrAs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -347,13 +347,13 @@
       <dsig:DigestValue>cX8vSU0sdoKTcHJeIy9oSXMSfhjfMprr9A/+uBQc44g=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Login.exe.config" size="1536">
+  <file name="Login.exe.config" size="1957">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>65m9JH+IZXslnXI8plpCcSAsBl9lHcLIqVBGRkm0xRo=</dsig:DigestValue>
+      <dsig:DigestValue>oa+WuBh1vFRgaY69Wc2Sz1FHGw09C9RYW+276pHGYAc=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Login.pdb" size="97792">

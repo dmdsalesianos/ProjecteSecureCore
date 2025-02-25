@@ -41,7 +41,7 @@ namespace EDI
             this.rtbDoc.Location = new System.Drawing.Point(38, 157);
             this.rtbDoc.Name = "rtbDoc";
             this.rtbDoc.ReadOnly = true;
-            this.rtbDoc.Size = new System.Drawing.Size(669, 368);
+            this.rtbDoc.Size = new System.Drawing.Size(669, 472);
             this.rtbDoc.TabIndex = 0;
             this.rtbDoc.TabStop = false;
             this.rtbDoc.Text = "";
@@ -81,12 +81,13 @@ namespace EDI
             this.btnMakeOrder.TabIndex = 4;
             this.btnMakeOrder.Text = "Make Order";
             this.btnMakeOrder.UseVisualStyleBackColor = true;
+            this.btnMakeOrder.Click += new System.EventHandler(this.btnMakeOrder_Click);
             // 
             // frmEDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 537);
+            this.ClientSize = new System.Drawing.Size(1008, 658);
             this.Controls.Add(this.btnMakeOrder);
             this.Controls.Add(this.btnSelectFile);
             this.Controls.Add(this.lblFile);

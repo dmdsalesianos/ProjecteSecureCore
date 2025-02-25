@@ -19,8 +19,8 @@ namespace EDI
         public short idAgency { get; set; }
         public short idOperationalArea { get; set; }
     
-        public virtual Agencies Agencies { get; set; }
-        public virtual OperationalAreas OperationalAreas { get; set; }
-        public virtual Orders Orders { get; set; }
+        public virtual Agency Agency { get; set; }
+        public virtual OperationalArea OperationalArea { get; set; }
+        public virtual Order Order { get; set; }
     }
 }
