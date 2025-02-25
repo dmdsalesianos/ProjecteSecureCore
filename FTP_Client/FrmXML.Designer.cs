@@ -29,7 +29,6 @@ namespace FTP_Client
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmXML));
             this.rtbXML = new System.Windows.Forms.RichTextBox();
             this.txtServer = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -161,7 +160,6 @@ namespace FTP_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(934, 505);
             this.Controls.Add(this.btnRuta);

@@ -31,7 +31,7 @@ namespace FTP_Client
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFTP));
             this.btnDownload = new System.Windows.Forms.Button();
-            this.btnSelectFile = new System.Windows.Forms.Button();
+            this.btnUploadFile = new System.Windows.Forms.Button();
             this.gbVerificacio = new System.Windows.Forms.GroupBox();
             this.lblConnexio2 = new System.Windows.Forms.Label();
             this.lblConnexio = new System.Windows.Forms.Label();
@@ -57,16 +57,16 @@ namespace FTP_Client
             this.btnDownload.UseVisualStyleBackColor = true;
             this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
             // 
-            // btnSelectFile
+            // btnUploadFile
             // 
-            this.btnSelectFile.Location = new System.Drawing.Point(667, 94);
-            this.btnSelectFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSelectFile.Name = "btnSelectFile";
-            this.btnSelectFile.Size = new System.Drawing.Size(96, 30);
-            this.btnSelectFile.TabIndex = 1;
-            this.btnSelectFile.Text = "Select File";
-            this.btnSelectFile.UseVisualStyleBackColor = true;
-            this.btnSelectFile.Click += new System.EventHandler(this.btnSelectFile_Click);
+            this.btnUploadFile.Location = new System.Drawing.Point(667, 94);
+            this.btnUploadFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUploadFile.Name = "btnUploadFile";
+            this.btnUploadFile.Size = new System.Drawing.Size(96, 30);
+            this.btnUploadFile.TabIndex = 1;
+            this.btnUploadFile.Text = "Upload File";
+            this.btnUploadFile.UseVisualStyleBackColor = true;
+            this.btnUploadFile.Click += new System.EventHandler(this.btnSelectFile_Click);
             // 
             // gbVerificacio
             // 
@@ -175,6 +175,7 @@ namespace FTP_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(198)))), ((int)(((byte)(250)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(996, 450);
@@ -185,7 +186,7 @@ namespace FTP_Client
             this.Controls.Add(this.txtNomArxiu);
             this.Controls.Add(this.rtbFiles);
             this.Controls.Add(this.gbVerificacio);
-            this.Controls.Add(this.btnSelectFile);
+            this.Controls.Add(this.btnUploadFile);
             this.Controls.Add(this.btnDownload);
             this.DoubleBuffered = true;
             this.Name = "FrmFTP";
@@ -204,7 +205,7 @@ namespace FTP_Client
         #endregion
 
         private System.Windows.Forms.Button btnDownload;
-        private System.Windows.Forms.Button btnSelectFile;
+        private System.Windows.Forms.Button btnUploadFile;
         private System.Windows.Forms.GroupBox gbVerificacio;
         private System.Windows.Forms.Label lblConnexio2;
         private System.Windows.Forms.Label lblConnexio;
