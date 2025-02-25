@@ -35,7 +35,6 @@ namespace FrmProductes
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button_new = new System.Windows.Forms.Button();
-            this.button_delete = new System.Windows.Forms.Button();
             this.button_Update = new System.Windows.Forms.Button();
             this.comboBox_relacional = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -43,12 +42,9 @@ namespace FrmProductes
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(94, 219);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(1015, 318);
@@ -90,29 +86,19 @@ namespace FrmProductes
             // 
             // button_new
             // 
-            this.button_new.Location = new System.Drawing.Point(874, 111);
+            this.button_new.Location = new System.Drawing.Point(941, 148);
             this.button_new.Name = "button_new";
-            this.button_new.Size = new System.Drawing.Size(75, 41);
+            this.button_new.Size = new System.Drawing.Size(75, 38);
             this.button_new.TabIndex = 5;
             this.button_new.Text = "New";
             this.button_new.UseVisualStyleBackColor = true;
             this.button_new.Click += new System.EventHandler(this.button_new_Click);
             // 
-            // button_delete
-            // 
-            this.button_delete.Location = new System.Drawing.Point(1063, 111);
-            this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(75, 41);
-            this.button_delete.TabIndex = 6;
-            this.button_delete.Text = "Delete";
-            this.button_delete.UseVisualStyleBackColor = true;
-            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
-            // 
             // button_Update
             // 
-            this.button_Update.Location = new System.Drawing.Point(967, 111);
+            this.button_Update.Location = new System.Drawing.Point(1034, 148);
             this.button_Update.Name = "button_Update";
-            this.button_Update.Size = new System.Drawing.Size(75, 41);
+            this.button_Update.Size = new System.Drawing.Size(75, 38);
             this.button_Update.TabIndex = 7;
             this.button_Update.Text = "Update";
             this.button_Update.UseVisualStyleBackColor = true;
@@ -125,6 +111,7 @@ namespace FrmProductes
             this.comboBox_relacional.Name = "comboBox_relacional";
             this.comboBox_relacional.Size = new System.Drawing.Size(213, 28);
             this.comboBox_relacional.TabIndex = 8;
+            this.comboBox_relacional.Tag = "DescFactory";
             // 
             // frmProduct
             // 
@@ -133,7 +120,6 @@ namespace FrmProductes
             this.ClientSize = new System.Drawing.Size(1196, 549);
             this.Controls.Add(this.comboBox_relacional);
             this.Controls.Add(this.button_Update);
-            this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button_new);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -141,7 +127,7 @@ namespace FrmProductes
             this.Controls.Add(this.textBox_name);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmProduct";
-            this.Text = "Form1";
+            this.Text = "q";
             this.Load += new System.EventHandler(this.frmProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -157,7 +143,6 @@ namespace FrmProductes
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button_new;
-        private System.Windows.Forms.Button button_delete;
         private System.Windows.Forms.Button button_Update;
         private System.Windows.Forms.ComboBox comboBox_relacional;
     }

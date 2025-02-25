@@ -22,30 +22,41 @@ namespace FrmProductes
         public frmProduct()
         {
             InitializeComponent();
-
-
             db = new SecureCoreG4Entities1();
         }
 
         private void frmProduct_Load(object sender, EventArgs e)
-        {
-            
+        {            
             RellenarDTG();
             LlenarComboBoxFactories();
-
         }
 
         private void RellenarDTG()
         {
-            products = db.Products.Include("Factories").ToList();
+            products = db.Products.Include("Factories").ToList();            
             dataGridView1.DataSource = products;
+            ActivarBinding();
+            OcultarColumnasSinBinding();
+        }
 
-            if (dataGridView1.Columns.Contains("idProduct"))
+        private void OcultarColumnasSinBinding()
+        {
+            var camposVinculados = this.Controls
+            .OfType<Control>() 
+            .Where(ct => ct is TextBox || ct is ComboBox) 
+            .Where(ct => !string.IsNullOrEmpty(ct.Tag?.ToString())) 
+            .Select(ct => ct.Tag.ToString()) 
+            .ToList();
+
+
+            foreach (DataGridViewColumn col in dataGridView1.Columns)
             {
-                dataGridView1.Columns["idProduct"].Visible = false;
+                if (!camposVinculados.Contains(col.DataPropertyName))
+                {
+                    col.Visible = false;
+                }
             }
 
-            ActivarBinding();
         }
 
         private void LlenarComboBoxFactories()
@@ -66,7 +77,6 @@ namespace FrmProductes
                     txt.DataBindings.Add("Text", products, txt.Tag.ToString());
                 }
             }
-
             comboBox_relacional.DataBindings.Clear();
             comboBox_relacional.DataBindings.Add("SelectedValue", products, "idFactory");
         }
@@ -131,26 +141,6 @@ namespace FrmProductes
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al guardar el producto: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void button_delete_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int selectedProductId = (int)dataGridView1.CurrentRow.Cells["idProduct"].Value;
-                Products productoParaEliminar = db.Products.FirstOrDefault(p => p.idProduct == selectedProductId);
-
-                if (productoParaEliminar != null)
-                {
-                    db.Products.Remove(productoParaEliminar);
-                    db.SaveChanges();
-                    RellenarDTG();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al eliminar el producto: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
