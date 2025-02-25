@@ -43,6 +43,7 @@ namespace EDI
                     rtbDoc.AppendText("______________________________________\n");
 
                     selectedFile = openFileDialog.FileName;
+                    txtArxiu.Text = selectedFile;
                     
                     using (StreamReader reader = new StreamReader(selectedFile))
                     {

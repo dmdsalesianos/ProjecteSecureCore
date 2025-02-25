@@ -29,18 +29,19 @@ namespace FTP_Client
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmXML));
             this.rtbXML = new System.Windows.Forms.RichTextBox();
-            this.txtServer = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtUser = new System.Windows.Forms.TextBox();
             this.lblServer = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.lblRuta = new System.Windows.Forms.Label();
-            this.txtRuta = new System.Windows.Forms.TextBox();
-            this.btnRuta = new System.Windows.Forms.Button();
+            this.txtServer = new CustomControls.SWTextbox();
+            this.txtUser = new CustomControls.SWTextbox();
+            this.txtPassword = new CustomControls.SWTextbox();
+            this.txtRuta = new CustomControls.SWTextbox();
+            this.btnRuta = new CustomControls.RJControls.RJButton();
+            this.btnCancelar = new CustomControls.RJControls.RJButton();
+            this.btnGuardar = new CustomControls.RJControls.RJButton();
             this.SuspendLayout();
             // 
             // rtbXML
@@ -54,30 +55,6 @@ namespace FTP_Client
             this.rtbXML.TabIndex = 0;
             this.rtbXML.TabStop = false;
             this.rtbXML.Text = "";
-            // 
-            // txtServer
-            // 
-            this.txtServer.Location = new System.Drawing.Point(43, 47);
-            this.txtServer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtServer.Name = "txtServer";
-            this.txtServer.Size = new System.Drawing.Size(280, 22);
-            this.txtServer.TabIndex = 1;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(527, 47);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(154, 22);
-            this.txtPassword.TabIndex = 2;
-            // 
-            // txtUser
-            // 
-            this.txtUser.Location = new System.Drawing.Point(340, 47);
-            this.txtUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(154, 22);
-            this.txtUser.TabIndex = 3;
             // 
             // lblServer
             // 
@@ -106,28 +83,6 @@ namespace FTP_Client
             this.lblPassword.TabIndex = 6;
             this.lblPassword.Text = "Password";
             // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(649, 420);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(80, 35);
-            this.btnGuardar.TabIndex = 7;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(564, 420);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(80, 35);
-            this.btnCancelar.TabIndex = 8;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // lblRuta
             // 
             this.lblRuta.AutoSize = true;
@@ -137,42 +92,129 @@ namespace FTP_Client
             this.lblRuta.TabIndex = 10;
             this.lblRuta.Text = "Ruta Descarga";
             // 
+            // txtServer
+            // 
+            this.txtServer.BackColor = System.Drawing.SystemColors.Window;
+            this.txtServer.EsForanea = false;
+            this.txtServer.Location = new System.Drawing.Point(43, 47);
+            this.txtServer.Name = "txtServer";
+            this.txtServer.NomCampBBDD = null;
+            this.txtServer.PermetreBuit = true;
+            this.txtServer.Size = new System.Drawing.Size(281, 22);
+            this.txtServer.TabIndex = 12;
+            this.txtServer.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
+            // 
+            // txtUser
+            // 
+            this.txtUser.BackColor = System.Drawing.SystemColors.Window;
+            this.txtUser.EsForanea = false;
+            this.txtUser.Location = new System.Drawing.Point(340, 47);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.NomCampBBDD = null;
+            this.txtUser.PermetreBuit = true;
+            this.txtUser.Size = new System.Drawing.Size(154, 22);
+            this.txtUser.TabIndex = 13;
+            this.txtUser.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPassword.EsForanea = false;
+            this.txtPassword.Location = new System.Drawing.Point(527, 47);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.NomCampBBDD = null;
+            this.txtPassword.PermetreBuit = true;
+            this.txtPassword.Size = new System.Drawing.Size(154, 22);
+            this.txtPassword.TabIndex = 14;
+            this.txtPassword.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
+            // 
             // txtRuta
             // 
+            this.txtRuta.BackColor = System.Drawing.SystemColors.Window;
+            this.txtRuta.EsForanea = false;
             this.txtRuta.Location = new System.Drawing.Point(43, 96);
-            this.txtRuta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRuta.Name = "txtRuta";
-            this.txtRuta.Size = new System.Drawing.Size(496, 22);
-            this.txtRuta.TabIndex = 9;
+            this.txtRuta.NomCampBBDD = null;
+            this.txtRuta.PermetreBuit = true;
+            this.txtRuta.Size = new System.Drawing.Size(497, 22);
+            this.txtRuta.TabIndex = 15;
+            this.txtRuta.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
             // 
             // btnRuta
             // 
-            this.btnRuta.Location = new System.Drawing.Point(544, 94);
-            this.btnRuta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRuta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
+            this.btnRuta.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
+            this.btnRuta.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnRuta.BorderRadius = 0;
+            this.btnRuta.BorderSize = 0;
+            this.btnRuta.FlatAppearance.BorderSize = 0;
+            this.btnRuta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRuta.ForeColor = System.Drawing.Color.White;
+            this.btnRuta.Location = new System.Drawing.Point(597, 95);
             this.btnRuta.Name = "btnRuta";
-            this.btnRuta.Size = new System.Drawing.Size(108, 26);
-            this.btnRuta.TabIndex = 11;
-            this.btnRuta.Text = "Select Ruta";
-            this.btnRuta.UseVisualStyleBackColor = true;
+            this.btnRuta.Size = new System.Drawing.Size(132, 24);
+            this.btnRuta.TabIndex = 16;
+            this.btnRuta.Text = "Seleccionar Ruta";
+            this.btnRuta.TextColor = System.Drawing.Color.White;
+            this.btnRuta.UseVisualStyleBackColor = false;
             this.btnRuta.Click += new System.EventHandler(this.btnRuta_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
+            this.btnCancelar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
+            this.btnCancelar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCancelar.BorderRadius = 0;
+            this.btnCancelar.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(563, 420);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(80, 34);
+            this.btnCancelar.TabIndex = 17;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextColor = System.Drawing.Color.White;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
+            this.btnGuardar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
+            this.btnGuardar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnGuardar.BorderRadius = 0;
+            this.btnGuardar.BorderSize = 0;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(649, 420);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(80, 34);
+            this.btnGuardar.TabIndex = 18;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextColor = System.Drawing.Color.White;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // FrmXML
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(934, 505);
-            this.Controls.Add(this.btnRuta);
-            this.Controls.Add(this.lblRuta);
-            this.Controls.Add(this.txtRuta);
-            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnRuta);
+            this.Controls.Add(this.txtRuta);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtUser);
+            this.Controls.Add(this.txtServer);
+            this.Controls.Add(this.lblRuta);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.lblServer);
-            this.Controls.Add(this.txtUser);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtServer);
             this.Controls.Add(this.rtbXML);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmXML";
@@ -187,16 +229,16 @@ namespace FTP_Client
         #endregion
 
         private System.Windows.Forms.RichTextBox rtbXML;
-        private System.Windows.Forms.TextBox txtServer;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Label lblServer;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblRuta;
-        private System.Windows.Forms.TextBox txtRuta;
-        private System.Windows.Forms.Button btnRuta;
+        private CustomControls.SWTextbox txtServer;
+        private CustomControls.SWTextbox txtUser;
+        private CustomControls.SWTextbox txtPassword;
+        private CustomControls.SWTextbox txtRuta;
+        private CustomControls.RJControls.RJButton btnRuta;
+        private CustomControls.RJControls.RJButton btnCancelar;
+        private CustomControls.RJControls.RJButton btnGuardar;
     }
 }
