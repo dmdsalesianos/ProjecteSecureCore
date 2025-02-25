@@ -38,36 +38,39 @@ namespace EDI
             // 
             // rtbDoc
             // 
-            this.rtbDoc.Location = new System.Drawing.Point(38, 157);
+            this.rtbDoc.Location = new System.Drawing.Point(34, 126);
+            this.rtbDoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbDoc.Name = "rtbDoc";
             this.rtbDoc.ReadOnly = true;
-            this.rtbDoc.Size = new System.Drawing.Size(669, 368);
+            this.rtbDoc.Size = new System.Drawing.Size(595, 295);
             this.rtbDoc.TabIndex = 0;
             this.rtbDoc.TabStop = false;
             this.rtbDoc.Text = "";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(38, 86);
+            this.textBox1.Location = new System.Drawing.Point(34, 69);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(381, 26);
+            this.textBox1.Size = new System.Drawing.Size(339, 22);
             this.textBox1.TabIndex = 1;
             // 
             // lblFile
             // 
             this.lblFile.AutoSize = true;
-            this.lblFile.Location = new System.Drawing.Point(34, 63);
+            this.lblFile.Location = new System.Drawing.Point(30, 50);
             this.lblFile.Name = "lblFile";
-            this.lblFile.Size = new System.Drawing.Size(161, 20);
+            this.lblFile.Size = new System.Drawing.Size(144, 17);
             this.lblFile.TabIndex = 2;
             this.lblFile.Text = "Archivo Seleccionado";
             // 
             // btnSelectFile
             // 
-            this.btnSelectFile.Location = new System.Drawing.Point(425, 82);
+            this.btnSelectFile.Location = new System.Drawing.Point(378, 66);
+            this.btnSelectFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSelectFile.Name = "btnSelectFile";
-            this.btnSelectFile.Size = new System.Drawing.Size(114, 34);
+            this.btnSelectFile.Size = new System.Drawing.Size(101, 27);
             this.btnSelectFile.TabIndex = 3;
             this.btnSelectFile.Text = "SelectFIle";
             this.btnSelectFile.UseVisualStyleBackColor = true;
@@ -75,23 +78,26 @@ namespace EDI
             // 
             // btnMakeOrder
             // 
-            this.btnMakeOrder.Location = new System.Drawing.Point(593, 117);
+            this.btnMakeOrder.Location = new System.Drawing.Point(527, 94);
+            this.btnMakeOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMakeOrder.Name = "btnMakeOrder";
-            this.btnMakeOrder.Size = new System.Drawing.Size(114, 34);
+            this.btnMakeOrder.Size = new System.Drawing.Size(101, 27);
             this.btnMakeOrder.TabIndex = 4;
             this.btnMakeOrder.Text = "Make Order";
             this.btnMakeOrder.UseVisualStyleBackColor = true;
+            this.btnMakeOrder.Click += new System.EventHandler(this.btnMakeOrder_Click);
             // 
             // frmEDI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 537);
+            this.ClientSize = new System.Drawing.Size(708, 430);
             this.Controls.Add(this.btnMakeOrder);
             this.Controls.Add(this.btnSelectFile);
             this.Controls.Add(this.lblFile);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.rtbDoc);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmEDI";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
