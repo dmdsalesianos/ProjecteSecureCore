@@ -111,7 +111,7 @@ namespace FrmProductes
             this.comboBox_relacional.Name = "comboBox_relacional";
             this.comboBox_relacional.Size = new System.Drawing.Size(213, 28);
             this.comboBox_relacional.TabIndex = 8;
-            this.comboBox_relacional.Tag = "DescFactory";
+            this.comboBox_relacional.Tag = "Fábrica";
             // 
             // frmProduct
             // 

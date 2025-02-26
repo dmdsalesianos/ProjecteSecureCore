@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
+using System.Data.Entity;
 
 
 namespace FrmProductes
@@ -26,17 +27,21 @@ namespace FrmProductes
         }
 
         private void frmProduct_Load(object sender, EventArgs e)
-        {            
+        {
             RellenarDTG();
             LlenarComboBoxFactories();
+
         }
 
         private void RellenarDTG()
         {
-            products = db.Products.Include("Factories").ToList();            
+            products = db.Products.Include("Factories").ToList();
+
             dataGridView1.DataSource = products;
+
             ActivarBinding();
             OcultarColumnasSinBinding();
+
         }
 
         private void OcultarColumnasSinBinding()
@@ -69,12 +74,12 @@ namespace FrmProductes
 
         private void ActivarBinding()
         {
-            foreach (Control ct in this.Controls)
+            foreach (Control cotl in this.Controls)
             {
-                if (ct is TextBox txt)
+                if (cotl is TextBox text)
                 {
-                    txt.DataBindings.Clear();
-                    txt.DataBindings.Add("Text", products, txt.Tag.ToString());
+                    text.DataBindings.Clear();
+                    text.DataBindings.Add("Text", products, text.Tag.ToString());
                 }
             }
             comboBox_relacional.DataBindings.Clear();
@@ -91,7 +96,6 @@ namespace FrmProductes
                     txt.Clear();
                 }
             }
-
             comboBox_relacional.DataBindings.Clear();
             comboBox_relacional.SelectedIndex = -1;
         }

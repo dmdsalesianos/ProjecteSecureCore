@@ -11,16 +11,14 @@ namespace FrmProductes
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations.Schema;
-
+    
     public partial class Products
     {
         public int idProduct { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
         public short idFactory { get; set; }
-
-        [ForeignKey("idFactory")]
+    
         public virtual Factories Factories { get; set; }
     }
 }
