@@ -93,7 +93,6 @@
     <Compile Include="Products.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmProduct.resx">
       <DependentUpon>frmProduct.cs</DependentUpon>
@@ -106,6 +105,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -142,10 +142,11 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\fondo.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomControls\CustomControls.csproj">
-      <Project>{6B666B1C-7BD0-4E76-AB39-95AD671EB46B}</Project>
+      <Project>{6b666b1c-7bd0-4e76-ab39-95ad671eb46b}</Project>
       <Name>CustomControls</Name>
     </ProjectReference>
   </ItemGroup>

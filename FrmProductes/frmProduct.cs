@@ -20,24 +20,27 @@ namespace FrmProductes
         private List<Factories> factories;
         private bool esNuevo = false;
 
+        
+
         public frmProduct()
         {
             InitializeComponent();
             db = new SecureCoreG4Entities1();
+
         }
 
         private void frmProduct_Load(object sender, EventArgs e)
         {
             RellenarDTG();
             LlenarComboBoxFactories();
-
+            dtb_products.AllowUserToDeleteRows = true;
         }
 
         private void RellenarDTG()
         {
             products = db.Products.Include("Factories").ToList();
 
-            dataGridView1.DataSource = products;
+            dtb_products.DataSource = products;
 
             ActivarBinding();
             OcultarColumnasSinBinding();
@@ -54,7 +57,7 @@ namespace FrmProductes
             .ToList();
 
 
-            foreach (DataGridViewColumn col in dataGridView1.Columns)
+            foreach (DataGridViewColumn col in dtb_products.Columns)
             {
                 if (!camposVinculados.Contains(col.DataPropertyName))
                 {
@@ -105,8 +108,8 @@ namespace FrmProductes
             esNuevo = true;
             DesactivarBinding();
 
-            textBox_name.Text = "";
-            textBox_precio.Text = "";
+            swTb_Name.Text = "";
+            swTb_Price.Text = "";
             comboBox_relacional.SelectedIndex = -1;
         }
 
@@ -118,8 +121,8 @@ namespace FrmProductes
                 {
                     Products nuevoProducto = new Products
                     {
-                        Name = textBox_name.Text,
-                        Price = decimal.Parse(textBox_precio.Text),
+                        Name = swTb_Name.Text,
+                        Price = decimal.Parse(swTb_Price.Text),
                         idFactory = (short)comboBox_relacional.SelectedValue
                     };
 
@@ -127,13 +130,13 @@ namespace FrmProductes
                 }
                 else
                 {
-                    int selectedProductId = (int)dataGridView1.CurrentRow.Cells["idProduct"].Value;
+                    int selectedProductId = (int)dtb_products.CurrentRow.Cells["idProduct"].Value;
                     Products productoParaActualizar = db.Products.FirstOrDefault(p => p.idProduct == selectedProductId);
 
                     if (productoParaActualizar != null)
                     {
-                        productoParaActualizar.Name = textBox_name.Text;
-                        productoParaActualizar.Price = decimal.Parse(textBox_precio.Text);
+                        productoParaActualizar.Name = swTb_Name.Text;
+                        productoParaActualizar.Price = decimal.Parse(swTb_Price.Text);
                         productoParaActualizar.idFactory = (short)comboBox_relacional.SelectedValue;
                     }
                 }
@@ -145,6 +148,43 @@ namespace FrmProductes
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al guardar el producto: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void EliminarProducto(int productId)
+        {
+                var productoParaEliminar = db.Products.FirstOrDefault(p => p.idProduct == productId);
+
+                if (productoParaEliminar != null)
+                {
+                    products.Remove(productoParaEliminar);
+                    db.Products.Remove(productoParaEliminar);
+
+                    db.SaveChanges();
+                    RellenarDTG();
+                }
+                else
+                {
+                    MessageBox.Show("No Producto");
+                }
+        }
+        private void DtProducts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) 
+            {
+                dtb_products.Rows[e.RowIndex].Selected = true;
+            }
+        }
+       
+        private void DtProducts_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+            if (e.KeyCode == Keys.Delete && dtb_products.SelectedRows.Count == 1)
+            {
+                
+                int selectedProductId = (int)dtb_products.SelectedRows[0].Cells["idProduct"].Value;
+                                
+                EliminarProducto(selectedProductId);
             }
         }
     }
