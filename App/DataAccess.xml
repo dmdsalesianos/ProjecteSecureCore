@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DataAccess</name>
+    </assembly>
+    <members>
+        <member name="T:DataAccess.MantenimentDades">
+            <summary>
+            Clase para realizar operaciones de mantenimiento de datos en una base de datos SQL.
+            </summary>
+            <remarks>
+            Esta clase ofrece funcionalidades como consultas, actualizaciones y ejecución de transacciones
+            en una base de datos SQL mediante ADO.NET.
+            </remarks>
+        </member>
+        <member name="F:DataAccess.MantenimentDades._connectionString">
+            <summary>
+            Cadena de conexión a la base de datos.
+            </summary>
+        </member>
+        <member name="M:DataAccess.MantenimentDades.#ctor(System.String)">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:DataAccess.MantenimentDades"/> con la cadena de conexión especificada.
+            </summary>
+            <param name="connectionString">La cadena de conexión a la base de datos.</param>
+            <remarks>
+            Este constructor crea una nueva instancia de la clase <see cref="T:DataAccess.MantenimentDades"/> y establece
+            la conexión a la base de datos usando la cadena de conexión proporcionada.
+            </remarks>
+        </member>
+        <member name="M:DataAccess.MantenimentDades.PortarTaula(System.String)">
+            <summary>
+            Obtiene todos los registros de una tabla especificada en la base de datos.
+            </summary>
+            <param name="nomTaula">Nombre de la tabla a obtener.</param>
+            <returns>
+            Un <see cref="T:System.Data.DataSet"/> que contiene los datos de la tabla.
+            Si ocurre un error, devuelve <c>null</c>.
+            </returns>
+            <remarks>
+            Este método abre una conexión con la base de datos y ejecuta una consulta SELECT para obtener
+            todos los registros de la tabla especificada. Los resultados se devuelven en un <see cref="T:System.Data.DataSet"/>.
+            </remarks>
+            <example>
+            Ejemplo de uso:
+            <code>
+            MantenimentDades db = new MantenimentDades(connectionString);
+            DataSet result = db.PortarTaula("Clientes");
+            </code>
+            </example>
+        </member>
+        <member name="M:DataAccess.MantenimentDades.PortarPerConsulta(System.String)">
+            <summary>
+            Ejecuta una consulta SQL y devuelve los resultados como un <see cref="T:System.Data.DataSet"/>.
+            </summary>
+            <param name="query">La consulta SQL a ejecutar.</param>
+            <returns>
+            Un <see cref="T:System.Data.DataSet"/> que contiene los datos resultantes de la consulta.
+            Si ocurre un error, devuelve <c>null</c>.
+            </returns>
+            <remarks>
+            Este método permite ejecutar cualquier consulta SQL que no esté directamente relacionada
+            con una tabla específica. Los resultados se devuelven en un <see cref="T:System.Data.DataSet"/>.
+            </remarks>
+            <example>
+            Ejemplo de uso:
+            <code>
+            string query = "SELECT * FROM Clientes WHERE Edad > 30";
+            DataSet result = db.PortarPerConsulta(query);
+            </code>
+            </example>
+        </member>
+        <member name="M:DataAccess.MantenimentDades.Actualitzar(System.String,System.Data.DataSet@,System.String)">
+            <summary>
+            Actualiza los registros en la base de datos de acuerdo a los cambios realizados en el DataSet.
+            Este método utiliza una transacción para garantizar que todas las actualizaciones se realicen de manera atómica.
+            Si ocurre un error durante la actualización, la transacción se revierte para evitar cambios parciales en la base de datos.
+            </summary>
+            <param name="querySelect">La consulta SQL SELECT utilizada para recuperar los datos que se van a actualizar.</param>
+            <param name="ds">El DataSet que contiene los cambios que se desean aplicar a la base de datos.</param>
+            <param name="nomTaula">El nombre de la tabla en el DataSet que se va a actualizar.</param>
+            <returns>El número de filas afectadas por la operación de actualización. Si ocurre un error, devuelve -1.</returns>
+            <remarks>
+            Este método inicia una transacción, realiza la actualización de la tabla en el DataSet, 
+            y si todo es exitoso, confirma la transacción. Si ocurre un error, la transacción es revertida.
+            </remarks>
+            <example>
+            Ejemplo de uso:
+            <code>
+            int filasAfectadas = Actualitzar("SELECT * FROM MiTabla", miDataSet, "MiTabla");
+            if (filasAfectadas == -1)
+            {
+                // Manejar el error
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:DataAccess.MantenimentDades.Executa(System.String)">
+            <summary>
+            Ejecuta una consulta SQL no selectiva (INSERT, UPDATE, DELETE).
+            </summary>
+            <param name="query">La consulta SQL a ejecutar.</param>
+            <returns>
+            El número de filas afectadas por la operación. Devuelve <c>-1</c> si ocurre un error.
+            </returns>
+            <remarks>
+            Este método se utiliza para ejecutar consultas que modifican la base de datos, como INSERT,
+            UPDATE o DELETE. Los resultados devueltos indican cuántas filas fueron afectadas.
+            </remarks>
+            <example>
+            Ejemplo de uso:
+            <code>
+            string query = "DELETE FROM Clientes WHERE Edad &lt; 18";
+            int rowsAffected = db.Executa(query);
+            </code>
+            </example>
+        </member>
+        <member name="M:DataAccess.MantenimentDades.GeneraConsultaCerca(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+             <summary>
+             Genera una consulta de búsqueda con múltiples criterios y devuelve los resultados en un <see cref="T:System.Data.DataSet"/>.
+             </summary>
+             <param name="nomTaula">Nombre de la tabla en la que buscar.</param>
+             <param name="criteris">
+             Diccionario de criterios de búsqueda, donde la clave es el nombre de la columna y el valor es el valor a buscar.
+             </param>
+             <returns>Un <see cref="T:System.Data.DataSet"/> con los resultados de la búsqueda. Si ocurre un error, devuelve <c>null</c>.</returns>
+             <remarks>
+             Este método genera dinámicamente una consulta SQL para buscar registros en una tabla específica según los criterios proporcionados.
+             Los nombres de las columnas y valores son incluidos en la consulta de manera segura para prevenir inyecciones SQL.
+             El nombre de la tabla es validado para garantizar que solo contenga caracteres alfanuméricos y guiones bajos.
+             </remarks>
+             <example>
+             Ejemplo: Generar una consulta de búsqueda con criterios específicos.
+             <code>
+             var criteris = new Dictionary&lt;string, string&gt;
+             {
+                 { "Login", "MAND" },
+                 { "Rol", "Admin" }
+             };
+             string nomTaula = "Usuarios";
+             MantenimentDades manteniment = new MantenimentDades(connectionString);
+             DataSet resultado = manteniment.GeneraConsultaCerca(nomTaula, criteris);
+             </code>
+             Esto generará una consulta SQL similar a:
+             <code>
+             SELECT * FROM [Usuarios] WHERE 1=1 AND [Login] = 'MAND' AND [Rol] = 'Admin'
+             </code>
+             Los valores de los parámetros serán configurados con seguridad para prevenir inyección SQL.
+            
+             Ejemplo: Generar una consulta de búsqueda sin criterios.
+             <code>
+             string nomTaula = "Usuarios";
+             MantenimentDades manteniment = new MantenimentDades(connectionString);
+             DataSet resultado = manteniment.GeneraConsultaCerca(nomTaula, null);
+             </code>
+             Esto generará una consulta SQL similar a:
+             <code>
+             SELECT * FROM [Usuarios] WHERE 1=1
+             </code>
+             </example>
+        </member>
+        <member name="M:DataAccess.MantenimentDades.ExecutaStoredProcedure(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Ejecuta un procedimiento almacenado en la base de datos con parámetros opcionales y devuelve los resultados en un <see cref="T:System.Data.DataSet"/>.
+            </summary>
+            <param name="nomProc">Nombre del procedimiento almacenado a ejecutar.</param>
+            <param name="parametres">
+            Diccionario de parámetros donde la clave es el nombre del parámetro (incluyendo el prefijo `@`) 
+            y el valor es el valor que se pasará al procedimiento almacenado. Este parámetro puede ser <c>null</c> si el procedimiento no requiere parámetros.
+            </param>
+            <returns>
+            Un <see cref="T:System.Data.DataSet"/> que contiene los resultados del procedimiento almacenado. 
+            Si ocurre un error durante la ejecución, se devuelve <c>null</c>.
+            </returns>
+            <remarks>
+            Este método permite ejecutar procedimientos almacenados en la base de datos, con soporte para parámetros opcionales.
+            Los parámetros deben pasarse como un diccionario con nombres y valores, donde los nombres coincidan 
+            exactamente con los esperados por el procedimiento almacenado, incluyendo el prefijo `@`. Si no se requieren parámetros,
+            se puede pasar <c>null</c> para la variable <paramref name="parametres"/>.
+            
+            El procedimiento almacenado será ejecutado mediante el comando `EXEC` y, si se pasan parámetros, estos serán agregados a la consulta SQL 
+            como parámetros nombrados (por ejemplo, `@Login = 'MAND'`).
+            
+            Asegúrese de que la conexión a la base de datos esté correctamente configurada antes de usar este método.
+            </remarks>
+            <example>
+            Ejemplo 1: Llamada a un procedimiento almacenado con un parámetro.
+            <code>
+            var parametres = new Dictionary&lt;string, string&gt; 
+            {
+                { "@Login", "MAND" }
+            };
+            string nomProc = "BuscarUsuario";
+            DataSet resultado = manteniment.ExecutaStoredProcedure(nomProc, parametres);
+            </code>
+            Esto generará una consulta SQL similar a:
+            <code>
+            EXEC BuscarUsuario @Login = 'MAND'  
+            </code>
+            
+            Ejemplo 2: Llamada a un procedimiento almacenado sin parámetros.
+            <code>
+            string nomProc = "ListarTodosLosClientes";
+            DataSet resultado = manteniment.ExecutaStoredProcedure(nomProc, null);
+            </code>
+            Esto generará una consulta SQL similar a:
+            <code>
+            EXEC ListarTodosLosClientes  
+            </code>
+            </example>
+        </member>
+        <member name="T:DataAcess.SecureCoreG4DataSet">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:DataAcess.SecureCoreG4DataSet.SpeciesDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:DataAcess.SecureCoreG4DataSet.SpeciesRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:DataAcess.SecureCoreG4DataSet.SpeciesRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:DataAcess.SecureCoreG4DataSetTableAdapters.SpeciesTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:DataAcess.SecureCoreG4DataSetTableAdapters.TableAdapterManager">
+             <summary>
+            TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+            </summary>
+        </member>
+        <member name="M:DataAcess.SecureCoreG4DataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(DataAcess.SecureCoreG4DataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Update rows in top-down order.
+            </summary>
+        </member>
+        <member name="M:DataAcess.SecureCoreG4DataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(DataAcess.SecureCoreG4DataSet,System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Insert rows in top-down order.
+            </summary>
+        </member>
+        <member name="M:DataAcess.SecureCoreG4DataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(DataAcess.SecureCoreG4DataSet,System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Delete rows in bottom-up order.
+            </summary>
+        </member>
+        <member name="M:DataAcess.SecureCoreG4DataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+            </summary>
+        </member>
+        <member name="M:DataAcess.SecureCoreG4DataSetTableAdapters.TableAdapterManager.UpdateAll(DataAcess.SecureCoreG4DataSet)">
+             <summary>
+            Update all changes to the dataset.
+            </summary>
+        </member>
+        <member name="T:DataAcess.SecureCoreG4DataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+             <summary>
+            Update Order Option
+            </summary>
+        </member>
+        <member name="T:DataAcess.SecureCoreG4DataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+             <summary>
+            Used to sort self-referenced table's rows
+            </summary>
+        </member>
+    </members>
+</doc>
