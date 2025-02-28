@@ -16,7 +16,7 @@ namespace FrmProductes
     public partial class SecureCoreG4Entities1 : DbContext
     {
         public SecureCoreG4Entities1()
-            : base("name=SecureCoreG4Entities1")
+            : base("name=SecureCoreG4EntitiesProducts")
         {
         }
     

@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDI", "EDI\EDI.csproj", "{7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FTP_Client", "FTP_Client\FTP_Client.csproj", "{D5A8C8ED-3E27-4A5F-ADFE-726C6BAEBE55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrmProductes", "FrmProductes\FrmProductes.csproj", "{9EB95AF9-B88E-4753-B1A4-47605BD5A6B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{D5A8C8ED-3E27-4A5F-ADFE-726C6BAEBE55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5A8C8ED-3E27-4A5F-ADFE-726C6BAEBE55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5A8C8ED-3E27-4A5F-ADFE-726C6BAEBE55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EB95AF9-B88E-4753-B1A4-47605BD5A6B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EB95AF9-B88E-4753-B1A4-47605BD5A6B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EB95AF9-B88E-4753-B1A4-47605BD5A6B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EB95AF9-B88E-4753-B1A4-47605BD5A6B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

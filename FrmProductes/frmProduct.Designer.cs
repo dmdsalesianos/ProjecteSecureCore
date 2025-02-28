@@ -50,50 +50,52 @@ namespace FrmProductes
             this.dtb_products.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dtb_products.Location = new System.Drawing.Point(94, 219);
             this.dtb_products.Name = "dtb_products";
+            this.dtb_products.ReadOnly = true;
             this.dtb_products.RowHeadersWidth = 62;
             this.dtb_products.RowTemplate.Height = 28;
             this.dtb_products.Size = new System.Drawing.Size(1081, 475);
             this.dtb_products.TabIndex = 0;
+            this.dtb_products.TabStop = false;
             this.dtb_products.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtProducts_CellClick);
             this.dtb_products.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DtProducts_KeyDown);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Nova", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(106, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 29);
+            this.label1.Size = new System.Drawing.Size(78, 29);
             this.label1.TabIndex = 3;
             this.label1.Text = "Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Nova", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(114, 121);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 29);
+            this.label2.Size = new System.Drawing.Size(69, 29);
             this.label2.TabIndex = 4;
             this.label2.Text = "Price";
             // 
             // comboBox_relacional
             // 
-            this.comboBox_relacional.Font = new System.Drawing.Font("Arial Nova", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_relacional.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_relacional.FormattingEnabled = true;
             this.comboBox_relacional.Location = new System.Drawing.Point(570, 52);
             this.comboBox_relacional.Name = "comboBox_relacional";
             this.comboBox_relacional.Size = new System.Drawing.Size(213, 37);
-            this.comboBox_relacional.TabIndex = 8;
+            this.comboBox_relacional.TabIndex = 2;
             this.comboBox_relacional.Tag = "Fábrica";
             // 
             // Factory
             // 
             this.Factory.AutoSize = true;
-            this.Factory.Font = new System.Drawing.Font("Arial Nova", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Factory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Factory.Location = new System.Drawing.Point(471, 55);
             this.Factory.Name = "Factory";
-            this.Factory.Size = new System.Drawing.Size(93, 29);
+            this.Factory.Size = new System.Drawing.Size(92, 29);
             this.Factory.TabIndex = 12;
             this.Factory.Text = "Factory";
             // 
@@ -101,14 +103,15 @@ namespace FrmProductes
             // 
             this.swTb_Price.BackColor = System.Drawing.SystemColors.Window;
             this.swTb_Price.EsForanea = false;
-            this.swTb_Price.Font = new System.Drawing.Font("Arial Nova", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.swTb_Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.swTb_Price.Location = new System.Drawing.Point(188, 118);
             this.swTb_Price.Name = "swTb_Price";
             this.swTb_Price.NomCampBBDD = null;
             this.swTb_Price.PermetreBuit = true;
-            this.swTb_Price.Size = new System.Drawing.Size(251, 37);
-            this.swTb_Price.TabIndex = 13;
+            this.swTb_Price.Size = new System.Drawing.Size(251, 35);
+            this.swTb_Price.TabIndex = 1;
             this.swTb_Price.Tag = "Price";
+            this.swTb_Price.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
             // 
             // rjBut_update
             // 
@@ -119,12 +122,12 @@ namespace FrmProductes
             this.rjBut_update.BorderSize = 2;
             this.rjBut_update.FlatAppearance.BorderSize = 0;
             this.rjBut_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjBut_update.Font = new System.Drawing.Font("Arial Nova", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjBut_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjBut_update.ForeColor = System.Drawing.Color.White;
             this.rjBut_update.Location = new System.Drawing.Point(1034, 143);
             this.rjBut_update.Name = "rjBut_update";
             this.rjBut_update.Size = new System.Drawing.Size(141, 53);
-            this.rjBut_update.TabIndex = 11;
+            this.rjBut_update.TabIndex = 4;
             this.rjBut_update.Text = "Update";
             this.rjBut_update.TextColor = System.Drawing.Color.White;
             this.rjBut_update.UseVisualStyleBackColor = false;
@@ -134,13 +137,13 @@ namespace FrmProductes
             // 
             this.swTb_Name.BackColor = System.Drawing.SystemColors.Window;
             this.swTb_Name.EsForanea = false;
-            this.swTb_Name.Font = new System.Drawing.Font("Arial Nova", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.swTb_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.swTb_Name.Location = new System.Drawing.Point(188, 51);
             this.swTb_Name.Name = "swTb_Name";
             this.swTb_Name.NomCampBBDD = null;
             this.swTb_Name.PermetreBuit = true;
-            this.swTb_Name.Size = new System.Drawing.Size(251, 37);
-            this.swTb_Name.TabIndex = 10;
+            this.swTb_Name.Size = new System.Drawing.Size(251, 35);
+            this.swTb_Name.TabIndex = 0;
             this.swTb_Name.Tag = "Name";
             this.swTb_Name.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Text;
             // 
@@ -153,12 +156,12 @@ namespace FrmProductes
             this.rjBut_Nuevo.BorderSize = 2;
             this.rjBut_Nuevo.FlatAppearance.BorderSize = 0;
             this.rjBut_Nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjBut_Nuevo.Font = new System.Drawing.Font("Arial Nova", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjBut_Nuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjBut_Nuevo.ForeColor = System.Drawing.Color.White;
             this.rjBut_Nuevo.Location = new System.Drawing.Point(903, 143);
             this.rjBut_Nuevo.Name = "rjBut_Nuevo";
             this.rjBut_Nuevo.Size = new System.Drawing.Size(125, 53);
-            this.rjBut_Nuevo.TabIndex = 9;
+            this.rjBut_Nuevo.TabIndex = 3;
             this.rjBut_Nuevo.Text = "Nuevo";
             this.rjBut_Nuevo.TextColor = System.Drawing.Color.White;
             this.rjBut_Nuevo.UseVisualStyleBackColor = false;

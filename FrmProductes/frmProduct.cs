@@ -69,7 +69,7 @@ namespace FrmProductes
 
         private void LlenarComboBoxFactories()
         {
-            factories = db.Factories.ToList();
+            factories = db.Factories.OrderBy(f => f.DescFactory).ToList();
             comboBox_relacional.DataSource = factories;
             comboBox_relacional.DisplayMember = "DescFactory";
             comboBox_relacional.ValueMember = "idFactory";
@@ -160,7 +160,7 @@ namespace FrmProductes
                     products.Remove(productoParaEliminar);
                     db.Products.Remove(productoParaEliminar);
 
-                    db.SaveChanges();
+                    //db.SaveChanges();
                     RellenarDTG();
                 }
                 else
