@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ab05b13b05894bd291517cfbc2531b19" Name="Diagram1">
+        <EntityTypeShape EntityType="SecureCoreG4Model.Factories" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureCoreG4Model.Products" Width="4.25" PointX="3.25" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="SecureCoreG4Model.FK__Products__idFact__73501C2F" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
