@@ -14,14 +14,22 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
+<<<<<<< HEAD
     <dependentAssembly dependencyType="install" codebase="Login.exe.manifest" size="21136">
+=======
+    <dependentAssembly dependencyType="install" codebase="Login.exe.manifest" size="21137">
+>>>>>>> 2188e4bb7a23d88d8a7057f7856bfd342322fa02
       <assemblyIdentity name="Login.exe" version="1.0.0.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>/Ljplep4qg+AxoOPmB6cqc0lJIoHt8AcXjd0JZfe+RE=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>pSZVEvUTjWyI4ozE2lEqM56b3NumUxRgOD1xgTLbOgM=</dsig:DigestValue>
+>>>>>>> 2188e4bb7a23d88d8a7057f7856bfd342322fa02
       </hash>
     </dependentAssembly>
   </dependency>

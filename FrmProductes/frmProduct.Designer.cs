@@ -109,7 +109,6 @@ namespace FrmProductes
             this.swTb_Price.Size = new System.Drawing.Size(251, 37);
             this.swTb_Price.TabIndex = 13;
             this.swTb_Price.Tag = "Price";
-            this.swTb_Price.TipusDada = CustomControls.SWTextbox.Tipus_Dada.All;
             // 
             // rjBut_update
             // 
