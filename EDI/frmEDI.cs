@@ -43,6 +43,7 @@ namespace EDI
                     rtbDoc.AppendText("______________________________________\n");
 
                     selectedFile = openFileDialog.FileName;
+                    txtArxiu.Text = selectedFile;
                     
                     using (StreamReader reader = new StreamReader(selectedFile))
                     {
@@ -59,6 +60,7 @@ namespace EDI
                                 newOrder.codeOrder = partes[1];
 
                                 string codePriority = partes[2];
+                                short id = entities.Priorities.FirstOrDefault(p => p.CodePriority == codePriority).idPriority;
 
                                 newOrder.IdPriority = entities.Priorities.FirstOrDefault(p => p.CodePriority == codePriority).idPriority;
 
@@ -92,7 +94,6 @@ namespace EDI
                                 newOrderDetail.idOrder = newOrder.idOrder;
                                 string CodePlanet = partes[1];
                                 newOrderDetail.idPlanet = entities.Planets.FirstOrDefault(p => p.CodePlanet == CodePlanet).idPlanet;
-
                                 string codeReference = partes[2];
                                 newOrderDetail.idReference = entities.References.FirstOrDefault(p => p.codeReference == codeReference).idReference;
                             }
@@ -145,13 +146,35 @@ namespace EDI
 
         private void btnMakeOrder_Click(object sender, EventArgs e)
         {
-            string destino = Path.Combine(Path.GetDirectoryName(selectedFile), "tractats", Path.GetFileName(selectedFile));
-            File.Move(selectedFile, destino);
+            try
+            {
+                if (string.IsNullOrEmpty(selectedFile))
+                {
+                    throw new InvalidOperationException("No se ha seleccionado un archivo.");
+                }
 
-            entities.SaveChanges();
+                string destino = Path.Combine(Path.GetDirectoryName(selectedFile), "tractats", Path.GetFileName(selectedFile));
 
-            rtbDoc.AppendText("Order made!\n");
-                
+                if (!Directory.Exists(Path.GetDirectoryName(destino)))
+                {
+                    Directory.CreateDirectory(Path.GetDirectoryName(destino));
+                }
+
+                File.Move(selectedFile, destino);
+                entities.SaveChanges();
+
+                rtbDoc.AppendText("Order made!\n");
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
         }
     }
 }

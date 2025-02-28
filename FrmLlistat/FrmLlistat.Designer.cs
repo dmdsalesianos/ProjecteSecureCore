@@ -31,9 +31,9 @@ namespace FrmLlistat
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLlistat));
             this.label1 = new System.Windows.Forms.Label();
-            this.btnInforme = new System.Windows.Forms.Button();
             this.CRVReports = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.txtParametre = new CustomControls.SWTextbox();
+            this.btnInforme = new CustomControls.RJControls.RJButton();
             this.SuspendLayout();
             // 
             // label1
@@ -44,16 +44,6 @@ namespace FrmLlistat
             this.label1.Size = new System.Drawing.Size(144, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Número de comanda:";
-            // 
-            // btnInforme
-            // 
-            this.btnInforme.Location = new System.Drawing.Point(299, 45);
-            this.btnInforme.Name = "btnInforme";
-            this.btnInforme.Size = new System.Drawing.Size(132, 29);
-            this.btnInforme.TabIndex = 2;
-            this.btnInforme.Text = "Mostrar informe";
-            this.btnInforme.UseVisualStyleBackColor = true;
-            this.btnInforme.Click += new System.EventHandler(this.btnInforme_Click);
             // 
             // CRVReports
             // 
@@ -77,16 +67,36 @@ namespace FrmLlistat
             this.txtParametre.TabIndex = 4;
             this.txtParametre.TipusDada = CustomControls.SWTextbox.Tipus_Dada.Number;
             // 
+            // btnInforme
+            // 
+            this.btnInforme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
+            this.btnInforme.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(89)))), ((int)(((byte)(84)))));
+            this.btnInforme.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnInforme.BorderRadius = 0;
+            this.btnInforme.BorderSize = 0;
+            this.btnInforme.FlatAppearance.BorderSize = 0;
+            this.btnInforme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInforme.ForeColor = System.Drawing.Color.White;
+            this.btnInforme.Location = new System.Drawing.Point(297, 45);
+            this.btnInforme.Name = "btnInforme";
+            this.btnInforme.Size = new System.Drawing.Size(132, 29);
+            this.btnInforme.TabIndex = 5;
+            this.btnInforme.Text = "Mostrar informe";
+            this.btnInforme.TextColor = System.Drawing.Color.White;
+            this.btnInforme.UseVisualStyleBackColor = false;
+            this.btnInforme.Click += new System.EventHandler(this.btnInforme_Click);
+            // 
             // FrmLlistat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(198)))), ((int)(((byte)(250)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1498, 859);
+            this.Controls.Add(this.btnInforme);
             this.Controls.Add(this.txtParametre);
             this.Controls.Add(this.CRVReports);
-            this.Controls.Add(this.btnInforme);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Name = "FrmLlistat";
@@ -101,9 +111,9 @@ namespace FrmLlistat
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnInforme;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer CRVReports;
         private CustomControls.SWTextbox txtParametre;
+        private CustomControls.RJControls.RJButton btnInforme;
     }
 }
 
