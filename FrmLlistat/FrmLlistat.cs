@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
@@ -21,23 +22,30 @@ namespace FrmLlistat
         {
             string idComanda = txtParametre.Text;
 
-            if(string.IsNullOrWhiteSpace(idComanda))
+            if (string.IsNullOrWhiteSpace(idComanda))
             {
                 MessageBox.Show("Introduce un ID de Comanda válido.");
-            } else
+            }
+            else if (!Regex.IsMatch(idComanda, @"^\d+$")) // Verifica si es un número entero
+            {
+                MessageBox.Show("El ID de Comanda debe ser un número entero positivo.");
+            }
+            else
             {
                 // Verificar si la comanda existe
-                if(!ComandaExiste(idComanda))
+                if (!ComandaExiste(idComanda))
                 {
                     MessageBox.Show("La Comanda " + idComanda + " no existe.");
                     CRVReports.ReportSource = null;
-                } else
+                }
+                else
                 {
                     // Cargar el informe si la comanda existe
                     CargarInforme(idComanda);
                 }
             }
         }
+
 
         private bool ComandaExiste(string idComanda)
         {
