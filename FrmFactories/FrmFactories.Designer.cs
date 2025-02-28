@@ -96,6 +96,8 @@ namespace FrmFactories
             this.dtgFactories.RowTemplate.Height = 24;
             this.dtgFactories.Size = new System.Drawing.Size(682, 288);
             this.dtgFactories.TabIndex = 7;
+            this.dtgFactories.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgFactories_CellClick);
+            this.dtgFactories.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtgFactories_KeyDown);
             // 
             // btnUpdate
             // 

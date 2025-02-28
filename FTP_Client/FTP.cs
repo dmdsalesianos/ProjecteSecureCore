@@ -108,7 +108,7 @@ namespace FTP_Client
                 response = (FtpWebResponse)renameRequest.GetResponse();
 
             }
-            catch
+            catch(Exception ex)
             {
             }
 
@@ -117,7 +117,7 @@ namespace FTP_Client
 
         public FtpWebResponse Upload(string fileName)
         {
-            ftpRequest = (FtpWebRequest)WebRequest.Create($"ftp://{ftpServer}/{fileName}");
+            ftpRequest = (FtpWebRequest)WebRequest.Create($"ftp://{ftpServer}/{Path.GetFileName(fileName)}");
             ftpRequest.Credentials = new NetworkCredential(ftpUser, ftpPassword);
             ftpRequest.Method = WebRequestMethods.Ftp.UploadFile;
 

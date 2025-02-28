@@ -35,14 +35,14 @@ namespace FrmFactories
 
         private void ActivarBinding()
         {
-            foreach(Control ct in this.Controls)
+            foreach (Control ct in this.Controls)
             {
-                if(ct is TextBox txt)
+                if (ct is TextBox txt)
                 {
                     txt.DataBindings.Clear();
                     txt.Clear();
 
-                    if(!string.IsNullOrEmpty(txt.Tag?.ToString()))
+                    if (!string.IsNullOrEmpty(txt.Tag?.ToString()))
                     {
                         txt.DataBindings.Add("Text", bindingSource, txt.Tag.ToString());
                     }
@@ -52,9 +52,9 @@ namespace FrmFactories
 
         private void DesactivarBinding()
         {
-            foreach(Control ct in this.Controls)
+            foreach (Control ct in this.Controls)
             {
-                if(ct is TextBox txt)
+                if (ct is TextBox txt)
                 {
                     txt.DataBindings.Clear();
                     txt.Clear();
@@ -70,9 +70,9 @@ namespace FrmFactories
                 .Select(txt => txt.Tag.ToString())
                 .ToList();
 
-            foreach(DataGridViewColumn col in dtgFactories.Columns)
+            foreach (DataGridViewColumn col in dtgFactories.Columns)
             {
-                if(!camposVinculados.Contains(col.DataPropertyName))
+                if (!camposVinculados.Contains(col.DataPropertyName))
                 {
                     col.Visible = false;
                 }
@@ -83,15 +83,16 @@ namespace FrmFactories
         {
             try
             {
-                if(esNou)
+                if (esNou)
                 {
                     esNou = false;
                     Factory fac = new Factory { codeFactory = txtCodeFactory.Text, DescFactory = txtDescFactory.Text };
                     db.Factories.Add(fac);
                 }
                 db.SaveChanges();
-                RellenarDTG();
-            } catch(Exception ex)
+                RellenarDTG(); // Recargar datos después de actualizar
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(
                     $"Error al actualizar los datos: {ex.Message}",
@@ -105,6 +106,46 @@ namespace FrmFactories
         {
             esNou = true;
             DesactivarBinding();
+        }
+
+        private void Eliminar(int Id)
+        {
+            var objetoParaEliminar = db.Factories.FirstOrDefault(p => p.idFactory == Id);
+
+            if (objetoParaEliminar != null)
+            {
+                factories.Remove(objetoParaEliminar); // Elimina del BindingSource
+                db.Factories.Remove(objetoParaEliminar); // Elimina de la base de datos
+                db.SaveChanges(); // Guarda los cambios en la base de datos
+
+                RellenarDTG(); // Recargar la DataGridView
+            }
+            else
+            {
+                MessageBox.Show("No se encontró el registro para eliminar.");
+            }
+        }
+
+        private void dtgFactories_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                dtgFactories.Rows[e.RowIndex].Selected = true;
+            }
+        }
+
+        private void dtgFactories_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete && dtgFactories.SelectedRows.Count == 1)
+            {
+                var selectedRow = dtgFactories.SelectedRows[0];
+
+                if (selectedRow.Cells["idFactory"].Value != null)
+                {
+                    int selectedObjectId = Convert.ToInt32(selectedRow.Cells["idFactory"].Value);
+                    Eliminar(selectedObjectId);
+                }
+            }
         }
     }
 }

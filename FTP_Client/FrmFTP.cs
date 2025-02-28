@@ -110,7 +110,7 @@ namespace FTP_Client
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string fileName = Path.GetFileName(openFileDialog.FileName);
+                string fileName = openFileDialog.FileName;
 
                 response = FTP.Upload(fileName);
                 if (response != null && response.StatusCode == FtpStatusCode.ClosingData)
