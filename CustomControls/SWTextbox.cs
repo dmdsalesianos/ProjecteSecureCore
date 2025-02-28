@@ -77,7 +77,7 @@ namespace CustomControls
             switch (tipusDada)
             {
                 case Tipus_Dada.Number:
-                    return Regex.IsMatch(text, @"^\d+$"); // Només números
+                    return Regex.IsMatch(text, @"^\d+([.,]\d+)?$"); // Només números
                 case Tipus_Dada.Text:
                     return text.All(c => Char.IsLetter(c) || c == ' ' || c == '\''); // Només text amb espais i cometes simples
                 case Tipus_Dada.Code:
