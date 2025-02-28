@@ -59,7 +59,6 @@ namespace EDI
                                 newOrder.codeOrder = partes[1];
 
                                 string codePriority = partes[2];
-                                short id = entities.Priorities.FirstOrDefault(p => p.CodePriority == codePriority).idPriority;
 
                                 newOrder.IdPriority = entities.Priorities.FirstOrDefault(p => p.CodePriority == codePriority).idPriority;
 
@@ -93,6 +92,7 @@ namespace EDI
                                 newOrderDetail.idOrder = newOrder.idOrder;
                                 string CodePlanet = partes[1];
                                 newOrderDetail.idPlanet = entities.Planets.FirstOrDefault(p => p.CodePlanet == CodePlanet).idPlanet;
+
                                 string codeReference = partes[2];
                                 newOrderDetail.idReference = entities.References.FirstOrDefault(p => p.codeReference == codeReference).idReference;
                             }
@@ -151,7 +151,7 @@ namespace EDI
             entities.SaveChanges();
 
             rtbDoc.AppendText("Order made!\n");
-
+                
         }
     }
 }
