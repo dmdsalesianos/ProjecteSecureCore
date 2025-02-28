@@ -8,7 +8,7 @@
         <beforeApplicationStartup />
       </update>
     </subscription>
-    <deploymentProvider codebase="file://desktop-jdrk3ok/Users/Daniel/source/repos/ProjecteSecureCore/publicacio/Login.application" />
+    <deploymentProvider codebase="file:///C:/publish/Login.application" />
   </deployment>
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
@@ -21,7 +21,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>NLBmvOWiWNZVwYdsfig5aK1JlbQ6Y57wSMXLZhYNq1Y=</dsig:DigestValue>
+        <dsig:DigestValue>pRqgkWugqq5ydJp44jbDqeb2B/xG2kWBM4iOKgRrJ+o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
